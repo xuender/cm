@@ -1,5 +1,5 @@
 ###
-#directives 指令
+directives 指令
 menucode 验证code的唯一性
 ###
 angular.module('search.directives', []).

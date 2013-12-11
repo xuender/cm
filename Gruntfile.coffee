@@ -30,6 +30,7 @@ module.exports = (grunt)->
           cwd: 'bower_components/angular/'
           src: [
             'angular.min.js'
+            'angular.js'
             'angular.min.js.map'
           ]
           dest: 'dist/js'
@@ -140,7 +141,10 @@ module.exports = (grunt)->
       utils:
         files: [
           cwd: 'bower_components/js-utils/js/'
-          src: 'js-utils.min.js'
+          src: [
+            'js-utils.min.js'
+            'chrome.min.js'
+          ]
           dest: 'dist/js'
           expand: true
           filter: 'isFile'
@@ -181,6 +185,8 @@ module.exports = (grunt)->
     coffee:
       # 合并多个文件
       #      'bower_components/angular-chosen-localytics/chosen.js'
+      options:
+        bare: true
       components:
         files:
           'dist/js/components.min.js': [

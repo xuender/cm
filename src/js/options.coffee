@@ -4,9 +4,8 @@
 ###
 angular.module('search', [
   'ngRoute'
-  'localytics.directives'
-  #'search.directives'
-  #'utils.directives'
+  'search.directives'
+  'utils.directives'
   'utils.services'
   'ui.bootstrap'
 ]).config(['$routeProvider', ($routeProvider)->
@@ -26,11 +25,11 @@ angular.module('search', [
 ])
 $ ->
   _gaq.push(['_trackEvent', 'i18n', navigator.language])
-  syncFetch('/manifest.json', (result)->
+  JU.syncFetch('/manifest.json', (result)->
     _gaq.push(['_trackEvent', 'ver', JSON.parse(result).version])
   )
 
-code = JU.localStorageGet('locale', navigator.language.replace('-', '_'))
+code = JU.lsGet('locale', navigator.language.replace('-', '_'))
 if code not in ['en', 'zh_CN', 'zh_TW']
   code = 'en'
-window.ci18n = new I18n(code)
+window.ci18n = new JU.I18n(code)

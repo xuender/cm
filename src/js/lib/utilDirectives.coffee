@@ -1,5 +1,5 @@
 ###
-#utilsDirectives 工具指令
+utilsDirectives 工具指令
 * enter 回车跳转或回车运行方法
 * integer 整数校验
 ###

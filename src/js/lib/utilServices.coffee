@@ -13,11 +13,11 @@ angular.module('utils.services', []).config(['$provide', ($provide)->
   # 读数据
   $provide.factory('lsGetItem', [->
     (key, defaultValue = false)->
-      JU.localStorageGet key, defaultValue
+      JU.lsGet key, defaultValue
   ])
   # 写数据
   $provide.factory('lsSetItem', [->
     (key, value)->
-      JU.localStorageSet key, value
+      JU.lsSet key, value
   ])
 ])

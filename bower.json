@@ -8,8 +8,7 @@
   "dependencies": {
     "jquery": "2.0.3",
     "bootstrap": "2.3.2",
-    "angular": "~1.2.4",
-    "angular-bootstrap": "~0.7.0",
+    "angular-bootstrap": "0.7.0",
     "angular-chosen-localytics": "~1.0.3",
     "angular-route": "~1.2.4",
     "angular-mocks": "~1.2.4",

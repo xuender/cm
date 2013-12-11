@@ -1,4 +1,3 @@
-'use strict'
 # 工具服务类
 describe 'utilServices', ->
   beforeEach module 'utils.services'
