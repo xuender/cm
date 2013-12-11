@@ -1,0 +1,12 @@
+bower_components/
+dist/
+cms_dist/
+tmp/
+docs/
+logs/
+.DS_Store
+*~
+*.min.js
+node_modules
+.idea
+.zcache/

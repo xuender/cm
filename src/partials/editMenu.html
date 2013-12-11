@@ -1,0 +1,38 @@
+<!-- 共享网址 -->
+<div class="modal-header">
+  <h3>{{ getI18n('i_edit') }}</h3>
+</div><!-- modal-header -->
+<div class="modal-body">
+  <form name="formPut" class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label" for="urlName">{{ getI18n('i_name') }}</label>
+      <div class="controls">
+        <input ng-model="name" id="urlName" type="text" class="span3"
+        ng-Maxlength="200" ng-Minlength="2" maxlength="200" required/>
+      </div><!-- controls -->
+    </div><!-- control-group -->
+    <div class="control-group">
+      <label class="control-label" for="urlTitle">{{ getI18n('t_title') }}</label>
+      <div class="controls">
+        <input type="text" ng-model="title" id="urlTitle" class="span3" readonly/>
+      </div><!-- controls -->
+    </div><!-- control-group -->
+    <div class="control-group">
+      <label class="control-label" for="nick">{{ getI18n('i_nick') }}</label>
+      <div class="controls">
+        <input type="text" ng-model="nick" id="nick" class="span3" readonly/>
+      </div><!-- controls -->
+    </div><!-- control-group -->
+    <div class="control-group">
+      <div class="controls">
+        <i class="icon-thumbs-up"></i> {{ menu.v }}
+        <i class="icon-thumbs-down"></i> {{ menu.b }}
+      </div><!-- controls -->
+    </div><!-- control-group -->
+  </form>
+</div><!-- modal-body -->
+<div class="modal-footer">
+  <button ng-click="black()" class="btn btn-inverse">{{ getI18n('i_black') }}</button>
+  <button ng-click="save()" class="btn btn-primary">{{ getI18n('b_save') }}</button>
+  <button ng-click="close()" class="btn">{{ getI18n('i_close') }}</button>
+</div><!-- model-footer -->

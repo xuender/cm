@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="search" data-ng-csp>
+  <head>
+    <meta charset="utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/options.min.css" rel="stylesheet"/>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/ui-bootstrap-tpls.min.js"></script>
+    <title id="i_title">右键搜 - 选项</title>
+  </head>
+  <body ng-controller="BodyCtrl" >
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+      <div class="container">
+        <!--
+        <div class="navbar-header">
+          <a href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn" target="_blank">
+            <img src="img/38.webp"/>
+          </a>
+        </div> navbar-header -->
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li ng-class="{active:isActive('/about')}">
+              <a href="#/about">
+               <i class="fa fa-info"></i>
+               <span id="i_about">关于</span>
+              </a>
+            </li>
+            <li ng-class="{active:isActive('/menu/txt')}">
+              <a href="#/menu/txt">
+                <i class="fa fa-search"></i>
+                <span id="i_txt"> 划词菜单</span>
+              </a>
+            </li>
+            <li ng-class="{active:isActive('/menu/men')}">
+              <a href="#/menu/men">
+                <i class="fa fa-bars"></i>
+                <span id="i_men">页面菜单</span>
+              </a>
+            </li>
+            <li ng-class="{active:isActive('/menu/pic')}">
+              <a href="#/menu/pic">
+                <i class="fa fa-picture-o"></i>
+                <span id="i_pic">图片菜单</span>
+              </a>
+            </li>
+            <li ng-class="{active:isActive('/menu/lin')}">
+              <a href="#/menu/lin">
+                <i class="fa fa-link"></i>
+                <span id="i_lin">链接菜单</span>
+              </a>
+            </li>
+            <li ng-class="{active:isActive('/settings')}">
+              <a href="#/settings">
+                <i class="fa fa-wrench"></i>
+                <span id="i_settings">设置</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a id="a_reviews" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn/reviews" target="_blank">
+                <i class="fa fa-star"></i>
+                <span id="reviews">评论</span>
+              </a>
+            </li>
+            <li>
+              <a id="a_bug" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#bug" target="_blank">
+                <i class="fa fa-times"></i>
+                <span id="bug">错误</span>
+              </a>
+            </li>
+            <li>
+              <a id="a_question" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#question" target="_blank">
+                <i class="fa fa-question-circle"></i>
+                <span id="question">问题</span>
+              </a>
+            </li>
+            <li>
+              <a id="a_feature" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#feature" target="_blank">
+                <i class="fa fa-heart"></i>
+                <span id="feature">功能</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- container -->
+    </header>
+    <div ng-view></div>
+    <footer role="contentinfo">
+      <div class="container">
+        <p>
+          <a id="a_store" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn" target="_blank">Chrome Web Store</a>
+        </p>
+        <p>© <a id="a_oldbean" href="http://www.oldbean.cn" target="_blank">www.oldbean.cn</a> 2012-2013</p>
+      </div><!-- container -->
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/components.min.js"></script>
+    <script src="js/options.min.js"></script>
+  </body>
+</html>

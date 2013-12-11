@@ -1,0 +1,38 @@
+body {
+  position: relative;
+  padding-top: 90px;
+}
+header a:hover .fa {
+  font-size: 18px;
+}
+.nav i, .pull-right i{
+  width: 17px;
+}
+footer {
+  margin-top: 50px;
+  text-align: center;
+  height: 140px;
+  background-color: #ccc;
+  border-top: 1px solid #aaa;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  position: relative;
+}
+footer .container {
+  padding-top: 40px;
+}
+.ru{
+  background: url("../img/ru.png") no-repeat scroll 0 0 transparent;
+  padding-left:19px;
+}
+.en{
+  background: url("../img/en.png") no-repeat scroll 0 0 transparent;
+  padding-left:19px;
+}
+.zh_TW{
+  background: url("../img/zh_TW.png") no-repeat scroll 0 0 transparent;
+  padding-left:19px;
+}
+.zh_CN{
+  background: url("../img/zh_CN.png") no-repeat scroll 0 0 transparent;
+  padding-left:19px;
+}

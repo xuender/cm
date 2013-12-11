@@ -1,0 +1,953 @@
+{
+  "tab_close":{
+    "message": "близко"
+  },
+  "google_site":{
+    "message": "Google site"
+  },
+  "google_link":{
+    "message": "Google link"
+  },
+  "bing_site":{
+    "message": "Bing site"
+  },
+  "gmail_lin":{
+    "message": "Send with Gmail"
+  },
+  "facebook_lin":{
+    "message": "Facebook Share"
+  },
+  "qr_lin":{
+    "message": "Generates QR for link"
+  },
+  "su_lin":{
+    "message": "Create short URL of the link and copy"
+  },
+  "su_lin_alert":{
+    "message": "Create link Short URL"
+  },
+  "twitter_lin":{
+    "message": "Twitter Share"
+  },
+  "cilianba":{
+    "message": "Thunder Cloud Demand"
+  },
+  "weibo_lin":{
+    "message": "Sina microblogging"
+  },
+  "i_title":{
+    "message": "Context Menus Option"
+  },
+  "c_extensions":{
+    "message": "Extensions"
+  },
+  "c_downloads":{
+    "message": "Downloads"
+  },
+  "c_clearBD":{
+    "message": "Clear browsing data"
+  },
+  "c_settings":{
+    "message": "Settings"
+  },
+  "c_flags":{
+    "message": "Flags"
+  },
+  "c_history":{
+    "message": "History"
+  },
+  "c_bookmarks":{
+    "message": "Bookmark Manager"
+  },
+  "c_plugins":{
+    "message": "Plug-ins"
+  },
+  "c_version":{
+    "message": "About Version"
+  },
+  "gmail_page":{
+    "message": "Send with Gmail"
+  },
+  "facebook_menu":{
+    "message": "Facebook Share"
+  },
+  "w3c_css":{
+    "message": "W3C css validator"
+  },
+  "su":{
+    "message": "Create short URL to clipboard"
+  },
+  "qr":{
+    "message": "Generates QR for page"
+  },
+  "su_alert":{
+    "message": "Create short URL"
+  },
+  "c_memory":{
+    "message": "About Memory"
+  },
+  "c_credits":{
+    "message": "Credits"
+  },
+  "twitter_men":{
+    "message": "Twitter Share"
+  },
+  "w3_html":{
+    "message": "W3C html Validation"
+  },
+  "tmall":{
+    "message": "tmall.com"
+  },
+  "taobao_ju":{
+    "message": "Taobao Ju"
+  },
+  "yihao":{
+    "message": "yihaodian.com"
+  },
+  "tmall_chaoshi":{
+    "message": "Tmall Supermarket"
+  },
+  "tmall_dq":{
+    "message": "Tmall Electrical"
+  },
+  "taobao_game":{
+    "message": "Taobao Game"
+  },
+  "taobao_trip":{
+    "message": "Taobao Trip"
+  },
+  "tmall_flist":{
+    "message": "Tmall Flist"
+  },
+  "tmall_temai":{
+    "message": "Tmall Temai"
+  },
+  "weibo":{
+    "message": "Sina microblogging"
+  },
+  "qzone":{
+    "message": "qzone"
+  },
+  "google_pic":{
+    "message": "Google Images"
+  },
+  "facebook_pic":{
+    "message": "Facebook Share"
+  },
+  "gmail_pic":{
+    "message": "Send with Gmail"
+  },
+  "qr_decode":{
+    "message": "Parsing QR in the images"
+  },
+  "su_pic":{
+    "message": "Create image short URL to clipboard"
+  },
+  "su_pic_alert":{
+    "message": "Create short URL for image"
+  },
+  "qr_pic":{
+    "message": "Generates QR for image"
+  },
+  "TinEye":{
+    "message": "TinEye"
+  },
+  "iqdb":{
+    "message": "iqdb search"
+  },
+  "SauceNAO":{
+    "message": "SauceNAO"
+  },
+  "exif":{
+    "message": "Exif viewer"
+  },
+  "twitter_pic":{
+    "message": "Twitter Share"
+  },
+  "baidu_pic":{
+    "message": "Baidu Images"
+  },
+  "sogou_pic":{
+    "message": "Sogou Pic"
+  },
+  "weibo_pic":{
+    "message": "Sina microblogging"
+  },
+  "i_about":{
+    "message": "о"
+  },
+  "ag":{
+    "message": "обычай"
+  },
+  "all":{
+    "message": "универсальный"
+  },
+  "all_chrome":{
+    "message": "Браузер Chrome"
+  },
+  "b_load":{
+    "message": "Загрузить настройки"
+  },
+  "book":{
+    "message": "читать"
+  },
+  "b_save":{
+    "message": "Сохранить настройки"
+  },
+  "bug":{
+    "message": "ошибка"
+  },
+  "chrome":{
+    "message": "Chrome"
+  },
+  "c_menGroup":{
+    "message": "Комбинированная функция"
+  },
+  "comic":{
+    "message": "карикатура"
+  },
+  "c_picGroup":{
+    "message": "Меню Комбинация картину"
+  },
+  "c_txtGroup":{
+    "message": "Страница группы меню"
+  },
+  "description":{
+    "message": "Расширенное меню, интегрированные функции меню 266 и супер ссылки сопротивления. Достижения нулевой ресурс оккупации."
+  },
+  "ditto":{
+    "message": "повторять"
+  },
+  "error":{
+    "message": "Неизвестное исключение"
+  },
+  "error_ps":{
+    "message": "Неправильный фразу теста"
+  },
+  "error_url":{
+    "message": "URL неверен:"
+  },
+  "feature":{
+    "message": "особенность"
+  },
+  "fy":{
+    "message": "перевод"
+  },
+  "g_title":{
+    "message": "название комбинации"
+  },
+  "h_drag":{
+    "message": "Супер Перетаскивание: перетащите страницу вперед, чтобы открыть связь прервана перетащить ссылку является открытым в фоновом режиме, перетащите ссылку слева, чтобы открыть левую или правую рулевую тягу на правом открывать, перетащить выделенный текст использует первыйпрограмма поиска слова открывается."
+  },
+  "i18n":{
+    "message": "ru"
+  },
+  "i_add":{
+    "message": "добавленный"
+  },
+  "i_alert":{
+    "message": "Увеличение во всплывающем меню для создания коротких URL страницы"
+  },
+  "i_all":{
+    "message": "Многоязычная"
+  },
+  "i_back":{
+    "message": "₪ фоне"
+  },
+  "i_bak":{
+    "message": "Cloud Storage"
+  },
+  "i_bak_title":{
+    "message": "Анонимные в облаке, чтобы сохранить настройки"
+  },
+  "i_black":{
+    "message": "черный список"
+  },
+  "i_cgroup":{
+    "message": "Пользовательская комбинация"
+  },
+  "i_close":{
+    "message": "близко"
+  },
+  "i_current":{
+    "message": "₪ текущей"
+  },
+  "i_custom":{
+    "message": "обычай"
+  },
+  "i_del":{
+    "message": "удалять"
+  },
+  "i_down":{
+    "message": "вниз"
+  },
+  "i_edit":{
+    "message": "редактировать"
+  },
+  "i_en":{
+    "message": "английский"
+  },
+  "i_group":{
+    "message": "комбинация"
+  },
+  "i_have":{
+    "message": "Представлен не могут быть общими"
+  },
+  "i_help":{
+    "message": "Введите проверочный фраза (8-30 символов), точка <span class=\"label label-info\"> Save Settings </span>, текущая конфигурация будет сохранена в облаке. В другое время или другой вход машин проверки фразы, точки <span class=\"label label-warning\"> Загрузить настройки </span>, все конфигурации естественного восстановления. Используйте <code>cloud demo</code> для тестирования. <br/> PS: Перед тестированием, пожалуйста, сохраните настройки ох ^ _ ^"
+  },
+  "i_info":{
+    "message": "введение"
+  },
+  "i_label":{
+    "message": "название"
+  },
+  "i_language":{
+    "message": "Выбор языка"
+  },
+  "i_lin":{
+    "message": "Ссылка меню"
+  },
+  "i_lin_alert":{
+    "message": "Увеличение во всплывающем меню для создания коротких URL ссылку"
+  },
+  "i_lin_title":{
+    "message": "Право-Link меню отображается"
+  },
+  "i_men":{
+    "message": "Страница меню"
+  },
+  "i_men_title":{
+    "message": "Щелкните правой кнопкой мыши страницу меню, отображаемого"
+  },
+  "i_menucode":{
+    "message": "Дублирующих имен изменять его."
+  },
+  "i_name":{
+    "message": "название"
+  },
+  "i_nick":{
+    "message": "автор"
+  },
+  "i_note":{
+    "message": "Меры предосторожности"
+  },
+  "i_pic":{
+    "message": "меню Изображение"
+  },
+  "i_pic_alert":{
+    "message": "Короткие увеличение URL Картинка, которую формирует всплывающее меню"
+  },
+  "i_pic_title":{
+    "message": "Правый снимок меню"
+  },
+  "i_private":{
+    "message": "☢ стелс"
+  },
+  "i_put_ok":{
+    "message": "Общий успех, ожидания для сбора."
+  },
+  "i_qr_decode":{
+    "message": "Анализ двумерного кода изображения"
+  },
+  "i_s3":{
+    "message": "Часть упрощенный китайский (GBK, GB2312) набор символов искаженные сайт, если использование %g представляет выделенный текст"
+  },
+  "i_select":{
+    "message": "выбирать"
+  },
+  "i_settings":{
+    "message": "создавать"
+  },
+  "i_settings_title":{
+    "message": "Другие настройки"
+  },
+  "i_share":{
+    "message": "доля"
+  },
+  "i_size":{
+    "message": "QR размер"
+  },
+  "i_slin":{
+    "message": "Пользовательских запросов с использованием %s указывает на ссылку URL, например: https://www.google.com/search?q=link%3A%s"
+  },
+  "i_smen":{
+    "message": "Пользовательских запросов с использованием %s указывает на текущий URL страницы, например: https://twitter.com/intent/tweet?url=%s"
+  },
+  "i_spic":{
+    "message": "Пользовательских запросов с использованием %s обозначает, что изображение URL, например: http://www.google.com/searchbyimage?image_url=%s"
+  },
+  "i_ss":{
+    "message": "В меню отображается выбранный текст"
+  },
+  "i_sshort":{
+    "message": "Выберите короткий URL сайта Генератор"
+  },
+  "i_stxt":{
+    "message": "Введите в поисковой системе \"SEARCHTEXT\", дисплей странице результатов и скопировать полную ссылку (включая http://) в поле ввода, а затем щелкните значок плюс знак признания"
+  },
+  "i_su_lin":{
+    "message": "Увеличить выработку копию Short URL ссылки меню буфера обмена"
+  },
+  "i_summary":{
+    "message": "Делают все щелкните правой кнопкой мыши меню расширений."
+  },
+  "i_txt":{
+    "message": "Зонная меню слово"
+  },
+  "i_txt_title":{
+    "message": "Выделите текст отображается меню правой"
+  },
+  "i_up":{
+    "message": "двигаться"
+  },
+  "i_url":{
+    "message": "сайт"
+  },
+  "i_zh_CN":{
+    "message": "упрощенный китайский"
+  },
+  "i_zh_TW":{
+    "message": "Традиционный китайский"
+  },
+  "li1":{
+    "message": "Обязуется выполнить это приложение, \"Google Chrome Web Store Условия предоставления услуг \";"
+  },
+  "li2":{
+    "message": "Это приложение является свободным программным обеспечением, любой желающий может установить и использовать бесплатно;"
+  },
+  "li3":{
+    "message": "Это приложение использует Google Analytics статистикой правильного поведения оперативно-розыскных мероприятий, но не собирает личную информацию, соблюдая конфиденциальность пользователей;"
+  },
+  "li4":{
+    "message": "Корзина колонке некоторых функций, не затрагивая предпосылки пользователя маркетинга союзов с третьими сторонами к сотрудничеству."
+  },
+  "linGroup":{
+    "message": "Выберите меню комбинации ссылку"
+  },
+  "linSelect":{
+    "message": "Выберите ссылку меню"
+  },
+  "mailme":{
+    "message": "автор"
+  },
+  "menGroup":{
+    "message": "Выберите комбинаций странице меню"
+  },
+  "menSelect":{
+    "message": "Выберите меню страницы"
+  },
+  "movie":{
+    "message": "телевидение"
+  },
+  "mp3":{
+    "message": "музыка"
+  },
+  "m_title":{
+    "message": "Имя пользовательского"
+  },
+  "name":{
+    "message": "Контекстные меню"
+  },
+  "new":{
+    "message": "новости"
+  },
+  "no_results":{
+    "message": "Совпадений не найдено"
+  },
+  "pic":{
+    "message": "картина"
+  },
+  "picGroup":{
+    "message": "Выбор комбинаций меню Изображение"
+  },
+  "picSelect":{
+    "message": "Выберите меню Изображение"
+  },
+  "qr_size":{
+    "message": "QR размер"
+  },
+  "question":{
+    "message": "вопрос"
+  },
+  "r_bak":{
+    "message": "Вы уверены, что параметры нагрузки?"
+  },
+  "r_del":{
+    "message": "Вы уверены, что хотите удалить?"
+  },
+  "reviews":{
+    "message": "Отзывы"
+  },
+  "s_back":{
+    "message": "Открытым в фоновом режиме по умолчанию"
+  },
+  "s_drag":{
+    "message": "Супер перетаскивания включен"
+  },
+  "shop":{
+    "message": "покупка товаров"
+  },
+  "s_newPage":{
+    "message": "Страница существует не открыть новую страницу"
+  },
+  "sns":{
+    "message": "Социальные сети"
+  },
+  "s_phrase":{
+    "message": "Проверьте фразу"
+  },
+  "t_isEdit":{
+    "message": "Показать кнопку Изменить"
+  },
+  "t_isFlag":{
+    "message": "Иконки язык отображения"
+  },
+  "title":{
+    "message": "Контекстные меню - Вариант"
+  },
+  "t_private":{
+    "message": "Открыть в новом окне в режиме инкогнито"
+  },
+  "t_title":{
+    "message": "резюме"
+  },
+  "txtGroup":{
+    "message": "Выберите в меню зональных словосочетаний"
+  },
+  "txtSelect":{
+    "message": "Выберите созданный словом меню"
+  },
+  "ui":{
+    "message": "дизайн"
+  },
+  "user":{
+    "message": "Поиск "
+  },
+  "utils":{
+    "message": "утилиты"
+  },
+  "google":{
+    "message": "Google"
+  },
+  "bing":{
+    "message": "Bing"
+  },
+  "google_define":{
+    "message": "Google Definition"
+  },
+  "google_site1":{
+    "message": "Google Site Search"
+  },
+  "duckduckgo":{
+    "message": "DuckDuckGo"
+  },
+  "bing_site1":{
+    "message": "Bing Site Search"
+  },
+  "translate":{
+    "message": "Google Translate"
+  },
+  "youtube":{
+    "message": "youtube"
+  },
+  "btdigg":{
+    "message": "btdigg.org"
+  },
+  "thepiratebay":{
+    "message": "thepiratebay"
+  },
+  "last":{
+    "message": "Last.fm"
+  },
+  "google_news":{
+    "message": "Google News"
+  },
+  "bing_news":{
+    "message": "Bing News"
+  },
+  "google_img":{
+    "message": "Google Images"
+  },
+  "Picasa":{
+    "message": "Picasa"
+  },
+  "bing_images":{
+    "message": "Bing Images"
+  },
+  "flickr":{
+    "message": "flickr.com"
+  },
+  "google_plus":{
+    "message": "Google+"
+  },
+  "gmail_txt":{
+    "message": "Send with Gmail"
+  },
+  "facebook":{
+    "message": "Facebook"
+  },
+  "findicons":{
+    "message": "Findicons.com"
+  },
+  "qr_txt":{
+    "message": "Generates QR for select text."
+  },
+  "Yahoo":{
+    "message": "Yahoo"
+  },
+  "surfcanyon":{
+    "message": "surfcanyon.com"
+  },
+  "hotbot":{
+    "message": "hotbot.com"
+  },
+  "ask":{
+    "message": "Ask.com"
+  },
+  "FreeDict":{
+    "message": "TheFreeDictionary"
+  },
+  "torrentz":{
+    "message": "Torrent Search Engine"
+  },
+  "rottentomatoes":{
+    "message": "Rotten Tomatoes"
+  },
+  "bitsnoop":{
+    "message": "bitsnoop.com"
+  },
+  "imdb":{
+    "message": "IMDb"
+  },
+  "mtv":{
+    "message": "MTV"
+  },
+  "cnn":{
+    "message": "CNN"
+  },
+  "bbc":{
+    "message": "BBC World"
+  },
+  "Amazon_com":{
+    "message": "Amazon"
+  },
+  "ebay":{
+    "message": "ebay.com"
+  },
+  "alibaba":{
+    "message": "alibaba.com"
+  },
+  "twitter":{
+    "message": "twitter"
+  },
+  "twitter_share":{
+    "message": "Twitter Share"
+  },
+  "sootuu":{
+    "message": "sootuu.com"
+  },
+  "veryicon":{
+    "message": "veryicon.com"
+  },
+  "dmoz":{
+    "message": "dmoz open directory project "
+  },
+  "wolframalpha":{
+    "message": "wolframalpha"
+  },
+  "en_wikipedia":{
+    "message": "Wikipedia en"
+  },
+  "baidu":{
+    "message": "Baidu"
+  },
+  "youdao":{
+    "message": "youdao.com"
+  },
+  "google_hk":{
+    "message": "Google"
+  },
+  "soso":{
+    "message": "Soso.com"
+  },
+  "yunyun":{
+    "message": "yunyun.com"
+  },
+  "sogou":{
+    "message": "Sogou.com"
+  },
+  "baidu_site":{
+    "message": "Baidu Site Search"
+  },
+  "yahoo_cn":{
+    "message": "Yahoo China"
+  },
+  "so_360":{
+    "message": "qihoo360"
+  },
+  "xunlei":{
+    "message": "xunlei"
+  },
+  "scholar":{
+    "message": "Google Scholar"
+  },
+  "wenku":{
+    "message": "Baidu Wenku"
+  },
+  "nlc":{
+    "message": "National Library"
+  },
+  "pul":{
+    "message": "Peking University Library"
+  },
+  "qidian":{
+    "message": "qidian.com"
+  },
+  "tsinghua":{
+    "message": "tsinghua.edu.cn"
+  },
+  "bful":{
+    "message": "Beijing Forestry University Library"
+  },
+  "bit":{
+    "message": "bit.edu.cn"
+  },
+  "buofal":{
+    "message": "Beijing University of Aeronautics and Astronautics Library"
+  },
+  "db_book":{
+    "message": "book.douban.com"
+  },
+  "readnovel":{
+    "message": "readnovel.com"
+  },
+  "sul":{
+    "message": "Sichuan University Library"
+  },
+  "ustc":{
+    "message": "University of Science and Technology of China Library"
+  },
+  "xul":{
+    "message": "Xiamen University Library"
+  },
+  "zongheng":{
+    "message": "zongheng.com"
+  },
+  "ktxp":{
+    "message": "ktxp.com"
+  },
+  "bilibili":{
+    "message": "bilibili.tv"
+  },
+  "popgo":{
+    "message": "popgo.org"
+  },
+  "youdao_dict":{
+    "message": "Youdao Translation"
+  },
+  "zdic":{
+    "message": "zdic.net"
+  },
+  "dict":{
+    "message": "dict.cn"
+  },
+  "iciba":{
+    "message": "iciba.com"
+  },
+  "frdic":{
+    "message": "frdic.com"
+  },
+  "edu5156":{
+    "message": "http://xh.5156edu.com/"
+  },
+  "youku":{
+    "message": "youku.com"
+  },
+  "nds":{
+    "message": "Network disk search"
+  },
+  "bt":{
+    "message": "BT search"
+  },
+  "video_baidu":{
+    "message": "Baidu Video"
+  },
+  "EDonkey":{
+    "message": "EDonkey Search"
+  },
+  "yyets":{
+    "message": "yyets.com"
+  },
+  "xiami":{
+    "message": "xiami.com"
+  },
+  "mtime":{
+    "message": "mtime.com"
+  },
+  "skb9":{
+    "message": "9skb.com"
+  },
+  "verycd":{
+    "message": "VeryCD"
+  },
+  "imax":{
+    "message": "imax.im"
+  },
+  "tudou":{
+    "message": "tudou.com"
+  },
+  "gdajie":{
+    "message": "gdajie.com"
+  },
+  "shooter":{
+    "message": "shooter.cn"
+  },
+  "qiyi":{
+    "message": "qiyi.com"
+  },
+  "kankan":{
+    "message": "kankan.com"
+  },
+  "ku6":{
+    "message": "ku6.com"
+  },
+  "db_movie":{
+    "message": "movie.douban.com"
+  },
+  "funshion":{
+    "message": "funshion.com"
+  },
+  "music_baidu":{
+    "message": "Baidu Music"
+  },
+  "kuwo":{
+    "message": "kuwo.cn"
+  },
+  "baidu_news":{
+    "message": "Baidu News"
+  },
+  "sina_new":{
+    "message": "Sina News"
+  },
+  "image_baidu":{
+    "message": "Baidu Image"
+  },
+  "image_youdao":{
+    "message": "Youdao Image"
+  },
+  "pic_sogou":{
+    "message": "Sogou Image"
+  },
+  "taobao":{
+    "message": "Taobao"
+  },
+  "buy360":{
+    "message": "360buy.com"
+  },
+  "amazon":{
+    "message": "amazon.cn"
+  },
+  "etao":{
+    "message": "Etao"
+  },
+  "dangdang":{
+    "message": "dangdang.com"
+  },
+  "zto":{
+    "message": "Through delivery range"
+  },
+  "eachnet":{
+    "message": "eachnet.com"
+  },
+  "paipai":{
+    "message": "paipai.com"
+  },
+  "vancl":{
+    "message": "vancl.com"
+  },
+  "yihao_t":{
+    "message": "yihaodian.com"
+  },
+  "douban":{
+    "message": "douban.com"
+  },
+  "tieba":{
+    "message": "Baidu Tieba"
+  },
+  "weibo_txt":{
+    "message": "Sina microblogging"
+  },
+  "t_qq":{
+    "message": "QQ Microblogging"
+  },
+  "design52":{
+    "message": "52design.com"
+  },
+  "ekoooo":{
+    "message": "ekoooo.com"
+  },
+  "missyuan":{
+    "message": "missyuan.com"
+  },
+  "wikipedia":{
+    "message": "Wikipedia zh"
+  },
+  "baike":{
+    "message": "Baidu Baike"
+  },
+  "kd":{
+    "message": "China express query"
+  },
+  "zhidao":{
+    "message": "Baidu Zhidao"
+  },
+  "ditu":{
+    "message": "Google map"
+  },
+  "iask":{
+    "message": "iask"
+  },
+  "kiees":{
+    "message": "China express a single number query"
+  },
+  "zol":{
+    "message": "zol.com.cn"
+  },
+  "hudong":{
+    "message": "hudong.com"
+  },
+  "skycn":{
+    "message": "skycn.com"
+  },
+  "ditu_bing":{
+    "message": "Bing Ditu"
+  },
+  "ditu_yahoo":{
+    "message": "Yahoo Ditu"
+  },
+  "ks_yahoo":{
+    "message": "Yahoo ks cn"
+  },
+  "map_baidu":{
+    "message": "Baidu map"
+  },
+  "newhua":{
+    "message": "newhua.com"
+  },
+  "pconline":{
+    "message": "pconline.com.cn"
+  },
+  "zhihu":{
+    "message": "zhihu.com"
+  },
+  "google_tw":{
+    "message": "Google tw"
+  },
+  "ruten":{
+    "message": "ruten.com"
+  },
+  "tw_wikipedia":{
+    "message": "Wikipedia tw"
+  }
+}

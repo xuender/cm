@@ -1,0 +1,39 @@
+{
+    "name": "__MSG_name__",
+    "manifest_version": 2,
+    "version": "4.1.7",
+    "description": "__MSG_description__",
+    "author": "ender",
+    "short_name": "CM",
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "js/background.min.js",
+            "js/components.min.js"
+        ]
+    },
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com; object-src 'self'",
+    "offline_enabled": false,
+    "permissions": [
+        "contextMenus",
+        "storage",
+        "*://*/*",
+        "clipboardRead",
+        "tabs"
+    ],
+    "options_page": "options.html",
+    "default_locale": "en",
+    "icons": {
+        "16": "img/16.png",
+        "48": "img/48.png",
+        "128": "img/128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "img/19.png",
+            "38": "img/38.png"
+        },
+        "default_title": "__MSG_name__",
+        "default_popup": "popup.html"
+    }
+}
