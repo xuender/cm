@@ -4,11 +4,13 @@
       <span id="i_settings">设置</span>
       <small id="i_settings_title">设置</small>
     </h2>
-  </div><!-- page-header  -->
-  <form name="f_setting" class="form-horizontal" role="form">
-    <div class="form-group">
-      <label class="col-sm-2 control-label" for="qr_size"><span id="i_language">语言选择</span></label>
-      <div class="col-sm-10">
+  </div>
+  <form name="f_setting" class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label" for="qr_size">
+        <span id="i_language">语言选择</span>
+      </label>
+      <div class="controls">
         <div class="btn-group">
           <button type="button" class="btn" ng-model="locale" btn-radio="'en'">
             <i class="en"></i>
@@ -22,78 +24,82 @@
           <button type="button" class="btn" ng-model="locale" btn-radio="'ru'">
             <i class="ru"></i>
           </button>
-        </div><!-- btn-group -->
-      </div><!-- col-sm-10 -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <label class="col-sm-2 control-label" for="qr_size" id="i_size">二维码尺寸</label>
-      <div class="col-sm-1">
-        <input class="form-control" type="text" ng-model="qr_size" id="qr_size" value="250" placeholder="二维码宽高" integer/>
-      </div><!-- col-sm-1 -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <label class="col-sm-2 control-label" for="qr_size"><span id="i_black">黑名单</span></label>
-      <div class="col-sm-10">
-        <span ng-repeat="b in bl">
-          <button class="btn btn-xs" ng-click="delBl(b)">
-            {{ showName(b) }}
-            <i class="fa fa-times"></i>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="qr_size"><span id="i_size">二维码尺寸</span>
+      </label>
+      <div class="controls">
+        <input type="text" ng-model="qr_size" id="qr_size" value="250" placeholder="二维码宽高" integer=""/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="qr_size">
+        <span id="i_black">黑名单</span>
+      </label>
+      <div class="controls">
+        <span class="span3" ng-repeat="b in bl">
+          <button class="btn btn-mini" ng-click="delBl(b)">
+            <i class="icon-remove"></i>
           </button>
-          <span/>
+          {{ showName(b) }}
         </span>
-      </div><!-- col-sm-10 -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <label class="col-sm-2 control-label">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="i_isEdit">
+        <span id="t_isEdit">显示编辑按钮</span>
+      </label>
+      <div class="controls">
+        <input type="checkbox" ng-model="isEdit" id="i_isEdit"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="i_isFlag">
+        <span id="t_isFlag">显示语言图标</span>
+      </label>
+      <div class="controls">
+        <input type="checkbox" ng-model="isFlag" id="i_isFlag"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="i_back">
+        <span id="s_back">默认后台打开</span>
+      </label>
+      <div class="controls">
+        <input type="checkbox" ng-model="back" id="i_back"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">
         <span id="i_sshort">选择短网址生成网站</span>
       </label>
-      <div class="col-sm-10">
+      <div class="controls">
         <div class="btn-group">
-          <button type="button" class="btn" ng-model="shorten" btn-radio="'googl'">
-            Goo.gl
-          </button>
-          <button type="button" class="btn" ng-model="shorten" btn-radio="'sinat'">
-            t.cn
-          </button>
-          <button type="button" class="btn" ng-model="shorten" btn-radio="'urlcn'">
-            url.cn
-          </button>
-          <button type="button" class="btn" ng-model="shorten" btn-radio="'dwz'">
-            dwz.cn
-          </button>
-        </div><!-- btn-group -->
-      </div><!-- controls -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="checkbox" ng-model="isEdit" id="i_isEdit"/>
-        <span id="t_isEdit">显示编辑按钮</span>
-      </div><!-- controls -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="checkbox" ng-model="isFlag" id="i_isFlag"/>
-        <span id="t_isFlag">显示语言图标</span>
-      </div><!-- controls -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="checkbox" ng-model="back" id="i_back"/>
-        <span id="s_back">默认后台打开</span>
-      </div><!-- controls -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="checkbox" ng-model="newPage" id="i_newPage"/>
+          <button type="button" class="btn" ng-model="shorten" btn-radio="'googl'">Goo.gl</button>
+          <button type="button" class="btn" ng-model="shorten" btn-radio="'sinat'">t.cn</button>
+          <button type="button" class="btn" ng-model="shorten" btn-radio="'urlcn'">url.cn</button>
+          <button type="button" class="btn" ng-model="shorten" btn-radio="'dwz'">dwz.cn</button>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="i_newPage">
         <span id="s_newPage">页面存在则不打开新页面</span>
-      </div><!-- controls -->
-    </div><!-- form-group -->
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="checkbox" ng-model="drag" id="i_drag"/>
+      </label>
+      <div class="controls">
+        <input type="checkbox" ng-model="newPage" id="i_newPage"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="i_drag">
         <span id="s_drag">启用超级拖拽</span>
-      </div><!-- controls -->
-    </div><!-- form-group -->
+      </label>
+      <div class="controls">
+        <input type="checkbox" ng-model="drag" id="i_drag"/>
+      </div>
+    </div>
     <div class="alert alert-success">
       <span id="h_drag"></span>
     </div>
@@ -103,21 +109,22 @@
       <span id="i_bak">云存储</span>
       <small id="i_bak_title">在云中匿名保存您的设置</small>
     </h2>
-  </div><!-- page-header  -->
-  <div class="alert" id="i_help"></div>
+  </div>
+  <div class="alert" id="i_help">
+  </div>
   <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
   <form name="bak" class="form-horizontal">
-    <div class="form-group">
-      <label class="col-sm-2 control-label" for="i_phrase"><span id="s_phrase">验证短语</span></label>
-      <div class="col-sm-3">
-        <input class="form-control" type="text" ng-model="phrase" id="i_phrase" ng-Maxlength="30" maxlength="30" ng-Minlength="8" required/>
-      </div><!-- controls -->
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+    <div class="control-group">
+      <label class="control-label" for="i_phrase">
+        <span id="s_phrase">验证短语</span>
+      </label>
+      <div class="controls">
+        <input type="text" ng-model="phrase" id="i_phrase" ng-maxlength="30" maxlength="30" ng-minlength="8" required=""/>
+      </div>
+      <div class="form-actions">
         <button class="btn btn-primary" id="b_save" ng-click="save()">保存设置</button>
         <button class="btn btn-warning" id="b_load" ng-click="load()">加载设置</button>
       </div>
-    </div><!-- form-actions -->
-    </form>
-  </div><!-- container -->
+    </div>
+  </form>
+</div>

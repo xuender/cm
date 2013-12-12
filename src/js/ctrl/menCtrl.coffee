@@ -7,8 +7,8 @@ sumGroup = (groups)->
     g.v = 0
     for i in g.items
       g.v += i.v
-    sortOn(g.items, '-v')
-  sortOn(groups, '-v')
+    JU.sortOn(g.items, '-v')
+  JU.sortOn(groups, '-v')
   groups
 
 showSelect = (select, groups = [])->
@@ -122,7 +122,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     for d in scope.allUrls
       if d.m == name
         scope.urls.push(d)
-    scope.groups = sumGroup(groupBy(scope.urls, 't'))
+    scope.groups = sumGroup(JU.groupBy(scope.urls, 't'))
     scope.custom = updateCustom(lsGetItem(custom, []))
     scope.menus = scope.custom.concat(scope.urls)
   

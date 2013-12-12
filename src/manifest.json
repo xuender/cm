@@ -8,6 +8,9 @@
     "background": {
         "persistent": true,
         "scripts": [
+            "js/jquery.min.js",
+            "js/chrome.min.js",
+            "js/js-utils.min.js",
             "js/background.min.js",
             "js/components.min.js"
         ]

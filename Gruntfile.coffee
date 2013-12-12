@@ -152,7 +152,10 @@ module.exports = (grunt)->
       root:
         files: [
           cwd: 'src/'
-          src: ['manifest.json']
+          src: [
+            'manifest.json'
+            'init.json'
+          ]
           dest: 'dist'
           expand: true
           filter: 'isFile'
@@ -265,6 +268,11 @@ module.exports = (grunt)->
         dest: 'cms_dist/css/',
         ext: '.min.css'
     watch:
+      json:
+        files: [
+          'src/manifest.json'
+        ]
+        tasks: ['copy:root']
       html:
         files: [
           'src/**/*.html'

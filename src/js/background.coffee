@@ -6,20 +6,20 @@
 start = ->
   ### 运行 ###
   console.info 'start'
-  if not localStorageGet('three_run', false)
+  if not JU.lsGet('three_run', false)
     i18n = ci18n.getMessage('i18n')
-    localStorageSet('en', true)
+    JU.lsSet('en', true)
     if i18n == 'cn'
-      localStorageSet('zh_CN', true)
+      JU.lsSet('zh_CN', true)
       data =
         txtSelect: ['baidu', 'translate', 'zdic', 'amazon', 'taobao']
         picSelect: ['google_pic', 'baidu_pic', 'qr_decode']
         linSelect: ['weibo_lin', 'gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     else if i18n == 'tw'
-      localStorageSet('zh_TW', true)
+      JU.lsSet('zh_TW', true)
     else if i18n == 'ru'
-      localStorageSet('ru', true)
+      JU.lsSet('ru', true)
     if not data
       data =
         txtSelect: ['bing', 'translate', 'Amazon_com']
@@ -27,9 +27,9 @@ start = ->
         linSelect: ['gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     for key of data
-      localStorageSet(key, localStorageGet(key, data[key]))
+      JU.lsSet(key, JU.lsGet(key, data[key]))
     chrome.tabs.create({url:'options.html', selected: true})
-    localStorageSet('three_run', true)
+    JU.lsSet('three_run', true)
     _gaq.push(['_trackEvent', 'option', 'init'])
   menuReset()
 
@@ -38,7 +38,7 @@ init = ->
   console.info 'init'
   urlsCount((count)->
     if count == 0
-      syncFetch('/init.json', (result)->
+      JU.syncFetch('/init.json', (result)->
         saveDb(JSON.parse(result))
         start()
         _gaq.push(['_trackEvent', 'db', 'ninit'])
@@ -99,7 +99,7 @@ openUrl = (url, tab, back=false, incognito=false, x=1, type='txt', value='')->
       incognito: true
     )
     return true
-  if localStorageGet('newPage', true)
+  if JU.lsGet('newPage', true)
     chrome.tabs.getAllInWindow(null,(tabs)->
       for t in tabs
         if isCurrent(t.url, url)
@@ -171,9 +171,9 @@ onClickHandler = (info, tab)->
 
 openTab = (id, type, value, tab, x=1, fg=null)->
   ### 打开tab页面 id,类型,变量,tab,左右###
-  back = id in localStorageGet("#{type}Back", [])
-  incognito = id in localStorageGet("#{type}Incognito", [])
-  if localStorageGet("back", false)
+  back = id in JU.lsGet("#{type}Back", [])
+  incognito = id in JU.lsGet("#{type}Incognito", [])
+  if JU.lsGet("back", false)
     back = !back
   if fg != null
     back = fg
@@ -182,13 +182,13 @@ openTab = (id, type, value, tab, x=1, fg=null)->
     if ur
       urls.push(ur)
       _gaq.push(['_trackEvent', 'menu', id])
-    custom = localStorageGet(type + 'Custom', [])
+    custom = JU.lsGet(type + 'Custom', [])
     for c in custom
       if c[0] == id
         urls.push(c[1])
         _gaq.push(['_trackEvent', 'menu', id])
         break
-    group = localStorageGet(type[0] + 'cGroup', [])
+    group = JU.lsGet(type[0] + 'cGroup', [])
     b = true
     for g in group
       if g[0] == id
@@ -214,15 +214,15 @@ chrome.contextMenus.onClicked.addListener onClickHandler
 
 menuReset = ->
   ### 重置菜单 ###
-  code = localStorageGet('locale', navigator.language.replace('-', '_'))
+  code = JU.lsGet('locale', navigator.language.replace('-', '_'))
   if code not in ['en', 'zh_CN', 'zh_TW']
     code = 'en'
-  window.ci18n = new I18n(code)
+  window.ci18n = new JU.I18n(code)
   chrome.contextMenus.removeAll ->
     for m in ['men', 'txt', 'pic', 'lin']
       createMenu(m)
     console.debug '重置菜单完毕'
-  if localStorageGet('drag', false)
+  if JU.lsGet('drag', false)
     if not chrome.tabs.onUpdated.hasListener(updated)
       chrome.tabs.onUpdated.addListener(updated)
   else
@@ -251,8 +251,8 @@ createMenuItem = (id, name, type)->
   if cid in _IDS
     return
   _IDS.push(cid)
-  ins = localStorageGet("#{type}Incognito", [])
-  bs = localStorageGet("#{type}Back", [])
+  ins = JU.lsGet("#{type}Incognito", [])
+  bs = JU.lsGet("#{type}Back", [])
   incognito = id in ins
   if incognito
     name = '☢ ' + name
@@ -271,15 +271,15 @@ createMenuItem = (id, name, type)->
 createMenu = (type)->
   ### 创建菜单 ###
   _IDS = []
-  select = localStorageGet(type + 'Select', [])
+  select = JU.lsGet(type + 'Select', [])
   if type == 'lin'
     chrome.contextMenus.create(
       "contexts": ['link']
       'type': 'separator'
-      'id': 's_'+getId()
+      'id': 's_' + JU.getId()
     )
   findUrls((urls)->
-    names = localStorageGet('names', {})
+    names = JU.lsGet('names', {})
     for id in select
       b = true
       for u in urls

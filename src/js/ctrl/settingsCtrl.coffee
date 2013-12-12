@@ -54,7 +54,7 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.$watch('shorten',(n, o) ->
     lsSetItem('shorten', n)
   )
-  code = localStorageGet('locale', navigator.language.replace('-', '_'))
+  code = lsGetItem('locale', navigator.language.replace('-', '_'))
   if code not in ['en', 'ru', 'zh_CN', 'zh_TW']
     code = 'en'
   scope.locale = lsGetItem('locale', code)
@@ -127,7 +127,7 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
       )
   scope.$watch('locale', (n, o) ->
     lsSetItem('locale', n)
-    window.ci18n = new I18n(n)
+    window.ci18n = new JU.I18n(n)
     scope.i18n()
     menuReset()
   )

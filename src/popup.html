@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html ng-app="popup" data-ng-csp>
+<html ng-app="popup" data-ng-csp="">
   <head>
-    <meta charset="utf-8"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <meta charset="utf-8"><link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/popup.min.css" rel="stylesheet"/>
     <title>行为菜单</title>
   </head>
   <body ng-controller="PopupCtrl">
-    <button type="button" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-star"></span> Star
-    </button>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <div class="controls">
+      <input type="text" class="search-query" ng-model="text" id="searchText" enter="defaultSearch()"/>
+      <button target="_blank" class="btn btn-mini pull-right" ng-click="search('i_title')">
+        <i class="icon-wrench"></i>
+      </button>
+    </div>
+    <button ng-repeat="b in btns" ng-click="search(b.id)" class="btn">{{ b.name }}</button>
+    <script src="js/lib.min.js"></script>
+  <script src="js/utils.min.js"></script>
+  <script src="js/popup.min.js"></script>
   </body>
 </html>
