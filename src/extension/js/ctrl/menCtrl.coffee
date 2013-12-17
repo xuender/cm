@@ -113,7 +113,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   scope.init = ->
     ### 初始化 ###
     log.debug('init')
-    findUrls(scope.initDb)
+    scope.initDb(STATIC)
 
   scope.initDb = (data)->
     ### 初始化数据 ###

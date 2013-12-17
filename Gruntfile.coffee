@@ -188,8 +188,8 @@ module.exports = (grunt)->
       components:
         files:
           'dist/extension/js/components.min.js': [
+            'src/extension/js/static.coffee'
             'src/extension/js/lib/analytics.coffee'
-            'src/extension/js/db.coffee'
           ]
       background:
         files:
