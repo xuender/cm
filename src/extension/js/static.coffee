@@ -516,3 +516,5 @@ findUrl = (code, fun)->
         _URLS[code] = s.u
         fun(url)
     fun(null)
+findUrls = (fun)->
+  STATIC
