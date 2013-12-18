@@ -241,12 +241,12 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
       menu.incognito = false
       scope.select.push(menu)
     else
-      arrayRemove(scope.select, menu)
+      JU.removeArray(scope.select, menu)
     1
   scope.unSelect = (menu)->
     ### 取消选择 ###
     menu.select = false
-    arrayRemove(scope.select, menu)
+    JU.removeArray(scope.select, menu)
   scope.newGroup = g:[], c:'', t: 'group'
   scope.addGroup = (menu)->
     ### 创建自定义组合 ###

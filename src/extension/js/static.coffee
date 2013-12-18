@@ -505,3 +505,14 @@ STATIC = [
     t: "utils"
   }
 ]
+_URLS = {}
+findUrl = (code, fun)->
+  ### 根据代码获取URL ###
+  if code of _URLS
+    fun(_URLS[code])
+  else
+    for s in STATIC
+      if s.c == code
+        _URLS[code] = s.u
+        fun(url)
+    fun(null)

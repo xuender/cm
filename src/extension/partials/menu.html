@@ -71,7 +71,7 @@
       </form>
       <form name="f_custom">
         <div>
-          <input enter="" id="m_title" ng-model="newCustom.c" ng-maxlength="200" ng-minlength="1" maxlength="200" type="text" class="span2" required="" menucode=""/>
+          <input enter="" name="title" id="m_title" ng-model="newCustom.c" ng-maxlength="200" ng-minlength="1" maxlength="200" type="text" class="span2" required="" menucode=""/>
           <div class="input-append">
             <input ng-model="newCustom.u" id="i_url" enter="addCustom(newCustom)" type="url" class="span6" required=""/>
             <button class="btn" ng-click="addCustom(newCustom)" title="{{ getI18n('i_add') }}">

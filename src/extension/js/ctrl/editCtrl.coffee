@@ -7,7 +7,7 @@ EditCtrl = (scope, log, lsGetItem, lsSetItem, $modalInstance, menu)->
   scope.title = menu.h
   scope.nick = menu.k
   scope.close = ->
-    dialog.close('close')
+    $modalInstance.close('close')
   scope.save = ->
     log.debug('save')
     $modalInstance.close(scope.name)

@@ -33,3 +33,4 @@ code = JU.lsGet('locale', navigator.language.replace('-', '_'))
 if code not in ['en', 'zh_CN', 'zh_TW']
   code = 'en'
 window.ci18n = new JU.I18n(code)
+

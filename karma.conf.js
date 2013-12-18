@@ -19,8 +19,8 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/js-utils/js/js-utils.min.js',
       'bower_components/js-utils/js/chrome.min.js',
-      'src/js/ctrl/*.coffee',
-      'src/js/lib/*.coffee',
+      'src/extension/js/ctrl/*.coffee',
+      'src/extension/js/lib/*.coffee',
       'test/**/*Spec.coffee'
     ],
 
