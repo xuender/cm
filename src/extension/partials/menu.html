@@ -4,13 +4,13 @@
       <ul class="nav nav-list bs-docs-sidenav" ng-class="{affix:select.length < size}">
         <li ng-repeat="s in select">
           <a>
-            <i class="icon-remove" ng-click="unSelect(s)"></i> {{ s.n }}<br/>
+            <i class="fa fa-times" ng-click="unSelect(s)"></i> {{ s.n }}<br/>
             <div class="btn-group">
               <button type="button" class="btn btn-mini incognito" ng-click="up($index)" title="{{ getI18n('i_up') }}" ng-class="{disabled:$index == 0}">
-                <i class="icon-arrow-up"></i>
+                <i class="fa fa-arrow-up"></i>
               </button>
               <button type="button" class="btn btn-mini incognito" ng-click="down($index)" title="{{ getI18n('i_down') }}" ng-class="{disabled:$index == select.length - 1}">
-                <i class="icon-arrow-down"></i>
+                <i class="fa fa-arrow-down"></i>
               </button>
               <button type="button" class="btn btn-mini back" ng-model="s.back" title="" btn-checkbox="">{{ i_back }}</button>
               <button type="button" class="btn btn-mini incognito" title="{{ getI18n('t_private') }}" ng-model="s.incognito" btn-checkbox="">{{ i_private }}</button>
@@ -46,7 +46,7 @@
         <h4>{{ g.label }}</h4>
         <span class="span3" ng-class="hide(menu)" ng-repeat="menu in g.items">
           <button class="btn btn-mini" ng-class="{true:'hide', false:''}[isHideIcon(menu)]" ng-click="update(menu)">
-            <i class="icon-edit"></i>
+            <i class="fa fa-edit"></i>
           </button>
           <label style="display:inline">
             <input type="checkbox" ng-model="menu.select" ng-change="change(menu)"/>
@@ -61,10 +61,10 @@
           <div class="input-append">
             <input ng-model="c.u" type="url" class="span6" required=""/>
             <button class="btn" ng-click="delCustom(c)" title="{{ getI18n('i_del') }}">
-              <i class="icon-remove"></i>
+              <i class="fa fa-times"></i>
             </button>
             <button class="btn" ng-click="putDialog(c)" title="{{ getI18n('i_share') }}">
-              <i class="icon-share-alt"></i>
+              <i class="fa fa-share"></i>
             </button>
           </div>
         </div>
@@ -75,7 +75,7 @@
           <div class="input-append">
             <input ng-model="newCustom.u" id="i_url" enter="addCustom(newCustom)" type="url" class="span6" required=""/>
             <button class="btn" ng-click="addCustom(newCustom)" title="{{ getI18n('i_add') }}">
-              <i class="icon-plus"></i>
+              <i class="fa fa-plus"></i>
             </button>
           </div>
           <div class="alert alert-error i_menucode span4" ng-show="f_custom.$error.menucode || f_custom_old.$error.menucode">名称重复，请修改。</div>
@@ -89,7 +89,7 @@
           <div class="input-append">
             <select ng-model="c.g" chosen="" ng-options="m.n group by m.t for m in menus" class="span6" multiple="multiple"></select>
             <button class="btn" ng-click="delGroup(c)" title="{{ getI18n('i_del') }}">
-              <i class="icon-remove"></i>
+              <i class="fa fa-times"></i>
             </button>
           </div>
         </div>
@@ -99,7 +99,7 @@
         <div class="input-append">
           <select id="g_select" ng-model="newGroup.g" chosen="" ng-options="m.n group by m.t for m in menus" class="span6" multiple="multiple"></select>
           <button class="btn" ng-click="addGroup(newGroup)" title="{{ getI18n('i_add') }}">
-            <i class="icon-plus"></i>
+            <i class="fa fa-plus"></i>
           </button>
         </div>
       </form>

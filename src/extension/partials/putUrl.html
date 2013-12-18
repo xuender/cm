@@ -19,11 +19,21 @@
       <label class="control-label" for="qr_size">{{ getI18n('i_language') }}</label>
       <div class="controls">
         <div class="btn-group">
-          <button type="button" class="btn" ng-model="locale" btn-radio="'all'">{{ getI18n('i_all') }}</button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'en'"><i class="en"></i></button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'zh_CN'"><i class="zh_CN"></i></button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'zh_TW'"><i class="zh_TW"></i></button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'ru'"><i class="ru"></i></button>
+          <button type="button" class="btn" ng-model="locale" btn-radio="'all'">
+            {{ getI18n('i_all') }}
+          </button>
+          <button type="button" class="btn" ng-model="locale" btn-radio="'en'">
+            <i class="en"></i>
+          </button>
+          <button type="button" class="btn" ng-model="locale" btn-radio="'zh_CN'">
+            <i class="zh_CN"></i>
+          </button>
+          <button type="button" class="btn" ng-model="locale" btn-radio="'zh_TW'">
+            <i class="zh_TW"></i>
+          </button>
+          <button type="button" class="btn" ng-model="locale" btn-radio="'ru'">
+            <i class="ru"></i>
+          </button>
         </div>
       </div>
     </div>
