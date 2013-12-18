@@ -14,13 +14,10 @@ module.exports = (grunt)->
 
   grunt.initConfig(
     pkg:
-      # 读取配置
       grunt.file.readJSON('package.json')
     clean:
-      # 清除临时目录
-      dist: ['dist', 'cms_dist']
+      dist: ['dist']
     bump:
-      # 版本修改
       options:
         part: 'patch'
       files: [ 'package.json', 'src/manifest.json' ]
@@ -33,15 +30,15 @@ module.exports = (grunt)->
             'angular.js'
             'angular.min.js.map'
           ]
-          dest: 'dist/js'
+          dest: 'dist/extension/js'
           expand: true
           filter: 'isFile'
         ]
-      angularCms:
+      angularServer:
         files: [
           cwd: '<%= copy.angular.files.0.cwd %>'
           src: '<%= copy.angular.files.0.src %>'
-          dest: 'cms_dist/js'
+          dest: 'dist/server/js'
           expand: true
           filter: 'isFile'
         ]
@@ -52,7 +49,7 @@ module.exports = (grunt)->
             'angular-route.min.js'
             'angular-route.min.js.map'
           ]
-          dest: 'dist/js'
+          dest: 'dist/extension/js'
           expand: true
           filter: 'isFile'
         ]
@@ -62,15 +59,15 @@ module.exports = (grunt)->
           src: [
             'ui-bootstrap-tpls.min.js'
           ]
-          dest: 'dist/js'
+          dest: 'dist/extension/js'
           expand: true
           filter: 'isFile'
         ]
-      angularBootstrapCms:
+      angularBootstrapServer:
         files: [
           cwd: '<%= copy.angularBootstrap.files.0.cwd %>'
           src: '<%= copy.angularBootstrap.files.0.src %>'
-          dest: 'cms_dist/js'
+          dest: 'dist/server/js'
           expand: true
           filter: 'isFile'
         ]
@@ -81,15 +78,15 @@ module.exports = (grunt)->
             'jquery.min.js'
             'jquery.min.map'
           ]
-          dest: 'dist/js'
+          dest: 'dist/extension/js'
           expand: true
           filter: 'isFile'
         ]
-      jqueryCms:
+      jqueryServer:
         files: [
           cwd: '<%= copy.jquery.files.0.cwd %>'
           src: '<%= copy.jquery.files.0.src %>'
-          dest: 'cms_dist/js'
+          dest: 'dist/server/js'
           expand: true
           filter: 'isFile'
         ]
@@ -104,16 +101,16 @@ module.exports = (grunt)->
             'fonts/fontawesome-webfont.ttf'
             'fonts/fontawesome-webfont.woff'
           ]
-          dest: 'dist'
+          dest: 'dist/extension'
           expand: true
           filter: 'isFile'
         ]
-      fontCms:
+      fontServer:
         # font-awesome
         files: [
           cwd: '<%= copy.font.files.0.cwd %>'
           src: '<%= copy.font.files.0.src %>'
-          dest: 'cms_dist'
+          dest: 'dist/server'
           expand: true
           filter: 'isFile'
         ]
@@ -125,16 +122,16 @@ module.exports = (grunt)->
             'css/bootstrap.min.css'
             'js/bootstrap.min.js'
           ]
-          dest: 'dist'
+          dest: 'dist/extension'
           expand: true
           filter: 'isFile'
         ]
-      bootstrapCms:
+      bootstrapServer:
         # bootstrap 2.3.2
         files: [
           cwd: '<%= copy.bootstrap.files.0.cwd %>'
           src: '<%= copy.bootstrap.files.0.src %>'
-          dest: 'cms_dist'
+          dest: 'dist/server'
           expand: true
           filter: 'isFile'
         ]
@@ -145,156 +142,153 @@ module.exports = (grunt)->
             'js-utils.min.js'
             'chrome.min.js'
           ]
-          dest: 'dist/js'
+          dest: 'dist/extension/js'
           expand: true
           filter: 'isFile'
         ]
       root:
         files: [
-          cwd: 'src/'
+          cwd: 'src/extension'
           src: [
             'manifest.json'
             'init.json'
           ]
-          dest: 'dist'
+          dest: 'dist/extension'
           expand: true
           filter: 'isFile'
         ]
       i18n:
         files: [
-          cwd: 'src/'
+          cwd: 'src/extension'
           src: '_locales/**'
-          dest: 'dist'
+          dest: 'dist/extension'
           expand: true
           filter: 'isFile'
         ]
       img:
         files: [
-          cwd: 'src/'
+          cwd: 'src/extension'
           src: 'img/**'
-          dest: 'dist'
+          dest: 'dist/extension'
           expand: true
           filter: 'isFile'
         ]
-      imgCms:
+      imgServer:
         files: [
-          cwd: 'src/'
+          cwd: 'src/extension'
           src: 'img/**'
-          dest: 'cms_dist'
+          dest: 'dist/server'
           expand: true
           filter: 'isFile'
         ]
 
     coffee:
-      # 合并多个文件
-      #      'bower_components/angular-chosen-localytics/chosen.js'
       options:
         bare: true
       components:
         files:
-          'dist/js/components.min.js': [
-            'src/js/lib/analytics.coffee'
-            'src/js/db.coffee'
+          'dist/extension/js/components.min.js': [
+            'src/extension/js/static.coffee'
+            'src/extension/js/lib/analytics.coffee'
           ]
       background:
         files:
-          'dist/js/background.min.js': [
-            'src/js/background.coffee'
+          'dist/extension/js/background.min.js': [
+            'src/extension/js/background.coffee'
           ]
       optionJs:
         files:
-          'dist/js/options.min.js': [
-            'src/js/lib/utilServices.coffee'
-            'src/js/lib/utilDirectives.coffee'
-            'src/js/lib/directives.coffee'
-            'src/js/ctrl/bodyCtrl.coffee'
-            'src/js/ctrl/aboutCtrl.coffee'
-            'src/js/ctrl/menCtrl.coffee'
-            'src/js/ctrl/editCtrl.coffee'
-            'src/js/ctrl/putCtrl.coffee'
-            'src/js/ctrl/settingsCtrl.coffee'
-            'src/js/options.coffee'
+          'dist/extension/js/options.min.js': [
+            'src/extension/js/lib/utilServices.coffee'
+            'src/extension/js/lib/utilDirectives.coffee'
+            'src/extension/js/lib/directives.coffee'
+            'src/extension/js/ctrl/bodyCtrl.coffee'
+            'src/extension/js/ctrl/aboutCtrl.coffee'
+            'src/extension/js/ctrl/menCtrl.coffee'
+            'src/extension/js/ctrl/editCtrl.coffee'
+            'src/extension/js/ctrl/putCtrl.coffee'
+            'src/extension/js/ctrl/settingsCtrl.coffee'
+            'src/extension/js/options.coffee'
           ]
       index:
         files:
-          'cms_dist/js/index.min.js': [
-            'cms_src/js/index.coffee'
-            'cms_src/js/init.coffee'
+          'dist/server/js/index.min.js': [
+            'src/server/js/index.coffee'
+            'src/server/js/init.coffee'
           ]
     uglify:
-      # 压缩js
       components:
         files:
-          'dist/js/components.min.js': [
-            'dist/js/components.min.js'
+          'dist/extension/js/components.min.js': [
+            'dist/extension/js/components.min.js'
           ]
       optionJs:
         files:
-          'dist/js/options.min.js': [
-            'dist/js/options.min.js'
+          'dist/extension/js/options.min.js': [
+            'dist/extension/js/options.min.js'
           ]
       background:
         files:
-          'dist/js/background.min.js': [
-            'dist/js/background.min.js'
+          'dist/extension/js/background.min.js': [
+            'dist/extension/js/background.min.js'
+          ]
+      index:
+        files:
+          'dist/server/js/index.min.js': [
+            'dist/server/js/index.min.js'
           ]
     htmlmin:
-      # 压缩HTML
       dist:
         options:
           removeComments: true,
           collapseWhitespace: true
         files:
-          'dist/popup.html': 'src/popup.html'
-          'dist/options.html': 'src/options.html'
-          'dist/partials/about.html': 'src/partials/about.html'
-          'dist/partials/editMenu.html': 'src/partials/editMenu.html'
-          'dist/partials/menu.html': 'src/partials/menu.html'
-          'dist/partials/putUrl.html': 'src/partials/putUrl.html'
-          'dist/partials/settings.html': 'src/partials/settings.html'
-          'cms_dist/index.html': 'cms_src/index.html'
+          'dist/extension/popup.html': 'src/extension/popup.html'
+          'dist/extension/options.html': 'src/extension/options.html'
+          'dist/extension/partials/about.html': 'src/extension/partials/about.html'
+          'dist/extension/partials/editMenu.html': 'src/extension/partials/editMenu.html'
+          'dist/extension/partials/menu.html': 'src/extension/partials/menu.html'
+          'dist/extension/partials/putUrl.html': 'src/extension/partials/putUrl.html'
+          'dist/extension/partials/settings.html': 'src/extension/partials/settings.html'
+          'dist/server/index.html': 'src/server/index.html'
     cssmin:
-      # css压缩
       cm:
         expand: true
-        cwd: 'src/css/'
+        cwd: 'src/extension/css/'
         src: ['*.css', '!*.min.css'],
-        dest: 'dist/css/',
+        dest: 'dist/extension/css/',
         ext: '.min.css'
-      cms:
+      cmServer:
         expand: true
-        cwd: 'cms_src/css/'
+        cwd: 'src/server/css/'
         src: ['*.css', '!*.min.css'],
-        dest: 'cms_dist/css/',
+        dest: 'dist/server/css/',
         ext: '.min.css'
     watch:
       json:
         files: [
-          'src/manifest.json'
+          'src/**/*.json'
         ]
-        tasks: ['copy:root']
+        tasks: [
+          'copy:root'
+          'copy:i18n'
+        ]
       html:
         files: [
           'src/**/*.html'
-          'src/*.html'
-          'cms_src/*.html'
         ]
         tasks: ['htmlmin']
       css:
         files: [
-          'src/css/*.css'
-          'cms_src/css/*.css'
+          'src/**/*.css'
         ]
         tasks: ['cssmin']
       coffee:
         files: [
-          'src/js/*.coffee'
-          'src/js/ctrl/*.coffee'
-          'cms_src/js/*.coffee'
+          'src/**/*.coffee'
         ]
         tasks: ['coffee']
     karma:
-      # karma 测试
       options:
         configFile: 'karma.conf.js'
       dev:
