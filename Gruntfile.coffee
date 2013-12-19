@@ -42,6 +42,36 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      angularChosen:
+        files: [
+          cwd: 'bower_components/angular-chosen-localytics/'
+          src: [
+            'chosen.js'
+          ]
+          dest: 'dist/extension/js'
+          expand: true
+          filter: 'isFile'
+        ]
+      chosenJs:
+        files: [
+          cwd: 'bower_components/chosen/public/'
+          src: [
+            'chosen.jquery.min.js'
+          ]
+          dest: 'dist/extension/js'
+          expand: true
+          filter: 'isFile'
+        ]
+      chosenCss:
+        files: [
+          cwd: 'bower_components/chosen/public/'
+          src: [
+            'chosen.min.css'
+          ]
+          dest: 'dist/extension/css'
+          expand: true
+          filter: 'isFile'
+        ]
       angularRoute:
         files: [
           cwd: 'bower_components/angular-route/'

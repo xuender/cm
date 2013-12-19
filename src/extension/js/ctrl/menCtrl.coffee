@@ -77,12 +77,11 @@ menuI18n = (menus, names)->
 MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   ### 菜单控制器 ###
   type = routeParams.type
-  name = type.toUpperCase()
   scope.i18n(type)
   $('.i_menucode').text(ci18n.getMessage('i_menucode'))
+  name = type.toUpperCase()
   for i in ['m_title', 'i_url', 'g_title']
     $('#' + i).attr('placeholder', ci18n.getMessage(i))
-
   select = routeParams.type + 'Select'
   back = routeParams.type + 'Back'
   incognito = routeParams.type + 'Incognito'
@@ -93,9 +92,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   scope.ru = lsGetItem('ru', false)
   scope.isEdit = lsGetItem('isEdit', true)
   scope.isFlag = lsGetItem('isFlag', true)
-  # 黑名单
-  scope.bl = lsGetItem('bl', [])
-  # 重命名
+  ## 重命名
   scope.names = lsGetItem('names', {})
   # select浮动窗口尺寸
   scope.size = (window.innerHeight - 80)/60
@@ -129,9 +126,6 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     scope.$watch('en',(n, o) ->
       lsSetItem('en', n)
     )
-    scope.$watch('bl',(n, o) ->
-      lsSetItem('bl', n)
-    , true)
     scope.$watch('names',(n, o) ->
       lsSetItem('names', n)
     , true)
@@ -226,7 +220,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     ret
   scope.hide = (menu)->
     ### 是否隐藏菜单 ###
-    not (menu.c not in scope.bl and (menu.l == 'all' or scope[menu.l]))
+    not (menu.l == 'all' or scope[menu.l])
   scope.show = (code)->
     ### 根据代码显示标题 ###
     for a in [scope.menus, scope.custom, scope.group]
@@ -321,10 +315,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     )
     dialog.result.then((result)->
       if result
-        if result == 'black'
-          scope.bl.push(menu.c)
-          _gaq.push(['_trackEvent', 'edit', 'black'])
-        else if result != 'close'
+        if result != 'close'
           if menu.n != result
             menu.n = result
             scope.names[menu.c] = result

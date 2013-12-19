@@ -97,7 +97,7 @@
       <form name="f_group" class="line">
         <input enter="" id="g_title" ng-model="newGroup.c" ng-maxlength="200" ng-minlength="1" maxlength="200" type="text" class="span2" required="" menucode=""/>
         <div class="input-append">
-          <select id="g_select" ng-model="newGroup.g" chosen="" ng-options="m.n group by m.t for m in menus" class="span6" multiple="multiple"></select>
+          <select id="g_select" ng-model="newGroup.g" chosen ng-options="m.n group by m.t for m in menus" class="span6" multiple="multiple"></select>
           <button class="btn" ng-click="addGroup(newGroup)" title="{{ getI18n('i_add') }}">
             <i class="fa fa-plus"></i>
           </button>

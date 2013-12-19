@@ -4,6 +4,7 @@
 ###
 angular.module('search', [
   'ngRoute'
+  'localytics.directives'
   'search.directives'
   'utils.directives'
   'utils.services'

@@ -23,16 +23,11 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.newPage= lsGetItem('newPage', true)
   scope.alerts= []
   scope.phrase = lsGetItem('phrase', '')
-  scope.bl = []
   scope.all = []
   scope.init = ->
     findUrls((data)->
       scope.all = menuI18n(data, [])
-      scope.bl = lsGetItem('bl', [])
       scope.$apply()
-      scope.$watch('bl',(n, o) ->
-        lsSetItem('bl', n)
-      , true)
     )
   scope.showName = (code)->
     ### 显示名称 ###
@@ -40,10 +35,6 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
       if m.c == code
         return m.n
     'None'
-  scope.delBl = (code)->
-    ### 删除黑名单 ###
-    arrayRemove(scope.bl, code)
-    _gaq.push(['_trackEvent', 'settings', 'delBl'])
   scope.$watch('newPage',(n, o) ->
     lsSetItem('newPage', n)
   )
