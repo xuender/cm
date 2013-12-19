@@ -11,6 +11,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-htmlmin')
   grunt.loadNpmTasks('grunt-shell')
   grunt.loadNpmTasks('grunt-bumpx')
+  grunt.loadNpmTasks('grunt-contrib-compress')
 
   grunt.initConfig(
     pkg:
@@ -239,6 +240,11 @@ module.exports = (grunt)->
           'dist/extension/js/options.min.js': [
             'dist/extension/js/options.min.js'
           ]
+      popupJs:
+        files:
+          'dist/extension/js/popup.min.js': [
+            'dist/extension/js/popup.min.js'
+          ]
       background:
         files:
           'dist/extension/js/background.min.js': [
@@ -300,6 +306,13 @@ module.exports = (grunt)->
           'src/**/*.coffee'
         ]
         tasks: ['coffee']
+    compress:
+      google:
+        options:
+          archive: 'dist/cm.zip'
+        files: [
+          {expand: true, cwd: 'dist/extension/', src: '**/*', dest: '/'}
+        ]
     karma:
       options:
         configFile: 'karma.conf.js'
@@ -309,20 +322,21 @@ module.exports = (grunt)->
         singleRun: true
         autoWatch: false
   )
-  grunt.registerTask('test', '测试', ['karma'])
-  grunt.registerTask('dev', '开发数据', [
+  grunt.registerTask('test', ['karma'])
+  grunt.registerTask('dev', [
     'clean'
     'copy',
     'htmlmin'
     'cssmin'
     'coffee'
   ])
-  grunt.registerTask('dist', '打包', [
+  grunt.registerTask('dist', [
     'dev'
     'uglify'
+    'compress'
   ])
-  grunt.registerTask('deploy', '发布', [
+  grunt.registerTask('deploy', [
     'dist'
     'bump'
   ])
-  grunt.registerTask('default', '默认(打包)', ['dist'])
+  grunt.registerTask('default', ['dist'])
