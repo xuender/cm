@@ -1,5 +1,5 @@
 ###
-body controllers 控制器
+# body controllers 控制器
 ###
 #MEN = findUrls('MEN')
 #LIN = findUrls('LIN')
@@ -7,6 +7,11 @@ body controllers 控制器
 #PIC = findUrls('PIC')
 BodyCtrl = (scope, log, http, $location, lsGetItem, lsSetItem)->
   ### 页面控制器 ###
+  $(document).on('click', 'a', ->
+    if $(this).attr('id')
+      _gaq.push(['_trackEvent', 'a', $(this).attr('id')])
+    true
+  )
   scope.isActive = (route)->
     ### 是否是当前页 ###
     route == $location.path()
@@ -31,41 +36,39 @@ BodyCtrl = (scope, log, http, $location, lsGetItem, lsSetItem)->
   scope.getI18n = (id)->
     ### i18n 字符串 ###
     ci18n.getMessage(id)
+  scope.loadDb = ->
+    log.debug 'loadDb'
+    old = lsGetItem('loadDb', 0)
+    if new Date().getTime() - old > 86400000
+      log.debug '获取数据'
+      sa = []
+      for t in ['men', 'lin', 'pic', 'txt']
+        for s in lsGetItem("#{t}Select", [])
+          sa.push(s)
+      sa = sa.join(',')
+      bs = lsGetItem('bl', []).join(',')
 
-
-    #scope.loadDb = ->
-    #  log.debug 'loadDb'
-    #  old = lsGetItem('loadDb', 0)
-    #  if new Date().getTime() - old > 86400000
-    #    log.debug '获取数据'
-    #    sa = []
-    #    for t in ['men', 'lin', 'pic', 'txt']
-    #      for s in lsGetItem("#{t}Select", [])
-    #        sa.push(s)
-    #    sa = sa.join(',')
-    #    bs = lsGetItem('bl', []).join(',')
-
-    #    queryDb((max)->
-    #      log.debug max
-    #      #url: 'http://localhost:8000/url/query/'
-    #      http(
-    #        method: 'POST'
-    #        url: 'http://cm.xuender.me/url/query/'
-    #        data: $.param(
-    #          t: max
-    #          v: sa
-    #          b: bs
-    #        )
-    #      ).success((data, status, headers, config) ->
-    #        saveDb(data)
-    #        lsSetItem('loadDb', new Date().getTime())
-    #        _gaq.push(['_trackEvent', 'db', 'query'])
-    #      ).error((data, status, headers, config) ->
-    #        log.error '错误'
-    #        log.error data
-    #        _gaq.push(['_trackEvent', 'db', 'query_error'])
-    #      )
-    #    )
-    #scope.loadDb()
+      queryDb((max)->
+        log.debug max
+        #url: 'http://localhost:8000/url/query/'
+        http(
+          method: 'POST'
+          url: 'http://cm.xuender.me/url/query/'
+          data: $.param(
+            t: max
+            v: sa
+            b: bs
+          )
+        ).success((data, status, headers, config) ->
+          saveDb(data)
+          lsSetItem('loadDb', new Date().getTime())
+          _gaq.push(['_trackEvent', 'db', 'query'])
+        ).error((data, status, headers, config) ->
+          log.error '错误'
+          log.error data
+          _gaq.push(['_trackEvent', 'db', 'query_error'])
+        )
+      )
+  scope.loadDb()
 BodyCtrl.$inject = ['$scope', '$log', '$http', '$location', 'lsGetItem',
   'lsSetItem']

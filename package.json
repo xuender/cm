@@ -1,6 +1,6 @@
 {
     "name": "ContextMenus",
-    "version": "4.1.7",
+    "version": "3.2.299",
     "devDependencies": {
         "grunt": "~0.4.2",
         "grunt-contrib-clean": "~0.5.0",

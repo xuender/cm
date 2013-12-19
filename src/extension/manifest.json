@@ -1,7 +1,7 @@
 {
     "name": "__MSG_name__",
     "manifest_version": 2,
-    "version": "4.1.7",
+    "version": "3.2.299",
     "description": "__MSG_description__",
     "author": "ender",
     "short_name": "CM",
@@ -9,6 +9,7 @@
         "persistent": true,
         "scripts": [
             "js/jquery.min.js",
+            "js/iconv.min.js",
             "js/chrome.min.js",
             "js/js-utils.min.js",
             "js/background.min.js",

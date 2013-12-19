@@ -4,106 +4,127 @@
       <ul class="nav nav-list bs-docs-sidenav" ng-class="{affix:select.length < size}">
         <li ng-repeat="s in select">
           <a>
-            <i class="fa fa-times" ng-click="unSelect(s)"></i> {{ s.n }}<br/>
+            <i class="fa fa-times pull-right" ng-click="unSelect(s)"></i>
+            {{ s.n }}
+            <br/>
             <div class="btn-group">
-              <button type="button" class="btn btn-mini incognito" ng-click="up($index)" title="{{ getI18n('i_up') }}" ng-class="{disabled:$index == 0}">
+              <button type="button" class="btn btn-mini incognito" ng-click="up($index)"
+              title="{{ getI18n('i_up') }}" ng-class="{disabled:$index == 0}">
                 <i class="fa fa-arrow-up"></i>
               </button>
-              <button type="button" class="btn btn-mini incognito" ng-click="down($index)" title="{{ getI18n('i_down') }}" ng-class="{disabled:$index == select.length - 1}">
+              <button type="button" class="btn btn-mini incognito" ng-click="down($index)"
+              title="{{ getI18n('i_down') }}" ng-class="{disabled:$index == select.length - 1}">
                 <i class="fa fa-arrow-down"></i>
               </button>
-              <button type="button" class="btn btn-mini back" ng-model="s.back" title="" btn-checkbox="">{{ i_back }}</button>
-              <button type="button" class="btn btn-mini incognito" title="{{ getI18n('t_private') }}" ng-model="s.incognito" btn-checkbox="">{{ i_private }}</button>
-            </div>
+              <button type="button" class="btn btn-mini back" ng-model="s.back" title=""
+              btn-checkbox>{{ i_back }}</button>
+              <button type="button" class="btn btn-mini incognito" title="{{ getI18n('t_private') }}"
+              ng-model="s.incognito" btn-checkbox>{{ i_private }}</button>
+            </div><!-- btn-group -->
           </a>
         </li>
       </ul>
-    </div>
-    <div class="span9">
+    </div><!-- span3 -->
+    <div class="span9">          
       <div class="page-header">
         <h2>
           <span id="i_t">右键菜单</span>
           <small id="i_s">右键空白页面显示的菜单</small>
         </h2>
-      </div>
+      </div><!-- page-header -->
       <h3 id="i_language">语言</h3>
       <div class="btn-group">
-        <button type="button" class="btn" ng-model="en" btn-checkbox="">
-          <i class="en"></i>
+        <button type="button" class="btn" ng-model="en" btn-checkbox>
+            <i class="en"></i>
         </button>
-        <button type="button" class="btn" ng-model="zh_CN" btn-checkbox="">
-          <i class="zh_CN"></i>
+        <button type="button" class="btn" ng-model="zh_CN" btn-checkbox>
+            <i class="zh_CN"></i>
         </button>
-        <button type="button" class="btn" ng-model="zh_TW" btn-checkbox="">
-          <i class="zh_TW"></i>
+        <button type="button" class="btn" ng-model="zh_TW" btn-checkbox>
+            <i class="zh_TW"></i>
         </button>
-        <button type="button" class="btn" ng-model="ru" btn-checkbox="">
-          <i class="ru"></i>
+        <button type="button" class="btn" ng-model="ru" btn-checkbox>
+            <i class="ru"></i>
         </button>
-      </div>
+      </div><!-- btn-group -->
       <h3 id="i_select">选择</h3>
       <div class="row" ng-repeat="g in groups">
         <h4>{{ g.label }}</h4>
-        <span class="span3" ng-class="hide(menu)" ng-repeat="menu in g.items">
+        <span class="span3" ng-hide="hide(menu)" ng-repeat="menu in g.items">
           <button class="btn btn-mini" ng-class="{true:'hide', false:''}[isHideIcon(menu)]" ng-click="update(menu)">
             <i class="fa fa-edit"></i>
           </button>
-          <label style="display:inline">
+          <label style="display:inline;">
             <input type="checkbox" ng-model="menu.select" ng-change="change(menu)"/>
-            <span ng-class="{true:menu.l, false:''}[isFlag]">{{menu.n}}</span>
+            <span ng-class="{true:menu.l, false:''}[isFlag]">
+              {{menu.n}}
+            </span> 
           </label>
         </span>
       </div>
       <h3 id="i_custom">自定义</h3>
       <form name="f_custom_old">
         <div ng-repeat="c in custom">
-          <input ng-model="c.c" ng-maxlength="200" ng-minlength="1" maxlength="200" type="text" class="span2" required="" menucode=""/>
+          <input ng-model="c.c" ng-Maxlength="200" ng-Minlength="1" maxlength="200"
+          type="text" class="span2" required menucode/>
           <div class="input-append">
-            <input ng-model="c.u" type="url" class="span6" required=""/>
+            <input ng-model="c.u" type="url" class="span6" required/>
             <button class="btn" ng-click="delCustom(c)" title="{{ getI18n('i_del') }}">
               <i class="fa fa-times"></i>
             </button>
             <button class="btn" ng-click="putDialog(c)" title="{{ getI18n('i_share') }}">
               <i class="fa fa-share"></i>
             </button>
-          </div>
+          </div><!-- input-append -->
         </div>
       </form>
       <form name="f_custom">
         <div>
-          <input enter="" name="title" id="m_title" ng-model="newCustom.c" ng-maxlength="200" ng-minlength="1" maxlength="200" type="text" class="span2" required="" menucode=""/>
+          <input enter id="m_title" ng-model="newCustom.c" ng-Maxlength="200" ng-Minlength="1" maxlength="200" 
+              type="text" class="span2" required menucode/>
           <div class="input-append">
-            <input ng-model="newCustom.u" id="i_url" enter="addCustom(newCustom)" type="url" class="span6" required=""/>
+            <input ng-model="newCustom.u" id="i_url"
+            enter="addCustom(newCustom)" type="url" class="span6" required/>
             <button class="btn" ng-click="addCustom(newCustom)" title="{{ getI18n('i_add') }}">
               <i class="fa fa-plus"></i>
             </button>
           </div>
-          <div class="alert alert-error i_menucode span4" ng-show="f_custom.$error.menucode || f_custom_old.$error.menucode">名称重复，请修改。</div>
+          <div class="alert alert-error i_menucode span4" ng-show="f_custom.$error.menucode || f_custom_old.$error.menucode">
+            名称重复，请修改。
+          </div>
           <span id="i_l" class="span8">自定义网址中使用%s表示当前页面网址，例如: https://twitter.com/intent/tweet?url=%si</span>
         </div>
       </form>
-      <h3 id="i_group">组合</h3>
+      <h3 id="i_group">组合<!-- 组合 data-placeholder="选择右键菜单组合" --></h3>
       <form name="f_group_old">
         <div ng-repeat="c in group" class="line">
-          <input ng-model="c.c" type="text" class="span2" ng-maxlength="200" ng-minlength="1" maxlength="200" required="" menucode=""/>
+          <input ng-model="c.c" type="text" class="span2" ng-Maxlength="200" ng-Minlength="1" maxlength="200"
+          required menucode/>
           <div class="input-append">
-            <select ng-model="c.g" chosen="" ng-options="m.n group by m.t for m in menus" class="span6" multiple="multiple"></select>
+            <select ng-model="c.g" chosen 
+                ng-options="m.n group by m.t for m in menus" 
+                class="span6" multiple="multiple"></select>
             <button class="btn" ng-click="delGroup(c)" title="{{ getI18n('i_del') }}">
               <i class="fa fa-times"></i>
             </button>
-          </div>
+          </div><!-- input-append -->
         </div>
       </form>
       <form name="f_group" class="line">
-        <input enter="" id="g_title" ng-model="newGroup.c" ng-maxlength="200" ng-minlength="1" maxlength="200" type="text" class="span2" required="" menucode=""/>
+        <input enter id="g_title" ng-model="newGroup.c" ng-Maxlength="200" ng-Minlength="1" maxlength="200" 
+            type="text" class="span2" required menucode/>
         <div class="input-append">
-          <select id="g_select" ng-model="newGroup.g" chosen ng-options="m.n group by m.t for m in menus" class="span6" multiple="multiple"></select>
+          <select id="g_select" ng-model="newGroup.g" chosen 
+              ng-options="m.n group by m.t for m in menus" 
+              class="span6" multiple="multiple"></select>
           <button class="btn" ng-click="addGroup(newGroup)" title="{{ getI18n('i_add') }}">
             <i class="fa fa-plus"></i>
           </button>
-        </div>
+        </div><!-- input-append -->
       </form>
-      <div class="alert alert-error i_menucode span4" ng-show="f_group.$error.menucode || f_group_old.$error.menucode">名称重复，请修改。</div>
-    </div>
-  </div>
-</div>
+      <div class="alert alert-error i_menucode span4" ng-show="f_group.$error.menucode || f_group_old.$error.menucode">
+        名称重复，请修改。
+      </div>
+    </div><!-- span9 -->
+  </div><!-- row -->
+</div><!-- container -->

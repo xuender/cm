@@ -20,15 +20,13 @@ module.exports = (grunt)->
     bump:
       options:
         part: 'patch'
-      files: [ 'package.json', 'src/manifest.json' ]
+      files: [ 'package.json', 'src/extension/manifest.json' ]
     copy:
       angular:
         files: [
-          cwd: 'bower_components/angular/'
+          cwd: 'src/extension/lib/angular/'
           src: [
             'angular.min.js'
-            'angular.js'
-            'angular.min.js.map'
           ]
           dest: 'dist/extension/js'
           expand: true
@@ -42,42 +40,11 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      angularChosen:
+      chosen:
         files: [
-          cwd: 'bower_components/angular-chosen-localytics/'
-          src: [
-            'chosen.js'
-          ]
-          dest: 'dist/extension/js'
-          expand: true
-          filter: 'isFile'
-        ]
-      chosenJs:
-        files: [
-          cwd: 'bower_components/chosen/public/'
+          cwd: 'src/extension/lib/'
           src: [
             'chosen.jquery.min.js'
-          ]
-          dest: 'dist/extension/js'
-          expand: true
-          filter: 'isFile'
-        ]
-      chosenCss:
-        files: [
-          cwd: 'bower_components/chosen/public/'
-          src: [
-            'chosen.min.css'
-          ]
-          dest: 'dist/extension/css'
-          expand: true
-          filter: 'isFile'
-        ]
-      angularRoute:
-        files: [
-          cwd: 'bower_components/angular-route/'
-          src: [
-            'angular-route.min.js'
-            'angular-route.min.js.map'
           ]
           dest: 'dist/extension/js'
           expand: true
@@ -169,6 +136,7 @@ module.exports = (grunt)->
         files: [
           cwd: 'bower_components/js-utils/js/'
           src: [
+            'iconv.min.js'
             'js-utils.min.js'
             'chrome.min.js'
           ]
@@ -211,24 +179,30 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-
     coffee:
       options:
         bare: true
+      context:
+        files:
+          'dist/extension/js/context.js': [
+            'src/extension/js/context.coffee'
+          ]
       components:
         files:
           'dist/extension/js/components.min.js': [
-            'src/extension/js/static.coffee'
+            'src/extension/js/db.coffee'
             'src/extension/js/lib/analytics.coffee'
           ]
       background:
         files:
           'dist/extension/js/background.min.js': [
+            'src/extension/js/coden.coffee'
             'src/extension/js/background.coffee'
           ]
       optionJs:
         files:
           'dist/extension/js/options.min.js': [
+            'src/extension/lib/chosen.coffee'
             'src/extension/js/lib/utilServices.coffee'
             'src/extension/js/lib/utilDirectives.coffee'
             'src/extension/js/lib/directives.coffee'
@@ -239,6 +213,14 @@ module.exports = (grunt)->
             'src/extension/js/ctrl/putCtrl.coffee'
             'src/extension/js/ctrl/settingsCtrl.coffee'
             'src/extension/js/options.coffee'
+          ]
+      popup:
+        files:
+          'dist/extension/js/popup.min.js': [
+            'src/extension/js/lib/utilServices.coffee'
+            'src/extension/js/lib/utilDirectives.coffee'
+            'src/extension/js/ctrl/popupCtrl.coffee'
+            'src/extension/js/popup.coffee'
           ]
       index:
         files:

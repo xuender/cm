@@ -8,18 +8,18 @@ start = ->
   console.info 'start'
   if not JU.lsGet('three_run', false)
     i18n = ci18n.getMessage('i18n')
-    JU.lsSet('en', true)
+    localStorageSet('en', true)
     if i18n == 'cn'
-      JU.lsSet('zh_CN', true)
+      localStorageSet('zh_CN', true)
       data =
         txtSelect: ['baidu', 'translate', 'zdic', 'amazon', 'taobao']
         picSelect: ['google_pic', 'baidu_pic', 'qr_decode']
         linSelect: ['weibo_lin', 'gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     else if i18n == 'tw'
-      JU.lsSet('zh_TW', true)
+      localStorageSet('zh_TW', true)
     else if i18n == 'ru'
-      JU.lsSet('ru', true)
+      localStorageSet('ru', true)
     if not data
       data =
         txtSelect: ['bing', 'translate', 'Amazon_com']
@@ -27,9 +27,9 @@ start = ->
         linSelect: ['gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     for key of data
-      JU.lsSet(key, JU.lsGet(key, data[key]))
+      localStorageSet(key, JU.lsGet(key, data[key]))
     chrome.tabs.create({url:'options.html', selected: true})
-    JU.lsSet('three_run', true)
+    localStorageSet('three_run', true)
     _gaq.push(['_trackEvent', 'option', 'init'])
   menuReset()
 
@@ -38,7 +38,7 @@ init = ->
   console.info 'init'
   urlsCount((count)->
     if count == 0
-      JU.syncFetch('/init.json', (result)->
+      syncFetch('/init.json', (result)->
         saveDb(JSON.parse(result))
         start()
         _gaq.push(['_trackEvent', 'db', 'ninit'])
@@ -308,8 +308,8 @@ chrome.extension.onConnect.addListener((port)->
         if data.message == 'txt'
           id = JSON.parse(localStorage["txtSelect"])[0]
           url = data.values.trim()
-          if isUrl(url)
-            if not isProtocol(url)
+          if JU.isUrl(url)
+            if not JU.isProtocol(url)
               url = "http://#{url}"
             openUrl(url, tab, fg, false, data.x)
             _gaq.push(['_trackEvent', 'drag', 'url'])
