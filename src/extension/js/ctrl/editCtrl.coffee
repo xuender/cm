@@ -1,4 +1,5 @@
-EditCtrl = (scope, log, lsGetItem, lsSetItem, $modalInstance, menu)->
+
+EditCtrl = (scope, log, lsGetItem, lsSetItem, dialog, menu)->
   scope.getI18n = (id)->
     ### i18n 字符串 ###
     ci18n.getMessage(id)
@@ -7,10 +8,14 @@ EditCtrl = (scope, log, lsGetItem, lsSetItem, $modalInstance, menu)->
   scope.title = menu.h
   scope.nick = menu.k
   scope.close = ->
-    $modalInstance.close('close')
+    dialog.close('close')
   scope.save = ->
     log.debug('save')
-    $modalInstance.close(scope.name)
+    dialog.close(scope.name)
+  scope.black = ->
+    dialog.close('black')
+
 
 EditCtrl.$inject = ['$scope', '$log', 'lsGetItem', 'lsSetItem',
-  '$modalInstance', 'menu']
+  'dialog', 'menu']
+

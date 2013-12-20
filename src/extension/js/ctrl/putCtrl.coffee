@@ -1,4 +1,5 @@
-PutCtrl = (scope, log, http, lsGetItem, lsSetItem, $modalInstance, url, type)->
+
+PutCtrl = (scope, log, http, lsGetItem, lsSetItem, dialog, url, type)->
   scope.getI18n = (id)->
     ### i18n 字符串 ###
     ci18n.getMessage(id)
@@ -10,7 +11,7 @@ PutCtrl = (scope, log, http, lsGetItem, lsSetItem, $modalInstance, url, type)->
   scope.locale = lsGetItem('locale', 'en')
   scope.close = ->
     log.debug('close')
-    $modalInstance.close('close')
+    dialog.close('close')
   scope.put = ->
     lsSetItem('nick', scope.nick)
     #  url: 'http://cm.xuender.me/url/put/'
@@ -27,11 +28,11 @@ PutCtrl = (scope, log, http, lsGetItem, lsSetItem, $modalInstance, url, type)->
       )
     ).success((data, status, headers, config) ->
       #scope.alert(ci18n.getMessage('b_load'))
-      $modalInstance.close(data)
+      dialog.close(data)
       _gaq.push(['_trackEvent', 'db', 'put'])
     ).error((data, status, headers, config) ->
-      $modalInstance.close(data)
+      dialog.close(data)
       _gaq.push(['_trackEvent', 'db', 'put_error'])
     )
 PutCtrl.$inject = ['$scope', '$log', '$http', 'lsGetItem', 'lsSetItem',
-  '$modalInstance', 'url', 'type']
+  'dialog', 'url', 'type']
