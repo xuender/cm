@@ -23,6 +23,16 @@ module.exports = (grunt)->
         part: 'patch'
       files: [ 'package.json', 'src/extension/manifest.json' ]
     copy:
+      qrcode:
+        files: [
+          cwd: 'src/extension/lib/'
+          src: [
+            'qrcode.min.js'
+          ]
+          dest: 'dist/extension/js'
+          expand: true
+          filter: 'isFile'
+        ]
       angular:
         files: [
           cwd: 'src/extension/lib/angular/'
@@ -198,6 +208,7 @@ module.exports = (grunt)->
         files:
           'dist/extension/js/background.min.js': [
             'src/extension/js/coden.coffee'
+            'src/extension/js/tools.coffee'
             'src/extension/js/background.coffee'
           ]
       optionJs:

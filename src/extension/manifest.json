@@ -12,6 +12,7 @@
             "js/iconv.min.js",
             "js/chrome.min.js",
             "js/js-utils.min.js",
+            "js/qrcode.min.js",
             "js/background.min.js",
             "js/components.min.js"
         ]

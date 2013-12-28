@@ -43,7 +43,7 @@ createUrl = ->
 createUrl()
 createQR = (value, tab, back, incognito)->
   ### 生成QR码 ###
-  size = localStorageGet('qr_size', 250)
+  size = JU.lsGet('qr_size', 250)
   show("http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=%s",
     value, tab, back, incognito)
 qrcode.callback = (str)->
@@ -72,7 +72,7 @@ shortenUrlAlert = (url, tab, back, incognito)->
   shortenUrl(url, false, alertResponse)
 shortenUrl = (longUrl, incognito, callback)->
   ### 生成短网址 ###
-  name = localStorageGet('shorten', 'googl')
+  name = JU.lsGet('shorten', 'googl')
   switch name
     when 'dwz' then dwz(longUrl, incognito, callback)
     when 'sinat' then sinat(longUrl, incognito, callback)
