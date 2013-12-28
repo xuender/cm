@@ -82,7 +82,7 @@ shortenUrl = (longUrl, incognito, callback)->
 urlcn = (longUrl, incognito, callback)->
   ### 腾讯短网址 ###
   xmlhttp = new XMLHttpRequest()
-  url = "http://open.t.qq.com/api/short_url/shorten?format=json&long_url=#{encodeURIComponent(longUrl)}&appid=801399639"
+  url = "http://open.t.qq.com/api/short_url/shorten?format=json&long_url=#{encodeURIComponent(longUrl)}&appid=801399639&openkey=898eab772e8dbd603f03c4db1963de93"
   xmlhttp.open('GET', url, false)
   xmlhttp.onreadystatechange = ->
     if xmlhttp.readyState == 4 and xmlhttp.status != 0
