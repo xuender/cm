@@ -17,10 +17,10 @@ BodyCtrl = (scope, log)->
     PIC: false
     LIN: false
   scope.total = 50
-  scope.page = 1
-  scope.numPages = 1
+  scope.currentPage = 1
   scope.show = []
-  scope.$watch('numPages',(n, o) ->
+  scope.$watch('currentPage',(n, o) ->
+    console.info n
     scope.show = scope.urls[n*20..n*20+20]
   )
   scope.$watch('locale',(n, o) ->
@@ -47,8 +47,10 @@ BodyCtrl = (scope, log)->
         b = isMode(u)
       if b
         scope.urls.push(u)
-    scope.total = scope.urls.length
-    scope.page = 1
+    scope.total = scope.urls.length / 20
+    scope.currentPage = 1
     scope.show = scope.urls[0..20]
+  scope.setPage = (pageNo)->
+    scope.currentPage = pageNo
   scope.load()
 BodyCtrl.$inject = ['$scope', '$log']

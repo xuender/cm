@@ -11,76 +11,80 @@
     <title>右键搜</title>
   </head>
   <body ng-controller="BodyCtrl" >
-    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
-      <div class="container">
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#">
-               <i class="fa fa-info"></i>
-               <span id="i_about">扩展</span>
-              </a>
-            </li>
-            <li>
-              <a href="chrome-extension://phlfmkfpmphogkomddckmggcfpmfchpn/options.html">
-                <i class="fa fa-wrench"></i>
-                <span id="i_settings">设置</span>
-              </a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a id="a_reviews" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn/reviews" target="_blank">
-                <i class="fa fa-star"></i>
-                <span id="reviews">评论</span>
-              </a>
-            </li>
-            <li>
-              <a id="a_bug" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#bug" target="_blank">
-                <i class="fa fa-times"></i>
-                <span id="bug">错误</span>
-              </a>
-            </li>
-            <li>
-              <a id="a_question" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#question" target="_blank">
-                <i class="fa fa-question-circle"></i>
-                <span id="question">问题</span>
-              </a>
-            </li>
-            <li>
-              <a id="a_feature" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#feature" target="_blank">
-                <i class="fa fa-heart"></i>
-                <span id="feature">功能</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div><!-- container -->
-    </header>
     <div class="container">
-      <form name="f_setting" class="form-horizontal" role="form">
-        <div class="form-group">
-          <div class="col-sm-12">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-info" ng-model="locale.en"
-              btn-checkbox>
-                <i class="en"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-info" ng-model="locale.zh_CN"
-              btn-checkbox>
-                <i class="zh_CN"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-info" ng-model="locale.zh_TW"
-              btn-checkbox>
-                <i class="zh_TW"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-info" ng-model="locale.ru"
-              btn-checkbox>
-                <i class="ru"></i>
-              </button>
-            </div><!-- btn-group -->
-            <div class="btn-group col-md-offset-1">
-              <button type="button" class="btn btn-sm btn-info"
+      <div class="row">
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <ul class="nav">
+              <li ng-class="{active:isActive('/about')}">
+                <a href="#/about">
+                  <i class="fa fa-info-circle"></i>
+                  <span id="i_about">关于</span>
+                </a>
+              </li>
+              <li ng-class="{active:isActive('/menu/men')}">
+                <a href="#/menu/men">
+                  <i class="fa fa-tasks"></i>
+                  <span id="i_men">页面菜单</span>
+                </a>
+              </li>
+              <li ng-class="{active:isActive('/menu/txt')}">
+                <a href="#/menu/txt">
+                  <i class="fa fa-search"></i>
+                  <span id="i_txt">划词菜单</span>
+                </a>
+              </li>
+              <li ng-class="{active:isActive('/menu/pic')}">
+                <a href="#/menu/pic">
+                  <i class="fa fa-picture-o"></i>
+                  <span id="i_pic">图片菜单</span>
+                </a>
+              </li>
+              <li ng-class="{active:isActive('/menu/lin')}">
+                <a href="#/menu/lin">
+                  <i class="fa fa-link"></i>
+                  <span id="i_lin">链接菜单</span>
+                </a>
+              </li>
+              <li ng-class="{active:isActive('/settings')}">
+                <a href="#/settings">
+                  <i class="fa fa-wrench"></i>
+                  <span id="i_settings">设置</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav pull-right">
+              <li>
+                <a id="a_reviews" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn/reviews" target="_blank">
+                  <i class="fa fa-star"></i>
+                  <span id="reviews">评论</span>
+                </a>
+              </li>
+              <li>
+                <a id="a_bug" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#bug" target="_blank">
+                  <i class="fa fa-times"></i>
+                  <span id="bug">错误</span>
+                </a>
+              </li>
+              <li>
+                <a id="a_question" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#question" target="_blank">
+                  <i class="fa fa-question-circle"></i>
+                  <span id="question">问题</span>
+                </a>
+              </li>
+              <li>
+                <a id="a_feature" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#feature" target="_blank">
+                  <i class="fa fa-heart"></i>
+                  <span id="feature">功能</span>
+                </a>
+              </li>
+            </ul>
+          </div><!-- navbar-inner -->
+        </div><!-- navbar -->
+        <form name="f_setting" class="form-horizontal" role="form">
+            <div class="row">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.TXT" btn-checkbox>
                 <i class="fa fa-search"></i>
                 <span id="i_txt"> 划词菜单</span>
@@ -101,10 +105,26 @@
                 <span id="i_lin">链接菜单</span>
               </button>
             </div><!-- btn-group -->
-          </div><!-- col-sm-10 -->
-        </div><!-- form-group -->
-        <div class="form-group">
-          <div class="col-sm-12">
+            <div class="btn-group span3">
+              <button type="button" class="btn btn-sm btn-info" ng-model="locale.en"
+              btn-checkbox>
+                <i class="en"></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-info" ng-model="locale.zh_CN"
+              btn-checkbox>
+                <i class="zh_CN"></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-info" ng-model="locale.zh_TW"
+              btn-checkbox>
+                <i class="zh_TW"></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-info" ng-model="locale.ru"
+              btn-checkbox>
+                <i class="ru"></i>
+              </button>
+            </div><!-- btn-group -->
+          </div><!-- span12 -->
+          <div class="row">
             <div class="btn-group">
               <button type="button" class="btn btn-sm btn-info" ng-model="type.a"
               btn-checkbox>通用</button>
@@ -113,8 +133,7 @@
               <button type="button" class="btn btn-sm btn-info" ng-model="type.fy"
               btn-checkbox>翻译</button>
             </div><!-- btn-group -->
-          </div><!-- col-sm-10 -->
-        </div><!-- form-group -->
+          </div><!-- span12 -->
       </form>
       <table class="table table-striped table-condensed">
         <thead>
@@ -136,31 +155,24 @@
           </tr>
         </tbody>
       </table>
-        <ul class="pagination pagination-lg">
-          <li><a href="#">1</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">1</a></li>
-        </ul>
-      <pagination total-items="totalItems" page="currentPage"
-      items-per-page="20"
-      previous-text="&lsaquo;"
-      next-text="&rsaquo;"
-      first-text="&laquo;"
-      last-text="&raquo;"
-      num-pages="numPages"></pagination>
+      <pagination total-items="total"
+      boundary-links="true"
+       max-size="5"
+       previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+      page="currentPage"></pagination>
+    </div><!-- row -->
+  </div><!-- container -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>
+        <a id="a_store" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn" target="_blank">Chrome Web Store</a>
+      </p>
+      <p>© <a id="a_oldbean" href="http://www.oldbean.cn" target="_blank">www.oldbean.cn</a> 2012-2013</p>
     </div><!-- container -->
-    <footer role="contentinfo">
-      <div class="container">
-        <p>
-          <a id="a_store" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn" target="_blank">Chrome Web Store</a>
-        </p>
-        <p>© <a id="a_oldbean" href="http://www.oldbean.cn" target="_blank">www.oldbean.cn</a> 2012-2013</p>
-      </div><!-- container -->
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/components.min.js"></script>
-    <script src="js/index.min.js"></script>
-  </body>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/index.min.js"></script>
+</body>
 </html>
 
