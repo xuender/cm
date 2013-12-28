@@ -23,6 +23,16 @@ module.exports = (grunt)->
         part: 'patch'
       files: [ 'package.json', 'src/extension/manifest.json' ]
     copy:
+      oauth:
+        files: [
+          cwd: 'src/extension/lib/oauth/'
+          src: [
+            'chrome_ex_oauth.min.js'
+          ]
+          dest: 'dist/extension/js'
+          expand: true
+          filter: 'isFile'
+        ]
       qrcode:
         files: [
           cwd: 'src/extension/lib/'

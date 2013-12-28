@@ -10,6 +10,7 @@
         "scripts": [
             "js/jquery.min.js",
             "js/iconv.min.js",
+            "js/chrome_ex_oauth.min.js",
             "js/chrome.min.js",
             "js/js-utils.min.js",
             "js/qrcode.min.js",
