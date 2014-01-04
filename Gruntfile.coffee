@@ -53,14 +53,6 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      angularServer:
-        files: [
-          cwd: '<%= copy.angular.files.0.cwd %>'
-          src: '<%= copy.angular.files.0.src %>'
-          dest: 'dist/server/js'
-          expand: true
-          filter: 'isFile'
-        ]
       chosen:
         files: [
           cwd: 'src/extension/lib/'
@@ -81,14 +73,6 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      angularBootstrapServer:
-        files: [
-          cwd: '<%= copy.angularBootstrap.files.0.cwd %>'
-          src: '<%= copy.angularBootstrap.files.0.src %>'
-          dest: 'dist/server/js'
-          expand: true
-          filter: 'isFile'
-        ]
       jquery:
         files: [
           cwd: 'bower_components/jquery/'
@@ -97,14 +81,6 @@ module.exports = (grunt)->
             'jquery.min.map'
           ]
           dest: 'dist/extension/js'
-          expand: true
-          filter: 'isFile'
-        ]
-      jqueryServer:
-        files: [
-          cwd: '<%= copy.jquery.files.0.cwd %>'
-          src: '<%= copy.jquery.files.0.src %>'
-          dest: 'dist/server/js'
           expand: true
           filter: 'isFile'
         ]
@@ -123,15 +99,6 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      fontServer:
-        # font-awesome
-        files: [
-          cwd: '<%= copy.font.files.0.cwd %>'
-          src: '<%= copy.font.files.0.src %>'
-          dest: 'dist/server'
-          expand: true
-          filter: 'isFile'
-        ]
       bootstrap:
         # bootstrap 2.3.2
         files: [
@@ -141,15 +108,6 @@ module.exports = (grunt)->
             'js/bootstrap.min.js'
           ]
           dest: 'dist/extension'
-          expand: true
-          filter: 'isFile'
-        ]
-      bootstrapServer:
-        # bootstrap 2.3.2
-        files: [
-          cwd: '<%= copy.bootstrap.files.0.cwd %>'
-          src: '<%= copy.bootstrap.files.0.src %>'
-          dest: 'dist/server'
           expand: true
           filter: 'isFile'
         ]
@@ -189,6 +147,14 @@ module.exports = (grunt)->
           cwd: 'src/extension'
           src: 'img/**'
           dest: 'dist/extension'
+          expand: true
+          filter: 'isFile'
+        ]
+      jsonServer:
+        files: [
+          cwd: 'src/server'
+          src: 'a.json'
+          dest: 'dist/server'
           expand: true
           filter: 'isFile'
         ]
@@ -248,7 +214,6 @@ module.exports = (grunt)->
         files:
           'dist/server/js/index.min.js': [
             'src/server/js/index.coffee'
-            'src/server/js/init.coffee'
           ]
     uglify:
       components:
