@@ -100,6 +100,12 @@
                 <span id="i_lin">链接菜单</span>
               </button>
             </div><!-- btn-group -->
+            <label>
+            </label>
+            <label class="col-md-offset-1">
+              <input type="checkbox" ng-model="saved"/>
+              已使用
+            </label>
           </div><!-- col-sm-10 -->
         </div><!-- form-group -->
         <div class="form-group">
@@ -124,12 +130,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="u in show">
-            <td><i class="{{ u.l }}"></i>{{ u.n }}</td>
+          <tr ng-class="{success:u.o}" ng-repeat="u in show">
+            <td><i class="{{ u.l }}"></i>{{ u.n }}{{u.o}}</td>
             <td>{{ getTypeName(u.t) }}</td>
             <td>{{ u.m }}</td>
             <td>{{ u.v }}</td>
-            <td>操作</td>
+            <td>
+              <button class="btn btn-primary" ng-hide="u.o">
+                <i class="fa fa-save"></i>
+                增加
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -154,6 +165,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
     <script src="http://cdn.jsdelivr.net/angular.bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/chrome.min.js"></script>
     <script src="js/index.min.js"></script>
   </body>
 </html>

@@ -150,6 +150,14 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      html5:
+        files: [
+          cwd: 'bower_components/js-utils'
+          src: 'js/chrome.min.js'
+          dest: 'dist/server'
+          expand: true
+          filter: 'isFile'
+        ]
       jsonServer:
         files: [
           cwd: 'src/server'
@@ -185,6 +193,7 @@ module.exports = (grunt)->
           'dist/extension/js/background.min.js': [
             'src/extension/js/coden.coffee'
             'src/extension/js/tools.coffee'
+            'src/extension/js/bg_server.coffee'
             'src/extension/js/background.coffee'
           ]
       optionJs:
@@ -209,6 +218,11 @@ module.exports = (grunt)->
             'src/extension/js/lib/utilDirectives.coffee'
             'src/extension/js/ctrl/popupCtrl.coffee'
             'src/extension/js/popup.coffee'
+          ]
+      server:
+        files:
+          'dist/extension/js/server.min.js': [
+            'src/extension/js/server.coffee'
           ]
       index:
         files:

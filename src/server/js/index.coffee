@@ -42,9 +42,16 @@ BodyCtrl = (scope, log, http)->
   scope.total = 50
   scope.numPages = 1
   scope.show = []
+  scope.all = []
+
   scope.$watch('numPages',(n, o) ->
     if typeof scope.urls != 'undefined'
       scope.show = scope.urls[(n-1)*20..n*20]
+  )
+  scope.saved = false
+  scope.$watch('saved',(n, o) ->
+    scope.load()
+    #lsSetItem('bl', n)
   )
   scope.$watch('locale',(n, o) ->
     scope.load()
@@ -58,28 +65,45 @@ BodyCtrl = (scope, log, http)->
     scope.load()
     #lsSetItem('bl', n)
   , true)
+
   isLocale = (u)->
     # 判断是否显示该语言
     u.l == 'all' or scope.locale[u.l]
+
   isMode = (u)->
     # 判断是否是该模式
     scope.mode[u.m]
+
   isType = (u)->
     # 判断是否是该类型 #
     scope.type[u.t]
-  scope.all = []
+
+  readIds = ()->
+    # 设置使用过的ID #
+    ids = JU.lsGet('ids', [])
+    for i in scope.all
+      i.o = false
+    for id in ids
+      for i in scope.all
+        if i.c == id
+          i.o = true
+
   scope.load = ->
     # 加载菜单
+    readIds()
     scope.urls = []
     for u in scope.all
       b = isLocale(u)
       b = if b then isMode(u) else b
       b = if b then isType(u) else b
+      if not scope.saved
+        b = b and not u.o
       if b
         scope.urls.push(u)
     scope.total = scope.urls.length
     scope.numPages = 1
     scope.show = scope.urls[0..20]
+
   scope.init = ->
     #http({method: 'GET', url: '/url/query/?t=1'}).
     http({method: 'GET', url: 'a.json'}).
@@ -90,5 +114,6 @@ BodyCtrl = (scope, log, http)->
       console.error data
       alert(data)
     )
+
   scope.init()
 BodyCtrl.$inject = ['$scope', '$log', '$http']
