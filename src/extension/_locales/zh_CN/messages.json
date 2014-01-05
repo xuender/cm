@@ -183,13 +183,13 @@
     "message": "Chrome浏览器"
   },
   "b_load":{
-    "message": "加载设置"
+    "message": "从云端加载设置"
   },
   "book":{
     "message": "阅读"
   },
   "b_save":{
-    "message": "保存设置"
+    "message": "保存设置到云端"
   },
   "bug":{
     "message": "错误"

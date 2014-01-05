@@ -45,9 +45,21 @@ module.exports = (grunt)->
         ]
       angular:
         files: [
-          cwd: 'src/extension/lib/angular/'
+          cwd: 'bower_components/angular/'
           src: [
             'angular.min.js'
+            'angular.min.js.map'
+          ]
+          dest: 'dist/extension/js'
+          expand: true
+          filter: 'isFile'
+        ]
+      angularRoute:
+        files: [
+          cwd: 'bower_components/angular-route/'
+          src: [
+            'angular-route.min.js'
+            'angular-route.min.js.map'
           ]
           dest: 'dist/extension/js'
           expand: true
@@ -84,28 +96,14 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      font:
-        # font-awesome
-        files: [
-          cwd: 'bower_components/font-awesome/'
-          src: [
-            'css/font-awesome.min.css'
-            'fonts/fontawesome-webfont.eot'
-            'fonts/fontawesome-webfont.svg'
-            'fonts/fontawesome-webfont.ttf'
-            'fonts/fontawesome-webfont.woff'
-          ]
-          dest: 'dist/extension'
-          expand: true
-          filter: 'isFile'
-        ]
       bootstrap:
         # bootstrap 2.3.2
         files: [
-          cwd: 'bower_components/bootstrap/bootstrap/'
+          cwd: 'bower_components/bootstrap/dist/'
           src: [
             'css/bootstrap.min.css'
             'js/bootstrap.min.js'
+            'fonts/*'
           ]
           dest: 'dist/extension'
           expand: true

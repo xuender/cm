@@ -17,7 +17,7 @@
       "js/components.min.js"
     ]
   },
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com https://cdn.jsdelivr.net; object-src 'self'",
   "content_scripts": [
     {
       "matches": [

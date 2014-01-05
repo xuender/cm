@@ -3,6 +3,7 @@
 模块加载及路由
 ###
 angular.module('search', [
+  'ngRoute'
   'localytics.directives'
   'search.directives'
   'utils.directives'

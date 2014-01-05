@@ -21,7 +21,7 @@ BodyCtrl = (scope, log, http, $location, lsGetItem, lsSetItem)->
 
   scope.i18n = (type = null)->
     ### 多国语言 ###
-    for es in [$('span'), $('h3'), $('button'), $('small')]
+    for es in [$('span'), $('h3'), $('button'), $('small'), $('label')]
       for s in es
         if s.id
           s.textContent = ci18n.getMessage(s.id)

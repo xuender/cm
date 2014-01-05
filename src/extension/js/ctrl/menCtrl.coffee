@@ -74,7 +74,7 @@ menuI18n = (menus, names)->
     )
   ret
 
-MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
+MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   ### 菜单控制器 ###
   type = routeParams.type
   name = type.toUpperCase()
@@ -189,7 +189,7 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
       lsSetItem(incognito, ia)
       menuReset()
     , true)
-    scope.$apply()
+    #scope.$apply()
 
   scope.up = (index)->
     ### 上移 ###
@@ -287,7 +287,7 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
       scope.custom.splice(scope.custom.indexOf(menu), 1)
   scope.putDialog = (url)->
     ### 弹出上传窗口 ###
-    d = dialog.dialog(
+    d = $modal.open(
       backdrop: true
       keyboard: true
       backdropClick: true
@@ -299,7 +299,7 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
         type: ->
           type
     )
-    d.open().then((result)->
+    d.result.then((result)->
       if result
         if result == 'ok'
           alert(scope.getI18n('i_put_ok'))
@@ -313,7 +313,7 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
     )
   scope.update = (menu)->
     ### 弹出编辑窗口 ###
-    d = dialog.dialog(
+    d = $modal.open(
       backdrop: true
       keyboard: true
       backdropClick: true
@@ -323,7 +323,7 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
         menu: ->
           angular.copy(menu)
     )
-    d.open().then((result)->
+    d.result.then((result)->
       if result
         if result == 'black'
           scope.bl.push(menu.c)
@@ -335,63 +335,5 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
             _gaq.push(['_trackEvent', 'edit', 'rename'])
     )
   scope.init()
-MenCtrl.$inject = ['$scope', '$routeParams', '$log', '$http', '$dialog',
+MenCtrl.$inject = ['$scope', '$routeParams', '$log', '$http', '$modal',
   'lsGetItem', 'lsSetItem']
-
-EditCtrl = (scope, log, lsGetItem, lsSetItem, dialog, menu)->
-  scope.getI18n = (id)->
-    ### i18n 字符串 ###
-    ci18n.getMessage(id)
-  scope.menu = menu
-  scope.name = menu.n
-  scope.title = menu.h
-  scope.nick = menu.k
-  scope.close = ->
-    dialog.close('close')
-  scope.save = ->
-    log.debug('save')
-    dialog.close(scope.name)
-  scope.black = ->
-    dialog.close('black')
-
-
-EditCtrl.$inject = ['$scope', '$log', 'lsGetItem', 'lsSetItem',
-  'dialog', 'menu']
-
-PutCtrl = (scope, log, http, lsGetItem, lsSetItem, dialog, url, type)->
-  scope.getI18n = (id)->
-    ### i18n 字符串 ###
-    ci18n.getMessage(id)
-  scope.type = type.toUpperCase()
-  scope.name = url.c
-  scope.url = url.u
-  scope.nick = lsGetItem('nick', '')
-  scope.title = ''
-  scope.locale = lsGetItem('locale', 'en')
-  scope.close = ->
-    log.debug('close')
-    dialog.close('close')
-  scope.put = ->
-    lsSetItem('nick', scope.nick)
-    #  url: 'http://cm.xuender.me/url/put/'
-    http(
-      method: 'POST'
-      url: 'http://cm.xuender.me/url/put/'
-      data: $.param(
-        name: scope.name
-        url: scope.url
-        nick: scope.nick
-        title: scope.title
-        hl: scope.locale
-        mode: scope.type
-      )
-    ).success((data, status, headers, config) ->
-      #scope.alert(ci18n.getMessage('b_load'))
-      dialog.close(data)
-      _gaq.push(['_trackEvent', 'db', 'put'])
-    ).error((data, status, headers, config) ->
-      dialog.close(data)
-      _gaq.push(['_trackEvent', 'db', 'put_error'])
-    )
-PutCtrl.$inject = ['$scope', '$log', '$http', 'lsGetItem', 'lsSetItem',
-  'dialog', 'url', 'type']
