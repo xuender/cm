@@ -117,3 +117,5 @@ BodyCtrl = (scope, log, http)->
 
   scope.init()
 BodyCtrl.$inject = ['$scope', '$log', '$http']
+test = ->
+  alert('test')

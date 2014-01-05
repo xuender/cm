@@ -126,7 +126,7 @@
             <th>类型</th>
             <th>范围</th>
             <th>次数 <i class="fa fa-caret-down"></i></th>
-            <th></th>
+            <th class="o"></th>
           </tr>
         </thead>
         <tbody>
@@ -135,8 +135,8 @@
             <td>{{ getTypeName(u.t) }}</td>
             <td>{{ u.m }}</td>
             <td>{{ u.v }}</td>
-            <td>
-              <button class="btn btn-primary" ng-hide="u.o">
+            <td class="o">
+              <button class="btn btn-primary b" ng-hide="u.o" json="{{u}}">
                 <i class="fa fa-save"></i>
                 增加
               </button>
