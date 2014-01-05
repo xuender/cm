@@ -2,24 +2,40 @@
 # background 后台运行
 创建右键菜单，监听菜单刷新事件
 ###
-
-start = ->
-  ### 运行 ###
-  console.info 'start'
+chrome.contextMenus.onClicked.addListener((info, tab)->
+  ### 单击事件 ###
+  console.debug 'onClickHandler'
+  type = info.menuItemId[0]
+  id = info.menuItemId[1..]
+  type = getType(type)
+  value = getValue(info, tab, type)
+  openTab(id, type, value, tab)
+)
+chrome.runtime.onStartup.addListener(menuReset)
+chrome.runtime.onInstalled.addListener(->
+  console.debug 'installed'
+  all = JU.lsGet('all', [])
+  if all.length == 0
+    JU.syncFetch('/init.json', (result)->
+      JU.lsSet('all', JSON.parse(result))
+      _gaq.push(['_trackEvent', 'db', 'ninit'])
+    )
+  console.debug 'start'
+  ci18n = getCi18n()
   if not JU.lsGet('three_run', false)
     i18n = ci18n.getMessage('i18n')
-    localStorageSet('en', true)
+    JU.lsSet('en', true)
     if i18n == 'cn'
-      localStorageSet('zh_CN', true)
+      JU.lsSet('zh_CN', true)
       data =
         txtSelect: ['baidu', 'translate', 'zdic', 'amazon', 'taobao']
         picSelect: ['google_pic', 'baidu_pic', 'qr_decode']
         linSelect: ['weibo_lin', 'gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     else if i18n == 'tw'
-      localStorageSet('zh_TW', true)
+      JU.lsSet('zh_TW', true)
     else if i18n == 'ru'
-      localStorageSet('ru', true)
+      JU.lsSet('ru', true)
     if not data
       data =
         txtSelect: ['bing', 'translate', 'Amazon_com']
@@ -27,37 +43,23 @@ start = ->
         linSelect: ['gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     for key of data
-      localStorageSet(key, JU.lsGet(key, data[key]))
+      JU.lsSet(key, JU.lsGet(key, data[key]))
     chrome.tabs.create({url:'options.html', selected: true})
-    localStorageSet('three_run', true)
+    JU.lsSet('three_run', true)
     _gaq.push(['_trackEvent', 'option', 'init'])
   menuReset()
+)
 
-init = ->
-  ### 扩展启动初始化 ###
-  console.info 'init'
-  urlsCount((count)->
-    if count == 0
-      syncFetch('/init.json', (result)->
-        saveDb(JSON.parse(result))
-        start()
-        _gaq.push(['_trackEvent', 'db', 'ninit'])
-      )
-    else
-      start()
-  )
-chrome.runtime.onStartup.addListener menuReset
-chrome.runtime.onInstalled.addListener init
-getUrls = (custom, ids, fun)->
-  ### 根据ids查找URL,返回URL列表 ###
-  for id in ids
-    _gaq.push(['_trackEvent', 'menu', id])
-    findUrl(id, (ur)->
-      fun(ur)
-    )
-    for c in custom
-      if c[0] == id
-        fun(c[1])
+#getUrls = (custom, ids, fun)->
+#  ### 根据ids查找URL,返回URL列表 ###
+#  for id in ids
+#    _gaq.push(['_trackEvent', 'menu', id])
+#    findUrl(id, (ur)->
+#      fun(ur)
+#    )
+#    for c in custom
+#      if c[0] == id
+#        fun(c[1])
 getValue = (info, tab, type)->
   ### 根据类型决定参数值 ###
   {
@@ -66,6 +68,7 @@ getValue = (info, tab, type)->
     'pic': info.srcUrl
     'lin': info.linkUrl
   }[type]
+
 show = (url, value, tab, back=false, incognito=false, x=1, type='txt')->
   ### 根据网址、变量打开页面 网址,变量,后台,类型,隐身,tab,左右###
   if /%l|%L/g.test(url)
@@ -86,6 +89,7 @@ show = (url, value, tab, back=false, incognito=false, x=1, type='txt')->
     doman = tab.url.split('/')[2]
     url = url.replace(/%u|%U/g, doman)
   openUrl(url, tab, back, incognito, x, type, value)
+
 openUrl = (url, tab, back=false, incognito=false, x=1, type='txt', value='')->
   ### 打开URL ###
   if tab
@@ -116,6 +120,7 @@ openUrl = (url, tab, back=false, incognito=false, x=1, type='txt', value='')->
       showPageAction(tab, type, value)
     )
   true
+
 showPageAction = (tab, type, value)->
   ### 根据ID显示弹出选项 ###
   if /http.+|ftp.+/.test(tab.url)
@@ -131,12 +136,14 @@ isCurrent = (turl, url)->
       if turl.indexOf('chrome-extension') == 0 and turl.indexOf(url) > 0
         return true
   url == turl
+
 getType = (t)->
   ### 获取类型 ###
   for type in ['men', 'txt', 'pic', 'lin']
     if t == type[0]
       return type
   'menu'
+
 execute = (id, value, tab, back, incognito)->
   ### 执行特殊命令 id, value, tab, back, incognito, x ###
   noInc = {
@@ -161,82 +168,98 @@ execute = (id, value, tab, back, incognito)->
   if id of inc
     inc[id](value, tab, back, incognito)
 
-onClickHandler = (info, tab)->
-  ### 单击事件 ###
-  type = info.menuItemId[0]
-  id = info.menuItemId[1..]
-  type = getType(type)
-  value = getValue(info, tab, type)
-  openTab(id, type, value, tab)
+getCustomUrl = (array, id)->
+  for c in array
+    if c[0] == id
+      return [c[1]]
+  []
+
+getAllUrl = (array, id)->
+  u = JU.findArray(array, 'c', id)
+  if u
+    return [u.u]
+  []
 
 openTab = (id, type, value, tab, x=1, fg=null)->
   ### 打开tab页面 id,类型,变量,tab,左右###
   back = id in JU.lsGet("#{type}Back", [])
   incognito = id in JU.lsGet("#{type}Incognito", [])
-  if JU.lsGet("back", false)
-    back = !back
-  if fg != null
-    back = fg
-  urls = []
-  findUrl(id, (ur)->
-    if ur
-      urls.push(ur)
-      _gaq.push(['_trackEvent', 'menu', id])
-    custom = JU.lsGet(type + 'Custom', [])
-    for c in custom
-      if c[0] == id
-        urls.push(c[1])
-        _gaq.push(['_trackEvent', 'menu', id])
-        break
-    group = JU.lsGet(type[0] + 'cGroup', [])
-    b = true
-    for g in group
-      if g[0] == id
-        getUrls(custom, g[1], (url)->
-          if /:|.htm/.test(url)
-            show(url, value, tab, back, incognito, x, type)
-          else
-            # 特殊功能，例如QR码等
-            execute(url, value, tab, back, incognito, x)
-        )
-        b = false
-        break
-    if b
-      for url in urls
-        if /:|.htm/.test(url)
-          show(url, value, tab, back, incognito, x, type)
-        else
-          # 特殊功能，例如QR码等
-          execute(url, value, tab, back, incognito, x)
-  )
+  back = if JU.lsGet("back", false) then !back else back
+  back = if fg != null then fg else back
+  console.debug 'openTab %s', id
+
+  all = JU.lsGet('all', [])
+  urls = getAllUrl(all, id)
+  custom = JU.lsGet(type + 'Custom', [])
+  urls = urls.concat(getCustomUrl(custom, id))
+  group = JU.lsGet(type[0] + 'cGroup', [])
+  for g in group
+    if g[0] == id
+      urls = urls.concat(getCustomUrl(custom, g[1]))
+      urls = urls.concat(getAllUrl(all, g[1]))
+  for u in urls
+    console.debug 'open %s', u
+    _gaq.push(['_trackEvent', 'menu', id])
+    if /:|.htm/.test(u)
+      show(u, value, tab, back, incognito, x, type)
+    else
+      # 特殊功能，例如QR码等
+      execute(u, value, tab, back, incognito, x)
   true
-chrome.contextMenus.onClicked.addListener onClickHandler
+
+getCi18n = ->
+  if 'ci18n' not in window
+    code = JU.lsGet('locale', navigator.language.replace('-', '_'))
+    if code not in ['en', 'zh_CN', 'zh_TW']
+      code = 'en'
+    window.ci18n = new JU.I18n(code)
+  window.ci18n
 
 menuReset = ->
   ### 重置菜单 ###
-  code = JU.lsGet('locale', navigator.language.replace('-', '_'))
-  if code not in ['en', 'zh_CN', 'zh_TW']
-    code = 'en'
-  window.ci18n = new JU.I18n(code)
-  chrome.contextMenus.removeAll ->
-    for m in ['men', 'txt', 'pic', 'lin']
-      createMenu(m)
-    console.debug '重置菜单完毕'
-  if JU.lsGet('drag', false)
-    if not chrome.tabs.onUpdated.hasListener(updated)
-      chrome.tabs.onUpdated.addListener(updated)
-  else
-    if chrome.tabs.onUpdated.hasListener(updated)
-      chrome.tabs.onUpdated.removeListener(updated)
-
-updated = (tabId, changeInfo, tab)->
-  ### 创建 ###
-  if /http.+|ftp.+/.test(tab.url)
-    chrome.tabs.executeScript(tab.id, {file: "js/context.js"})
-created = (tab)->
-  ### 创建 ###
-  if /http.+|ftp.+/.test(tab.url)
-    chrome.tabs.executeScript(tab.id, {file: "js/context.js"})
+  ci18n = getCi18n()
+  chrome.contextMenus.removeAll(->
+    for type in ['men', 'txt', 'pic', 'lin']
+        ### 创建菜单 ###
+        select = JU.lsGet(type + 'Select', [])
+        if type == 'lin'
+          chrome.contextMenus.create(
+            "contexts": ['link']
+            'type': 'separator'
+            'id': 's_' + JU.getId()
+          )
+        all = JU.lsGet('all', [])
+        names = JU.lsGet('names', {})
+        for id in select
+          console.debug 'select %s', id
+          u = JU.findArray(all, 'c', id)
+          if u
+            name = ci18n.getMessage(id)
+            console.info name
+            if not name
+              name = u.n
+            if u.c of names
+              name = names[u.c]
+            createMenuItem(id, name, type)
+          else
+            createMenuItem(id, id, type)
+    console.debug 'menu reset'
+  )
+#  if JU.lsGet('drag', false)
+#    if not chrome.tabs.onUpdated.hasListener(updated)
+#      chrome.tabs.onUpdated.addListener(updated)
+#  else
+#    if chrome.tabs.onUpdated.hasListener(updated)
+#      chrome.tabs.onUpdated.removeListener(updated)
+#
+#updated = (tabId, changeInfo, tab)->
+#  ### 创建 ###
+#  if /http.+|ftp.+/.test(tab.url)
+#    chrome.tabs.executeScript(tab.id, {file: "js/context.js"})
+#created = (tab)->
+#  ### 创建 ###
+#  if /http.+|ftp.+/.test(tab.url)
+#    chrome.tabs.executeScript(tab.id, {file: "js/context.js"})
 getContexts = (type)->
   ### 菜单类型 ###
   {
@@ -245,12 +268,8 @@ getContexts = (type)->
     'pic': 'image'
     'lin': 'link'
   }[type]
-_IDS = []
 createMenuItem = (id, name, type)->
   cid = type[0] + id
-  if cid in _IDS
-    return
-  _IDS.push(cid)
   ins = JU.lsGet("#{type}Incognito", [])
   bs = JU.lsGet("#{type}Back", [])
   incognito = id in ins
@@ -261,6 +280,7 @@ createMenuItem = (id, name, type)->
     if back
       name = '₪ ' + name
   try
+    console.debug 'create menu %s type:%s', name, type
     chrome.contextMenus.create(
       "title": name
       "contexts": [getContexts(type)]
@@ -268,35 +288,7 @@ createMenuItem = (id, name, type)->
     )
   catch err
     console.error err
-createMenu = (type)->
-  ### 创建菜单 ###
-  _IDS = []
-  select = JU.lsGet(type + 'Select', [])
-  if type == 'lin'
-    chrome.contextMenus.create(
-      "contexts": ['link']
-      'type': 'separator'
-      'id': 's_' + JU.getId()
-    )
-  findUrls((urls)->
-    names = JU.lsGet('names', {})
-    for id in select
-      b = true
-      for u in urls
-        if u.c == id
-          b = false
-          name = ci18n.getMessage(id)
-          if not name
-            name = u.n
-          if u.c of names
-            name = names[u.c]
-          createMenuItem(id, name, type)
-          break
-      if b
-        createMenuItem(id, id, type)
-    )
-  1
-menuReset()
+#menuReset()
 chrome.extension.onConnect.addListener((port)->
   port.onMessage.addListener((data)->
     if data.message == 'url' or data.message == 'txt'
@@ -306,7 +298,7 @@ chrome.extension.onConnect.addListener((port)->
           show(data.values, '', tab, fg, false, data.x)
           _gaq.push(['_trackEvent', 'drag', 'url'])
         if data.message == 'txt'
-          id = JSON.parse(localStorage["txtSelect"])[0]
+          id = JU.lsGet('txtSelect', ['baidu'])[0]
           url = data.values.trim()
           if JU.isUrl(url)
             if not JU.isProtocol(url)

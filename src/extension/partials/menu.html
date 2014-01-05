@@ -62,6 +62,7 @@
           </label>
         </span>
       </div>
+      <div class="span9">
       <h3 id="i_custom">自定义</h3>
       <form name="f_custom_old">
         <div ng-repeat="c in custom">
@@ -95,6 +96,8 @@
           <span id="i_l" class="span8">自定义网址中使用%s表示当前页面网址，例如: https://twitter.com/intent/tweet?url=%si</span>
         </div>
       </form>
+    </div><!-- span9 -->
+    <div class="span9">
       <h3 id="i_group">组合<!-- 组合 data-placeholder="选择右键菜单组合" --></h3>
       <form name="f_group_old">
         <div ng-repeat="c in group" class="line">
@@ -124,7 +127,8 @@
       </form>
       <div class="alert alert-error i_menucode span4" ng-show="f_group.$error.menucode || f_group_old.$error.menucode">
         名称重复，请修改。
-      </div>
+      </div><!-- alert -->
     </div><!-- span9 -->
-  </div><!-- row -->
+    </div><!-- span9 -->
+</div><!-- row -->
 </div><!-- container -->

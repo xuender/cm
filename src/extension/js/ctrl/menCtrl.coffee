@@ -113,10 +113,8 @@ MenCtrl = (scope, routeParams, log, http, dialog, lsGetItem, lsSetItem)->
   scope.init = ->
     ### 初始化 ###
     log.debug('init')
-    findUrls(scope.initDb)
+    data = JU.lsGet('all', [])
 
-  scope.initDb = (data)->
-    ### 初始化数据 ###
     scope.allUrls = menuI18n(data, scope.names)
     scope.urls = []
     for d in scope.allUrls

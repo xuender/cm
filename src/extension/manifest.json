@@ -20,6 +20,16 @@
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com; object-src 'self'",
   "content_scripts": [
     {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "ftp://*/*"
+      ],
+      "js": [
+        "js/context.js"
+      ]
+    },
+    {
       "matches": ["http://localhost:8000/*"],
       "js": [
         "js/server.min.js"
