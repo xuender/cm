@@ -191,6 +191,9 @@
   "b_save":{
     "message": "保存设置到云端"
   },
+  "update":{
+    "message": "保存"
+  },
   "bug":{
     "message": "错误"
   },

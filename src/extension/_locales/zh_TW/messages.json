@@ -1,4 +1,7 @@
 {
+  "update":{
+    "message": "保存"
+  },
   "tab_close":{
     "message": "關閉頁面"
   },

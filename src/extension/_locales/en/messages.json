@@ -1,4 +1,7 @@
 {
+  "update":{
+    "message": "Update"
+  },
   "tab_close":{
     "message": "Close tab"
   },

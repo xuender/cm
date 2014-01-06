@@ -1,26 +1,37 @@
 <div class="row">
   <div class="col-sm-3 bs-docs-sidebar">
-      <ul class="nav nav-list bs-docs-sidenav" ng-class="{affix:select.length < size}">
+    <ul class="nav nav-list bs-docs-sidenav"
+    ng-class="{affix:select.length < size}">
         <li ng-repeat="s in select">
           <a>
-            <button class="pull-right btn btn-xs btn-warning" ng-click="unSelect(s)">
+            <button class="pull-right btn btn-xs btn-warning"
+            ng-click="unSelect(s)">
               <i class="glyphicon glyphicon-trash"></i>
             </button>
             {{ s.n }}
             <br/>
             <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-success incognito" ng-click="up($index)"
-              title="{{ getI18n('i_up') }}" ng-class="{disabled:$index == 0}">
+              <button class="btn btn-sm btn-success incognito"
+              title="{{ getI18n('i_up') }}"
+              ng-click="up($index)"
+              ng-class="{disabled:$index == 0}">
                 <i class="glyphicon glyphicon-chevron-up"></i>
               </button>
-              <button type="button" class="btn btn-sm btn-success incognito" ng-click="down($index)"
-              title="{{ getI18n('i_down') }}" ng-class="{disabled:$index == select.length - 1}">
+              <button class="btn btn-sm btn-success incognito"
+              title="{{ getI18n('i_down') }}"
+              ng-click="down($index)"
+              ng-class="{disabled:$index == select.length - 1}">
                 <i class="glyphicon glyphicon-chevron-down"></i>
               </button>
-              <button type="button" class="btn btn-sm btn-info back" ng-model="s.back" title=""
-              btn-checkbox>{{ i_back }}</button>
-              <button type="button" class="btn btn-sm btn-info incognito" title="{{ getI18n('t_private') }}"
-              ng-model="s.incognito" btn-checkbox>{{ i_private }}</button>
+              <button class="btn btn-sm btn-info back" title=""
+              ng-model="s.back" btn-checkbox>
+                {{ i_back }}
+              </button>
+              <button class="btn btn-sm btn-info incognito"
+              title="{{ getI18n('t_private') }}"
+              ng-model="s.incognito" btn-checkbox>
+                {{ i_private }}
+              </button>
             </div><!-- btn-group -->
           </a>
         </li>
@@ -35,24 +46,27 @@
       </div><!-- page-header -->
       <h3 id="i_language">语言</h3>
       <div class="btn-group">
-        <button type="button" class="btn" ng-model="en" btn-checkbox>
+        <button class="btn btn-default" ng-model="en" btn-checkbox>
           <i class="en"></i>
         </button>
-        <button type="button" class="btn" ng-model="zh_CN" btn-checkbox>
+        <button class="btn btn-default" ng-model="zh_CN" btn-checkbox>
           <i class="zh_CN"></i>
         </button>
-        <button type="button" class="btn" ng-model="zh_TW" btn-checkbox>
+        <button class="btn btn-default" ng-model="zh_TW" btn-checkbox>
           <i class="zh_TW"></i>
         </button>
-        <button type="button" class="btn" ng-model="ru" btn-checkbox>
+        <button class="btn btn-default" ng-model="ru" btn-checkbox>
           <i class="ru"></i>
         </button>
       </div><!-- btn-group -->
       <h3 id="i_select">选择</h3>
       <div class="row" ng-repeat="g in groups">
         <h4>{{ g.label }}</h4>
-        <span class="col-sm-3" ng-hide="hide(menu)" ng-repeat="menu in g.items">
-          <button class="btn btn-xs btn-default" ng-class="{true:'hide', false:''}[isHideIcon(menu)]" ng-click="update(menu)">
+        <span class="col-sm-3"
+        ng-hide="hide(menu)" ng-repeat="menu in g.items">
+          <button class="btn btn-xs btn-default"
+          ng-class="{true:'hide', false:''}[isHideIcon(menu)]"
+          ng-click="update(menu)">
             <i class="glyphicon glyphicon-edit"></i>
           </button>
           <label style="display:inline;">
@@ -73,18 +87,19 @@
       <form name="f_custom_old">
         <div class="form-group" ng-repeat="c in custom">
           <div class="col-sm-3">
-            <input ng-model="c.c" ng-Maxlength="200" ng-Minlength="1"
-            maxlength="200" type="text" class="form-control" required menucode/>
+            <input maxlength="200" type="text" class="form-control" required
+            ng-model="c.c" ng-Maxlength="200" ng-Minlength="1" menucode/>
           </div><!-- col-sm-3 -->
           <div class="input-group col-sm-6">
-            <input ng-model="c.u" type="url" class="col-sm-6 form-control" required/>
+            <input type="url" class="col-sm-6 form-control" required
+            ng-model="c.u"/>
             <div class="input-group-btn">
-              <button class="btn btn-danger" ng-click="delCustom(c)"
-              title="{{ getI18n('i_del') }}">
+              <button class="btn btn-danger" title="{{ getI18n('i_del') }}"
+              ng-click="delCustom(c)">
                 <i class="glyphicon glyphicon-trash"></i>
               </button>
-              <button class="btn btn-warning" ng-click="putDialog(c)"
-              title="{{ getI18n('i_share') }}">
+              <button class="btn btn-warning" title="{{ getI18n('i_share') }}"
+              ng-click="putDialog(c)">
                 <i class="glyphicon glyphicon-share"></i>
               </button>
             </div><!-- input-group-btn -->
@@ -94,15 +109,17 @@
       <form name="f_custom">
         <div class="form-group">
           <div class="col-sm-3">
-            <input enter id="m_title" name="m_title"
-            ng-model="newCustom.c" ng-Maxlength="200" ng-Minlength="1" maxlength="200" 
-            type="text" class="col-sm-2 form-control" required menucode/>
+            <input id="m_title" name="m_title" maxlength="200" type="text"
+            class="form-control" required
+            enter ng-model="newCustom.c" ng-Maxlength="200" ng-Minlength="1"
+            menucode/>
           </div><!-- col-sm-3 -->
           <div class="input-group col-sm-6">
-            <input ng-model="newCustom.u" class="col-sm-6 form-control" 
-          enter="addCustom(newCustom)" id="i_url" type="url" required/>
+            <input id="i_url" type="url" required class="form-control" 
+            ng-model="newCustom.u" enter="addCustom(newCustom)"/>
             <div class="input-group-btn">
-              <button class="btn btn-primary" ng-click="addCustom(newCustom)" title="{{ getI18n('i_add') }}">
+              <button class="btn btn-primary" title="{{ getI18n('i_add') }}"
+              ng-click="addCustom(newCustom)">
                 <i class="glyphicon glyphicon-plus"></i>
               </button>
             </div><!-- input-group-btn -->
@@ -111,11 +128,12 @@
         <div class="form-group">
           <!-- ng-show="f_custom.$error.menucode || f_custom_old.$error.menucode" -->
           <span class="ng-hide alert alert-error i_menucode col-sm-3" 
-          ng-show="f_custom.$error.menucode || f_custom_old.$error.menucode"
-          >
+          ng-show="f_custom.$error.menucode || f_custom_old.$error.menucode">
             名称重复，请修改。
           </span><!-- alert -->
-          <span id="i_l" class="col-sm-9">自定义网址中使用%s表示当前页面网址，例如: https://twitter.com/intent/tweet?url=%si</span>
+          <span id="i_l" class="col-sm-9">
+            自定义网址中使用%s表示当前页面网址，例如: https://twitter.com/intent/tweet?url=%si
+          </span>
         </div><!-- form-group -->
       </form>
       <div class="page-header col-sm-12">
@@ -127,17 +145,16 @@
       <form name="f_group_old">
         <div class="form-group" ng-repeat="c in group">
           <div class="col-sm-3">
-            <input ng-model="c.c" type="text" class="col-sm-2 form-control"
-            ng-Maxlength="200" ng-Minlength="1" maxlength="200"
-          required menucode/>
+            <input type="text" class="form-control" maxlength="200" required 
+            ng-model="c.c" ng-Maxlength="200" ng-Minlength="1" menucode/>
           </div><!-- col-sm-3 -->
           <div class="input-group col-sm-6">
-            <select ng-model="c.g" chosen 
-                ng-options="m.n group by m.t for m in menus" 
-                class="form-control" multiple="multiple"></select>
+            <select class="form-control" multiple="multiple"
+            ng-model="c.g" chosen ng-options="m.n group by m.t for m in menus">
+            </select>
             <div class="input-group-btn">
-              <button class="btn btn-danger" ng-click="delGroup(c)"
-              title="{{ getI18n('i_del') }}">
+              <button class="btn btn-danger" title="{{ getI18n('i_del') }}"
+              ng-click="delGroup(c)">
                 <i class="glyphicon glyphicon-trash"></i>
               </button>
             </div><!-- input-group-btn -->
@@ -147,21 +164,25 @@
       <form name="f_group" class="line">
         <div class="form-group">
           <div class="col-sm-3">
-            <input enter id="g_title" ng-model="newGroup.c" ng-Maxlength="200" ng-Minlength="1" maxlength="200" 
-            type="text" class="col-sm-2 form-control" required menucode/>
+            <input id="g_title" type="text" class="form-control" required
+            maxlength="200" 
+            enter ng-model="newGroup.c" ng-Maxlength="200" ng-Minlength="1"
+            menucode>
           </div><!-- col-sm-3 -->
           <div class="input-group col-sm-6">
-            <select id="g_select" ng-model="newGroup.g" chosen 
-              ng-options="m.n group by m.t for m in menus" 
-              class="form-control" multiple="multiple"></select>
+            <select id="g_select" class="form-control" multiple="multiple"
+            ng-model="newGroup.g" ng-options="m.n group by m.t for m in menus" 
+            chosen></select>
             <div class="input-group-btn">
-              <button class="btn btn-primary" ng-click="addGroup(newGroup)" title="{{ getI18n('i_add') }}">
+              <button class="btn btn-primary" title="{{ getI18n('i_add') }}"
+              ng-click="addGroup(newGroup)">
                 <i class="glyphicon glyphicon-plus"></i>
               </button>
             </div><!-- input-group-btn -->
           </div><!-- input-group -->
         </div><!-- form-group -->
-        <div class="ng-hide alert alert-error i_menucode form-group" ng-show="f_group.$error.menucode || f_group_old.$error.menucode">
+        <div class="ng-hide alert alert-error i_menucode form-group"
+        ng-show="f_group.$error.menucode || f_group_old.$error.menucode">
         名称重复，请修改。
         </div><!-- alert -->
       </form>

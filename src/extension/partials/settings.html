@@ -7,18 +7,20 @@
 </div><!-- page-header  -->
 <form name="f_setting" class="form-horizontal" role="form">
   <div class="form-group">
-    <label class="col-sm-2 control-label" for="qr_size"><span id="i_language">语言选择</span></label>
+    <label class="col-sm-2 control-label" for="qr_size">
+      <span id="i_language">语言选择</span>
+    </label>
     <div class="btn-group col-sm-10">
-      <button type="button" class="btn btn-info" ng-model="locale" btn-radio="'en'">
+      <button class="btn btn-default" ng-model="locale" btn-radio="'en'">
         <i class="en"></i>
       </button>
-      <button type="button" class="btn btn-info" ng-model="locale" btn-radio="'zh_CN'">
+      <button class="btn btn-default" ng-model="locale" btn-radio="'zh_CN'">
         <i class="zh_CN"></i>
       </button>
-      <button type="button" class="btn btn-info" ng-model="locale" btn-radio="'zh_TW'">
+      <button class="btn btn-default" ng-model="locale" btn-radio="'zh_TW'">
         <i class="zh_TW"></i>
       </button>
-      <button type="button" class="btn btn-info" ng-model="locale" btn-radio="'ru'">
+      <button class="btn btn-default" ng-model="locale" btn-radio="'ru'">
         <i class="ru"></i>
       </button>
     </div><!-- btn-group -->
@@ -27,52 +29,60 @@
     <label class="col-sm-2 control-label" for="qr_size" id="i_size">
       二维码尺寸
     </label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="qr_size" id="qr_size" value="250" placeholder="二维码宽高" integer/>
+    <div class="col-sm-2">
+      <input type="text" id="qr_size" value="250" placeholder="二维码宽高"
+      class="form-control"
+      ng-model="qr_size" integer/>
     </div><!-- col-sm-10-->
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="checkbox" ng-model="isEdit" id="i_isEdit"/>
-      <label class="control-label" for="i_isEdit" id="t_isEdit">
-        显示编辑按钮
-      </label>
+      <div class="checkbox">
+        <input type="checkbox" id="i_isEdit" ng-model="isEdit"/>
+        <label class="control-label" for="i_isEdit" id="t_isEdit">
+          显示编辑按钮
+        </label>
+      </div><!-- checkbox -->
     </div>
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="checkbox" ng-model="isFlag" id="i_isFlag"/>
-      <label class="control-label" for="i_isFlag" id="t_isFlag">
-        显示语言图标
-      </label>
+      <div class="checkbox">
+        <input type="checkbox" id="i_isFlag" ng-model="isFlag"/>
+        <label class="control-label" for="i_isFlag" id="t_isFlag">
+          显示语言图标
+        </label>
+      </div><!-- checkbox -->
     </div>
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="checkbox" ng-model="back" id="i_back"/>
-      <label class="control-label" for="i_back" id="s_back">
-        默认后台打开
-      </label>
-    </div>
+      <div class="checkbox">
+        <input type="checkbox" id="i_back" ng-model="back"/>
+        <label class="control-label" for="i_back" id="s_back">
+          默认后台打开
+        </label>
+      </div><!-- checkbox -->
+    </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="form-group">
     <label class="col-sm-2 control-label" id="i_sshort">
       选择短网址生成网站
     </label>
     <div class="btn-group col-sm-10">
-      <button type="button" class="btn btn-success"
+      <button class="btn btn-success"
       ng-model="shorten" btn-radio="'googl'">
         Goo.gl
       </button>
-      <button type="button" class="btn btn-success"
+      <button class="btn btn-success"
       ng-model="shorten" btn-radio="'sinat'">
         t.cn
       </button>
-      <button type="button" class="btn btn-success"
+      <button class="btn btn-success"
       ng-model="shorten" btn-radio="'urlcn'">
         url.cn
       </button>
-      <button type="button" class="btn btn-success"
+      <button class="btn btn-success"
       ng-model="shorten" btn-radio="'dwz'">
         dwz.cn
       </button>
@@ -80,19 +90,23 @@
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
-      <input type="checkbox" ng-model="newPage" id="i_newPage"/>
-      <label class="control-label" for="i_newPage" id="s_newPage">
-        页面存在则不打开新页面
-      </label>
-    </div><!-- controls -->
+      <div class="checkbox">
+        <input type="checkbox" id="i_newPage" ng-model="newPage"/>
+        <label class="control-label" for="i_newPage" id="s_newPage">
+          页面存在则不打开新页面
+        </label>
+      </div><!-- checkbox -->
+    </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
-      <input type="checkbox" ng-model="drag" id="i_drag"/>
-      <label class="control-label" for="i_drag" id="s_drag">
-        启用超级拖拽
-      </label>
-    </div><!-- controls -->
+      <div class="checkbox">
+        <input type="checkbox" id="i_drag" ng-model="drag"/>
+        <label class="control-label" for="i_drag" id="s_drag">
+          启用超级拖拽
+        </label>
+      </div><!-- checkbox -->
+    </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="alert alert-success">
     <span id="h_drag"></span>
@@ -106,15 +120,19 @@
   </h2>
 </div><!-- page-header  -->
 <div class="alert" id="i_help"></div>
-<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+<alert type="alert.type" close="closeAlert($index)" ng-repeat="alert in alerts">
+  {{alert.msg}}
+</alert>
 <form name="bak" class="form-horizontal">
   <div class="form-group">
     <label class="col-sm-2 control-label" for="i_phrase" id="s_phrase">
       验证短语
     </label>
-    <div class="col-sm-10">
-      <input type="text" ng-model="phrase" id="i_phrase" ng-Maxlength="30" maxlength="30" ng-Minlength="8" required/>
-    </div><!-- controls -->
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="i_phrase" maxlength="30"
+      required
+      ng-Maxlength="30" ng-model="phrase" ng-Minlength="8"/>
+    </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-offset-2 btn-group col-sm-10">
@@ -126,6 +144,6 @@
         <i class="glyphicon glyphicon-cloud-download"></i>
         <span id="b_load">加载设置</span>
       </button>
-    </div><!-- form-actions -->
+    </div><!-- btn-group -->
   </div><!-- form-group -->
 </form>

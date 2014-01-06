@@ -26,8 +26,8 @@ header a:hover .glyphicon {
 }
 body {
   position: relative;
+  min-width: 1000px;
   padding-top: 90px;
-  min-width: 1000px
   background-color: #ebeff9;
 }
 .page-header {

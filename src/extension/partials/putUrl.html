@@ -1,59 +1,90 @@
 <!-- 共享网址 -->
 <div class="modal-header">
-  <h3>{{ getI18n('i_share') }}</h3>
+  <h3>
+    {{ getI18n('i_share') }}
+    <i class="glyphicon glyphicon-floppy-disk"></i>
+  </h3>
 </div><!-- modal-header -->
 <div class="modal-body">
   <form name="formPut" class="form-horizontal">
-    <div class="control-group">
-      <label class="control-label" for="urlName">{{ getI18n('i_name') }}</label>
-      <div class="controls">
-        <input ng-model="name" id="urlName" ng-Maxlength="200" ng-Minlength="1" maxlength="200"
-        type="text" class="span3" required/>
-      </div><!-- controls -->
-    </div><!-- control-group -->
-    <div class="control-group">
-      <label class="control-label" for="urlUrl">{{ getI18n('i_url') }}</label>
-      <div class="controls">
-        <input ng-model="url" id="urlUrl" type="url" ng-Maxlength="250" ng-Minlength="7" maxlength="250"
-        class="span3" required/>
-      </div><!-- controls -->
-    </div><!-- control-group -->
-    <div class="control-group">
-      <label class="control-label" for="qr_size">{{ getI18n('i_language') }}</label>
-      <div class="controls">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="urlName">
+        {{ getI18n('i_name') }}
+      </label>
+      <div class="col-sm-8">
+        <input id="urlName" maxlength="200" type="text" class="form-control"
+        required 
+        ng-model="name" ng-Maxlength="200" ng-Minlength="1"/>
+      </div><!-- sm-8-->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="urlUrl">
+        {{ getI18n('i_url') }}
+      </label>
+      <div class="col-sm-8">
+        <input id="urlUrl" type="url" class="form-control" maxlength="250"
+        required
+        ng-model="url" ng-Maxlength="250" ng-Minlength="7"/>
+      </div><!-- sm-8-->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="qr_size">
+        {{ getI18n('i_language') }}
+      </label>
+      <div class="col-sm-8">
         <div class="btn-group">
-          <button type="button" class="btn" ng-model="locale" btn-radio="'all'">{{ getI18n('i_all') }}</button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'en'">
+          <button class="btn btn-default"
+          ng-model="locale" btn-radio="'all'">
+            {{ getI18n('i_all') }}
+          </button>
+          <button class="btn btn-default"
+          ng-model="locale" btn-radio="'en'">
             <i class="en"></i>
           </button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'zh_CN'">
+          <button class="btn btn-default"
+          ng-model="locale" btn-radio="'zh_CN'">
             <i class="zh_CN"></i>
           </button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'zh_TW'">
+          <button class="btn btn-default"
+          ng-model="locale" btn-radio="'zh_TW'">
             <i class="zh_TW"></i>
           </button>
-          <button type="button" class="btn" ng-model="locale" btn-radio="'ru'">
+          <button class="btn btn-default"
+          ng-model="locale" btn-radio="'ru'">
             <i class="ru"></i>
           </button>
         </div><!-- btn-group -->
-      </div><!-- controls -->
-    </div><!-- control-group -->
-    <div class="control-group">
-      <label class="control-label" for="urlTitle">{{ getI18n('t_title') }}</label>
-      <div class="controls">
-        <input ng-model="title" id="urlTitle" type="text" ng-Maxlength="250" maxlength="250"
-        class="span3" required/>
-      </div><!-- controls -->
-    </div><!-- control-group -->
-    <div class="control-group">
-      <label class="control-label" for="nick">{{ getI18n('i_nick') }}</label>
-      <div class="controls">
-        <input ng-model="nick" id="nick" type="text" class="span3" required/>
-      </div><!-- controls -->
-    </div><!-- control-group -->
+      </div><!-- sm-8-->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="urlTitle">
+        {{ getI18n('t_title') }}
+      </label>
+      <div class="col-sm-8">
+        <input id="urlTitle" type="text" maxlength="250" class="form-control"
+        required
+        ng-model="title" ng-Maxlength="250"/>
+      </div><!-- sm-8 -->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="nick">
+        {{ getI18n('i_nick') }}
+      </label>
+      <div class="col-sm-8">
+        <input id="nick" type="text" class="form-control" required
+        ng-model="nick"/>
+      </div><!-- sm-8 -->
+    </div><!-- form-group -->
   </form>
 </div><!-- modal-body -->
 <div class="modal-footer">
-  <button ng-click="close()" class="btn">{{ getI18n('i_close') }}</button>
-  <button ng-click="put()" class="btn btn-primary">{{ getI18n('i_share') }}</button>
+  <button class="btn btn-primary"
+  ng-click="put()">
+    <i class="glyphicon glyphicon-share"></i>
+    {{ getI18n('i_share') }}
+  </button>
+  <button class="btn btn-warning"
+  ng-click="close()">
+    {{ getI18n('i_close') }}
+  </button>
 </div><!-- model-footer -->
