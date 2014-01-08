@@ -174,3 +174,7 @@ input.ng-valid.ng-dirty{
   margin-right: 5rem;
   padding: 1rem;
 }
+
+h3 i, h2 i{
+  margin-right: 10px;
+}

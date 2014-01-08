@@ -76,9 +76,9 @@ menuI18n = (menus, names)->
 
 MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   ### 菜单控制器 ###
-  type = routeParams.type
-  name = type.toUpperCase()
-  scope.i18n(type)
+  scope.type = routeParams.type
+  name = scope.type.toUpperCase()
+  scope.i18n(scope.type)
   $('.i_menucode').text(ci18n.getMessage('i_menucode'))
   for i in ['m_title', 'i_url', 'g_title']
     $('#' + i).attr('placeholder', ci18n.getMessage(i))
@@ -297,7 +297,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
         url: ->
           angular.copy(url)
         type: ->
-          type
+          scope.type
     )
     d.result.then((result)->
       if result
