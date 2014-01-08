@@ -94,7 +94,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   scope.isEdit = lsGetItem('isEdit', true)
   scope.isFlag = lsGetItem('isFlag', true)
   # 黑名单
-  scope.bl = lsGetItem('bl', [])
+  #scope.bl = lsGetItem('bl', [])
   # 重命名
   scope.names = lsGetItem('names', {})
   # select浮动窗口尺寸
@@ -127,9 +127,9 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     scope.$watch('en',(n, o) ->
       lsSetItem('en', n)
     )
-    scope.$watch('bl',(n, o) ->
-      lsSetItem('bl', n)
-    , true)
+    #scope.$watch('bl',(n, o) ->
+    #  lsSetItem('bl', n)
+    #, true)
     scope.$watch('names',(n, o) ->
       lsSetItem('names', n)
     , true)
@@ -224,7 +224,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     ret
   scope.hide =(menu)->
     ### 是否隐藏菜单 ###
-    not (menu.c not in scope.bl and (menu.l == 'all' or scope[menu.l]))
+    not (menu.l == 'all' or scope[menu.l])
   scope.show = (code)->
     ### 根据代码显示标题 ###
     for a in [scope.menus, scope.custom, scope.group]
@@ -325,9 +325,8 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     )
     d.result.then((result)->
       if result
-        if result == 'black'
-          scope.bl.push(menu.c)
-          _gaq.push(['_trackEvent', 'edit', 'black'])
+        if result == 'del'
+          scope.remove(menu)
         else if result != 'close'
           if menu.n != result
             menu.n = result
@@ -335,5 +334,20 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
             _gaq.push(['_trackEvent', 'edit', 'rename'])
     )
   scope.init()
+  scope.remove = (menu)->
+    ### 删除菜单 ###
+    menu.select = false
+    JU.removeArray(scope.select, menu)
+    for g in scope.groups
+      JU.removeArray(g.items, menu)
+    all = JU.lsGet('all', [])
+    m = JU.findArray(all, 'c', menu.c)
+    JU.removeArray(all, m)
+    JU.lsSet('all', all)
+    for gs in scope.group
+      for g in gs.g
+        if g.c == menu.c
+          JU.removeArray(gs.g, g)
+    _gaq.push(['_trackEvent', 'edit', 'del'])
 MenCtrl.$inject = ['$scope', '$routeParams', '$log', '$http', '$modal',
   'lsGetItem', 'lsSetItem']

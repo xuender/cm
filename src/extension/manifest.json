@@ -7,7 +7,6 @@
   "short_name": "CM",
   "background": {
     "scripts": [
-      "js/jquery.min.js",
       "js/iconv.min.js",
       "js/chrome_ex_oauth.min.js",
       "js/chrome.min.js",

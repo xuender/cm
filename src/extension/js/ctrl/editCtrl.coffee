@@ -11,8 +11,8 @@ EditCtrl = (scope, log, lsGetItem, lsSetItem, $modalInstance, menu)->
   scope.save = ->
     log.debug('save')
     $modalInstance.close(scope.name)
-  scope.black = ->
-    $modalInstance.close('black')
+  scope.del = ->
+    $modalInstance.close('del')
 
 EditCtrl.$inject = ['$scope', '$log', 'lsGetItem', 'lsSetItem',
   '$modalInstance', 'menu']
