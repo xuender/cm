@@ -278,6 +278,9 @@
   "i_custom":{
     "message": "自定义"
   },
+  "i_custom_title":{
+    "message": "用户自定义功能菜单"
+  },
   "i_del":{
     "message": "删除"
   },

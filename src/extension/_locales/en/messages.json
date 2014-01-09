@@ -21,13 +21,13 @@
     "message": "Facebook Share"
   },
   "qr_lin":{
-    "message": "Generates QR for link"
+    "message": "QR for link"
   },
   "su_lin":{
-    "message": "Create short URL of the link and copy"
+    "message": "short URL of the link and copy"
   },
   "su_lin_alert":{
-    "message": "Create link Short URL"
+    "message": "link Short URL"
   },
   "twitter_lin":{
     "message": "Twitter Share"
@@ -78,10 +78,10 @@
     "message": "W3C css validator"
   },
   "su":{
-    "message": "Create short URL to clipboard"
+    "message": "short URL to clipboard"
   },
   "qr":{
-    "message": "Generates QR for page"
+    "message": "QR for page URL"
   },
   "su_alert":{
     "message": "Create short URL"
@@ -144,13 +144,13 @@
     "message": "Parsing QR in the images"
   },
   "su_pic":{
-    "message": "Create image short URL to clipboard"
+    "message": "image short URL to clipboard"
   },
   "su_pic_alert":{
-    "message": "Create short URL for image"
+    "message": "short URL for image"
   },
   "qr_pic":{
-    "message": "Generates QR for image"
+    "message": "QR for image"
   },
   "TinEye":{
     "message": "TinEye"
@@ -249,7 +249,7 @@
     "message": "Added"
   },
   "i_alert":{
-    "message": "Generated short URL alert for page."
+    "message": "short URL alert for page."
   },
   "i_all":{
     "message": "Multilingual"
@@ -278,6 +278,9 @@
   "i_custom":{
     "message": "Custom"
   },
+  "i_custom_title":{
+    "message": "User-defined functions menu"
+  },
   "i_del":{
     "message": "Delete"
   },
@@ -292,6 +295,9 @@
   },
   "i_group":{
     "message": "Group"
+  },
+  "i_group_title":{
+    "message": "Run with a combination of multiple functions"
   },
   "i_have":{
     "message": "提交過不能共享"
@@ -339,7 +345,7 @@
     "message": "Image Menu"
   },
   "i_pic_alert":{
-    "message": "Generated short URL alert for image."
+    "message": "short URL alert for image."
   },
   "i_pic_title":{
     "message": "Right-click the picture shows the menu"
@@ -594,7 +600,7 @@
     "message": "Findicons.com"
   },
   "qr_txt":{
-    "message": "Generates QR for select text."
+    "message": "QR for select text."
   },
   "Yahoo":{
     "message": "Yahoo"

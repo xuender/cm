@@ -278,6 +278,9 @@
   "i_custom":{
     "message": "自定義"
   },
+  "i_custom_title":{
+    "message": "用戶自定義功能菜單"
+  },
   "i_del":{
     "message": "刪除"
   },
@@ -292,6 +295,9 @@
   },
   "i_group":{
     "message": "組合"
+  },
+  "i_group_title":{
+    "message": "多個功能組合一起運行"
   },
   "i_have":{
     "message": "Submitted can not be shared"
