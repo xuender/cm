@@ -4,11 +4,6 @@ Copyright (C) 2014 ender xu <xuender@gmail.com>
 
 Distributed under terms of the MIT license.
 ###
-chrome.runtime.sendMessage(
-  {cmd: 'getIds'},
-  (response)->
-    localStorage['ids'] = JSON.stringify(response.ids)
-)
 
 buttonClick = (e)->
   e.target.parentElement.parentElement.setAttribute('class', 'success')
@@ -31,4 +26,14 @@ buttonClick = (e)->
   bs = document.getElementsByClassName('b')
   for b in bs
     b.addEventListener('click', buttonClick)
+  chrome.runtime.sendMessage(
+    {cmd: 'getIds'},
+    (response)->
+      localStorage['ids'] = JSON.stringify(response.ids)
+      all = document.getElementById('all').value
+      chrome.runtime.sendMessage(
+        cmd: 'setAll'
+        all: all
+      )
+  )
 )()

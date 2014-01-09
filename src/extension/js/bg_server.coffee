@@ -9,6 +9,8 @@ chrome.runtime.onMessage.addListener (request, sender, sendResponse)->
     getIds(sendResponse)
   if request.cmd == 'addMenu'
     addMenu(request.json, sendResponse)
+  if request.cmd == 'setAll'
+    setAll(request.all)
 
 getIds = (sendResponse)->
   ### 获取所有在用的ID ###
@@ -26,3 +28,14 @@ addMenu = (json, sendResponse)->
   all.push(JSON.parse(json))
   JU.lsSet('all', all)
   getIds(sendResponse)
+
+setAll = (all)->
+  ### 刷新全部菜单 ###
+  oldAll = JU.lsGet('all', [])
+  newAll = []
+  for n in JSON.parse(all)
+    b = false
+    for o in oldAll
+      if n.c == o.c then b = true
+    if b then newAll.push(n)
+  JU.lsSet('all', newAll)
