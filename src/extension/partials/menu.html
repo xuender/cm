@@ -64,6 +64,10 @@
         </button>
       </div><!-- btn-group -->
       <h3 id="i_select">选择</h3>
+      <a class="btn btn-primary btn-lg" href="http://localhost:8000/?type={{ type }}">
+        <i class="glyphicon glyphicon-transfer"></i>
+        <span id="i_find">获取右键菜单</span>
+      </a>
       <div class="row" ng-repeat="g in groups">
         <h4>{{ g.label }}</h4>
         <span class="col-sm-3"

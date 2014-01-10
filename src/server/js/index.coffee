@@ -5,6 +5,15 @@ angular.module('urls', [
   'ui.bootstrap'
 ])
 
+getType = ->
+  ### 查询字符串 ###
+  str = window.location.search.toUpperCase()
+  for t in ['MEN', 'LIN', 'PIC', 'TXT']
+    if str.indexOf(t) > 0
+      return t
+  'TXT'
+
+
 BodyCtrl = (scope, log, http)->
   scope.locale =
     en: true
@@ -12,10 +21,11 @@ BodyCtrl = (scope, log, http)->
     zh_TW: true
     ru: true
   scope.mode =
-    TXT: true
-    MEN: true
-    PIC: true
-    LIN: true
+    TXT: false
+    MEN: false
+    PIC: false
+    LIN: false
+  scope.mode[getType()] = true
   scope.type = {}
   scope.typeValue = [
     {c: 'all',    n:'通用'}

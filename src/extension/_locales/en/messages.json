@@ -365,6 +365,9 @@
   "i_select":{
     "message": "Select"
   },
+  "i_find":{
+    "message": "Get the right click menu"
+  },
   "i_settings":{
     "message": "Settings"
   },

@@ -365,6 +365,9 @@
   "i_select":{
     "message": "選擇"
   },
+  "i_find":{
+    "message": "獲取右鍵菜單"
+  },
   "i_settings":{
     "message": "設置"
   },

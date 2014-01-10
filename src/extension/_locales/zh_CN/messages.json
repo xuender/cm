@@ -362,6 +362,9 @@
   "i_select":{
     "message": "选择"
   },
+  "i_find":{
+    "message": "获取右键菜单"
+  },
   "i_settings":{
     "message": "设置"
   },
