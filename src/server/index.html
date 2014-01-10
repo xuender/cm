@@ -111,7 +111,7 @@
             <div class="btn-group">
               <button type="button" class="btn btn-sm btn-success" btn-checkbox
               ng-model="type[c.c]" ng-repeat="c in typeValue">
-              {{ c.n }}
+                {{ c.n }}
               </button>
             </div><!-- btn-group -->
           </div><!-- col-sm-10 -->
@@ -143,13 +143,13 @@
         </tbody>
       </table>
       <div class="pull-right">
-      <pagination total-items="total" page="numPages" 
-      boundary-links="true"
-      items-per-page="20"
-      previous-text="&lsaquo;"
-      next-text="&rsaquo;"
-      first-text="&laquo;"
-      last-text="&raquo;"/>
+        <pagination total-items="total" page="numPages"
+        boundary-links="true"
+        items-per-page="20"
+        previous-text="&lsaquo;"
+        next-text="&rsaquo;"
+        first-text="&laquo;"
+        last-text="&raquo;"/>
       </div><!-- pull-right -->
     </div><!-- container -->
     <input type="hidden" id="all" value="{{ all }}"/>
