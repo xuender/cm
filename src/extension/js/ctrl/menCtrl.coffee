@@ -251,7 +251,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
     if menu.g and menu.g.length > 0 and scope.f_group.$valid
       menu.n = menu.c
       menu.l = 'all'
-      scope.group.push(angular.copy(menu))
+      scope.group.push(menu)
       scope.newGroup = angular.copy({})
       $('#g_select_chzn ul.chzn-choices').children('li.search-choice').remove()
       $('#g_title').focus()
