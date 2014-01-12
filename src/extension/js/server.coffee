@@ -6,9 +6,14 @@ Distributed under terms of the MIT license.
 ###
 
 buttonClick = (e)->
-  e.target.parentElement.parentElement.setAttribute('class', 'success')
-  e.target.remove()
-  json = e.target.getAttribute('json')
+  if e.target.tagName == 'I'
+    target = e.target.parentElement
+  else
+    target = e.target
+
+  target.parentElement.parentElement.setAttribute('class', 'success')
+  target.remove()
+  json = target.getAttribute('json')
   chrome.runtime.sendMessage(
     {
       cmd: 'addMenu'
@@ -16,7 +21,6 @@ buttonClick = (e)->
     },
     (response)->
       localStorage['ids'] = JSON.stringify(response.ids)
-      alert('增加成功')
   )
 
 (->

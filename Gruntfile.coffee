@@ -140,6 +140,14 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      i18nServer:
+        files: [
+          cwd: 'src/server'
+          src: '_locales/**'
+          dest: 'dist/server'
+          expand: true
+          filter: 'isFile'
+        ]
       img:
         files: [
           cwd: 'src/extension'
@@ -288,6 +296,7 @@ module.exports = (grunt)->
         tasks: [
           'copy:root'
           'copy:i18n'
+          'copy:i18nServer'
         ]
       html:
         files: [

@@ -93,6 +93,9 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
   scope.ru = lsGetItem('ru', false)
   scope.isEdit = lsGetItem('isEdit', true)
   scope.isFlag = lsGetItem('isFlag', true)
+  scope.locale = JU.lsGet('locale', navigator.language.replace('-', '_'))
+  if scope.locale not in ['en', 'zh_CN', 'zh_TW']
+    scope.locale = 'en'
   # 黑名单
   #scope.bl = lsGetItem('bl', [])
   # 重命名

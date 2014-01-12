@@ -78,14 +78,14 @@
             </div><!-- btn-group -->
             <div class="btn-group col-md-offset-1">
               <button type="button" class="btn btn-sm btn-info"
-              ng-model="mode.TXT" btn-checkbox>
-                <i class="fa fa-search"></i>
-                <span id="i_txt"> 划词菜单</span>
-              </button>
-              <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.MEN" btn-checkbox>
                 <i class="fa fa-bars"></i>
                 <span id="i_men">页面菜单</span>
+              </button>
+              <button type="button" class="btn btn-sm btn-info"
+              ng-model="mode.TXT" btn-checkbox>
+                <i class="fa fa-search"></i>
+                <span id="i_txt"> 划词菜单</span>
               </button>
               <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.PIC" btn-checkbox>
@@ -102,16 +102,17 @@
             </label>
             <label class="col-md-offset-1">
               <input type="checkbox" ng-model="saved"/>
-              已使用
+              <span id="i_used"></span>
             </label>
           </div><!-- col-sm-10 -->
         </div><!-- form-group -->
+        {{ lg }}
         <div class="form-group">
           <div class="col-sm-12">
             <div class="btn-group">
               <button type="button" class="btn btn-sm btn-success" btn-checkbox
-              ng-model="type[c.c]" ng-repeat="c in typeValue">
-                {{ c.n }}
+              ng-model="type[c]" ng-repeat="c in typeValue">
+                {{ getMessage(c) }}
               </button>
             </div><!-- btn-group -->
           </div><!-- col-sm-10 -->
@@ -120,23 +121,26 @@
       <table class="table table-bordered table-hover table-condensed">
         <thead>
           <tr>
-            <th>名称</th>
-            <th>类型</th>
-            <th>范围</th>
-            <th>次数 <i class="fa fa-caret-down"></i></th>
+            <th id="i_name">名称</th>
+            <th id="i_sort">分类</th>
+            <th id="i_type">类型</th>
+            <th>
+              <span id="i_count">次数</span> 
+              <i class="fa fa-caret-down"></i>
+            </th>
             <th class="o"></th>
           </tr>
         </thead>
         <tbody>
           <tr ng-class="{success:u.o}" ng-repeat="u in show">
-            <td><i class="{{ u.l }}"></i>{{ u.n }}{{u.o}}</td>
-            <td>{{ getTypeName(u.t) }}</td>
-            <td>{{ u.m }}</td>
+            <td><i class="{{ u.l }}"></i>{{ u.n }}</td>
+            <td>{{ getMessage(u.t) }}</td>
+            <td>{{ getMessage('i_' + u.m.toLowerCase()) }}</td>
             <td>{{ u.v }}</td>
             <td class="o">
               <button class="btn btn-primary b" ng-hide="u.o" json="{{u}}">
                 <i class="fa fa-save"></i>
-                增加
+                {{ getMessage('update') }}
               </button>
             </td>
           </tr>
@@ -161,8 +165,8 @@
         <p>© <a id="a_oldbean" href="http://www.oldbean.cn" target="_blank">www.oldbean.cn</a> 2012-2014</p>
       </div><!-- container -->
     </footer>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
     <script src="http://cdn.jsdelivr.net/angular.bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
     <script src="js/chrome.min.js"></script>
     <script src="js/index.min.js"></script>

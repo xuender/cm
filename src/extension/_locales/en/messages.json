@@ -1,6 +1,6 @@
 {
   "update":{
-    "message": "Update"
+    "message": "Save"
   },
   "tab_close":{
     "message": "Close tab"
@@ -315,7 +315,7 @@
     "message": "Language Selection"
   },
   "i_lin":{
-    "message": "Link Menu"
+    "message": "LinkMenu"
   },
   "i_lin_alert":{
     "message": "To increase generated link Short URL pop-up menu"
@@ -324,7 +324,7 @@
     "message": "Right-click the link to display the menu"
   },
   "i_men":{
-    "message": "Page Menu"
+    "message": "ContextMenu"
   },
   "i_men_title":{
     "message": "Right-click on the page to display the menu"
@@ -342,7 +342,7 @@
     "message": "Precautions"
   },
   "i_pic":{
-    "message": "Image Menu"
+    "message": "ImageMenu"
   },
   "i_pic_alert":{
     "message": "short URL alert for image."
@@ -405,7 +405,7 @@
     "message": "Do the best context menu extension."
   },
   "i_txt":{
-    "message": "Selection Menu"
+    "message": "SelectionMenu"
   },
   "i_txt_title":{
     "message": "Right-click to select the text display menu"

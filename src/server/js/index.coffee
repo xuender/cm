@@ -5,16 +5,59 @@ angular.module('urls', [
   'ui.bootstrap'
 ])
 
+getSearch = ->
+  # 查询参数 #
+  ret = {}
+  search = window.location.search[1..]
+  if search[search.length - 1] == '/'
+    search = search[..(search.length - 2)]
+  for str in search.split('&')
+    s = str.split('=')
+    if s.length < 2
+      ret[s[0]] = null
+    else
+      ret[s[0]] = s[1]
+  ret
+
 getType = ->
   ### 查询字符串 ###
-  str = window.location.search.toUpperCase()
-  for t in ['MEN', 'LIN', 'PIC', 'TXT']
-    if str.indexOf(t) > 0
+  t = getSearch()['type']
+  if t
+    t = t.toUpperCase()
+    if t in ['MEN', 'LIN', 'PIC', 'TXT']
       return t
   'TXT'
 
-
+getLg = ->
+  ### 查询字符串 ###
+  lg = getSearch()['lg']
+  if lg and lg in ['en', 'zh_CN', 'zh_TW', 'ru']
+    return lg
+  'en'
 BodyCtrl = (scope, log, http)->
+  scope.lg = getLg()
+  scope._i18n = null
+  scope.getMessage = (key)->
+    if scope._i18n
+      if key of scope._i18n
+        return scope._i18n[key].message
+    key
+  scope.i18n = ->
+    http({method: 'GET', url: "_locales/#{scope.lg}/messages.json"}).
+    success((data, status, headers, config)->
+      console.info data
+      scope._i18n = data
+      for es in [$('span'), $('th'), $('button'), $('label')]
+            for s in es
+              if s.id
+                s.textContent = scope.getMessage(s.id)
+                console.info s.textContent
+
+    ).error((data, status, headers, config)->
+      console.error data
+      alert(data)
+    )
+  scope.i18n()
   scope.locale =
     en: true
     zh_CN: true
@@ -28,27 +71,22 @@ BodyCtrl = (scope, log, http)->
   scope.mode[getType()] = true
   scope.type = {}
   scope.typeValue = [
-    {c: 'all',    n:'通用'}
-    {c: 'new',    n:'新闻'}
-    {c: 'chrome', n:'谷歌浏览器'}
-    {c: 'pic',    n:'图片'}
-    {c: 'ui',     n:'设计'}
-    {c: 'mp3',    n:'音乐'}
-    {c: 'movie',  n:'视频'}
-    {c: 'book',   n:'阅读'}
-    {c: 'fy',     n:'翻译'}
-    {c: 'comic',  n:'卡通'}
-    {c: 'shop',   n:'购物'}
-    {c: 'sns',    n:'社交'}
-    {c: 'utils',  n:'工具'}
+    'all'
+    'new'
+    'chrome'
+    'pic'
+    'ui'
+    'mp3'
+    'movie'
+    'book'
+    'fy'
+    'comic'
+    'shop'
+    'sns'
+    'utils'
   ]
   for t in scope.typeValue
-    scope.type[t.c] = true
-  scope.getTypeName = (type)->
-    for t in scope.typeValue
-      if t.c == type
-        return t.n
-    ''
+    scope.type[t] = true
   scope.total = 50
   scope.numPages = 1
   scope.show = []
@@ -127,5 +165,3 @@ BodyCtrl = (scope, log, http)->
 
   scope.init()
 BodyCtrl.$inject = ['$scope', '$log', '$http']
-test = ->
-  alert('test')
