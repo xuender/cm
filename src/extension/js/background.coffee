@@ -195,8 +195,9 @@ openTab = (id, type, value, tab, x=1, fg=null)->
   group = JU.lsGet(type[0] + 'cGroup', [])
   for g in group
     if g[0] == id
-      urls = urls.concat(getCustomUrl(custom, g[1]))
-      urls = urls.concat(getAllUrl(all, g[1]))
+      for gid in g[1]
+        urls = urls.concat(getCustomUrl(custom, gid))
+        urls = urls.concat(getAllUrl(all, gid))
   for u in urls
     console.debug 'open %s', u
     _gaq.push(['_trackEvent', 'menu', id])
