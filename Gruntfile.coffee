@@ -12,6 +12,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-shell')
   grunt.loadNpmTasks('grunt-bumpx')
   grunt.loadNpmTasks('grunt-contrib-compress')
+  grunt.loadNpmTasks('grunt-manifest')
 
   grunt.initConfig(
     pkg:
@@ -54,6 +55,17 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      angularServer:
+        files: [
+          cwd: 'bower_components/angular/'
+          src: [
+            'angular.min.js'
+            'angular.min.js.map'
+          ]
+          dest: 'dist/server/js'
+          expand: true
+          filter: 'isFile'
+        ]
       angularRoute:
         files: [
           cwd: 'bower_components/angular-route/'
@@ -85,6 +97,16 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      angularBootstrapServer:
+        files: [
+          cwd: 'bower_components/angular-bootstrap/'
+          src: [
+            'ui-bootstrap-tpls.min.js'
+          ]
+          dest: 'dist/server/js'
+          expand: true
+          filter: 'isFile'
+        ]
       jquery:
         files: [
           cwd: 'bower_components/jquery/'
@@ -96,8 +118,18 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      jqueryServer:
+        files: [
+          cwd: 'bower_components/jquery/'
+          src: [
+            'jquery.min.js'
+            'jquery.min.map'
+          ]
+          dest: 'dist/server/js'
+          expand: true
+          filter: 'isFile'
+        ]
       bootstrap:
-        # bootstrap 2.3.2
         files: [
           cwd: 'bower_components/bootstrap/dist/'
           src: [
@@ -106,6 +138,18 @@ module.exports = (grunt)->
             'fonts/*'
           ]
           dest: 'dist/extension'
+          expand: true
+          filter: 'isFile'
+        ]
+      bootstrapServer:
+        files: [
+          cwd: 'bower_components/bootstrap/dist/'
+          src: [
+            'css/bootstrap.min.css'
+            'js/bootstrap.min.js'
+            'fonts/*'
+          ]
+          dest: 'dist/server'
           expand: true
           filter: 'isFile'
         ]
@@ -328,6 +372,33 @@ module.exports = (grunt)->
       travis:
         singleRun: true
         autoWatch: false
+    manifest:
+      server:
+        options:
+          basePath: '../'
+          cache: [
+            '../css/bootstrap.min.css'
+            '../css/index.min.css'
+            '../js/jquery.min.js'
+            '../js/chrome.min.js'
+            '../js/index.min.js'
+            '../js/ui-bootstrap-tpls.min.js'
+            '../js/angular.min.js'
+            '../img/en.png'
+            '../img/zh_CN.png'
+            '../img/zh_TW.png'
+            '../img/ru.png'
+            '../_locales/zh_CN/messages.json'
+            '../_locales/zh_TW/messages.json'
+            '../_locales/en/messages.json'
+            '../_locales/ru/messages.json'
+            '../fonts/glyphicons-halflings-regular.woff'
+            '../js/jquery.min.map'
+            '../js/angular.min.js.map'
+          ]
+        src: [
+        ]
+        dest: 'dist/server/manifest.appcache'
   )
   grunt.registerTask('test', ['karma'])
   grunt.registerTask('dev', [
@@ -336,6 +407,7 @@ module.exports = (grunt)->
     'htmlmin'
     'cssmin'
     'coffee'
+    'manifest'
   ])
   grunt.registerTask('dist', [
     'dev'

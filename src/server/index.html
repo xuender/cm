@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="urls" data-ng-csp>
+<html manifest="/static/manifest.appcache" ng-app="urls" data-ng-csp>
   <head>
     <meta charset="utf-8"/>
-    <link href="http://cdn.jsdelivr.net/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="http://cdn.jsdelivr.net/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
      <link href="css/index.min.css" rel="stylesheet"/>
     <title>右键搜扩展列表</title>
   </head>
@@ -14,13 +13,13 @@
           <ul class="nav navbar-nav">
             <li class="active">
               <a href="#">
-               <i class="fa fa-info"></i>
+                <i class="glyphicon glyphicon-info-sign"></i>
                <span id="i_about">扩展</span>
               </a>
             </li>
             <li>
               <a href="chrome-extension://phlfmkfpmphogkomddckmggcfpmfchpn/options.html">
-                <i class="fa fa-wrench"></i>
+                <i class="glyphicon glyphicon-wrench"></i>
                 <span id="i_settings">设置</span>
               </a>
             </li>
@@ -28,25 +27,25 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a id="a_reviews" href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn/reviews" target="_blank">
-                <i class="fa fa-star"></i>
+                <i class="glyphicon glyphicon-star"></i>
                 <span id="reviews">评论</span>
               </a>
             </li>
             <li>
               <a id="a_bug" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#bug" target="_blank">
-                <i class="fa fa-times"></i>
+                <i class="glyphicon glyphicon-plus-sign"></i>
                 <span id="bug">错误</span>
               </a>
             </li>
             <li>
               <a id="a_question" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#question" target="_blank">
-                <i class="fa fa-question-circle"></i>
+                <i class="glyphicon glyphicon-question-sign"></i>
                 <span id="question">问题</span>
               </a>
             </li>
             <li>
               <a id="a_feature" href="https://chrome.google.com/webstore/support/phlfmkfpmphogkomddckmggcfpmfchpn?#feature" target="_blank">
-                <i class="fa fa-heart"></i>
+                <i class="glyphicon glyphicon-heart"></i>
                 <span id="feature">功能建议</span>
               </a>
             </li>
@@ -79,22 +78,22 @@
             <div class="btn-group col-md-offset-1">
               <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.MEN" btn-checkbox>
-                <i class="fa fa-bars"></i>
+                <i class="glyphicon glyphicon-list"></i>
                 <span id="i_men">页面菜单</span>
               </button>
               <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.TXT" btn-checkbox>
-                <i class="fa fa-search"></i>
+                <i class="glyphicon glyphicon-search"></i>
                 <span id="i_txt"> 划词菜单</span>
               </button>
               <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.PIC" btn-checkbox>
-                <i class="fa fa-picture-o"></i>
+                <i class="glyphicon glyphicon-picture"></i>
                 <span id="i_pic">图片菜单</span>
               </button>
               <button type="button" class="btn btn-sm btn-info"
               ng-model="mode.LIN" btn-checkbox>
-                <i class="fa fa-link"></i>
+                <i class="glyphicon glyphicon-link"></i>
                 <span id="i_lin">链接菜单</span>
               </button>
             </div><!-- btn-group -->
@@ -126,7 +125,7 @@
             <th id="i_type">类型</th>
             <th>
               <span id="i_count">次数</span> 
-              <i class="fa fa-caret-down"></i>
+              <i class="glyphicon glyphicon-chevron-down"></i>
             </th>
             <th class="o"></th>
           </tr>
@@ -139,7 +138,7 @@
             <td>{{ u.v }}</td>
             <td class="o">
               <button class="btn btn-primary b" ng-hide="u.o" json="{{u}}">
-                <i class="fa fa-save"></i>
+                <i class="glyphicon glyphicon-cloud-download"></i>
                 {{ getMessage('update') }}
               </button>
             </td>
@@ -156,7 +155,7 @@
         last-text="&raquo;"/>
       </div><!-- pull-right -->
     </div><!-- container -->
-    <input type="hidden" id="all" value="{{ all }}"/>
+    <input type="hidden" id="all" value="[]"/>
     <footer role="contentinfo">
       <div class="container">
         <p>
@@ -165,9 +164,9 @@
         <p>© <a id="a_oldbean" href="http://www.oldbean.cn" target="_blank">www.oldbean.cn</a> 2012-2014</p>
       </div><!-- container -->
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/angular.bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap-tpls.min.js"></script>
     <script src="js/chrome.min.js"></script>
     <script src="js/index.min.js"></script>
   </body>

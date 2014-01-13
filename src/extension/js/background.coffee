@@ -11,9 +11,12 @@ chrome.contextMenus.onClicked.addListener((info, tab)->
   value = getValue(info, tab, type)
   openTab(id, type, value, tab)
 )
-chrome.runtime.onStartup.addListener(menuReset)
+chrome.runtime.onStartup.addListener(->
+  console.debug 'onStartup'
+  menuReset()
+)
 chrome.runtime.onInstalled.addListener(->
-  console.debug 'installed'
+  console.debug 'onInstalled'
   all = JU.lsGet('all', [])
   if all.length == 0
     JU.syncFetch('/init.json', (result)->

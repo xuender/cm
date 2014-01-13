@@ -43,18 +43,15 @@ BodyCtrl = (scope, log, http)->
         return scope._i18n[key].message
     key
   scope.i18n = ->
-    http({method: 'GET', url: "_locales/#{scope.lg}/messages.json"}).
+    http({method: 'GET', url: "static/_locales/#{scope.lg}/messages.json"}).
     success((data, status, headers, config)->
-      console.info data
       scope._i18n = data
       for es in [$('span'), $('th'), $('button'), $('label')]
             for s in es
               if s.id
                 s.textContent = scope.getMessage(s.id)
-                console.info s.textContent
 
     ).error((data, status, headers, config)->
-      console.error data
       alert(data)
     )
   scope.i18n()
@@ -153,15 +150,7 @@ BodyCtrl = (scope, log, http)->
     scope.show = scope.urls[0..20]
 
   scope.init = ->
-    #http({method: 'GET', url: '/url/query/?t=1'}).
-    http({method: 'GET', url: 'a.json'}).
-    success((data, status, headers, config)->
-      scope.all = data
-      scope.load()
-    ).error((data, status, headers, config)->
-      console.error data
-      alert(data)
-    )
+    scope.all = JSON.parse($('#all').val())
 
   scope.init()
 BodyCtrl.$inject = ['$scope', '$log', '$http']
