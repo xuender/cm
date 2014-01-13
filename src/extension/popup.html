@@ -4,8 +4,6 @@
     <meta charset="utf-8"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/popup.min.css" rel="stylesheet"/>
-    <link href="css/font-awesome.min.css" rel="stylesheet"/>
-
     <script src="js/jquery.min.js" defer></script>
     <script src="js/angular.min.js" defer></script>
     <script src="js/bootstrap.min.js" defer></script>
@@ -18,11 +16,12 @@
   <body ng-controller="PopupCtrl">
     <div class="controls">
       <input type="text" class="search-query" ng-model="text" id="searchText" enter="defaultSearch()"/>
-      <button target="_blank" class="btn btn-mini pull-right" ng-click="search('i_title')">
-        <i class="fa fa-wrench"></i>
+      <button target="_blank" class="btn btn-xs pull-right" ng-click="search('i_title')">
+        <i class="glyphicon glyphicon-wrench"></i>
       </button>
     </div><!-- controls -->
-    <button ng-repeat="b in btns" ng-click="search(b.id)" ng-class="{true:'btn-primary'}[$first]" class="btn btn-mini">{{ b.name }}</button>
+    <button class="btn btn-xs"
+    ng-repeat="b in btns" ng-click="search(b.id)" ng-class="{true:'btn-primary'}[$first]" >{{ b.name }}</button>
   </body>
 </html>
 

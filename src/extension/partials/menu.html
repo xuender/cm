@@ -65,13 +65,13 @@
       </div><!-- btn-group -->
       <h3 id="i_select">选择</h3>
       <a class="btn btn-primary btn-lg"
-      href="http://localhost:8000/?type={{ type }}&lg={{ locale }}">
+      href="http://cm.xuender.me/?type={{ type }}&lg={{ locale }}">
         <i class="glyphicon glyphicon-transfer"></i>
         <span id="i_find">获取右键菜单</span>
       </a>
       <div class="row" ng-repeat="g in groups">
         <h4>{{ g.label }}</h4>
-        <span class="col-sm-3"
+        <span class="col-sm-4"
         ng-hide="hide(menu)" ng-repeat="menu in g.items">
           <button class="btn btn-xs btn-default"
           ng-class="{true:'hide', false:''}[isHideIcon(menu)]"
