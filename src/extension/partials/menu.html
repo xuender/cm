@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-3 bs-docs-sidebar">
+  <div class="col-sm-4 bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav"
     ng-class="{affix:select.length < size}">
         <li ng-repeat="s in select">
@@ -37,7 +37,7 @@
         </li>
       </ul>
     </div><!-- span3 -->
-    <div class="col-sm-9">          
+    <div class="col-sm-8">          
       <div class="page-header">
         <h2>
           <i class="glyphicon glyphicon-list" ng-show="type == 'men'"></i>
@@ -71,21 +71,25 @@
       </a>
       <div class="row" ng-repeat="g in groups">
         <h4>{{ g.label }}</h4>
-        <span class="col-sm-4"
-        ng-hide="hide(menu)" ng-repeat="menu in g.items">
-          <button class="btn btn-xs btn-default"
-          ng-class="{true:'hide', false:''}[isHideIcon(menu)]"
-          ng-click="update(menu)">
-            <i class="glyphicon glyphicon-edit"></i>
-          </button>
-          <label style="display:inline;">
-            <input type="checkbox"
-            ng-model="menu.select" ng-change="change(menu)"/>
-            <span ng-class="{true:menu.l, false:''}[isFlag]">
-              {{menu.n}}
-            </span> 
-          </label>
-        </span>
+        <table class="table table-bordered table-hover table-condensed">
+          <tbody>
+            <tr ng-hide="hide(menu)" ng-repeat="menu in g.items">
+              <td>
+                <button class="pull-right btn btn-xs btn-default"
+                ng-class="{true:'hide', false:''}[isHideIcon(menu)]"
+                ng-click="update(menu)">
+                  <i class="glyphicon glyphicon-edit"></i>
+                </button>
+                <label>
+                  <input type="checkbox"
+                  ng-model="menu.select" ng-change="change(menu)"/>
+                  <i ng-class="{true:menu.l, false:''}[isFlag]"></i>
+                  {{menu.n}}
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div><!-- row -->
       <div class="page-header">
         <h2>
