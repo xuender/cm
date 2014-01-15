@@ -36,24 +36,17 @@ getLg = ->
   'en'
 BodyCtrl = (scope, log, http)->
   scope.lg = getLg()
-  scope._i18n = null
+  scope._i18n = window[scope.lg]
   scope.getMessage = (key)->
     if scope._i18n
       if key of scope._i18n
         return scope._i18n[key].message
     key
   scope.i18n = ->
-    http({method: 'GET', url: "static/_locales/#{scope.lg}/messages.json"}).
-    success((data, status, headers, config)->
-      scope._i18n = data
-      for es in [$('span'), $('th'), $('button'), $('label')]
-            for s in es
-              if s.id
-                s.textContent = scope.getMessage(s.id)
-
-    ).error((data, status, headers, config)->
-      alert(data)
-    )
+    for es in [$('span'), $('th'), $('button'), $('label')]
+      for s in es
+        if s.id
+          s.textContent = scope.getMessage(s.id)
   scope.i18n()
   scope.locale =
     en: true

@@ -1,4 +1,4 @@
-{
+var en = {
   "i_used":{
     "message": "Have used"
   },
@@ -80,4 +80,4 @@
   "ui":{
     "message": "Design"
   }
-}
+};

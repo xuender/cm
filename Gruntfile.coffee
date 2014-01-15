@@ -23,6 +23,15 @@ module.exports = (grunt)->
       options:
         part: 'patch'
       files: [ 'package.json', 'src/extension/manifest.json' ]
+    concat:
+      locales:
+        src: [
+          'src/server/js/en.js'
+          'src/server/js/ru.js'
+          'src/server/js/zh_CN.js'
+          'src/server/js/zh_TW.js'
+        ]
+        dest: 'dist/server/js/locales.min.js'
     copy:
       oauth:
         files: [
@@ -184,14 +193,6 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
-      i18nServer:
-        files: [
-          cwd: 'src/server'
-          src: '_locales/**'
-          dest: 'dist/server'
-          expand: true
-          filter: 'isFile'
-        ]
       img:
         files: [
           cwd: 'src/extension'
@@ -280,6 +281,11 @@ module.exports = (grunt)->
             'src/server/js/index.coffee'
           ]
     uglify:
+      locales:
+        files:
+          'dist/server/js/locales.min.js': [
+            'dist/server/js/locales.min.js'
+          ]
       components:
         files:
           'dist/extension/js/components.min.js': [
@@ -381,6 +387,7 @@ module.exports = (grunt)->
             '../css/index.min.css'
             '../js/jquery.min.js'
             '../js/chrome.min.js'
+            '../js/locales.min.js'
             '../js/index.min.js'
             '../js/ui-bootstrap-tpls.min.js'
             '../js/angular.min.js'
@@ -388,10 +395,6 @@ module.exports = (grunt)->
             '../img/zh_CN.png'
             '../img/zh_TW.png'
             '../img/ru.png'
-            '../_locales/zh_CN/messages.json'
-            '../_locales/zh_TW/messages.json'
-            '../_locales/en/messages.json'
-            '../_locales/ru/messages.json'
             '../fonts/glyphicons-halflings-regular.woff'
             '../js/jquery.min.map'
             '../js/angular.min.js.map'
@@ -408,6 +411,7 @@ module.exports = (grunt)->
     'cssmin'
     'coffee'
     'manifest'
+    'concat'
   ])
   grunt.registerTask('dist', [
     'dev'
