@@ -70,6 +70,6 @@ PopupCtrl = (scope, log, lsGetItem, lsSetItem)->
       chrome.runtime.getBackgroundPage (backgroundPage)->
         backgroundPage.openTab(id, scope.type, scope.text, false, tab)
     )
-    _gaq.push(['_trackEvent', 'popup', id])
+    ga('send', 'event', 'popup', id)
   1
 PopupCtrl.$inject = ['$scope', '$log', 'lsGetItem', 'lsSetItem']

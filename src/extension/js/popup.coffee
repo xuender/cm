@@ -3,4 +3,4 @@ angular.module('popup', [
   'utils.directives'
 ])
 $ ->
-  _gaq.push(['_trackEvent', 'popup', 'open'])
+  ga('send', 'event', 'popup', 'open')

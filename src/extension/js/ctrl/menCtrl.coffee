@@ -258,7 +258,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
       scope.newGroup = angular.copy({})
       $('#g_select_chzn ul.chzn-choices').children('li.search-choice').remove()
       $('#g_title').focus()
-      _gaq.push(['_trackEvent', 'group', menu.c])
+      ga('send', 'event', 'group', menu.c)
   scope.delGroup = (menu)->
     ### 删除组合 ###
     if menu.select
@@ -280,7 +280,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
       scope.custom.push(angular.copy(menu))
       scope.newCustom = angular.copy({t:'custom'})
       $('#m_title').focus()
-      _gaq.push(['_trackEvent', 'custom', menu.c])
+      ga('send', 'event', 'custom', menu.c)
   scope.delCustom = (menu)->
     ### 删除自定义 ###
     if confirm(ci18n.getMessage('r_del'))
@@ -306,13 +306,13 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
       if result
         if result == 'ok'
           alert(scope.getI18n('i_put_ok'))
-          _gaq.push(['_trackEvent', 'put', 'share'])
+          ga('send', 'event', 'put', 'share')
         if result == 'have'
           alert(scope.getI18n('i_have'))
-          _gaq.push(['_trackEvent', 'put', 'have'])
+          ga('send', 'event', 'put', 'have')
         if result == 'error'
           alert(scope.getI18n('error'))
-          _gaq.push(['_trackEvent', 'put', 'error'])
+          ga('send', 'event', 'put', 'error')
     )
   scope.update = (menu)->
     ### 弹出编辑窗口 ###
@@ -334,7 +334,7 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
           if menu.n != result
             menu.n = result
             scope.names[menu.c] = result
-            _gaq.push(['_trackEvent', 'edit', 'rename'])
+            ga('send', 'event', 'edit', 'rename')
     )
   scope.init()
   scope.remove = (menu)->
@@ -351,6 +351,6 @@ MenCtrl = (scope, routeParams, log, http, $modal, lsGetItem, lsSetItem)->
       for g in gs.g
         if g.c == menu.c
           JU.removeArray(gs.g, g)
-    _gaq.push(['_trackEvent', 'edit', 'del'])
+    ga('send', 'event', 'edit', 'del')
 MenCtrl.$inject = ['$scope', '$routeParams', '$log', '$http', '$modal',
   'lsGetItem', 'lsSetItem']
