@@ -14,14 +14,18 @@
     <title>行为菜单</title>
   </head>
   <body ng-controller="PopupCtrl">
-    <div class="controls">
-      <input type="text" class="search-query" ng-model="text" id="searchText" enter="defaultSearch()"/>
-      <button target="_blank" class="btn btn-xs pull-right" ng-click="search('i_title')">
-        <i class="glyphicon glyphicon-wrench"></i>
+    <input type="text" id="searchText" class="form-control" 
+    ng-model="text" enter="defaultSearch()"/>
+    <div class="btn-group">
+      <button class="btn btn-sm"
+      ng-repeat="b in btns" ng-click="search(b.id)" 
+      ng-class="{true:'btn-primary',false:'btn-info'}[$first]" >
+        {{ b.name }}
       </button>
-    </div><!-- controls -->
-    <button class="btn btn-xs"
-    ng-repeat="b in btns" ng-click="search(b.id)" ng-class="{true:'btn-primary'}[$first]" >{{ b.name }}</button>
+    </div>
+    <button target="_blank" class="btn btn-xs btn-success pull-right" ng-click="search('i_title')">
+      <i class="glyphicon glyphicon-wrench"></i>
+    </button>
   </body>
 </html>
 
