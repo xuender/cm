@@ -13,32 +13,31 @@ PopupCtrl = (scope, log, lsGetItem, lsSetItem)->
     select = JU.lsGet(scope.type + 'Select', [])
     custom = JU.lsGet(type + 'Custom', [])
     group = JU.lsGet(type[0] + 'cGroup', [])
-    findUrls((urls)->
-      names = JU.lsGet('names', {})
-      for id in select
-        b = true
-        for u in urls
-          if u.c == id
-            b = false
-            name = chrome.i18n.getMessage(id)
-            if not name
-              name = u.n
-            if u.c of names
-              name = names[u.c]
-        if b
+    urls = JU.lsGet('all', [])
+    names = JU.lsGet('names', {})
+    for id in select
+      b = true
+      for u in urls
+        if u.c == id
+          b = false
           name = chrome.i18n.getMessage(id)
-        if not name
-          name = id
-        incognito = id in ins
-        if incognito
-          name = '☢ ' + name
-        else
-          back = id in bs
-          if back
-            name = '₪ ' + name
-        scope.btns.push(id: id, name:name)
-      scope.$apply()
-    )
+          if not name
+            name = u.n
+          if u.c of names
+            name = names[u.c]
+      if b
+        name = chrome.i18n.getMessage(id)
+      if not name
+        name = id
+      incognito = id in ins
+      if incognito
+        name = '☢ ' + name
+      else
+        back = id in bs
+        if back
+          name = '₪ ' + name
+      scope.btns.push(id: id, name:name)
+    scope.$apply()
   chrome.tabs.query(
     active: true
     windowId: chrome.windows.WINDOW_ID_CURRENT

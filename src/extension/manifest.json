@@ -1,61 +1,63 @@
 {
-  "name": "__MSG_name__",
-  "manifest_version": 2,
-  "version": "3.2.299",
-  "description": "__MSG_description__",
-  "author": "ender",
-  "short_name": "CM",
-  "background": {
-    "scripts": [
-      "js/iconv.min.js",
-      "js/chrome_ex_oauth.min.js",
-      "js/chrome.min.js",
-      "js/js-utils.min.js",
-      "js/qrcode.min.js",
-      "js/background.min.js",
-      "js/components.min.js"
-    ]
-  },
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com https://apis.google.com https://ajax.googleapis.com https://cdn.jsdelivr.net; object-src 'self'",
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*",
-        "ftp://*/*"
-      ],
-      "js": [
-        "js/context.js"
-      ]
+    "name": "__MSG_name__",
+    "manifest_version": 2,
+    "version": "4.1.300",
+    "description": "__MSG_description__",
+    "author": "ender",
+    "short_name": "CM",
+    "background": {
+        "scripts": [
+            "js/iconv.min.js",
+            "js/chrome_ex_oauth.min.js",
+            "js/chrome.min.js",
+            "js/js-utils.min.js",
+            "js/qrcode.min.js",
+            "js/background.min.js",
+            "js/components.min.js"
+        ]
     },
-    {
-      "matches": ["http://cm.xuender.me/*"],
-      "js": [
-        "js/server.min.js"
-      ]
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com https://apis.google.com https://ajax.googleapis.com https://cdn.jsdelivr.net; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "ftp://*/*"
+            ],
+            "js": [
+                "js/context.js"
+            ]
+        },
+        {
+            "matches": [
+                "http://cm.xuender.me/*"
+            ],
+            "js": [
+                "js/server.min.js"
+            ]
+        }
+    ],
+    "offline_enabled": false,
+    "permissions": [
+        "contextMenus",
+        "storage",
+        "*://*/*",
+        "clipboardRead",
+        "tabs"
+    ],
+    "options_page": "options.html",
+    "default_locale": "en",
+    "icons": {
+        "16": "img/16.png",
+        "48": "img/48.png",
+        "128": "img/128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "img/19.png",
+            "38": "img/38.png"
+        },
+        "default_title": "__MSG_name__",
+        "default_popup": "popup.html"
     }
-  ],
-  "offline_enabled": false,
-  "permissions": [
-    "contextMenus",
-    "storage",
-    "*://*/*",
-    "clipboardRead",
-    "tabs"
-  ],
-  "options_page": "options.html",
-  "default_locale": "en",
-  "icons": {
-    "16": "img/16.png",
-    "48": "img/48.png",
-    "128": "img/128.png"
-  },
-  "browser_action": {
-    "default_icon": {
-      "19": "img/19.png",
-      "38": "img/38.png"
-    },
-    "default_title": "__MSG_name__",
-    "default_popup": "popup.html"
-  }
 }
