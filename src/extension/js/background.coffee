@@ -21,7 +21,7 @@ chrome.runtime.onInstalled.addListener(->
   if all.length == 0
     JU.syncFetch('/init.json', (result)->
       JU.lsSet('all', JSON.parse(result))
-      _gaq.push(['_trackEvent', 'db', 'ninit'])
+      ga('send', 'event', 'db', 'ninit')
     )
   console.debug 'start'
   ci18n = getCi18n()
@@ -49,7 +49,7 @@ chrome.runtime.onInstalled.addListener(->
       JU.lsSet(key, JU.lsGet(key, data[key]))
     chrome.tabs.create({url:'options.html', selected: true})
     JU.lsSet('three_run', true)
-    _gaq.push(['_trackEvent', 'option', 'init'])
+    ga('send', 'event', 'option', 'init')
   menuReset()
 )
 
@@ -203,7 +203,7 @@ openTab = (id, type, value, tab, x=1, fg=null)->
         urls = urls.concat(getAllUrl(all, gid))
   for u in urls
     console.debug 'open %s', u
-    _gaq.push(['_trackEvent', 'menu', id])
+    ga('send', 'event', 'menu', id)
     if /:|.htm/.test(u)
       show(u, value, tab, back, incognito, x, type)
     else
@@ -300,7 +300,7 @@ chrome.extension.onConnect.addListener((port)->
         fg = (data.y == 1)
         if data.message == 'url'
           show(data.values, '', tab, fg, false, data.x)
-          _gaq.push(['_trackEvent', 'drag', 'url'])
+          ga('send', 'event', 'drag', 'url')
         if data.message == 'txt'
           id = JU.lsGet('txtSelect', ['baidu'])[0]
           url = data.values.trim()
@@ -308,10 +308,10 @@ chrome.extension.onConnect.addListener((port)->
             if not JU.isProtocol(url)
               url = "http://#{url}"
             openUrl(url, tab, fg, false, data.x)
-            _gaq.push(['_trackEvent', 'drag', 'url'])
+            ga('send', 'event', 'drag', 'url')
           else
             openTab(id, 'txt', data.values, tab, data.x, fg)
-            _gaq.push(['_trackEvent', 'drag', id])
+            ga('send', 'event', 'drag', id)
       )
   )
 )

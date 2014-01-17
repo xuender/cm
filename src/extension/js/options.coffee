@@ -28,9 +28,9 @@ angular.module('search', [
   })
 ])
 $ ->
-  _gaq.push(['_trackEvent', 'i18n', navigator.language])
+  ga('send', 'event', 'i18n', navigator.language)
   JU.syncFetch('/manifest.json', (result)->
-    _gaq.push(['_trackEvent', 'ver', JSON.parse(result).version])
+    ga('send', 'event', 'ver', JSON.parse(result).version)
   )
 (->
   code = JU.lsGet('locale', navigator.language.replace('-', '_'))

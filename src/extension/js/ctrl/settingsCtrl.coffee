@@ -12,11 +12,11 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.isFlag = lsGetItem('isFlag', true)
   scope.$watch('isFlag',(n, o) ->
     lsSetItem('isFlag', n)
-    _gaq.push(['_trackEvent', 'settings', 'isFlag' + n])
+    ga('send', 'event', 'settings', 'isFlag' + n)
   )
   scope.$watch('isEdit',(n, o) ->
     lsSetItem('isEdit', n)
-    _gaq.push(['_trackEvent', 'settings', 'isEdit' + n])
+    ga('send', 'event', 'settings', 'isEdit' + n)
   )
   scope.back = lsGetItem('back', false)
   scope.drag = lsGetItem('drag', false)
@@ -40,10 +40,6 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
       if m.c == code
         return m.n
     'None'
-  scope.delBl = (code)->
-    ### 删除黑名单 ###
-    arrayRemove(scope.bl, code)
-    _gaq.push(['_trackEvent', 'settings', 'delBl'])
   scope.$watch('newPage',(n, o) ->
     lsSetItem('newPage', n)
   )
@@ -91,20 +87,20 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
             scope.save(false)
             scope.alert(ci18n.getMessage('b_load'))
             menuReset()
-            _gaq.push(['_trackEvent', 'bak', 'old_load_ok'])
+            ga('send', 'event', 'bak', 'old_load_ok')
           ).error((data1, status1, headers1, config1) ->
             scope.alert(ci18n.getMessage('error_ps'))
-            _gaq.push(['_trackEvent', 'bak', 'old_load_error'])
+            ga('send', 'event', 'bak', 'old_load_error')
           )
           return
         for i of data
           localStorage[i] = data[i]
         scope.alert(ci18n.getMessage('b_load'))
         menuReset()
-        _gaq.push(['_trackEvent', 'bak', 'new_load'])
+        ga('send', 'event', 'bak', 'new_load')
       ).error((data, status, headers, config) ->
         scope.alert(ci18n.getMessage('error_ps'))
-        _gaq.push(['_trackEvent', 'bak', 'load_error'])
+        ga('send', 'event', 'bak', 'new_error')
       )
   scope.save = (msg=true)->
     if scope.bak.$valid
@@ -120,10 +116,10 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
         if 'ok' == data
           if msg
             scope.alert(ci18n.getMessage('b_save'))
-            _gaq.push(['_trackEvent', 'bak', 'new_save'])
+            ga('send', 'event', 'bak', 'new_save')
       ).error((data, status, headers, config) ->
         scope.alert(ci18n.getMessage('error_ps'))
-        _gaq.push(['_trackEvent', 'bak', 'save_error'])
+        ga('send', 'event', 'bak', 'new_error')
       )
   scope.$watch('locale', (n, o) ->
     lsSetItem('locale', n)

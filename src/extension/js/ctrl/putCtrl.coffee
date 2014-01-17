@@ -28,10 +28,10 @@ PutCtrl = (scope, log, http, lsGetItem, lsSetItem, $modalInstance, url, type)->
     ).success((data, status, headers, config) ->
       #scope.alert(ci18n.getMessage('b_load'))
       $modalInstance.close(data)
-      _gaq.push(['_trackEvent', 'db', 'put'])
+      ga('send', 'event', 'db', 'put')
     ).error((data, status, headers, config) ->
       $modalInstance.close(data)
-      _gaq.push(['_trackEvent', 'db', 'put_error'])
+      ga('send', 'event', 'db', 'put_error')
     )
 PutCtrl.$inject = ['$scope', '$log', '$http', 'lsGetItem', 'lsSetItem',
   '$modalInstance', 'url', 'type']

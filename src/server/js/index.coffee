@@ -146,4 +146,13 @@ BodyCtrl = (scope, log, http)->
     scope.all = JSON.parse($('#all').val())
 
   scope.init()
+  $(document).on('click', 'button', ->
+    ga('send', 'event', 'server', $(this).text().trim())
+    true
+  )
+  $(document).on('click', 'a', ->
+    if $(this).attr('id')
+      ga('send', 'event', 'server', $(this).attr('id'))
+    true
+  )
 BodyCtrl.$inject = ['$scope', '$log', '$http']
