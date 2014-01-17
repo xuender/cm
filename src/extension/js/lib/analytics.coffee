@@ -1,5 +1,5 @@
 ((i, s, o, g, r, a, m)->
-  if JS.lsGet('analytics', true)
+  if JU.lsGet('analytics', true)
     i['GoogleAnalyticsObject'] = r
     i[r] = i[r] || ->
       (i[r].q = i[r].q || []).push(arguments)
@@ -12,7 +12,6 @@
   else
     window['ga'] = ->
       console.debug arguments
-)(window, document, 'script', 'https://w.google-analytics.com/analytics.js', 'ga')
-ga('create', 'UA-35761644-1')
+)(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
+ga('create', 'UA-35761644-1', 'cm.xuender.me')
 ga('send', 'pageview')
-

@@ -277,6 +277,7 @@ module.exports = (grunt)->
       index:
         files:
           'dist/server/js/index.min.js': [
+            'src/extension/js/lib/analytics.coffee'
             'src/server/js/index.coffee'
           ]
     uglify:
