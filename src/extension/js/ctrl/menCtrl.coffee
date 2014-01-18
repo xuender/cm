@@ -52,10 +52,7 @@ menuI18n = (menus, names)->
   ### 翻译菜单 ###
   ret = []
   for m in menus
-    if /^\d+$/.test(m.c)
-      n = m.n
-    else
-      n = ci18n.getMessage(m.c)
+    n = ci18n.getMessage(m.c, m.n)
     if m.c of names
       n = names[m.c]
     ret.push(

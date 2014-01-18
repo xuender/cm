@@ -1,24 +1,18 @@
 {
-  "update":{
-    "message": "保存"
-  },
-  "tab_close":{
-    "message": "關閉頁面"
-  },
-  "google_site":{
-    "message": "谷歌網站"
+  "bing_site":{
+    "message": "Bing網站"
   },
   "google_link":{
     "message": "谷歌鏈接"
   },
-  "bing_site":{
-    "message": "Bing網站"
-  },
-  "gmail_lin":{
-    "message": "Gmail中发送"
+  "google_site":{
+    "message": "谷歌網站"
   },
   "facebook_lin":{
     "message": "Facebook分享"
+  },
+  "gmail_lin":{
+    "message": "Gmail中发送"
   },
   "qr_lin":{
     "message": "當前鏈接生成二維碼"
@@ -32,26 +26,23 @@
   "twitter_lin":{
     "message": "Twitter 分享"
   },
-  "cilianba":{
-    "message": "迅雷雲點播"
-  },
   "weibo_lin":{
     "message": "新浪微博"
   },
   "i_title":{
     "message": "右鍵搜 選項"
   },
-  "c_extensions":{
-    "message": "擴展程序"
-  },
-  "c_downloads":{
-    "message": "下載內容"
+  "c_bookmarks":{
+    "message": "書籤管理器"
   },
   "c_clearBD":{
     "message": "清除瀏覽數據"
   },
-  "c_settings":{
-    "message": "設置"
+  "c_downloads":{
+    "message": "下載內容"
+  },
+  "c_extensions":{
+    "message": "擴展程序"
   },
   "c_flags":{
     "message": "實驗室"
@@ -59,77 +50,50 @@
   "c_history":{
     "message": "歷史記錄"
   },
-  "c_bookmarks":{
-    "message": "書籤管理器"
-  },
   "c_plugins":{
     "message": "插件"
+  },
+  "c_settings":{
+    "message": "設置"
   },
   "c_version":{
     "message": "關於版本"
   },
-  "gmail_page":{
-    "message": "Gmail中发送"
-  },
   "facebook_menu":{
     "message": "Facebook分享"
   },
-  "w3c_css":{
-    "message": "W3C CSS驗證"
-  },
-  "su":{
-    "message": "創建頁面短網址並複制"
+  "gmail_page":{
+    "message": "Gmail中发送"
   },
   "qr":{
     "message": "生成當前網址二維碼"
   },
+  "su":{
+    "message": "創建頁面短網址並複制"
+  },
   "su_alert":{
     "message": "創建頁面短網址"
   },
-  "c_memory":{
-    "message": "內存"
+  "tab_close":{
+    "message": "關閉頁面"
   },
   "c_credits":{
     "message": "作者"
   },
+  "c_memory":{
+    "message": "內存"
+  },
   "twitter_men":{
     "message": "Twitter 分享"
-  },
-  "w3_html":{
-    "message": "W3C HTML驗證"
   },
   "tmall":{
     "message": "天貓商城"
   },
-  "taobao_ju":{
-    "message": "淘寶聚划算"
-  },
-  "yihao":{
-    "message": "一號店"
-  },
-  "tmall_chaoshi":{
-    "message": "天貓超市"
-  },
-  "tmall_dq":{
-    "message": "天貓電器城"
-  },
-  "taobao_game":{
-    "message": "淘寶遊戲"
-  },
-  "taobao_trip":{
-    "message": "淘寶旅行"
-  },
-  "tmall_flist":{
-    "message": "天貓母嬰"
-  },
-  "tmall_temai":{
-    "message": "天貓品牌特賣"
+  "qzone":{
+    "message": "分享到QQ空間"
   },
   "weibo":{
     "message": "新浪微博"
-  },
-  "qzone":{
-    "message": "分享到QQ空間"
   },
   "google_pic":{
     "message": "Google圖片"
@@ -143,23 +107,14 @@
   "qr_decode":{
     "message": "解析圖片中的二維碼"
   },
+  "qr_pic":{
+    "message": "當前圖片生成二維碼"
+  },
   "su_pic":{
     "message": "創建圖片短網址並複制"
   },
   "su_pic_alert":{
     "message": "創建圖片短網址"
-  },
-  "qr_pic":{
-    "message": "當前圖片生成二維碼"
-  },
-  "TinEye":{
-    "message": "TinEye"
-  },
-  "iqdb":{
-    "message": "iqdb search"
-  },
-  "SauceNAO":{
-    "message": "SauceNAO"
   },
   "exif":{
     "message": "圖片信息查看"
@@ -167,17 +122,8 @@
   "twitter_pic":{
     "message": "Twitter 分享"
   },
-  "baidu_pic":{
-    "message": "百度圖片"
-  },
-  "sogou_pic":{
-    "message": "搜狗圖片"
-  },
   "weibo_pic":{
     "message": "新浪微博"
-  },
-  "i_about":{
-    "message": "關於"
   },
   "ag":{
     "message": "自定義"
@@ -216,7 +162,7 @@
     "message": "組合劃詞菜單"
   },
   "description":{
-    "message": "擴展右鍵菜單，266種功能，方便的選擇、組合或自定義頁面、劃詞、圖片菜單，並有生成、解析二維碼和短網址功能。設置可使用雲存儲。實現超級拖拽鏈接、圖片打開，文字拖拽搜索，方向不同打開方式不同。可達到零資源佔用。最新增加網址共享、黑名單、自動更新、重命名等功能。"
+    "message": "擴展右鍵菜單，超過300種功能，方便的選擇、組合或自定義頁面、劃詞、圖片菜單，並有生成、解析二維碼和短網址功能。設置可使用雲存儲。實現超級拖拽鏈接、圖片打開，文字拖拽搜索，方向不同打開方式不同。最新增加功能共享、資源下載、重命名等功能。"
   },
   "ditto":{
     "message": "重複"
@@ -244,6 +190,9 @@
   },
   "i18n":{
     "message": "tw"
+  },
+  "i_about":{
+    "message": "關於"
   },
   "i_add":{
     "message": "新增"
@@ -293,17 +242,17 @@
   "i_en":{
     "message": "英語"
   },
+  "i_find":{
+    "message": "獲取右鍵菜單"
+  },
   "i_group":{
     "message": "組合"
-  },
-  "i_group_title":{
-    "message": "多個功能組合一起運行"
   },
   "i_have":{
     "message": "Submitted can not be shared"
   },
   "i_help":{
-    "message": "輸入驗證短語(8-30字符)，點<span class=\"label label-info\">保存設置</span>，當前配置將保存到雲端。輸入驗證短語點<span class=\"label label-warning\">加載設置</span>，所有配置立刻恢復。可使用<code>cloud demo</code>測試。 <br/>PS: 測試前，請先保存您的設置哦^_^"
+    "message": "輸入驗證短語(8-30字符)，點<span class='label label-info'>保存設置</span>，當前配置將保存到雲端。輸入驗證短語點<span class='label label-warning'>加載設置</span>，所有配置立刻恢復。可使用<code>cloud demo</code>測試。 <br/>PS: 測試前，請先保存您的設置哦^_^"
   },
   "i_info":{
     "message": "介紹"
@@ -365,9 +314,6 @@
   "i_select":{
     "message": "選擇"
   },
-  "i_find":{
-    "message": "獲取右鍵菜單"
-  },
   "i_settings":{
     "message": "設置"
   },
@@ -426,12 +372,9 @@
     "message": "本應用承諾遵守《谷歌瀏覽器擴展程序庫服務條款》；"
   },
   "li2":{
-    "message": "本應用是免費軟件，任何人都可以無償安裝使用；"
+    "message": "本應用是開源軟件，所有源碼均可在github上查看；"
   },
   "li3":{
-    "message": "本應用使用Google Analytics統計右鍵搜的操作行為，但不收集個人信息，尊重用戶隱私權；"
-  },
-  "li4":{
     "message": "購物欄目中部分功能在不影響用戶的前提下與第三方推廣聯盟進行合作。"
   },
   "linGroup":{
@@ -491,6 +434,9 @@
   "reviews":{
     "message": "評論"
   },
+  "s_analytics":{
+    "message": "啟用Google Analytics"
+  },
   "s_back":{
     "message": "默認後台打開"
   },
@@ -533,74 +479,47 @@
   "ui":{
     "message": "設計"
   },
+  "update":{
+    "message": "保存"
+  },
   "user":{
     "message": "用 "
   },
   "utils":{
     "message": "工具"
   },
-  "google":{
-    "message": "Google"
-  },
   "bing":{
     "message": "Bing"
-  },
-  "google_define":{
-    "message": "谷歌精準搜索"
-  },
-  "google_site1":{
-    "message": "Google站內搜"
   },
   "duckduckgo":{
     "message": "DuckDuckGo"
   },
-  "bing_site1":{
-    "message": "Bing站内搜"
+  "google":{
+    "message": "Google"
   },
   "translate":{
     "message": "Google翻譯"
   },
-  "youtube":{
-    "message": "youtube"
-  },
-  "btdigg":{
-    "message": "btdigg.org"
-  },
   "thepiratebay":{
     "message": "海盜灣"
   },
-  "last":{
-    "message": "Last.fm"
-  },
-  "google_news":{
-    "message": "谷歌新聞"
-  },
-  "bing_news":{
-    "message": "Bing新聞"
-  },
-  "google_img":{
-    "message": "Google圖片"
-  },
-  "Picasa":{
-    "message": "Picasa"
+  "youtube":{
+    "message": "Toutube"
   },
   "bing_images":{
     "message": "Bing圖片"
   },
-  "flickr":{
-    "message": "flickr.com"
-  },
-  "google_plus":{
-    "message": "Google+"
-  },
-  "gmail_txt":{
-    "message": "Gmail中发送"
+  "google_img":{
+    "message": "Google圖片"
   },
   "facebook":{
     "message": "臉書搜索"
   },
-  "findicons":{
-    "message": "圖標搜索Findicons"
+  "gmail_txt":{
+    "message": "Gmail中发送"
+  },
+  "google_plus":{
+    "message": "Google+"
   },
   "qr_txt":{
     "message": "選擇文字生成二維碼"
@@ -608,65 +527,14 @@
   "Yahoo":{
     "message": "Yahoo"
   },
-  "surfcanyon":{
-    "message": "surfcanyon"
-  },
-  "hotbot":{
-    "message": "hotbot.com"
-  },
-  "ask":{
-    "message": "Ask.com"
-  },
-  "FreeDict":{
-    "message": "TheFreeDictionary"
-  },
-  "torrentz":{
-    "message": "種子搜索引擎"
-  },
-  "rottentomatoes":{
-    "message": "爛番茄"
-  },
-  "bitsnoop":{
-    "message": "bitsnoop.com"
-  },
-  "imdb":{
-    "message": "IMDb"
-  },
-  "mtv":{
-    "message": "MTV"
-  },
-  "cnn":{
-    "message": "CNN"
-  },
-  "bbc":{
-    "message": "BBC世界"
-  },
   "Amazon_com":{
     "message": "亞馬遜"
   },
-  "ebay":{
-    "message": "ebay.com"
-  },
-  "alibaba":{
-    "message": "阿里巴巴"
-  },
   "twitter":{
-    "message": "twitter"
+    "message": "Twitter"
   },
   "twitter_share":{
     "message": "Twitter 分享"
-  },
-  "sootuu":{
-    "message": "搜圖素材"
-  },
-  "veryicon":{
-    "message": "veryicon圖標搜索"
-  },
-  "dmoz":{
-    "message": "dmoz.org"
-  },
-  "wolframalpha":{
-    "message": "wolframalpha"
   },
   "en_wikipedia":{
     "message": "英文維基百科"
@@ -674,32 +542,14 @@
   "baidu":{
     "message": "百度"
   },
-  "youdao":{
-    "message": "有道"
+  "baidu_site":{
+    "message": "百度站內搜"
   },
   "google_hk":{
     "message": "谷歌"
   },
-  "soso":{
-    "message": "搜搜搜索"
-  },
-  "yunyun":{
-    "message": "云云搜索"
-  },
-  "sogou":{
-    "message": "搜狗搜索"
-  },
-  "baidu_site":{
-    "message": "百度站內搜"
-  },
   "yahoo_cn":{
     "message": "Yahoo中國"
-  },
-  "so_360":{
-    "message": "奇虎360"
-  },
-  "xunlei":{
-    "message": "迅雷搜索"
   },
   "scholar":{
     "message": "Google學術"
@@ -707,257 +557,38 @@
   "wenku":{
     "message": "百度文庫"
   },
-  "nlc":{
-    "message": "國家圖書館"
-  },
-  "pul":{
-    "message": "北大圖書館"
-  },
-  "qidian":{
-    "message": "起點中文"
-  },
-  "tsinghua":{
-    "message": "清華圖書館"
-  },
-  "bful":{
-    "message": "北林圖書館"
-  },
-  "bit":{
-    "message": "北理工圖書館"
-  },
-  "buofal":{
-    "message": "北航圖書館"
-  },
-  "db_book":{
-    "message": "豆瓣書籍"
-  },
-  "readnovel":{
-    "message": "小說閱讀網"
-  },
-  "sul":{
-    "message": "川大圖書館"
-  },
-  "ustc":{
-    "message": "中國科技大圖書館"
-  },
-  "xul":{
-    "message": "廈大圖書館"
-  },
-  "zongheng":{
-    "message": "縱橫中文網"
-  },
-  "ktxp":{
-    "message": "極影動漫"
-  },
-  "bilibili":{
-    "message": "嗶哩嗶哩"
-  },
-  "popgo":{
-    "message": "漫遊"
-  },
-  "youdao_dict":{
-    "message": "有道翻譯"
-  },
-  "zdic":{
-    "message": "漢典"
-  },
-  "dict":{
-    "message": "海詞詞典"
-  },
-  "iciba":{
-    "message": "金山詞霸"
-  },
-  "frdic":{
-    "message": "法語助手"
-  },
-  "edu5156":{
-    "message": "在線新華字典"
-  },
-  "youku":{
-    "message": "優酷網"
-  },
-  "nds":{
-    "message": "網盤搜索"
-  },
   "bt":{
     "message": "BT搜索"
-  },
-  "video_baidu":{
-    "message": "百度視頻"
   },
   "EDonkey":{
     "message": "電驢搜索"
   },
-  "yyets":{
-    "message": "人人影視"
-  },
-  "xiami":{
-    "message": "蝦米"
-  },
-  "mtime":{
-    "message": "時光網"
-  },
-  "skb9":{
-    "message": "就搜快播"
-  },
-  "verycd":{
-    "message": "VeryCD"
-  },
-  "imax":{
-    "message": "高清電影"
-  },
-  "tudou":{
-    "message": "土豆網"
-  },
-  "gdajie":{
-    "message": "逛電驢"
-  },
-  "shooter":{
-    "message": "射手網"
-  },
-  "qiyi":{
-    "message": "奇藝網"
-  },
-  "kankan":{
-    "message": "迅雷看看"
-  },
-  "ku6":{
-    "message": "酷6網"
-  },
-  "db_movie":{
-    "message": "豆瓣電影"
-  },
-  "funshion":{
-    "message": "風行網影視搜索"
-  },
-  "music_baidu":{
-    "message": "百度mp3"
-  },
-  "kuwo":{
-    "message": "酷我音樂"
-  },
-  "baidu_news":{
-    "message": "百度新聞"
-  },
-  "sina_new":{
-    "message": "新浪新聞"
+  "nds":{
+    "message": "網盤搜索"
   },
   "image_baidu":{
     "message": "百度圖片"
   },
-  "image_youdao":{
-    "message": "有道圖片"
-  },
-  "pic_sogou":{
-    "message": "搜狗圖片"
+  "amazon":{
+    "message": "亞馬遜中國"
   },
   "taobao":{
     "message": "淘寶"
   },
-  "buy360":{
-    "message": "京東網"
-  },
-  "amazon":{
-    "message": "亞馬遜中國"
-  },
-  "etao":{
-    "message": "一淘"
-  },
-  "dangdang":{
-    "message": "噹噹網"
-  },
-  "zto":{
-    "message": "中通【派送範圍】"
-  },
-  "eachnet":{
-    "message": "易趣網"
-  },
-  "paipai":{
-    "message": "拍拍網"
-  },
-  "vancl":{
-    "message": "凡客誠品"
-  },
-  "yihao_t":{
-    "message": "一號店"
-  },
-  "douban":{
-    "message": "豆瓣"
-  },
-  "tieba":{
-    "message": "百度貼吧"
-  },
-  "weibo_txt":{
-    "message": "新浪微博"
-  },
-  "t_qq":{
-    "message": "騰訊微博"
-  },
-  "design52":{
-    "message": "創意素材庫"
-  },
-  "ekoooo":{
-    "message": "素材藝庫"
-  },
-  "missyuan":{
-    "message": "思緣設計"
-  },
-  "wikipedia":{
-    "message": "簡體維基百科"
-  },
-  "baike":{
-    "message": "百度百科"
-  },
-  "kd":{
-    "message": "快遞單查詢"
-  },
-  "zhidao":{
-    "message": "百度知道"
-  },
   "ditu":{
     "message": "Google地圖"
-  },
-  "iask":{
-    "message": "愛問"
-  },
-  "kiees":{
-    "message": "快遞之家單號查詢"
-  },
-  "zol":{
-    "message": "中關村在線"
-  },
-  "hudong":{
-    "message": "互動百科"
-  },
-  "skycn":{
-    "message": "天空下載"
   },
   "ditu_bing":{
     "message": "Bing地圖"
   },
-  "ditu_yahoo":{
-    "message": "雅虎地圖"
+  "kd":{
+    "message": "快遞單查詢"
   },
-  "ks_yahoo":{
-    "message": "雅虎知識堂"
-  },
-  "map_baidu":{
-    "message": "百度地圖"
-  },
-  "newhua":{
-    "message": "華軍軟件園"
-  },
-  "pconline":{
-    "message": "太平洋電腦"
-  },
-  "zhihu":{
-    "message": "知乎"
+  "wikipedia":{
+    "message": "簡體維基百科"
   },
   "google_tw":{
     "message": "穀歌台版"
-  },
-  "ruten":{
-    "message": "露天拍賣"
   },
   "tw_wikipedia":{
     "message": "繁體維基百科"

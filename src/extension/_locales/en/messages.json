@@ -1,24 +1,18 @@
 {
-  "update":{
-    "message": "Save"
-  },
-  "tab_close":{
-    "message": "Close tab"
-  },
-  "google_site":{
-    "message": "Google site"
+  "bing_site":{
+    "message": "Bing site"
   },
   "google_link":{
     "message": "Google link"
   },
-  "bing_site":{
-    "message": "Bing site"
-  },
-  "gmail_lin":{
-    "message": "Send with Gmail"
+  "google_site":{
+    "message": "Google site"
   },
   "facebook_lin":{
     "message": "Facebook Share"
+  },
+  "gmail_lin":{
+    "message": "Send with Gmail"
   },
   "qr_lin":{
     "message": "QR for link"
@@ -32,26 +26,23 @@
   "twitter_lin":{
     "message": "Twitter Share"
   },
-  "cilianba":{
-    "message": "Thunder Cloud Demand"
-  },
   "weibo_lin":{
     "message": "Sina microblogging"
   },
   "i_title":{
     "message": "Context Menus Option"
   },
-  "c_extensions":{
-    "message": "Extensions"
-  },
-  "c_downloads":{
-    "message": "Downloads"
+  "c_bookmarks":{
+    "message": "Bookmark Manager"
   },
   "c_clearBD":{
     "message": "Clear browsing data"
   },
-  "c_settings":{
-    "message": "Settings"
+  "c_downloads":{
+    "message": "Downloads"
+  },
+  "c_extensions":{
+    "message": "Extensions"
   },
   "c_flags":{
     "message": "Flags"
@@ -59,77 +50,50 @@
   "c_history":{
     "message": "History"
   },
-  "c_bookmarks":{
-    "message": "Bookmark Manager"
-  },
   "c_plugins":{
     "message": "Plug-ins"
+  },
+  "c_settings":{
+    "message": "Settings"
   },
   "c_version":{
     "message": "About Version"
   },
-  "gmail_page":{
-    "message": "Send with Gmail"
-  },
   "facebook_menu":{
     "message": "Facebook Share"
   },
-  "w3c_css":{
-    "message": "W3C css validator"
-  },
-  "su":{
-    "message": "short URL to clipboard"
+  "gmail_page":{
+    "message": "Send with Gmail"
   },
   "qr":{
     "message": "QR for page URL"
   },
+  "su":{
+    "message": "short URL to clipboard"
+  },
   "su_alert":{
     "message": "Create short URL"
   },
-  "c_memory":{
-    "message": "About Memory"
+  "tab_close":{
+    "message": "Close tab"
   },
   "c_credits":{
     "message": "Credits"
   },
+  "c_memory":{
+    "message": "About Memory"
+  },
   "twitter_men":{
     "message": "Twitter Share"
-  },
-  "w3_html":{
-    "message": "W3C html Validation"
   },
   "tmall":{
     "message": "tmall.com"
   },
-  "taobao_ju":{
-    "message": "Taobao Ju"
-  },
-  "yihao":{
-    "message": "yihaodian.com"
-  },
-  "tmall_chaoshi":{
-    "message": "Tmall Supermarket"
-  },
-  "tmall_dq":{
-    "message": "Tmall Electrical"
-  },
-  "taobao_game":{
-    "message": "Taobao Game"
-  },
-  "taobao_trip":{
-    "message": "Taobao Trip"
-  },
-  "tmall_flist":{
-    "message": "Tmall Flist"
-  },
-  "tmall_temai":{
-    "message": "Tmall Temai"
+  "qzone":{
+    "message": "qzone"
   },
   "weibo":{
     "message": "Sina microblogging"
-  },
-  "qzone":{
-    "message": "qzone"
   },
   "google_pic":{
     "message": "Google Images"
@@ -143,23 +107,14 @@
   "qr_decode":{
     "message": "Parsing QR in the images"
   },
+  "qr_pic":{
+    "message": "QR for image"
+  },
   "su_pic":{
     "message": "image short URL to clipboard"
   },
   "su_pic_alert":{
     "message": "short URL for image"
-  },
-  "qr_pic":{
-    "message": "QR for image"
-  },
-  "TinEye":{
-    "message": "TinEye"
-  },
-  "iqdb":{
-    "message": "iqdb search"
-  },
-  "SauceNAO":{
-    "message": "SauceNAO"
   },
   "exif":{
     "message": "Exif viewer"
@@ -167,17 +122,8 @@
   "twitter_pic":{
     "message": "Twitter Share"
   },
-  "baidu_pic":{
-    "message": "Baidu Images"
-  },
-  "sogou_pic":{
-    "message": "Sogou Pic"
-  },
   "weibo_pic":{
     "message": "Sina microblogging"
-  },
-  "i_about":{
-    "message": "About"
   },
   "ag":{
     "message": "Custom"
@@ -216,7 +162,7 @@
     "message": "Page menu group"
   },
   "description":{
-    "message": "The extended menu, integrated 266 function menu and super drag links. Achieve zero resource occupation."
+    "message": "The extended menu, integrated 300+ function menu and super drag links."
   },
   "ditto":{
     "message": " ditto"
@@ -244,6 +190,9 @@
   },
   "i18n":{
     "message": "en"
+  },
+  "i_about":{
+    "message": "About"
   },
   "i_add":{
     "message": "Added"
@@ -293,17 +242,17 @@
   "i_en":{
     "message": "English"
   },
+  "i_find":{
+    "message": "Get the right click menu"
+  },
   "i_group":{
     "message": "Group"
-  },
-  "i_group_title":{
-    "message": "Run with a combination of multiple functions"
   },
   "i_have":{
     "message": "提交過不能共享"
   },
   "i_help":{
-    "message": "Enter the verification phrase(8-30 characters), click <span class=\"label label-info\"> Save Settings </span>, the current configuration will be saved to the cloud. At other times or other machines input validation phrase, click <span class=\"label label-warning\"> Load Settings </span>, all configurations natural recovery. Enter verification phrase <code> cloud demo </code> to be tested. <br/> PS: Before testing, please save your settings oh ^_^"
+    "message": "Enter the verification phrase(8-30 characters), click <span class='label label-info'> Save Settings </span>, the current configuration will be saved to the cloud. At other times or other machines input validation phrase, click <span class='label label-warning'> Load Settings </span>, all configurations natural recovery. Enter verification phrase <code> cloud demo </code> to be tested. <br/> PS: Before testing, please save your settings oh ^_^"
   },
   "i_info":{
     "message": "Introduction"
@@ -365,9 +314,6 @@
   "i_select":{
     "message": "Select"
   },
-  "i_find":{
-    "message": "Get the right click menu"
-  },
   "i_settings":{
     "message": "Settings"
   },
@@ -396,7 +342,7 @@
     "message": "Select Short URL Generator Website"
   },
   "i_stxt":{
-    "message": "Enter in the search engine \"SEARCHTEXT\", display the results page and copy the full link (including http://) into the input box, and then click the plus sign recognition"
+    "message": "Enter in the search engine 'SEARCHTEXT', display the results page and copy the full link (including http://) into the input box, and then click the plus sign recognition"
   },
   "i_su_lin":{
     "message": "Increase generate links short URL copy clipboard menu."
@@ -426,12 +372,9 @@
     "message": "Undertakes to comply with this app, \"Google Chrome Web Store Terms of Service\";"
   },
   "li2":{
-    "message": "This app is free software, anyone can install and use free of charge;"
+    "message": "This application is open source software, all source code can be viewed on github;"
   },
   "li3":{
-    "message": "This app uses Google Analytics statistics context menus behavior, but does not collect personal information, respecting user privacy;"
-  },
-  "li4":{
     "message": "Shopping column some functions without affecting the user's premise marketing alliances with third parties to cooperate."
   },
   "linGroup":{
@@ -491,6 +434,9 @@
   "reviews":{
     "message": "Reviews"
   },
+  "s_analytics":{
+    "message": "Enable Google Analytics"
+  },
   "s_back":{
     "message": "Open in the background by default"
   },
@@ -533,74 +479,47 @@
   "ui":{
     "message": "Design"
   },
+  "update":{
+    "message": "Save"
+  },
   "user":{
     "message": "Search "
   },
   "utils":{
     "message": "Utils"
   },
-  "google":{
-    "message": "Google"
-  },
   "bing":{
     "message": "Bing"
-  },
-  "google_define":{
-    "message": "Google Definition"
-  },
-  "google_site1":{
-    "message": "Google Site Search"
   },
   "duckduckgo":{
     "message": "DuckDuckGo"
   },
-  "bing_site1":{
-    "message": "Bing Site Search"
+  "google":{
+    "message": "Google"
   },
   "translate":{
     "message": "Google Translate"
   },
-  "youtube":{
-    "message": "youtube"
-  },
-  "btdigg":{
-    "message": "btdigg.org"
-  },
   "thepiratebay":{
     "message": "thepiratebay"
   },
-  "last":{
-    "message": "Last.fm"
-  },
-  "google_news":{
-    "message": "Google News"
-  },
-  "bing_news":{
-    "message": "Bing News"
-  },
-  "google_img":{
-    "message": "Google Images"
-  },
-  "Picasa":{
-    "message": "Picasa"
+  "youtube":{
+    "message": "Youtube"
   },
   "bing_images":{
     "message": "Bing Images"
   },
-  "flickr":{
-    "message": "flickr.com"
-  },
-  "google_plus":{
-    "message": "Google+"
-  },
-  "gmail_txt":{
-    "message": "Send with Gmail"
+  "google_img":{
+    "message": "Google Images"
   },
   "facebook":{
     "message": "Facebook"
   },
-  "findicons":{
-    "message": "Findicons.com"
+  "gmail_txt":{
+    "message": "Send with Gmail"
+  },
+  "google_plus":{
+    "message": "Google+"
   },
   "qr_txt":{
     "message": "QR for select text."
@@ -608,65 +527,14 @@
   "Yahoo":{
     "message": "Yahoo"
   },
-  "surfcanyon":{
-    "message": "surfcanyon.com"
-  },
-  "hotbot":{
-    "message": "hotbot.com"
-  },
-  "ask":{
-    "message": "Ask.com"
-  },
-  "FreeDict":{
-    "message": "TheFreeDictionary"
-  },
-  "torrentz":{
-    "message": "Torrent Search Engine"
-  },
-  "rottentomatoes":{
-    "message": "Rotten Tomatoes"
-  },
-  "bitsnoop":{
-    "message": "bitsnoop.com"
-  },
-  "imdb":{
-    "message": "IMDb"
-  },
-  "mtv":{
-    "message": "MTV"
-  },
-  "cnn":{
-    "message": "CNN"
-  },
-  "bbc":{
-    "message": "BBC World"
-  },
   "Amazon_com":{
     "message": "Amazon"
   },
-  "ebay":{
-    "message": "ebay.com"
-  },
-  "alibaba":{
-    "message": "alibaba.com"
-  },
   "twitter":{
-    "message": "twitter"
+    "message": "Twitter"
   },
   "twitter_share":{
     "message": "Twitter Share"
-  },
-  "sootuu":{
-    "message": "sootuu.com"
-  },
-  "veryicon":{
-    "message": "veryicon.com"
-  },
-  "dmoz":{
-    "message": "dmoz open directory project "
-  },
-  "wolframalpha":{
-    "message": "wolframalpha"
   },
   "en_wikipedia":{
     "message": "Wikipedia en"
@@ -674,32 +542,14 @@
   "baidu":{
     "message": "Baidu"
   },
-  "youdao":{
-    "message": "youdao.com"
+  "baidu_site":{
+    "message": "Baidu Site Search"
   },
   "google_hk":{
     "message": "Google"
   },
-  "soso":{
-    "message": "Soso.com"
-  },
-  "yunyun":{
-    "message": "yunyun.com"
-  },
-  "sogou":{
-    "message": "Sogou.com"
-  },
-  "baidu_site":{
-    "message": "Baidu Site Search"
-  },
   "yahoo_cn":{
     "message": "Yahoo China"
-  },
-  "so_360":{
-    "message": "qihoo360"
-  },
-  "xunlei":{
-    "message": "xunlei"
   },
   "scholar":{
     "message": "Google Scholar"
@@ -707,257 +557,38 @@
   "wenku":{
     "message": "Baidu Wenku"
   },
-  "nlc":{
-    "message": "National Library"
-  },
-  "pul":{
-    "message": "Peking University Library"
-  },
-  "qidian":{
-    "message": "qidian.com"
-  },
-  "tsinghua":{
-    "message": "tsinghua.edu.cn"
-  },
-  "bful":{
-    "message": "Beijing Forestry University Library"
-  },
-  "bit":{
-    "message": "bit.edu.cn"
-  },
-  "buofal":{
-    "message": "Beijing University of Aeronautics and Astronautics Library"
-  },
-  "db_book":{
-    "message": "book.douban.com"
-  },
-  "readnovel":{
-    "message": "readnovel.com"
-  },
-  "sul":{
-    "message": "Sichuan University Library"
-  },
-  "ustc":{
-    "message": "University of Science and Technology of China Library"
-  },
-  "xul":{
-    "message": "Xiamen University Library"
-  },
-  "zongheng":{
-    "message": "zongheng.com"
-  },
-  "ktxp":{
-    "message": "ktxp.com"
-  },
-  "bilibili":{
-    "message": "bilibili.tv"
-  },
-  "popgo":{
-    "message": "popgo.org"
-  },
-  "youdao_dict":{
-    "message": "Youdao Translation"
-  },
-  "zdic":{
-    "message": "zdic.net"
-  },
-  "dict":{
-    "message": "dict.cn"
-  },
-  "iciba":{
-    "message": "iciba.com"
-  },
-  "frdic":{
-    "message": "frdic.com"
-  },
-  "edu5156":{
-    "message": "http://xh.5156edu.com/"
-  },
-  "youku":{
-    "message": "youku.com"
-  },
-  "nds":{
-    "message": "Network disk search"
-  },
   "bt":{
     "message": "BT search"
-  },
-  "video_baidu":{
-    "message": "Baidu Video"
   },
   "EDonkey":{
     "message": "EDonkey Search"
   },
-  "yyets":{
-    "message": "yyets.com"
-  },
-  "xiami":{
-    "message": "xiami.com"
-  },
-  "mtime":{
-    "message": "mtime.com"
-  },
-  "skb9":{
-    "message": "9skb.com"
-  },
-  "verycd":{
-    "message": "VeryCD"
-  },
-  "imax":{
-    "message": "imax.im"
-  },
-  "tudou":{
-    "message": "tudou.com"
-  },
-  "gdajie":{
-    "message": "gdajie.com"
-  },
-  "shooter":{
-    "message": "shooter.cn"
-  },
-  "qiyi":{
-    "message": "qiyi.com"
-  },
-  "kankan":{
-    "message": "kankan.com"
-  },
-  "ku6":{
-    "message": "ku6.com"
-  },
-  "db_movie":{
-    "message": "movie.douban.com"
-  },
-  "funshion":{
-    "message": "funshion.com"
-  },
-  "music_baidu":{
-    "message": "Baidu Music"
-  },
-  "kuwo":{
-    "message": "kuwo.cn"
-  },
-  "baidu_news":{
-    "message": "Baidu News"
-  },
-  "sina_new":{
-    "message": "Sina News"
+  "nds":{
+    "message": "Network disk search"
   },
   "image_baidu":{
     "message": "Baidu Image"
   },
-  "image_youdao":{
-    "message": "Youdao Image"
-  },
-  "pic_sogou":{
-    "message": "Sogou Image"
+  "amazon":{
+    "message": "amazon.cn"
   },
   "taobao":{
     "message": "Taobao"
   },
-  "buy360":{
-    "message": "360buy.com"
-  },
-  "amazon":{
-    "message": "amazon.cn"
-  },
-  "etao":{
-    "message": "Etao"
-  },
-  "dangdang":{
-    "message": "dangdang.com"
-  },
-  "zto":{
-    "message": "Through delivery range"
-  },
-  "eachnet":{
-    "message": "eachnet.com"
-  },
-  "paipai":{
-    "message": "paipai.com"
-  },
-  "vancl":{
-    "message": "vancl.com"
-  },
-  "yihao_t":{
-    "message": "yihaodian.com"
-  },
-  "douban":{
-    "message": "douban.com"
-  },
-  "tieba":{
-    "message": "Baidu Tieba"
-  },
-  "weibo_txt":{
-    "message": "Sina microblogging"
-  },
-  "t_qq":{
-    "message": "QQ Microblogging"
-  },
-  "design52":{
-    "message": "52design.com"
-  },
-  "ekoooo":{
-    "message": "ekoooo.com"
-  },
-  "missyuan":{
-    "message": "missyuan.com"
-  },
-  "wikipedia":{
-    "message": "Wikipedia zh"
-  },
-  "baike":{
-    "message": "Baidu Baike"
-  },
-  "kd":{
-    "message": "China express query"
-  },
-  "zhidao":{
-    "message": "Baidu Zhidao"
-  },
   "ditu":{
     "message": "Google map"
-  },
-  "iask":{
-    "message": "iask"
-  },
-  "kiees":{
-    "message": "China express a single number query"
-  },
-  "zol":{
-    "message": "zol.com.cn"
-  },
-  "hudong":{
-    "message": "hudong.com"
-  },
-  "skycn":{
-    "message": "skycn.com"
   },
   "ditu_bing":{
     "message": "Bing Ditu"
   },
-  "ditu_yahoo":{
-    "message": "Yahoo Ditu"
+  "kd":{
+    "message": "China express query"
   },
-  "ks_yahoo":{
-    "message": "Yahoo ks cn"
-  },
-  "map_baidu":{
-    "message": "Baidu map"
-  },
-  "newhua":{
-    "message": "newhua.com"
-  },
-  "pconline":{
-    "message": "pconline.com.cn"
-  },
-  "zhihu":{
-    "message": "zhihu.com"
+  "wikipedia":{
+    "message": "Wikipedia zh"
   },
   "google_tw":{
     "message": "Google tw"
-  },
-  "ruten":{
-    "message": "ruten.com"
   },
   "tw_wikipedia":{
     "message": "Wikipedia tw"

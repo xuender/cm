@@ -1,18 +1,18 @@
 {
-  "google_site":{
-    "message": "谷歌网站"
+  "bing_site":{
+    "message": "Bing网站"
   },
   "google_link":{
     "message": "谷歌链接"
   },
-  "bing_site":{
-    "message": "Bing网站"
-  },
-  "gmail_lin":{
-    "message": "Gmail发送"
+  "google_site":{
+    "message": "谷歌网站"
   },
   "facebook_lin":{
     "message": "Facebook分享"
+  },
+  "gmail_lin":{
+    "message": "Gmail发送"
   },
   "qr_lin":{
     "message": "当前链接生成二维码"
@@ -26,26 +26,23 @@
   "twitter_lin":{
     "message": "Twitter 分享"
   },
-  "cilianba":{
-    "message": "迅雷云点播"
-  },
   "weibo_lin":{
     "message": "新浪微博"
   },
   "i_title":{
     "message": "右键搜 选项"
   },
-  "c_extensions":{
-    "message": "扩展程序"
-  },
-  "c_downloads":{
-    "message": "下载内容"
+  "c_bookmarks":{
+    "message": "书签管理器"
   },
   "c_clearBD":{
     "message": "清除浏览数据"
   },
-  "c_settings":{
-    "message": "设置"
+  "c_downloads":{
+    "message": "下载内容"
+  },
+  "c_extensions":{
+    "message": "扩展程序"
   },
   "c_flags":{
     "message": "实验室"
@@ -53,77 +50,50 @@
   "c_history":{
     "message": "历史记录"
   },
-  "c_bookmarks":{
-    "message": "书签管理器"
-  },
   "c_plugins":{
     "message": "插件"
+  },
+  "c_settings":{
+    "message": "设置"
   },
   "c_version":{
     "message": "关于版本"
   },
-  "gmail_page":{
-    "message": "Gmail发送"
-  },
   "facebook_menu":{
     "message": "Facebook分享"
   },
-  "w3c_css":{
-    "message": "W3C CSS验证"
-  },
-  "su":{
-    "message": "创建页面短网址并复制"
+  "gmail_page":{
+    "message": "Gmail发送"
   },
   "qr":{
     "message": "生成当前网址二维码"
   },
+  "su":{
+    "message": "创建页面短网址并复制"
+  },
   "su_alert":{
     "message": "创建页面短网址"
   },
-  "c_memory":{
-    "message": "内存"
+  "tab_close":{
+    "message": "关闭页面"
   },
   "c_credits":{
     "message": "作者"
   },
+  "c_memory":{
+    "message": "内存"
+  },
   "twitter_men":{
     "message": "Twitter 分享"
-  },
-  "w3_html":{
-    "message": "W3C HTML验证"
   },
   "tmall":{
     "message": "天猫商城 "
   },
-  "taobao_ju":{
-    "message": "淘宝聚划算"
-  },
-  "yihao":{
-    "message": "一号店"
-  },
-  "tmall_chaoshi":{
-    "message": "天猫超市"
-  },
-  "tmall_dq":{
-    "message": "天猫电器城"
-  },
-  "taobao_game":{
-    "message": "淘宝游戏"
-  },
-  "taobao_trip":{
-    "message": "淘宝旅行"
-  },
-  "tmall_flist":{
-    "message": "天猫母婴"
-  },
-  "tmall_temai":{
-    "message": "天猫品牌特卖"
+  "qzone":{
+    "message": "分享到QQ空间"
   },
   "weibo":{
     "message": "新浪微博"
-  },
-  "qzone":{
-    "message": "分享到QQ空间"
   },
   "google_pic":{
     "message": "Google图片"
@@ -137,23 +107,14 @@
   "qr_decode":{
     "message": "解析图片中的二维码"
   },
+  "qr_pic":{
+    "message": "当前图片生成二维码"
+  },
   "su_pic":{
     "message": "创建图片短网址并复制"
   },
   "su_pic_alert":{
     "message": "创建图片短网址"
-  },
-  "qr_pic":{
-    "message": "当前图片生成二维码"
-  },
-  "TinEye":{
-    "message": "TinEye"
-  },
-  "iqdb":{
-    "message": "iqdb search"
-  },
-  "SauceNAO":{
-    "message": "SauceNAO"
   },
   "exif":{
     "message": "图片信息查看"
@@ -161,17 +122,8 @@
   "twitter_pic":{
     "message": "Twitter 分享"
   },
-  "baidu_pic":{
-    "message": "百度图片"
-  },
-  "sogou_pic":{
-    "message": "搜狗图片"
-  },
   "weibo_pic":{
     "message": "新浪微博"
-  },
-  "i_about":{
-    "message": "关于"
   },
   "ag":{
     "message": "自定义"
@@ -191,17 +143,11 @@
   "b_save":{
     "message": "保存设置到云端"
   },
-  "update":{
-    "message": "保存"
-  },
   "bug":{
     "message": "错误"
   },
   "chrome":{
     "message": "Chrome"
-  },
-  "tab_close":{
-    "message": "关闭页面"
   },
   "c_menGroup":{
     "message": "组合功能"
@@ -216,7 +162,7 @@
     "message": "组合划词菜单"
   },
   "description":{
-    "message": "扩展右键菜单，266种功能，方便的选择、组合或自定义页面、划词、图片菜单，并有生成、解析二维码和短网址功能。设置可使用云存储。实现超级拖拽链接、图片打开，文字拖拽搜索，方向不同打开方式不同。可达到零资源占用。最新增加网址共享、黑名单、自动更新、重命名等功能。"
+    "message": "扩展右键菜单，超过300种功能，方便的选择、组合或自定义页面、划词、图片菜单，并有生成、解析二维码和短网址功能。设置可使用云存储。实现超级拖拽链接、图片打开，文字拖拽搜索，方向不同打开方式不同。最新增加功能共享、资源下载、重命名等功能。"
   },
   "ditto":{
     "message": "重复"
@@ -244,6 +190,9 @@
   },
   "i18n":{
     "message": "cn"
+  },
+  "i_about":{
+    "message": "关于"
   },
   "i_add":{
     "message": "新增"
@@ -293,6 +242,9 @@
   "i_en":{
     "message": "英语"
   },
+  "i_find":{
+    "message": "获取右键菜单"
+  },
   "i_group":{
     "message": "组合"
   },
@@ -300,7 +252,7 @@
     "message": "提交过不能共享"
   },
   "i_help":{
-    "message": "输入验证短语(8-30字符)，点<span class=\"label label-info\">保存设置</span>，当前配置将保存到云端。输入验证短语点<span class=\"label label-warning\">加载设置</span>，所有配置立刻恢复。可使用<code>cloud demo</code>测试。<br/>PS: 测试前，请先保存您的设置哦^_^"
+    "message": "输入验证短语(8-30字符)，点<span class='label label-info'>保存设置</span>，当前配置将保存到云端。输入验证短语点<span class='label label-warning'>加载设置</span>，所有配置立刻恢复。可使用<code>cloud demo</code>测试。<br/>PS: 测试前，请先保存您的设置哦^_^"
   },
   "i_info":{
     "message": "介绍"
@@ -362,9 +314,6 @@
   "i_select":{
     "message": "选择"
   },
-  "i_find":{
-    "message": "获取右键菜单"
-  },
   "i_settings":{
     "message": "设置"
   },
@@ -423,12 +372,9 @@
     "message": "本应用承诺遵守《谷歌浏览器扩展程序库服务条款》；"
   },
   "li2":{
-    "message": "本应用是免费软件，任何人都可以无偿安装使用；"
+    "message": "本应用是开源软件，所有源码均可在github上查看；"
   },
   "li3":{
-    "message": "本应用使用Google Analytics统计右键搜的操作行为，但不收集个人信息，尊重用户隐私权；"
-  },
-  "li4":{
     "message": "购物栏目中部分功能在不影响用户的前提下与第三方推广联盟进行合作。"
   },
   "linGroup":{
@@ -488,6 +434,9 @@
   "reviews":{
     "message": "评论"
   },
+  "s_analytics":{
+    "message": "启用Google Analytics"
+  },
   "s_back":{
     "message": "默认后台打开"
   },
@@ -530,74 +479,47 @@
   "ui":{
     "message": "设计"
   },
+  "update":{
+    "message": "保存"
+  },
   "user":{
     "message": "用 "
   },
   "utils":{
     "message": "工具"
   },
-  "google":{
-    "message": "Google"
-  },
   "bing":{
     "message": "Bing"
-  },
-  "google_define":{
-    "message": "谷歌精准搜索"
-  },
-  "google_site1":{
-    "message": "Google站内搜"
   },
   "duckduckgo":{
     "message": "DuckDuckGo"
   },
-  "bing_site1":{
-    "message": "Bing站内搜"
+  "google":{
+    "message": "Google"
   },
   "translate":{
     "message": "Google翻译"
   },
-  "youtube":{
-    "message": "youtube"
-  },
-  "btdigg":{
-    "message": "btdigg.org"
-  },
   "thepiratebay":{
     "message": "海盗湾"
   },
-  "last":{
-    "message": "Last.fm"
-  },
-  "google_news":{
-    "message": "谷歌新闻"
-  },
-  "bing_news":{
-    "message": "Bing新闻"
-  },
-  "google_img":{
-    "message": "Google图片"
-  },
-  "Picasa":{
-    "message": "Picasa"
+  "youtube":{
+    "message": "Youtube"
   },
   "bing_images":{
     "message": "Bing图片"
   },
-  "flickr":{
-    "message": "flickr.com"
-  },
-  "google_plus":{
-    "message": "Google+"
-  },
-  "gmail_txt":{
-    "message": "Gmail发送"
+  "google_img":{
+    "message": "Google图片"
   },
   "facebook":{
     "message": "Facebook搜索"
   },
-  "findicons":{
-    "message": "图标搜索Findicons"
+  "gmail_txt":{
+    "message": "Gmail发送"
+  },
+  "google_plus":{
+    "message": "Google+"
   },
   "qr_txt":{
     "message": "选择文字生成二维码"
@@ -605,65 +527,14 @@
   "Yahoo":{
     "message": "Yahoo"
   },
-  "surfcanyon":{
-    "message": "surfcanyon"
-  },
-  "hotbot":{
-    "message": "hotbot.com"
-  },
-  "ask":{
-    "message": "Ask.com"
-  },
-  "FreeDict":{
-    "message": "TheFreeDictionary"
-  },
-  "torrentz":{
-    "message": "种子搜索引擎"
-  },
-  "rottentomatoes":{
-    "message": "烂番茄"
-  },
-  "bitsnoop":{
-    "message": "bitsnoop.com"
-  },
-  "imdb":{
-    "message": "IMDb"
-  },
-  "mtv":{
-    "message": "MTV"
-  },
-  "cnn":{
-    "message": "CNN"
-  },
-  "bbc":{
-    "message": "BBC世界"
-  },
   "Amazon_com":{
     "message": "亚马逊"
   },
-  "ebay":{
-    "message": "ebay.com"
-  },
-  "alibaba":{
-    "message": "阿里巴巴"
-  },
   "twitter":{
-    "message": "twitter"
+    "message": "Twitter"
   },
   "twitter_share":{
     "message": "Twitter 分享"
-  },
-  "sootuu":{
-    "message": "搜图素材"
-  },
-  "veryicon":{
-    "message": "veryicon图标搜索"
-  },
-  "dmoz":{
-    "message": "dmoz.org"
-  },
-  "wolframalpha":{
-    "message": "wolframalpha"
   },
   "en_wikipedia":{
     "message": "英文维基百科"
@@ -671,32 +542,14 @@
   "baidu":{
     "message": "百度"
   },
-  "youdao":{
-    "message": "有道"
+  "baidu_site":{
+    "message": "百度站内搜"
   },
   "google_hk":{
     "message": "谷歌"
   },
-  "soso":{
-    "message": "搜搜搜索"
-  },
-  "yunyun":{
-    "message": "云云搜索"
-  },
-  "sogou":{
-    "message": "搜狗搜索"
-  },
-  "baidu_site":{
-    "message": "百度站内搜"
-  },
   "yahoo_cn":{
     "message": "Yahoo中国"
-  },
-  "so_360":{
-    "message": "奇虎360"
-  },
-  "xunlei":{
-    "message": "迅雷搜索"
   },
   "scholar":{
     "message": "Google学术"
@@ -704,257 +557,38 @@
   "wenku":{
     "message": "百度文库"
   },
-  "nlc":{
-    "message": "国家图书馆"
-  },
-  "pul":{
-    "message": "北大学图书馆"
-  },
-  "qidian":{
-    "message": "起点中文"
-  },
-  "tsinghua":{
-    "message": "清华图书馆"
-  },
-  "bful":{
-    "message": "北林图书馆"
-  },
-  "bit":{
-    "message": "北理工图书馆"
-  },
-  "buofal":{
-    "message": "北航图书馆"
-  },
-  "db_book":{
-    "message": "豆瓣书籍"
-  },
-  "readnovel":{
-    "message": "小说阅读网"
-  },
-  "sul":{
-    "message": "川大图书馆"
-  },
-  "ustc":{
-    "message": "中国科技大图书馆"
-  },
-  "xul":{
-    "message": "厦大图书馆"
-  },
-  "zongheng":{
-    "message": "纵横中文网"
-  },
-  "ktxp":{
-    "message": "极影动漫"
-  },
-  "bilibili":{
-    "message": "哔哩哔哩"
-  },
-  "popgo":{
-    "message": "漫游"
-  },
-  "youdao_dict":{
-    "message": "有道翻译"
-  },
-  "zdic":{
-    "message": "汉典"
-  },
-  "dict":{
-    "message": "海词词典"
-  },
-  "iciba":{
-    "message": "金山词霸"
-  },
-  "frdic":{
-    "message": "法语助手"
-  },
-  "edu5156":{
-    "message": "在线新华字典"
-  },
-  "youku":{
-    "message": "优酷网"
-  },
-  "nds":{
-    "message": "网盘搜索"
-  },
   "bt":{
     "message": "BT搜索"
-  },
-  "video_baidu":{
-    "message": "百度视频"
   },
   "EDonkey":{
     "message": "电驴搜索"
   },
-  "yyets":{
-    "message": "人人影视"
-  },
-  "xiami":{
-    "message": "虾米"
-  },
-  "mtime":{
-    "message": "时光网"
-  },
-  "skb9":{
-    "message": "就搜快播"
-  },
-  "verycd":{
-    "message": "VeryCD"
-  },
-  "imax":{
-    "message": "高清电影"
-  },
-  "tudou":{
-    "message": "土豆网"
-  },
-  "gdajie":{
-    "message": "逛电驴"
-  },
-  "shooter":{
-    "message": "射手网"
-  },
-  "qiyi":{
-    "message": "奇艺网"
-  },
-  "kankan":{
-    "message": "迅雷看看"
-  },
-  "ku6":{
-    "message": "酷6网"
-  },
-  "db_movie":{
-    "message": "豆瓣电影"
-  },
-  "funshion":{
-    "message": "风行网影视搜索"
-  },
-  "music_baidu":{
-    "message": "百度mp3"
-  },
-  "kuwo":{
-    "message": "酷我音乐"
-  },
-  "baidu_news":{
-    "message": "百度新闻"
-  },
-  "sina_new":{
-    "message": "新浪新闻"
+  "nds":{
+    "message": "网盘搜索"
   },
   "image_baidu":{
     "message": "百度图片"
   },
-  "image_youdao":{
-    "message": "有道图片"
-  },
-  "pic_sogou":{
-    "message": "搜狗图片"
+  "amazon":{
+    "message": "亚马逊中国"
   },
   "taobao":{
     "message": "淘宝"
   },
-  "buy360":{
-    "message": "京东网"
-  },
-  "amazon":{
-    "message": "亚马逊中国"
-  },
-  "etao":{
-    "message": "一淘"
-  },
-  "dangdang":{
-    "message": "当当网"
-  },
-  "zto":{
-    "message": "中通【派送范围】"
-  },
-  "eachnet":{
-    "message": "易趣网"
-  },
-  "paipai":{
-    "message": "拍拍网"
-  },
-  "vancl":{
-    "message": "凡客诚品"
-  },
-  "yihao_t":{
-    "message": "一号店"
-  },
-  "douban":{
-    "message": "豆瓣"
-  },
-  "tieba":{
-    "message": "百度贴吧"
-  },
-  "weibo_txt":{
-    "message": "新浪微博"
-  },
-  "t_qq":{
-    "message": "腾讯微博"
-  },
-  "design52":{
-    "message": "创意素材库"
-  },
-  "ekoooo":{
-    "message": "素材艺库"
-  },
-  "missyuan":{
-    "message": "思缘设计"
-  },
-  "wikipedia":{
-    "message": "简体维基百科"
-  },
-  "baike":{
-    "message": "百度百科"
-  },
-  "kd":{
-    "message": "快递单查询"
-  },
-  "zhidao":{
-    "message": "百度知道"
-  },
   "ditu":{
     "message": "Google地图"
-  },
-  "iask":{
-    "message": "爱问"
-  },
-  "kiees":{
-    "message": "快递之家单号查询"
-  },
-  "zol":{
-    "message": "中关村在线"
-  },
-  "hudong":{
-    "message": "互动百科"
-  },
-  "skycn":{
-    "message": "天空下载"
   },
   "ditu_bing":{
     "message": "Bing地图"
   },
-  "ditu_yahoo":{
-    "message": "雅虎地图"
+  "kd":{
+    "message": "快递单查询"
   },
-  "ks_yahoo":{
-    "message": "雅虎知识堂"
-  },
-  "map_baidu":{
-    "message": "百度地图"
-  },
-  "newhua":{
-    "message": "华军软件园"
-  },
-  "pconline":{
-    "message": "太平洋电脑"
-  },
-  "zhihu":{
-    "message": "知乎"
+  "wikipedia":{
+    "message": "简体维基百科"
   },
   "google_tw":{
     "message": "谷歌台版"
-  },
-  "ruten":{
-    "message": "露天拍卖"
   },
   "tw_wikipedia":{
     "message": "繁体维基百科"

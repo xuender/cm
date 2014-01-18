@@ -20,6 +20,7 @@ chrome.runtime.onInstalled.addListener(->
   all = JU.lsGet('all', [])
   if all.length == 0
     JU.syncFetch('/init.json', (result)->
+      console.info result
       JU.lsSet('all', JSON.parse(result))
       ga('send', 'event', 'db', 'ninit')
     )

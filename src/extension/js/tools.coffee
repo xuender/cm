@@ -78,7 +78,7 @@ shortenUrl = (longUrl, incognito, callback)->
     when 'sinat' then sinat(longUrl, incognito, callback)
     when 'urlcn' then urlcn(longUrl, incognito, callback)
     else googl(longUrl, incognito, callback)
-  _gaq.push(['_trackEvent', 'shorten', name])
+  ga('send', 'event', 'shorten', name)
 urlcn = (longUrl, incognito, callback)->
   ### 腾讯短网址 ###
   xmlhttp = new XMLHttpRequest()

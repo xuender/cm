@@ -346,7 +346,6 @@ module.exports = (grunt)->
         tasks: [
           'copy:root'
           'copy:i18n'
-          'copy:i18nServer'
         ]
       html:
         files: [

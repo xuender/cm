@@ -10,6 +10,11 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.qr_size = lsGetItem('qr_size', 250)
   scope.isEdit = lsGetItem('isEdit', true)
   scope.isFlag = lsGetItem('isFlag', true)
+  scope.analytics = lsGetItem('analytics', true)
+  scope.$watch('analytics',(n, o) ->
+    lsSetItem('analytics', n)
+    ga('send', 'event', 'settings', 'analytics' + n)
+  )
   scope.$watch('isFlag',(n, o) ->
     lsSetItem('isFlag', n)
     ga('send', 'event', 'settings', 'isFlag' + n)
@@ -23,17 +28,9 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.newPage= lsGetItem('newPage', true)
   scope.alerts= []
   scope.phrase = lsGetItem('phrase', '')
-  scope.bl = []
   scope.all = []
   scope.init = ->
-    findUrls((data)->
-      scope.all = menuI18n(data, [])
-      scope.bl = lsGetItem('bl', [])
-      scope.$apply()
-      scope.$watch('bl',(n, o) ->
-        lsSetItem('bl', n)
-      , true)
-    )
+  scope.all = menuI18n(JU.lsGet('all',[]), [])
   scope.showName = (code)->
     ### 显示名称 ###
     for m in scope.all
@@ -75,23 +72,7 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
         )
       ).success((data, status, headers, config) ->
         if data == 'error' or data == ''
-          http(
-            method: 'POST'
-            url: 'http://emap.sinaapp.com/cm'
-            data: $.param(
-              k: scope.phrase
-            )
-          ).success((data1, status1, headers1, config1) ->
-            for i of data1
-              localStorage[i] = data1[i]
-            scope.save(false)
-            scope.alert(ci18n.getMessage('b_load'))
-            menuReset()
-            ga('send', 'event', 'bak', 'old_load_ok')
-          ).error((data1, status1, headers1, config1) ->
-            scope.alert(ci18n.getMessage('error_ps'))
-            ga('send', 'event', 'bak', 'old_load_error')
-          )
+          console.error 'load...%s', data
           return
         for i of data
           localStorage[i] = data[i]
