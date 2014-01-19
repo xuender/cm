@@ -2,9 +2,14 @@ Chrome extension Context Menus
 ==
 > Do the best context menu extension.
 
-Install from [Chrome Webstore](https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn).
 
-Contact from [Google plus](https://plus.google.com/107030593690431685646).
+Install
+===
+[Chrome Webstore](https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn)
+
+Contact
+===
+[Google plus](https://plus.google.com/107030593690431685646)
 
 Power by
 ===

@@ -296,7 +296,7 @@ createMenuItem = (id, name, type)->
 #menuReset()
 chrome.extension.onConnect.addListener((port)->
   port.onMessage.addListener((data)->
-    if data.message == 'url' or data.message == 'txt'
+    if JU.lsGet('drag', true) and (data.message == 'url' or data.message == 'txt')
       chrome.tabs.getSelected(null, (tab)->
         fg = (data.y == 1)
         if data.message == 'url'
