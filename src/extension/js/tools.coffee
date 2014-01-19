@@ -144,7 +144,6 @@ googl = (longUrl, incognito, callback)->
         if response.error.code == '401'
           oauth.clearTokens()
         callback({status: 'error', message: response.error.message})
-        console.error('error:%s', response.error.message)
       else
         callback(
           status: 'success'
@@ -173,5 +172,4 @@ getOauth = ->
 
 tabClose = (value, tab, back, incognito)->
   ### 关闭标签页 ###
-  console.info('关闭:' + tab.id)
   chrome.tabs.remove(tab.id)

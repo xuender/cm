@@ -4,7 +4,6 @@
 ###
 chrome.contextMenus.onClicked.addListener((info, tab)->
   ### 单击事件 ###
-  console.debug 'onClickHandler'
   type = info.menuItemId[0]
   id = info.menuItemId[1..]
   type = getType(type)
@@ -12,19 +11,15 @@ chrome.contextMenus.onClicked.addListener((info, tab)->
   openTab(id, type, value, tab)
 )
 chrome.runtime.onStartup.addListener(->
-  console.debug 'onStartup'
   menuReset()
 )
 chrome.runtime.onInstalled.addListener(->
-  console.debug 'onInstalled'
   all = JU.lsGet('all', [])
   if all.length == 0
     JU.syncFetch('/init.json', (result)->
-      console.info result
       JU.lsSet('all', JSON.parse(result))
       ga('send', 'event', 'db', 'ninit')
     )
-  console.debug 'start'
   ci18n = getCi18n()
   if not JU.lsGet('three_run', false)
     i18n = ci18n.getMessage('i18n')
@@ -190,7 +185,6 @@ openTab = (id, type, value, tab, x=1, fg=null)->
   incognito = id in JU.lsGet("#{type}Incognito", [])
   back = if JU.lsGet("back", false) then !back else back
   back = if fg != null then fg else back
-  console.debug 'openTab %s', id
 
   all = JU.lsGet('all', [])
   urls = getAllUrl(all, id)
@@ -203,7 +197,6 @@ openTab = (id, type, value, tab, x=1, fg=null)->
         urls = urls.concat(getCustomUrl(custom, gid))
         urls = urls.concat(getAllUrl(all, gid))
   for u in urls
-    console.debug 'open %s', u
     ga('send', 'event', 'menu', id)
     if /:|.htm/.test(u)
       show(u, value, tab, back, incognito, x, type)
@@ -236,11 +229,9 @@ menuReset = ->
         all = JU.lsGet('all', [])
         names = JU.lsGet('names', {})
         for id in select
-          console.debug 'select %s', id
           u = JU.findArray(all, 'c', id)
           if u
             name = ci18n.getMessage(id)
-            console.info name
             if not name
               name = u.n
             if u.c of names
@@ -285,7 +276,6 @@ createMenuItem = (id, name, type)->
     if back
       name = '₪ ' + name
   try
-    console.debug 'create menu %s type:%s', name, type
     chrome.contextMenus.create(
       "title": name
       "contexts": [getContexts(type)]
