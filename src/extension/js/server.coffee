@@ -8,26 +8,23 @@ Distributed under terms of the MIT license.
 buttonClick = (e)->
   if e.target.tagName == 'I'
     target = e.target.parentElement
-  else
+  else if e.target.tagName == 'BUTTON'
     target = e.target
-
-  target.parentElement.parentElement.setAttribute('class', 'success')
-  target.remove()
-  json = target.getAttribute('json')
-  chrome.runtime.sendMessage(
-    {
-      cmd: 'addMenu'
-      json: json
-    },
-    (response)->
-      localStorage['ids'] = JSON.stringify(response.ids)
-  )
+  if target
+    target.parentElement.parentElement.setAttribute('class', 'success')
+    target.remove()
+    json = target.getAttribute('json')
+    chrome.runtime.sendMessage(
+      {
+        cmd: 'addMenu'
+        json: json
+      },
+      (response)->
+        localStorage['ids'] = JSON.stringify(response.ids)
+    )
 
 (->
-  os = document.getElementsByClassName('o')
-  for o in os
-    o.setAttribute('class','o')
-  bs = document.getElementsByClassName('b')
+  bs = document.getElementsByTagName('table')
   for b in bs
     b.addEventListener('click', buttonClick)
   chrome.runtime.sendMessage(
