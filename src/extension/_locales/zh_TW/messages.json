@@ -77,6 +77,9 @@
   "tab_close":{
     "message": "關閉頁面"
   },
+  "c_appcache":{
+    "message": "應用緩存"
+  },
   "c_credits":{
     "message": "作者"
   },

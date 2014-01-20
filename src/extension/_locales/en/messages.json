@@ -77,6 +77,9 @@
   "tab_close":{
     "message": "Close tab"
   },
+  "c_appcache":{
+    "message": "AppCache Internals"
+  },
   "c_credits":{
     "message": "Credits"
   },

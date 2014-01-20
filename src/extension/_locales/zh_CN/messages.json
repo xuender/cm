@@ -77,6 +77,9 @@
   "tab_close":{
     "message": "关闭页面"
   },
+  "c_appcache":{
+    "message": "应用缓存"
+  },
   "c_credits":{
     "message": "作者"
   },
