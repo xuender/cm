@@ -2,6 +2,7 @@
 # background 后台运行
 创建右键菜单，监听菜单刷新事件
 ###
+run = true
 chrome.contextMenus.onClicked.addListener((info, tab)->
   ### 单击事件 ###
   type = info.menuItemId[0]
@@ -11,7 +12,8 @@ chrome.contextMenus.onClicked.addListener((info, tab)->
   openTab(id, type, value, tab)
 )
 chrome.runtime.onStartup.addListener(->
-  menuReset()
+  if run
+    menuReset()
 )
 chrome.runtime.onInstalled.addListener(->
   all = JU.lsGet('all', [])
@@ -215,6 +217,7 @@ getCi18n = ->
 
 menuReset = ->
   ### 重置菜单 ###
+  run = false
   ci18n = getCi18n()
   chrome.contextMenus.removeAll(->
     for type in ['men', 'txt', 'pic', 'lin']
@@ -306,3 +309,6 @@ chrome.extension.onConnect.addListener((port)->
       )
   )
 )
+if run
+  console.info 'run'
+  menuReset()
