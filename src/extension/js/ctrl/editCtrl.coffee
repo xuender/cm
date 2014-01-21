@@ -10,10 +10,10 @@ EditCtrl = (scope, log, lsGetItem, lsSetItem, $modalInstance, menu)->
     $modalInstance.close('close')
   scope.save = ->
     log.debug('save')
-    $modalInstance.close(scope.name)
+    # why don't work $modalInstance.close(scope.name)
+    $modalInstance.close($('#urlName').val())
   scope.del = ->
     $modalInstance.close('del')
 
 EditCtrl.$inject = ['$scope', '$log', 'lsGetItem', 'lsSetItem',
   '$modalInstance', 'menu']
-
