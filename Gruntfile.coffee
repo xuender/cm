@@ -22,7 +22,11 @@ module.exports = (grunt)->
     bump:
       options:
         part: 'patch'
-      files: [ 'package.json', 'src/extension/manifest.json' ]
+      files: [
+        'package.json'
+        'bower.json'
+        'src/extension/manifest.json'
+      ]
     concat:
       locales:
         src: [
