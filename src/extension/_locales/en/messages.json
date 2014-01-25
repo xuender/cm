@@ -152,6 +152,9 @@
   "c_menGroup":{
     "message": "Group Menus"
   },
+  "coffee":{
+    "message": "Bitcoins buy a coffee to the author"
+  },
   "comic":{
     "message": "Comic"
   },

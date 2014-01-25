@@ -152,6 +152,9 @@
   "c_menGroup":{
     "message": "组合功能"
   },
+  "coffee":{
+    "message": "使用比特币给作者买杯饮料"
+  },
   "comic":{
     "message": "漫画"
   },

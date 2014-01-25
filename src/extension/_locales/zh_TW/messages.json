@@ -152,6 +152,9 @@
   "c_menGroup":{
     "message": "組合功能"
   },
+  "coffee":{
+    "message": "使用比特幣給作者買杯飲料"
+  },
   "comic":{
     "message": "漫畫"
   },
