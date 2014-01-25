@@ -89,9 +89,6 @@
   "twitter_men":{
     "message": "Twitter 分享"
   },
-  "tmall":{
-    "message": "天貓商城"
-  },
   "qzone":{
     "message": "分享到QQ空間"
   },
@@ -507,7 +504,7 @@
     "message": "海盜灣"
   },
   "youtube":{
-    "message": "Youtube"
+    "message": "Toutube"
   },
   "bing_images":{
     "message": "Bing圖片"
@@ -574,9 +571,6 @@
   },
   "amazon":{
     "message": "亞馬遜中國"
-  },
-  "taobao":{
-    "message": "淘寶"
   },
   "ditu":{
     "message": "Google地圖"

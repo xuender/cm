@@ -89,9 +89,6 @@
   "twitter_men":{
     "message": "Twitter 分享"
   },
-  "tmall":{
-    "message": "天猫商城 "
-  },
   "qzone":{
     "message": "分享到QQ空间"
   },
@@ -574,9 +571,6 @@
   },
   "amazon":{
     "message": "亚马逊中国"
-  },
-  "taobao":{
-    "message": "淘宝"
   },
   "ditu":{
     "message": "Google地图"

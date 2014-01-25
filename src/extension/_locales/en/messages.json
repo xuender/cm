@@ -89,9 +89,6 @@
   "twitter_men":{
     "message": "Twitter Share"
   },
-  "tmall":{
-    "message": "tmall.com"
-  },
   "qzone":{
     "message": "qzone"
   },
@@ -574,9 +571,6 @@
   },
   "amazon":{
     "message": "amazon.cn"
-  },
-  "taobao":{
-    "message": "Taobao"
   },
   "ditu":{
     "message": "Google map"

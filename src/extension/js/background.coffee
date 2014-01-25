@@ -29,8 +29,8 @@ chrome.runtime.onInstalled.addListener(->
     if i18n == 'cn'
       JU.lsSet('zh_CN', true)
       data =
-        txtSelect: ['baidu', 'translate', 'zdic', 'amazon', 'taobao']
-        picSelect: ['google_pic', 'baidu_pic', 'qr_decode']
+        txtSelect: ['baidu', 'translate', 'amazon']
+        picSelect: ['google_pic', 'baidu_pic', 'su_pic', 'qr_decode']
         linSelect: ['weibo_lin', 'gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     else if i18n == 'tw'
@@ -40,7 +40,7 @@ chrome.runtime.onInstalled.addListener(->
     if not data
       data =
         txtSelect: ['bing', 'translate', 'Amazon_com']
-        picSelect: ['google_pic', 'su_pic']
+        picSelect: ['google_pic', 'su_pic', 'qr_decode']
         linSelect: ['gmail_lin', 'qr_lin']
         menSelect: ['i_title']
     for key of data
