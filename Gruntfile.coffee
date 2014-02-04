@@ -422,7 +422,7 @@ module.exports = (grunt)->
     'compress'
   ])
   grunt.registerTask('deploy', [
-    'dist'
     'bump'
+    'dist'
   ])
   grunt.registerTask('default', ['dist'])
