@@ -35,6 +35,7 @@ getLg = ->
     return lg
   'en'
 BodyCtrl = (scope, log, http)->
+  scope.isShow = false
   scope.lg = getLg()
   scope._i18n = window[scope.lg]
   scope.getMessage = (key)->
@@ -155,4 +156,5 @@ BodyCtrl = (scope, log, http)->
       ga('send', 'event', 'server', $(this).attr('id'))
     true
   )
+  scope.isShow = true
 BodyCtrl.$inject = ['$scope', '$log', '$http']

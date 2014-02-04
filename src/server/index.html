@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html manifest="manifest.appcache" ng-app="urls" data-ng-csp>
+<html ng-app="urls" data-ng-csp>
   <head>
     <meta charset="utf-8"/>
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
      <link href="css/index.min.css" rel="stylesheet"/>
     <title>Google Chrome extension ContextMenus</title>
   </head>
-  <body ng-controller="BodyCtrl" >
+  <body ng-controller="BodyCtrl" class="ng-hide" ng-show="isShow">
     <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
       <div class="container">
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -14,7 +14,7 @@
             <li class="active">
               <a href="#">
                 <i class="glyphicon glyphicon-info-sign"></i>
-               <span id="i_about">扩展</span>
+               <span id="i_about">关于</span>
               </a>
             </li>
             <li>
