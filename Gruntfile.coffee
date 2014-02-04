@@ -387,11 +387,7 @@ module.exports = (grunt)->
           basePath: '../'
           cache: [
             '../css/bootstrap.min.css'
-            '../css/index.min.css'
             '../js/jquery.min.js'
-            '../js/chrome.min.js'
-            '../js/locales.min.js'
-            '../js/index.min.js'
             '../js/ui-bootstrap-tpls.min.js'
             '../js/angular.min.js'
             '../img/en.png'
