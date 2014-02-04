@@ -4,9 +4,9 @@
     ng-class="{affix:select.length < size}">
         <li ng-repeat="s in select">
           <a>
-            <button class="pull-right btn btn-xs btn-warning"
+            <button class="close" aria-hidden="true"
             ng-click="unSelect(s)">
-              <i class="glyphicon glyphicon-trash"></i>
+              &times;
             </button>
             {{ s.n }}
             <br/>
