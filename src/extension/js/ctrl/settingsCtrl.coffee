@@ -24,7 +24,6 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
     ga('send', 'event', 'settings', 'isEdit' + n)
   )
   scope.back = lsGetItem('back', false)
-  scope.drag = lsGetItem('drag', false)
   scope.newPage= lsGetItem('newPage', true)
   scope.alerts= []
   scope.phrase = lsGetItem('phrase', '')
@@ -106,10 +105,6 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
     lsSetItem('locale', n)
     window.ci18n = new JU.I18n(n)
     scope.i18n()
-    menuReset()
-  )
-  scope.$watch('drag',(n, o) ->
-    lsSetItem('drag', n)
     menuReset()
   )
   scope.init()

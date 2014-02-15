@@ -232,11 +232,6 @@ module.exports = (grunt)->
     coffee:
       options:
         bare: true
-      context:
-        files:
-          'dist/extension/js/context.js': [
-            'src/extension/js/context.coffee'
-          ]
       components:
         files:
           'dist/extension/js/components.min.js': [

@@ -244,12 +244,6 @@ menuReset = ->
             createMenuItem(id, id, type)
     console.debug 'menu reset'
   )
-#  if JU.lsGet('drag', false)
-#    if not chrome.tabs.onUpdated.hasListener(updated)
-#      chrome.tabs.onUpdated.addListener(updated)
-#  else
-#    if chrome.tabs.onUpdated.hasListener(updated)
-#      chrome.tabs.onUpdated.removeListener(updated)
 #
 #updated = (tabId, changeInfo, tab)->
 #  ### 创建 ###
@@ -287,28 +281,6 @@ createMenuItem = (id, name, type)->
   catch err
     console.error err
 #menuReset()
-chrome.extension.onConnect.addListener((port)->
-  port.onMessage.addListener((data)->
-    if JU.lsGet('drag', true) and (data.message == 'url' or data.message == 'txt')
-      chrome.tabs.getSelected(null, (tab)->
-        fg = (data.y == 1)
-        if data.message == 'url'
-          show(data.values, '', tab, fg, false, data.x)
-          ga('send', 'event', 'drag', 'url')
-        if data.message == 'txt'
-          id = JU.lsGet('txtSelect', ['baidu'])[0]
-          url = data.values.trim()
-          if JU.isUrl(url)
-            if not JU.isProtocol(url)
-              url = "http://#{url}"
-            openUrl(url, tab, fg, false, data.x)
-            ga('send', 'event', 'drag', 'url')
-          else
-            openTab(id, 'txt', data.values, tab, data.x, fg)
-            ga('send', 'event', 'drag', id)
-      )
-  )
-)
 if run
   console.info 'run'
   menuReset()

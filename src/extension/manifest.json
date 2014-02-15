@@ -1,7 +1,7 @@
 {
     "name": "__MSG_name__",
     "manifest_version": 2,
-    "version": "4.1.304",
+    "version": "4.1.305",
     "description": "__MSG_description__",
     "author": "ender",
     "short_name": "CM",
@@ -18,16 +18,6 @@
     },
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; object-src 'self'",
     "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*",
-                "ftp://*/*"
-            ],
-            "js": [
-                "js/context.js"
-            ]
-        },
         {
             "matches": [
                 "http://cm.xuender.me/*"
