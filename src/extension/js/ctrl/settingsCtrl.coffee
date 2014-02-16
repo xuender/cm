@@ -3,6 +3,38 @@
 ###
 SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   ### 设置控制器 ###
+  scope.lt1 = lsGetItem('lt1', '1')
+  scope.lt2 = lsGetItem('lt2', '1')
+  scope.rt1 = lsGetItem('rt1', '1')
+  scope.rt2 = lsGetItem('rt2', '2')
+  scope.lb1 = lsGetItem('lb1', '2')
+  scope.lb2 = lsGetItem('lb2', '1')
+  scope.rb1 = lsGetItem('rb1', '2')
+  scope.rb2 = lsGetItem('rb2', '2')
+  scope.$watch('lt1', (n, o)->
+    lsSetItem('lt1', n)
+  )
+  scope.$watch('lt2', (n, o)->
+    lsSetItem('lt2', n)
+  )
+  scope.$watch('rt1', (n, o)->
+    lsSetItem('rt1', n)
+  )
+  scope.$watch('rt2', (n, o)->
+    lsSetItem('rt2', n)
+  )
+  scope.$watch('lb1', (n, o)->
+    lsSetItem('lb1', n)
+  )
+  scope.$watch('lb2', (n, o)->
+    lsSetItem('lb2', n)
+  )
+  scope.$watch('rb1', (n, o)->
+    lsSetItem('rb1', n)
+  )
+  scope.$watch('rb2', (n, o)->
+    lsSetItem('rb2', n)
+  )
   scope.i18n('settings')
   $('#i_help').html(ci18n.getMessage('i_help'))
   $('#i_help2').html(ci18n.getMessage('i_help2'))

@@ -281,6 +281,62 @@ createMenuItem = (id, name, type)->
   catch err
     console.error err
 #menuReset()
+chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse)->
+  chrome.tabs.getSelected(null, (tab)->
+    x = request.x
+    if request.x == 1
+      if request.y == 1
+        fg = (JU.lsGet('rb1', '2') == '2')
+        x = if JU.lsGet('rb2', '2') == '1' then -1 else 1
+      else
+        fg = (JU.lsGet('rt1', '1') == '2')
+        x = if JU.lsGet('rt2', '2') == '1' then -1 else 1
+    else
+      if request.y == 1
+        fg = (JU.lsGet('lb1', '1') == '2')
+        x = if JU.lsGet('lb2', '1') == '1' then -1 else 1
+      else
+        fg = (JU.lsGet('lt1', '1') == '2')
+        x = if JU.lsGet('lt2', '2') == '1' then -1 else 1
+    fg = (request.y == 1)
+    if request.cmd == 'url'
+      show(request.values, '', tab, fg, false, x)
+      ga('send', 'event', 'drag', 'url')
+    if request.cmd == 'txt'
+      id = JU.lsGet('txtSelect', ['baidu'])[0]
+      url = request.values.trim()
+      if JU.isUrl(url)
+        if not JU.isProtocol(url)
+          url = "http://#{url}"
+        openUrl(url, tab, fg, false, x)
+        ga('send', 'event', 'drag', 'url')
+      else
+        openTab(id, 'txt', request.values, tab, x, fg)
+        ga('send', 'event', 'drag', id)
+  )
+)
+#chrome.extension.onConnect.addListener((port)->
+#  port.onMessage.addListener((data)->
+#    if data.message == 'url' or data.message == 'txt'
+#      chrome.tabs.getSelected(null, (tab)->
+#        fg = (data.y == 1)
+#        if data.message == 'url'
+#          show(data.values, '', tab, fg, false, data.x)
+#          ga('send', 'event', 'drag', 'url')
+#        if data.message == 'txt'
+#          id = JU.lsGet('txtSelect', ['baidu'])[0]
+#          url = data.values.trim()
+#          if JU.isUrl(url)
+#            if not JU.isProtocol(url)
+#              url = "http://#{url}"
+#            openUrl(url, tab, fg, false, data.x)
+#            ga('send', 'event', 'drag', 'url')
+#          else
+#            openTab(id, 'txt', data.values, tab, data.x, fg)
+#            ga('send', 'event', 'drag', id)
+#      )
+#  )
+#)
 if run
   console.info 'run'
   menuReset()

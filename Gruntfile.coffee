@@ -26,6 +26,7 @@ module.exports = (grunt)->
         'package.json'
         'bower.json'
         'src/extension/manifest.json'
+        'src/mate/manifest.json'
       ]
     concat:
       locales:
@@ -189,6 +190,16 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      rootMate:
+        files: [
+          cwd: 'src/mate'
+          src: [
+            'manifest.json'
+          ]
+          dest: 'dist/mate'
+          expand: true
+          filter: 'isFile'
+        ]
       i18n:
         files: [
           cwd: 'src/extension'
@@ -197,11 +208,27 @@ module.exports = (grunt)->
           expand: true
           filter: 'isFile'
         ]
+      i18nMate:
+        files: [
+          cwd: 'src/mate'
+          src: '_locales/**'
+          dest: 'dist/mate'
+          expand: true
+          filter: 'isFile'
+        ]
       img:
         files: [
           cwd: 'src/extension'
           src: 'img/**'
           dest: 'dist/extension'
+          expand: true
+          filter: 'isFile'
+        ]
+      imgMate:
+        files: [
+          cwd: 'src/mate'
+          src: 'img/**'
+          dest: 'dist/mate'
           expand: true
           filter: 'isFile'
         ]
@@ -259,6 +286,11 @@ module.exports = (grunt)->
             'src/extension/js/ctrl/putCtrl.coffee'
             'src/extension/js/ctrl/settingsCtrl.coffee'
             'src/extension/js/options.coffee'
+          ]
+      mateContext:
+        files:
+          'dist/mate/context.js': [
+            'src/mate/context.coffee'
           ]
       popup:
         files:
