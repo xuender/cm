@@ -36,7 +36,7 @@ if 's_b' not of window
       data = e.dataTransfer.getData('Text')
       msg = 'txt'
     if data
-      chrome.runtime.sendMessage('mhklklghjhnlacpcddonhkfockldmamd',
+      chrome.runtime.sendMessage('phlfmkfpmphogkomddckmggcfpmfchpn',
         cmd: msg
         values: data
         x: x

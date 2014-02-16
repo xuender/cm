@@ -394,11 +394,17 @@ module.exports = (grunt)->
         ]
         tasks: ['coffee']
     compress:
-      google:
+      cm:
         options:
           archive: 'dist/cm.zip'
         files: [
           {expand: true, cwd: 'dist/extension/', src: '**/*', dest: '/'}
+        ]
+      mate:
+        options:
+          archive: 'dist/mate.zip'
+        files: [
+          {expand: true, cwd: 'dist/mate/', src: '**/*', dest: '/'}
         ]
     karma:
       options:

@@ -38,6 +38,7 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.i18n('settings')
   $('#i_help').html(ci18n.getMessage('i_help'))
   $('#i_help2').html(ci18n.getMessage('i_help2'))
+  $('#h_drag').html(ci18n.getMessage('h_drag'))
 
   scope.qr_size = lsGetItem('qr_size', 250)
   scope.isEdit = lsGetItem('isEdit', true)
@@ -139,6 +140,8 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
     scope.i18n()
     menuReset()
   )
+  scope.i18n = (key)->
+    ci18n.getMessage(key)
   scope.init()
   log.debug('settings')
 SettingsCtrl.$inject = ['$scope', '$log', '$http', 'lsGetItem', 'lsSetItem']

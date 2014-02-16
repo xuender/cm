@@ -1,596 +1,623 @@
 {
-  "bing_site":{
-    "message": "Bing網站"
-  },
-  "google_link":{
-    "message": "谷歌鏈接"
-  },
-  "google_site":{
-    "message": "谷歌網站"
-  },
-  "facebook_lin":{
-    "message": "Facebook分享"
-  },
-  "gmail_lin":{
-    "message": "Gmail中发送"
-  },
-  "qr_lin":{
-    "message": "當前鏈接生成二維碼"
-  },
-  "su_lin":{
-    "message": "創建鏈接短網址並複制"
-  },
-  "su_lin_alert":{
-    "message": "創建鏈接短網址"
-  },
-  "twitter_lin":{
-    "message": "Twitter 分享"
-  },
-  "weibo_lin":{
-    "message": "新浪微博"
-  },
-  "i_title":{
-    "message": "右鍵搜 選項"
-  },
-  "c_bookmarks":{
-    "message": "書籤管理器"
-  },
-  "c_clearBD":{
-    "message": "清除瀏覽數據"
-  },
-  "c_downloads":{
-    "message": "下載內容"
-  },
-  "c_extensions":{
-    "message": "擴展程序"
-  },
-  "c_flags":{
-    "message": "實驗室"
-  },
-  "c_history":{
-    "message": "歷史記錄"
-  },
-  "c_plugins":{
-    "message": "插件"
-  },
-  "c_settings":{
-    "message": "設置"
-  },
-  "c_version":{
-    "message": "關於版本"
-  },
-  "facebook_menu":{
-    "message": "Facebook分享"
-  },
-  "gmail_page":{
-    "message": "Gmail中发送"
-  },
-  "qr":{
-    "message": "生成當前網址二維碼"
-  },
-  "su":{
-    "message": "創建頁面短網址並複制"
-  },
-  "su_alert":{
-    "message": "創建頁面短網址"
-  },
-  "tab_close":{
-    "message": "關閉頁面"
-  },
-  "c_appcache":{
-    "message": "應用緩存"
-  },
-  "c_credits":{
-    "message": "作者"
-  },
-  "c_memory":{
-    "message": "內存"
-  },
-  "twitter_men":{
-    "message": "Twitter 分享"
-  },
-  "qzone":{
-    "message": "分享到QQ空間"
-  },
-  "weibo":{
-    "message": "新浪微博"
-  },
-  "google_pic":{
-    "message": "Google圖片"
-  },
-  "facebook_pic":{
-    "message": "Facebook分享"
-  },
-  "gmail_pic":{
-    "message": "Gmail中发送"
-  },
-  "qr_decode":{
-    "message": "解析圖片中的二維碼"
-  },
-  "qr_pic":{
-    "message": "當前圖片生成二維碼"
-  },
-  "su_pic":{
-    "message": "創建圖片短網址並複制"
-  },
-  "su_pic_alert":{
-    "message": "創建圖片短網址"
-  },
-  "exif":{
-    "message": "圖片信息查看"
-  },
-  "twitter_pic":{
-    "message": "Twitter 分享"
-  },
-  "weibo_pic":{
-    "message": "新浪微博"
-  },
-  "ag":{
-    "message": "自定義"
-  },
-  "all":{
-    "message": "通用"
-  },
-  "all_chrome":{
-    "message": "Chrome瀏覽器"
-  },
-  "b_load":{
-    "message": "加載設置"
-  },
-  "book":{
-    "message": "閱讀"
-  },
-  "b_save":{
-    "message": "保存設置"
-  },
-  "bug":{
-    "message": "錯誤"
-  },
-  "chrome":{
-    "message": "Chrome"
-  },
-  "c_menGroup":{
-    "message": "組合功能"
-  },
-  "coffee":{
-    "message": "使用比特幣給作者買杯飲料"
-  },
-  "comic":{
-    "message": "漫畫"
-  },
-  "c_picGroup":{
-    "message": "組合圖片菜單"
-  },
-  "c_txtGroup":{
-    "message": "組合劃詞菜單"
-  },
-  "description":{
-    "message": "擴展右鍵菜單，超過300種功能，方便的選擇、組合或自定義頁面、劃詞、圖片菜單，並有生成、解析二維碼和短網址功能。設置可使用雲存儲。最新增加功能共享、資源下載、重命名等功能。"
-  },
-  "ditto":{
-    "message": "重複"
-  },
-  "error":{
-    "message": "未知異常"
-  },
-  "error_ps":{
-    "message": "錯誤的驗證短語"
-  },
-  "error_url":{
-    "message": "網址格式錯誤: "
-  },
-  "feature":{
-    "message": "功能建議"
-  },
-  "fy":{
-    "message": "翻譯"
-  },
-  "g_title":{
-    "message": "組合名稱"
-  },
-  "h_drag":{
-    "message": "超級拖拽: 網頁中向上拖拽鏈接則前台打開，向下拖拽鏈接則後台打開，向左拖拽鏈接則左側打開，向右拖拽鏈接則右側打開，拖拽選擇文字則使用第一個劃詞搜索打開。"
-  },
-  "i18n":{
-    "message": "tw"
-  },
-  "i_about":{
-    "message": "關於"
-  },
-  "i_add":{
-    "message": "新增"
-  },
-  "i_alert":{
-    "message": "增加生成頁面短網址彈出菜單"
-  },
-  "i_all":{
-    "message": "多國語言"
-  },
-  "i_back":{
-    "message": "₪ 後台"
-  },
-  "i_bak":{
-    "message": "雲存儲"
-  },
-  "i_bak_title":{
-    "message": "在雲中匿名保存您的設置"
-  },
-  "i_black":{
-    "message": "黑名單"
-  },
-  "i_cgroup":{
-    "message": "自定義組合"
-  },
-  "i_close":{
-    "message": "關閉"
-  },
-  "i_current":{
-    "message": "₪ 當前"
-  },
-  "i_custom":{
-    "message": "自定義"
-  },
-  "i_custom_title":{
-    "message": "用戶自定義功能菜單"
-  },
-  "i_del":{
-    "message": "刪除"
-  },
-  "i_down":{
-    "message": "下移"
-  },
-  "i_edit":{
-    "message": "編輯"
-  },
-  "i_en":{
-    "message": "英語"
-  },
-  "i_find":{
-    "message": "獲取右鍵菜單"
-  },
-  "i_group":{
-    "message": "組合"
-  },
-  "i_have":{
-    "message": "Submitted can not be shared"
-  },
-  "i_help":{
-    "message": "輸入驗證短語(8-30字符)，點<span class='label label-info'>保存設置</span>，當前配置將保存到雲端。輸入驗證短語點<span class='label label-warning'>加載設置</span>，所有配置立刻恢復。可使用<code>cloud demo</code>測試。 <br/>PS: 測試前，請先保存您的設置哦^_^"
-  },
-  "i_info":{
-    "message": "介紹"
-  },
-  "i_label":{
-    "message": "標題"
-  },
-  "i_language":{
-    "message": "語言選擇"
-  },
-  "i_lin":{
-    "message": "鏈接菜單"
-  },
-  "i_lin_alert":{
-    "message": "增加生成鏈接短網址彈出菜單"
-  },
-  "i_lin_title":{
-    "message": "右鍵鏈接顯示的菜單"
-  },
-  "i_men":{
-    "message": "頁面菜單"
-  },
-  "i_men_title":{
-    "message": "右擊頁面顯示的菜單"
-  },
-  "i_menucode":{
-    "message": "名稱重複，請修改。"
-  },
-  "i_name":{
-    "message": "名稱"
-  },
-  "i_nick":{
-    "message": "提交人"
-  },
-  "i_note":{
-    "message": "注意事項"
-  },
-  "i_pic":{
-    "message": "圖片菜單"
-  },
-  "i_pic_alert":{
-    "message": "增加生成圖片短網址彈出菜單"
-  },
-  "i_pic_title":{
-    "message": "右鍵圖片顯示的菜單"
-  },
-  "i_private":{
-    "message": "☢ 隱身"
-  },
-  "i_put_ok":{
-    "message": "共享成功，等待收錄。"
-  },
-  "i_qr_decode":{
-    "message": "解析圖片中的二維碼"
-  },
-  "i_s3":{
-    "message": "部分簡體中文(GBK、GB2312)字符集網站如果亂碼則使用%g表示選中的文字"
-  },
-  "i_select":{
-    "message": "選擇"
-  },
-  "i_settings":{
-    "message": "設置"
-  },
-  "i_settings_title":{
-    "message": "其他設置"
-  },
-  "i_share":{
-    "message": "共享"
-  },
-  "i_size":{
-    "message": "二維碼尺寸"
-  },
-  "i_slin":{
-    "message": "自定義網址中使用%s表示鏈接網址，例如: https://www.google.com/search?q=link%3A%s"
-  },
-  "i_smen":{
-    "message": "自定義網址中使用%s表示當前頁面網址，例如: https://twitter.com/intent/tweet?url=%s"
-  },
-  "i_spic":{
-    "message": "自定義網址中使用％s表示圖片網址，例如：http://www.google.com/searchbyimage?image_url=%s"
-  },
-  "i_ss":{
-    "message": "在菜單中顯示選擇的文字"
-  },
-  "i_sshort":{
-    "message": "選擇短網址生成網站"
-  },
-  "i_stxt":{
-    "message": "在搜索引擎中輸入“搜索文字”，顯示結果頁面後復製完整的鏈接(包括http://)到輸入框，然後點擊加號確認"
-  },
-  "i_su_lin":{
-    "message": "增加生成鏈接短網址複製剪貼板菜單"
-  },
-  "i_summary":{
-    "message": "做最優秀的右鍵菜單擴展程序。"
-  },
-  "i_txt":{
-    "message": "劃詞菜單"
-  },
-  "i_txt_title":{
-    "message": "右鍵選擇文字顯示的菜單"
-  },
-  "i_up":{
-    "message": "上移"
-  },
-  "i_url":{
-    "message": "網址"
-  },
-  "i_zh_CN":{
-    "message": "簡體中文"
-  },
-  "i_zh_TW":{
-    "message": "繁體中文"
-  },
-  "li1":{
-    "message": "本應用承諾遵守《谷歌瀏覽器擴展程序庫服務條款》；"
-  },
-  "li2":{
-    "message": "本應用是開源軟件，所有源碼均可在github上查看；"
-  },
-  "li3":{
-    "message": "購物欄目中部分功能在不影響用戶的前提下與第三方推廣聯盟進行合作。"
-  },
-  "linGroup":{
-    "message": "選擇鏈接菜單組合"
-  },
-  "linSelect":{
-    "message": "選擇鏈接菜單"
-  },
-  "mailme":{
-    "message": "作者"
-  },
-  "menGroup":{
-    "message": "選擇頁面菜單組合"
-  },
-  "menSelect":{
-    "message": "選擇頁面菜單"
-  },
-  "movie":{
-    "message": "影視"
-  },
-  "mp3":{
-    "message": "音樂"
-  },
-  "m_title":{
-    "message": "自定義名稱"
-  },
-  "name":{
-    "message": "右鍵搜"
-  },
-  "new":{
-    "message": "新聞"
-  },
-  "no_results":{
-    "message": "未找到匹配"
-  },
-  "pic":{
-    "message": "圖片"
-  },
-  "picGroup":{
-    "message": "選擇圖片菜單組合"
-  },
-  "picSelect":{
-    "message": "選擇圖片菜單"
-  },
-  "qr_size":{
-    "message": "二維碼宽高"
-  },
-  "question":{
-    "message": "問題"
-  },
-  "r_bak":{
-    "message": "是否確定加載備份？"
-  },
-  "r_del":{
-    "message": "是否確定刪除?"
-  },
-  "reviews":{
-    "message": "評論"
-  },
-  "s_analytics":{
-    "message": "啟用Google Analytics"
-  },
-  "s_back":{
-    "message": "默認後台打開"
-  },
-  "s_drag":{
-    "message": "啟用超級拖拽"
-  },
-  "shop":{
-    "message": "購物"
-  },
-  "s_newPage":{
-    "message": "頁面存在則不打開新頁面"
-  },
-  "sns":{
-    "message": "社交網絡"
-  },
-  "s_phrase":{
-    "message": "驗證短語"
-  },
-  "t_isEdit":{
-    "message": "顯示編輯按鈕"
-  },
-  "t_isFlag":{
-    "message": "顯示語言圖標"
-  },
-  "title":{
-    "message": "右鍵搜 - 選項"
-  },
-  "t_private":{
-    "message": "在新的隱身窗口打開"
-  },
-  "t_title":{
-    "message": "簡介"
-  },
-  "txtGroup":{
-    "message": "選擇劃詞菜單組合"
-  },
-  "txtSelect":{
-    "message": "選擇劃詞菜單"
-  },
-  "ui":{
-    "message": "設計"
-  },
-  "update":{
-    "message": "保存"
-  },
-  "user":{
-    "message": "用 "
-  },
-  "utils":{
-    "message": "工具"
-  },
-  "bing":{
-    "message": "Bing"
-  },
-  "duckduckgo":{
-    "message": "DuckDuckGo"
-  },
-  "google":{
-    "message": "Google"
-  },
-  "translate":{
-    "message": "Google翻譯"
-  },
-  "thepiratebay":{
-    "message": "海盜灣"
-  },
-  "youtube":{
-    "message": "Toutube"
-  },
-  "bing_images":{
-    "message": "Bing圖片"
-  },
-  "google_img":{
-    "message": "Google圖片"
-  },
-  "facebook":{
-    "message": "臉書搜索"
-  },
-  "gmail_txt":{
-    "message": "Gmail中发送"
-  },
-  "google_plus":{
-    "message": "Google+"
-  },
-  "qr_txt":{
-    "message": "選擇文字生成二維碼"
-  },
-  "Yahoo":{
-    "message": "Yahoo"
-  },
-  "Amazon_com":{
+   "Amazon_com":{
     "message": "亞馬遜"
   },
-  "twitter":{
-    "message": "Twitter"
-  },
-  "twitter_share":{
-    "message": "Twitter 分享"
-  },
-  "en_wikipedia":{
-    "message": "英文維基百科"
-  },
-  "baidu":{
-    "message": "百度"
-  },
-  "baidu_site":{
-    "message": "百度站內搜"
-  },
-  "google_hk":{
-    "message": "谷歌"
-  },
-  "yahoo_cn":{
-    "message": "Yahoo中國"
-  },
-  "scholar":{
-    "message": "Google學術"
-  },
-  "wenku":{
-    "message": "百度文庫"
-  },
-  "bt":{
-    "message": "BT搜索"
-  },
-  "EDonkey":{
+   "EDonkey":{
     "message": "電驢搜索"
   },
-  "nds":{
-    "message": "網盤搜索"
+   "Yahoo":{
+    "message": "Yahoo"
   },
-  "image_baidu":{
-    "message": "百度圖片"
+   "ag":{
+    "message": "自定義"
   },
-  "amazon":{
+   "all":{
+    "message": "通用"
+  },
+   "all_chrome":{
+    "message": "Chrome瀏覽器"
+  },
+   "amazon":{
     "message": "亞馬遜中國"
   },
-  "ditu":{
+   "b_load":{
+    "message": "加載設置"
+  },
+   "b_save":{
+    "message": "保存設置"
+  },
+   "baidu":{
+    "message": "百度"
+  },
+   "baidu_site":{
+    "message": "百度站內搜"
+  },
+   "bing":{
+    "message": "Bing"
+  },
+   "bing_images":{
+    "message": "Bing圖片"
+  },
+   "bing_site":{
+    "message": "Bing網站"
+  },
+   "bo":{
+    "message": "後台"
+  },
+   "book":{
+    "message": "閱讀"
+  },
+   "bt":{
+    "message": "BT搜索"
+  },
+   "bug":{
+    "message": "錯誤"
+  },
+   "c_appcache":{
+    "message": "應用緩存"
+  },
+   "c_bookmarks":{
+    "message": "書籤管理器"
+  },
+   "c_clearBD":{
+    "message": "清除瀏覽數據"
+  },
+   "c_credits":{
+    "message": "作者"
+  },
+   "c_downloads":{
+    "message": "下載內容"
+  },
+   "c_extensions":{
+    "message": "擴展程序"
+  },
+   "c_flags":{
+    "message": "實驗室"
+  },
+   "c_history":{
+    "message": "歷史記錄"
+  },
+   "c_memory":{
+    "message": "內存"
+  },
+   "c_menGroup":{
+    "message": "組合功能"
+  },
+   "c_picGroup":{
+    "message": "組合圖片菜單"
+  },
+   "c_plugins":{
+    "message": "插件"
+  },
+   "c_settings":{
+    "message": "設置"
+  },
+   "c_txtGroup":{
+    "message": "組合劃詞菜單"
+  },
+   "c_version":{
+    "message": "關於版本"
+  },
+   "chrome":{
+    "message": "Chrome"
+  },
+   "coffee":{
+    "message": "使用比特幣給作者買杯飲料"
+  },
+   "comic":{
+    "message": "漫畫"
+  },
+   "description":{
+    "message": "擴展右鍵菜單，超過300種功能，方便的選擇、組合或自定義頁面、劃詞、圖片菜單，並有生成、解析二維碼和短網址功能。設置可使用雲存儲。最新增加功能共享、資源下載、重命名等功能。右鍵搜伴侶增加超級拖拽。"
+  },
+   "ditto":{
+    "message": "重複"
+  },
+   "ditu":{
     "message": "Google地圖"
   },
-  "ditu_bing":{
+   "ditu_bing":{
     "message": "Bing地圖"
   },
-  "kd":{
-    "message": "快遞單查詢"
+   "duckduckgo":{
+    "message": "DuckDuckGo"
   },
-  "wikipedia":{
-    "message": "簡體維基百科"
+   "en_wikipedia":{
+    "message": "英文維基百科"
   },
-  "google_tw":{
+   "error":{
+    "message": "未知異常"
+  },
+   "error_ps":{
+    "message": "錯誤的驗證短語"
+  },
+   "error_url":{
+    "message": "網址格式錯誤: "
+  },
+   "exif":{
+    "message": "圖片信息查看"
+  },
+   "facebook":{
+    "message": "臉書搜索"
+  },
+   "facebook_lin":{
+    "message": "Facebook分享"
+  },
+   "facebook_menu":{
+    "message": "Facebook分享"
+  },
+   "facebook_pic":{
+    "message": "Facebook分享"
+  },
+   "feature":{
+    "message": "功能建議"
+  },
+   "fo":{
+    "message": "前台"
+  },
+   "fy":{
+    "message": "翻譯"
+  },
+   "g_title":{
+    "message": "組合名稱"
+  },
+   "gmail_lin":{
+    "message": "Gmail中发送"
+  },
+   "gmail_page":{
+    "message": "Gmail中发送"
+  },
+   "gmail_pic":{
+    "message": "Gmail中发送"
+  },
+   "gmail_txt":{
+    "message": "Gmail中发送"
+  },
+   "google":{
+    "message": "Google"
+  },
+   "google_hk":{
+    "message": "谷歌"
+  },
+   "google_img":{
+    "message": "Google圖片"
+  },
+   "google_link":{
+    "message": "谷歌鏈接"
+  },
+   "google_pic":{
+    "message": "Google圖片"
+  },
+   "google_plus":{
+    "message": "Google+"
+  },
+   "google_site":{
+    "message": "谷歌網站"
+  },
+   "google_tw":{
     "message": "穀歌台版"
   },
-  "tw_wikipedia":{
+   "h_drag":{
+    "message": "超級拖拽: 網頁中拖拽鏈接則搜索或打開，啟用超級拖拽需要安裝<a href='https://chrome.google.com/webstore/detail/gojgagdabkhlnoeglbklbcebanlfnjkl' target='_blank'>右鍵搜伴侶</a>。"
+  },
+   "i18n":{
+    "message": "tw"
+  },
+   "i_about":{
+    "message": "關於"
+  },
+   "i_add":{
+    "message": "新增"
+  },
+   "i_alert":{
+    "message": "增加生成頁面短網址彈出菜單"
+  },
+   "i_all":{
+    "message": "多國語言"
+  },
+   "i_back":{
+    "message": "₪ 後台"
+  },
+   "i_bak":{
+    "message": "雲存儲"
+  },
+   "i_bak_title":{
+    "message": "在雲中匿名保存您的設置"
+  },
+   "i_black":{
+    "message": "黑名單"
+  },
+   "i_cgroup":{
+    "message": "自定義組合"
+  },
+   "i_close":{
+    "message": "關閉"
+  },
+   "i_current":{
+    "message": "₪ 當前"
+  },
+   "i_custom":{
+    "message": "自定義"
+  },
+   "i_custom_title":{
+    "message": "用戶自定義功能菜單"
+  },
+   "i_del":{
+    "message": "刪除"
+  },
+   "i_down":{
+    "message": "下移"
+  },
+   "i_edit":{
+    "message": "編輯"
+  },
+   "i_en":{
+    "message": "英語"
+  },
+   "i_find":{
+    "message": "獲取右鍵菜單"
+  },
+   "i_group":{
+    "message": "組合"
+  },
+   "i_have":{
+    "message": "Submitted can not be shared"
+  },
+   "i_help":{
+    "message": "輸入驗證短語(8-30字符)，點<span class='label label-info'>保存設置</span>，當前配置將保存到雲端。輸入驗證短語點<span class='label label-warning'>加載設置</span>，所有配置立刻恢復。可使用<code>cloud demo</code>測試。 <br/>PS: 測試前，請先保存您的設置哦^_^"
+  },
+   "i_info":{
+    "message": "介紹"
+  },
+   "i_label":{
+    "message": "標題"
+  },
+   "i_language":{
+    "message": "語言選擇"
+  },
+   "i_lin":{
+    "message": "鏈接菜單"
+  },
+   "i_lin_alert":{
+    "message": "增加生成鏈接短網址彈出菜單"
+  },
+   "i_lin_title":{
+    "message": "右鍵鏈接顯示的菜單"
+  },
+   "i_men":{
+    "message": "頁面菜單"
+  },
+   "i_men_title":{
+    "message": "右擊頁面顯示的菜單"
+  },
+   "i_menucode":{
+    "message": "名稱重複，請修改。"
+  },
+   "i_name":{
+    "message": "名稱"
+  },
+   "i_nick":{
+    "message": "提交人"
+  },
+   "i_note":{
+    "message": "注意事項"
+  },
+   "i_pic":{
+    "message": "圖片菜單"
+  },
+   "i_pic_alert":{
+    "message": "增加生成圖片短網址彈出菜單"
+  },
+   "i_pic_title":{
+    "message": "右鍵圖片顯示的菜單"
+  },
+   "i_private":{
+    "message": "☢ 隱身"
+  },
+   "i_put_ok":{
+    "message": "共享成功，等待收錄。"
+  },
+   "i_qr_decode":{
+    "message": "解析圖片中的二維碼"
+  },
+   "i_s3":{
+    "message": "部分簡體中文(GBK、GB2312)字符集網站如果亂碼則使用%g表示選中的文字"
+  },
+   "i_select":{
+    "message": "選擇"
+  },
+   "i_settings":{
+    "message": "設置"
+  },
+   "i_settings_title":{
+    "message": "其他設置"
+  },
+   "i_share":{
+    "message": "共享"
+  },
+   "i_size":{
+    "message": "二維碼尺寸"
+  },
+   "i_slin":{
+    "message": "自定義網址中使用%s表示鏈接網址，例如: https://www.google.com/search?q=link%3A%s"
+  },
+   "i_smen":{
+    "message": "自定義網址中使用%s表示當前頁面網址，例如: https://twitter.com/intent/tweet?url=%s"
+  },
+   "i_spic":{
+    "message": "自定義網址中使用％s表示圖片網址，例如：http://www.google.com/searchbyimage?image_url=%s"
+  },
+   "i_ss":{
+    "message": "在菜單中顯示選擇的文字"
+  },
+   "i_sshort":{
+    "message": "選擇短網址生成網站"
+  },
+   "i_stxt":{
+    "message": "在搜索引擎中輸入“搜索文字”，顯示結果頁面後復製完整的鏈接(包括http://)到輸入框，然後點擊加號確認"
+  },
+   "i_su_lin":{
+    "message": "增加生成鏈接短網址複製剪貼板菜單"
+  },
+   "i_summary":{
+    "message": "做最優秀的右鍵菜單擴展程序。"
+  },
+   "i_title":{
+    "message": "右鍵搜 選項"
+  },
+   "i_txt":{
+    "message": "劃詞菜單"
+  },
+   "i_txt_title":{
+    "message": "右鍵選擇文字顯示的菜單"
+  },
+   "i_up":{
+    "message": "上移"
+  },
+   "i_url":{
+    "message": "網址"
+  },
+   "i_zh_CN":{
+    "message": "簡體中文"
+  },
+   "i_zh_TW":{
+    "message": "繁體中文"
+  },
+   "image_baidu":{
+    "message": "百度圖片"
+  },
+   "kd":{
+    "message": "快遞單查詢"
+  },
+   "lb":{
+    "message": "左下"
+  },
+   "li1":{
+    "message": "本應用承諾遵守《谷歌瀏覽器擴展程序庫服務條款》；"
+  },
+   "li2":{
+    "message": "本應用是開源軟件，所有源碼均可在github上查看；"
+  },
+   "li3":{
+    "message": "購物欄目中部分功能在不影響用戶的前提下與第三方推廣聯盟進行合作。"
+  },
+   "linGroup":{
+    "message": "選擇鏈接菜單組合"
+  },
+   "linSelect":{
+    "message": "選擇鏈接菜單"
+  },
+   "lo":{
+    "message": "左側"
+  },
+   "lt":{
+    "message": "左上"
+  },
+   "m_title":{
+    "message": "自定義名稱"
+  },
+   "mailme":{
+    "message": "作者"
+  },
+   "menGroup":{
+    "message": "選擇頁面菜單組合"
+  },
+   "menSelect":{
+    "message": "選擇頁面菜單"
+  },
+   "movie":{
+    "message": "影視"
+  },
+   "mp3":{
+    "message": "音樂"
+  },
+   "name":{
+    "message": "右鍵搜"
+  },
+   "nds":{
+    "message": "網盤搜索"
+  },
+   "new":{
+    "message": "新建"
+  },
+   "no_results":{
+    "message": "未找到匹配"
+  },
+   "pic":{
+    "message": "圖片"
+  },
+   "picGroup":{
+    "message": "選擇圖片菜單組合"
+  },
+   "picSelect":{
+    "message": "選擇圖片菜單"
+  },
+   "qr":{
+    "message": "生成當前網址二維碼"
+  },
+   "qr_decode":{
+    "message": "解析圖片中的二維碼"
+  },
+   "qr_lin":{
+    "message": "當前鏈接生成二維碼"
+  },
+   "qr_pic":{
+    "message": "當前圖片生成二維碼"
+  },
+   "qr_size":{
+    "message": "二維碼宽高"
+  },
+   "qr_txt":{
+    "message": "選擇文字生成二維碼"
+  },
+   "question":{
+    "message": "問題"
+  },
+   "qzone":{
+    "message": "分享到QQ空間"
+  },
+   "r_bak":{
+    "message": "是否確定加載備份？"
+  },
+   "r_del":{
+    "message": "是否確定刪除?"
+  },
+   "rb":{
+    "message": "右下"
+  },
+   "reviews":{
+    "message": "評論"
+  },
+   "ro":{
+    "message": "右側"
+  },
+   "rt":{
+    "message": "右上"
+  },
+   "s_analytics":{
+    "message": "啟用Google Analytics"
+  },
+   "s_back":{
+    "message": "默認後台打開"
+  },
+   "s_drag":{
+    "message": "超級拖拽"
+  },
+   "s_newPage":{
+    "message": "頁面存在則不打開新頁面"
+  },
+   "s_phrase":{
+    "message": "驗證短語"
+  },
+   "scholar":{
+    "message": "Google學術"
+  },
+   "shop":{
+    "message": "購物"
+  },
+   "sns":{
+    "message": "社交網絡"
+  },
+   "su":{
+    "message": "創建頁面短網址並複制"
+  },
+   "su_alert":{
+    "message": "創建頁面短網址"
+  },
+   "su_lin":{
+    "message": "創建鏈接短網址並複制"
+  },
+   "su_lin_alert":{
+    "message": "創建鏈接短網址"
+  },
+   "su_pic":{
+    "message": "創建圖片短網址並複制"
+  },
+   "su_pic_alert":{
+    "message": "創建圖片短網址"
+  },
+   "t_isEdit":{
+    "message": "顯示編輯按鈕"
+  },
+   "t_isFlag":{
+    "message": "顯示語言圖標"
+  },
+   "t_private":{
+    "message": "在新的隱身窗口打開"
+  },
+   "t_title":{
+    "message": "簡介"
+  },
+   "tab_close":{
+    "message": "關閉頁面"
+  },
+   "target":{
+    "message": "目標"
+  },
+   "thepiratebay":{
+    "message": "海盜灣"
+  },
+   "title":{
+    "message": "右鍵搜 - 選項"
+  },
+   "translate":{
+    "message": "Google翻譯"
+  },
+   "tw_wikipedia":{
     "message": "繁體維基百科"
+  },
+   "twitter":{
+    "message": "Twitter"
+  },
+   "twitter_lin":{
+    "message": "Twitter 分享"
+  },
+   "twitter_men":{
+    "message": "Twitter 分享"
+  },
+   "twitter_pic":{
+    "message": "Twitter 分享"
+  },
+   "twitter_share":{
+    "message": "Twitter 分享"
+  },
+   "txtGroup":{
+    "message": "選擇劃詞菜單組合"
+  },
+   "txtSelect":{
+    "message": "選擇劃詞菜單"
+  },
+   "ui":{
+    "message": "設計"
+  },
+   "update":{
+    "message": "保存"
+  },
+   "user":{
+    "message": "用 "
+  },
+   "utils":{
+    "message": "工具"
+  },
+   "weibo":{
+    "message": "新浪微博"
+  },
+   "weibo_lin":{
+    "message": "新浪微博"
+  },
+   "weibo_pic":{
+    "message": "新浪微博"
+  },
+   "wenku":{
+    "message": "百度文庫"
+  },
+   "wikipedia":{
+    "message": "簡體維基百科"
+  },
+   "yahoo_cn":{
+    "message": "Yahoo中國"
+  },
+   "youtube":{
+    "message": "Toutube"
   }
 }

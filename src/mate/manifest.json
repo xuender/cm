@@ -1,32 +1,34 @@
 {
-  "name": "__MSG_cmm_name__",
-  "manifest_version": 2,
-  "version": "1.0.1",
-  "description": "__MSG_cmm_description__",
-  "author": "ender",
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com https://cdn.jsdelivr.net; object-src 'self'",
-  "content_scripts": [
-    {
-    "matches": [
-      "http://*/*",
-      "https://*/*",
-      "ftp://*/*"
+    "name": "__MSG_cmm_name__",
+    "manifest_version": 2,
+    "version": "1.0.4",
+    "description": "__MSG_cmm_description__",
+    "author": "ender",
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com https://cdn.jsdelivr.net; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "ftp://*/*"
+            ],
+            "run_at": "document_start",
+            "permissions": [
+                "tabs"
+            ],
+            "js": [
+                "context.js"
+            ]
+        }
     ],
-    "run_at": "document_start",
-    "permissions": [ "tabs" ],
-    "js": [
-      "context.js"
-    ]
-  }
-  ],
-  "offline_enabled": false,
-  "permissions": [
-    "tabs"
-  ],
-  "default_locale": "en",
-  "icons": {
-    "16": "img/16.png",
-    "48": "img/48.png",
-    "128": "img/128.png"
-  }
+    "offline_enabled": false,
+    "permissions": [
+        "tabs"
+    ],
+    "default_locale": "en",
+    "icons": {
+        "16": "img/16.png",
+        "48": "img/48.png",
+        "128": "img/128.png"
+    }
 }
