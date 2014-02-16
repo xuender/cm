@@ -4,6 +4,7 @@
     "version": "1.0.4",
     "description": "__MSG_cmm_description__",
     "author": "ender",
+    "short_name": "CMM",
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com https://cdn.jsdelivr.net; object-src 'self'",
     "content_scripts": [
         {
