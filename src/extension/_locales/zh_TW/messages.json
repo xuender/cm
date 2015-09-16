@@ -23,7 +23,13 @@
    "b_load":{
     "message": "加載設置"
   },
+   "b_read":{
+    "message": "讀取設定"
+  },
    "b_save":{
+    "message": "保存設置到雲端"
+  },
+   "b_save2":{
     "message": "保存設置"
   },
    "baidu":{
@@ -223,6 +229,12 @@
   },
    "i_bak_title":{
     "message": "在雲中匿名保存您的設置"
+  },
+   "i_bak2":{
+    "message": "存儲"
+  },
+   "i_bak2_title":{
+    "message": "顯示設定，複製保存"
   },
    "i_black":{
     "message": "黑名單"

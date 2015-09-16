@@ -93,7 +93,16 @@ SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->
   scope.closeAlert = (index) ->
     ### 删除提示信息 ###
     scope.alerts.splice(index, 1)
-  #scope.bak = JSON.stringify(localStorage)
+  scope.read = ->
+    scope.bakstr = JSON.stringify(localStorage)
+  # 加载2
+  scope.load2 = ->
+    if confirm(ci18n.getMessage('r_bak'))
+      data = JSON.parse(scope.bakstr)
+      for i of data
+        localStorage[i] = data[i]
+      scope.alert(ci18n.getMessage('b_load'))
+      menuReset()
   scope.load = ->
     if scope.bak.$valid and confirm(ci18n.getMessage('r_bak'))
       http(

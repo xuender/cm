@@ -23,7 +23,13 @@
    "b_load":{
     "message": "Загрузить настройки"
   },
+   "b_read":{
+    "message": "Загрузить настройки"
+  },
    "b_save":{
+    "message": "Сохранить настройки"
+  },
+   "b_save2":{
     "message": "Сохранить настройки"
   },
    "baidu":{
@@ -223,6 +229,12 @@
   },
    "i_bak_title":{
     "message": "Анонимные в облаке, чтобы сохранить настройки"
+  },
+   "i_bak2":{
+    "message": "Save"
+  },
+   "i_bak2_title":{
+    "message": "Show settings"
   },
    "i_black":{
     "message": "черный список"

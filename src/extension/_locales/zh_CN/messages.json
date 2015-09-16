@@ -23,8 +23,14 @@
    "b_load":{
     "message": "从云端加载设置"
   },
+   "b_read":{
+    "message": "读取设置"
+  },
    "b_save":{
     "message": "保存设置到云端"
+  },
+   "b_save2":{
+    "message": "保存设置"
   },
    "baidu":{
     "message": "百度"
@@ -223,6 +229,12 @@
   },
    "i_bak_title":{
     "message": "在云中匿名保存您的设置"
+  },
+   "i_bak2":{
+    "message": "存储"
+  },
+   "i_bak2_title":{
+    "message": "显示设置，复制保存"
   },
    "i_black":{
     "message": "黑名单"

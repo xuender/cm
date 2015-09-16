@@ -6,27 +6,32 @@
   </h1>
   <span id="i_summary">做最优秀的右键菜单扩展程序</span>
 </div><!-- jumbotron -->
-<div class="pull-right">
-  <img src="img/coffee.png"/>
-  <div class="text-info text-center"><span id="coffee">coffee</span></div>
+<div class="pull-right" ng-show="isCn">
+赞助作者购买云存储服务器
+  <form action="https://shenghuo.alipay.com/send/payment/fill.htm" method="POST" target="_blank" accept-charset="GBK">
+      <input name="optEmail" type="hidden" value="xuender@139.com" />
+      <input name="payAmount" type="hidden" value="10" />
+      <input id="title" name="title" type="hidden" value="赞助" />
+      <input name="memo" type="hidden" value="Context Menus" />
+      <input name="pay" type="image" value="转账" src="img/alipay.png" />
+  </form>
 </div><!-- pull-right -->
-<div class="col-sm-8">
-<div class="page-header">
-  <h3>
-    <i class="glyphicon glyphicon-info-sign"></i>
-    <span id="i_info">介绍</span>
-  </h3>
-</div>
-<div id="description" class="well well-large"></div>
-<div class="page-header">
-  <h3>
-    <i class="glyphicon glyphicon-warning-sign"></i>
-    <span id="i_note">注意事项</span>
-  </h3>
-</div>
-<ol>
-  <li><span id="li1"></span></li>
-  <li><span id="li2"></span></li>
-  <li><span id="li3"></span></li>
-</ol>
+<div ng-class="{'col-sm-8':isCn}">
+  <div class="page-header">
+    <h3>
+      <i class="glyphicon glyphicon-info-sign"></i>
+      <span id="i_info">介绍</span>
+    </h3>
+  </div>
+  <div id="description" class="well well-large"></div>
+  <div class="page-header">
+    <h3>
+      <i class="glyphicon glyphicon-warning-sign"></i>
+      <span id="i_note">注意事项</span>
+    </h3>
+  </div>
+  <ol>
+    <li><span id="li1"></span></li>
+    <li><span id="li2"></span></li>
+  </ol>
 </div><!-- sol-sm-8 -->

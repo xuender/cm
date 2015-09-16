@@ -23,7 +23,13 @@
    "b_load":{
     "message": "Load Settings"
   },
+   "b_read":{
+    "message": "Read Settings"
+  },
    "b_save":{
+    "message": "Save Settings"
+  },
+   "b_save2":{
     "message": "Save Settings"
   },
    "baidu":{
@@ -223,6 +229,12 @@
   },
    "i_bak_title":{
     "message": "Save your settings anonymously in the cloud."
+  },
+   "i_bak2":{
+    "message": "Save"
+  },
+   "i_bak2_title":{
+    "message": "Show settings"
   },
    "i_black":{
     "message": "Blacklist"
