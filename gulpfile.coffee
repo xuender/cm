@@ -88,10 +88,23 @@ gulp.task('copy', ->
     .pipe(gulp.dest('dist/extension/scripts'))
 )
 
+gulp.task('concat', ->
+  gulp.src([
+    'src/extension/lib/js-utils/js/ionic.min.js'
+    'src/extension/scripts/chrome_ex_oauth.min.js'
+    'src/extension/lib/js-utils/js/chrome.min.js'
+    'src/extension/lib/js-utils/js/js-utils.min.js'
+    'src/extension/scripts/qrcode.min.js'
+  ])
+    .pipe(concat('bg_lib.js'))
+    .pipe(gulp.dest('src/extension/js'))
+)
 gulp.task('coffee', ->
   gulp.src([
     'src/extension/options/options.coffee'
+    'src/extension/options/optionsCtrl.coffee'
     'src/extension/options/aboutCtrl.coffee'
+    'src/extension/options/settingsCtrl.coffee'
   ])
     .pipe(coffee({bare:true}))
     .pipe(concat('options.js'))
@@ -109,7 +122,12 @@ gulp.task('coffee', ->
     .pipe(concat('i18n.js'))
     .pipe(gulp.dest('src/extension/js'))
   gulp.src([
-    'src/extension/coffee/background.coffee'
+    'src/extension/background/code.coffee'
+    'src/extension/background/tools.coffee'
+    'src/extension/background/bg_server.coffee'
+    'src/extension/background/background.coffee'
+    'src/extension/scripts/analytics.coffee'
+    'src/extension/background/chromereload.coffee' # 正式发布需要删除这行
   ])
     .pipe(coffee({bare:true}))
     .pipe(concat('background.js'))
@@ -155,7 +173,7 @@ gulp.task('watch', ->
 )
 
 gulp.task('dev', (cb)->
-  runSequence('clean', ['coffee', 'sass', 'copy'], 'usemin', cb)
+  runSequence('clean', ['concat', 'coffee', 'sass', 'copy'], 'usemin', cb)
 )
 
 gulp.task('dist', (cb)->

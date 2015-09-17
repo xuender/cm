@@ -7,7 +7,8 @@
     "short_name": "CM",
     "background": {
         "scripts": [
-            "scripts/chromereload.js"
+            "js/bg_lib.js",
+            "js/background.js"
         ]
     },
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; object-src 'self'",

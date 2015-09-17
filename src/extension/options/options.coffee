@@ -45,6 +45,7 @@ app.config([
     ).state('settings',
       url: '/settings'
       templateUrl: 'options/settings.html',
+      controller: 'SettingsCtrl'
     )
   #when('/settings', {
   #  templateUrl: 'partials/settings.html',
