@@ -3,7 +3,6 @@
 * enter 回车跳转或回车运行方法
 * integer 整数校验
 ###
-utilsDirectives = angular.module('utils.directives', [])
 # 回车
 utilsDirectives.directive('enter',->
   ($scope, elm, attr)->

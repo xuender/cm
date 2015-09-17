@@ -4,14 +4,25 @@
 ctrls.controller('OptionsCtrl',[
   '$scope'
   'localStorageService'
+  '$translate'
+  'menu'
   (
     $scope
     lls
+    $translate
+    menu
   )->
-    console.log 'setting'
-    lls.bind($scope, 'locale', navigator.language.replace('-', '_'))
+    console.log 'option ctrl'
+    $scope.locale = lls.get('locale')
+    if not $scope.locale
+      $scope.locale = navigator.language.replace('-', '_')
     if $scope.locale not in ['ru', 'en', 'zh_CN', 'zh_TW']
       $scope.locale = 'en'
+    $scope.$watch('locale', (n, o) ->
+      lls.set('locale', n)
+      $translate.use(n)
+      menu.reset()
+    )
 ])
 #BodyCtrl = (scope, log, http, $location, lsGetItem, lsSetItem)->
 #  ### 页面控制器 ###

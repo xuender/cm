@@ -3,14 +3,14 @@
 ###
 ctrls.controller('SettingsCtrl',[
   '$scope'
-  '$log'
   '$http'
   'localStorageService'
+  'menu'
   (
     $scope
-    $log
     $http
     lls
+    menu
   )->
     ### 设置控制器 ###
     lls.bind($scope, 'lt1', '1')
@@ -58,7 +58,7 @@ ctrls.controller('SettingsCtrl',[
         for i of data
           localStorage[i] = data[i]
         $scope.alert(ci18n.getMessage('b_load'))
-        menuReset()
+        menu.reset()
     $scope.load = ->
       if $scope.bak.$valid and confirm(ci18n.getMessage('r_bak'))
         http(
@@ -74,7 +74,7 @@ ctrls.controller('SettingsCtrl',[
           for i of data
             localStorage[i] = data[i]
           $scope.alert(ci18n.getMessage('b_load'))
-          menuReset()
+          menu.reset()
           ga('send', 'event', 'bak', 'new_load')
         ).error((data, status, headers, config) ->
           $scope.alert(ci18n.getMessage('error_ps'))
@@ -100,14 +100,7 @@ ctrls.controller('SettingsCtrl',[
           $scope.alert(ci18n.getMessage('error_ps'))
           ga('send', 'event', 'bak', 'new_error')
         )
-    $scope.$watch('locale', (n, o) ->
-      window.ci18n = new JU.I18n(n)
-      $scope.i18n()
-      menuReset()
-    )
-    $scope.i18n = (key)->
-      ci18n.getMessage(key)
-    $log.debug('settings')
+    console.log('settings')
 
 ])
 #SettingsCtrl = (scope, log, http, lsGetItem, lsSetItem)->

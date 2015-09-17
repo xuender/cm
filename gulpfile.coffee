@@ -101,10 +101,15 @@ gulp.task('concat', ->
 )
 gulp.task('coffee', ->
   gulp.src([
+    'src/extension/scripts/analytics.coffee'
+    'src/extension/options/chosen.coffee'
     'src/extension/options/options.coffee'
     'src/extension/options/optionsCtrl.coffee'
     'src/extension/options/aboutCtrl.coffee'
     'src/extension/options/settingsCtrl.coffee'
+    'src/extension/options/utilDirectives.coffee'
+    'src/extension/options/menuService.coffee'
+    'src/extension/options/directives.coffee'
   ])
     .pipe(coffee({bare:true}))
     .pipe(concat('options.js'))

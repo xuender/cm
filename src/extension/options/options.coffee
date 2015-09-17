@@ -8,12 +8,14 @@ app = angular.module('cm', [
   'pascalprecht.translate'
   'LocalStorageModule'
   'cm.controllers'
+  'cm.services'
   #'search.directives'
-  #'utils.directives'
-  #'utils.services'
-  #'ui.bootstrap'
+  'utils.directives'
+  'ui.bootstrap'
 ])
 ctrls = angular.module('cm.controllers', [])
+services = angular.module('cm.services', [])
+utilsDirectives = angular.module('utils.directives', [])
 app.config([
   '$stateProvider'
   '$urlRouterProvider'
@@ -25,13 +27,17 @@ app.config([
     $translateProvider
     localStorageServiceProvider
   )->
-    localStorageServiceProvider.setPrefix('cm')
+    localStorageServiceProvider.setPrefix('')
     # 多国语言
+    for k of TRANSLATIONS_ZH_CN
+      if k not of TRANSLATIONS_EN
+        TRANSLATIONS_EN[k] = k
     $translateProvider.translations('zh', TRANSLATIONS_ZH_CN)
       .translations('en', TRANSLATIONS_EN)
       .registerAvailableLanguageKeys(['zh', 'en'],
         'zh-cn': 'zh'
         'zh-tw': 'zh'
+        'en': 'en'
       )
       .determinePreferredLanguage()
       .fallbackLanguage('en')
