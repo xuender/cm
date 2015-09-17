@@ -1,13 +1,13 @@
 <div id="overview" class="jumbotron">
   <h1>
     <img align="bottom" src="img/48.png"/>
-    <span id="name">右键搜</span>
+    <span translate>Context Menus</span>
     <small>{{ ver }}</small>
   </h1>
-  <span id="i_summary">做最优秀的右键菜单扩展程序</span>
+  <span translate>summary</span>
 </div><!-- jumbotron -->
-<div class="pull-right" ng-show="isCn">
-赞助作者购买云存储服务器
+<div class="pull-right" ng-show="locale == 'zh_CN'">
+  <span translate>Sponsor</span>
   <form action="https://shenghuo.alipay.com/send/payment/fill.htm" method="POST" target="_blank" accept-charset="GBK">
       <input name="optEmail" type="hidden" value="xuender@139.com" />
       <input name="payAmount" type="hidden" value="10" />
@@ -16,22 +16,22 @@
       <input name="pay" type="image" value="转账" src="img/alipay.png" />
   </form>
 </div><!-- pull-right -->
-<div ng-class="{'col-sm-8':isCn}">
+<div ng-class="{'col-sm-10':locale == 'zh_CN'}">
   <div class="page-header">
     <h3>
       <i class="glyphicon glyphicon-info-sign"></i>
-      <span id="i_info">介绍</span>
+      <span translate>Introduction</span>
     </h3>
   </div>
-  <div id="description" class="well well-large"></div>
+  <div class="well well-large" translate>description</div>
   <div class="page-header">
     <h3>
       <i class="glyphicon glyphicon-warning-sign"></i>
-      <span id="i_note">注意事项</span>
+      <span translate>Precautions</span>
     </h3>
   </div>
   <ol>
-    <li><span id="li1"></span></li>
-    <li><span id="li2"></span></li>
+    <li translate>Precaution1</li>
+    <li translate>Precaution2</li>
   </ol>
 </div><!-- sol-sm-8 -->

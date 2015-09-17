@@ -1,14 +1,14 @@
 <div class="page-header">
   <h2>
     <i class="glyphicon glyphicon-cog"></i>
-    <span id="i_settings">设置</span>
-    <small id="i_settings_title">设置</small>
+    <span translate>Settings</span>
+    <small translate>Advanced settings</small>
   </h2>
 </div><!-- page-header  -->
 <form name="f_setting" class="form-horizontal" role="form">
   <div class="form-group">
     <label class="col-sm-2 control-label" for="qr_size">
-      <span id="i_language">语言选择</span>
+      <span translate>Language Selection</span>
     </label>
     <div class="btn-group col-sm-10">
       <button class="btn btn-default" ng-model="locale" btn-radio="'en'">
@@ -26,11 +26,9 @@
     </div><!-- btn-group -->
   </div><!-- form-group -->
   <div class="form-group">
-    <label class="col-sm-2 control-label" for="qr_size" id="i_size">
-      二维码尺寸
-    </label>
+    <label class="col-sm-2 control-label" for="qr_size" translate>QR size</label>
     <div class="col-sm-2">
-      <input type="text" id="qr_size" value="250" placeholder="二维码宽高"
+      <input type="text" id="qr_size" value="250"
       class="form-control"
       ng-model="qr_size" integer/>
     </div><!-- col-sm-10-->
@@ -39,8 +37,8 @@
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <input type="checkbox" id="i_isEdit" ng-model="isEdit"/>
-        <label class="control-label" for="i_isEdit" id="t_isEdit">
-          显示编辑按钮
+        <label class="control-label" for="i_isEdit" translate>
+          Show Edit button
         </label>
       </div><!-- checkbox -->
     </div>
@@ -49,8 +47,8 @@
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <input type="checkbox" id="i_isFlag" ng-model="isFlag"/>
-        <label class="control-label" for="i_isFlag" id="t_isFlag">
-          显示语言图标
+        <label class="control-label" for="i_isFlag" translate>
+          Language icon
         </label>
       </div><!-- checkbox -->
     </div>
@@ -59,15 +57,15 @@
     <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <input type="checkbox" id="i_back" ng-model="back"/>
-        <label class="control-label" for="i_back" id="s_back">
-          默认后台打开
+        <label class="control-label" for="i_back" translate>
+          Open in the background by default
         </label>
       </div><!-- checkbox -->
     </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="form-group">
-    <label class="col-sm-2 control-label" id="i_sshort">
-      选择短网址生成网站
+    <label class="col-sm-2 control-label" translate>
+      Select Short URL Generator Website
     </label>
     <div class="btn-group col-sm-10">
       <button class="btn btn-success"
@@ -92,8 +90,8 @@
     <div class="col-sm-10 col-sm-offset-2">
       <div class="checkbox">
         <input type="checkbox" id="i_newPage" ng-model="newPage"/>
-        <label class="control-label" for="i_newPage" id="s_newPage">
-          页面存在则不打开新页面
+        <label class="control-label" for="i_newPage" translate>
+          Page exists not open a new page
         </label>
       </div><!-- checkbox -->
     </div><!-- sm-10 -->
@@ -102,97 +100,98 @@
     <div class="col-sm-10 col-sm-offset-2">
       <div class="checkbox">
         <input type="checkbox" id="i_analytics" ng-model="analytics"/>
-        <label class="control-label" for="i_analytics" id="s_analytics">
-          启动Google Analytics
+        <label class="control-label" for="i_analytics" translate>
+          Enable Google Analytics
         </label>
       </div><!-- checkbox -->
     </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="form-group">
     <label class="col-sm-2 control-label" for="qr_size">
-      <span id="s_drag">超级拖拽</span>
+      <span translate>Super Drag</span>
     </label>
     <div class="col-sm-10">
       <div class="row">
-        <label class="col-sm-1 control-label" id="lt">左上</label>
+        <label class="col-sm-1 control-label" translate>Top Left</label>
         <div class="col-sm-2">
           <select class="form-control" ng-model="lt1">
-            <option value="1">{{ i18n('fo') }}</option>
-            <option value="2">{{ i18n('bo') }}</option>
+            <option value="1" translate>Front</option>
+            <option value="2" translate>Background</option>
           </select>
         </div><!-- 2 -->
         <div class="col-sm-2">
           <select class="form-control" ng-model="lt2">
-            <option value="1">{{ i18n('lo') }}</option>
-            <option value="2">{{ i18n('ro') }}</option>
+            <option value="1" translate>Left</option>
+            <option value="2" translate>Right</option>
           </select>
         </div><!-- 2 -->
-        <label class="col-sm-offset-2 col-sm-1 control-label" id="rt">右上</label>
+        <label class="col-sm-offset-2 col-sm-1 control-label" translate>Top Right</label>
         <div class="col-sm-2">
           <select class="form-control" ng-model="rt1">
-            <option value="1">{{ i18n('fo') }}</option>
-            <option value="2">{{ i18n('bo') }}</option>
+            <option value="1" translate>Front</option>
+            <option value="2" translate>Background</option>
           </select>
         </div><!-- 2 -->
         <div class="col-sm-2">
           <select class="form-control" ng-model="rt2">
-            <option value="1">{{ i18n('lo') }}</option>
-            <option value="2">{{ i18n('ro') }}</option>
+            <option value="1" translate>Left</option>
+            <option value="2" translate>Right</option>
           </select>
         </div><!-- 2 -->
       </div><!-- row -->
       <div class="row">
-        <label class="col-sm-offset-6 control-label" id="target">目标</label>
+        <label class="col-sm-offset-6 control-label" translate>TARGET</label>
       </div><!-- row -->
       <div class="row">
-        <label class="col-sm-1 control-label" id="lb">左下</label>
+        <label class="col-sm-1 control-label" translate>Bottom Left</label>
         <div class="col-sm-2">
           <select class="form-control" ng-model="lb1">
-            <option value="1">{{ i18n('fo') }}</option>
-            <option value="2">{{ i18n('bo') }}</option>
+            <option value="1" translate>Front</option>
+            <option value="2" translate>Background</option>
           </select>
         </div><!-- 2 -->
         <div class="col-sm-2">
           <select class="form-control" ng-model="lb2">
-            <option value="1">{{ i18n('lo') }}</option>
-            <option value="2">{{ i18n('ro') }}</option>
+            <option value="1" translate>Left</option>
+            <option value="2" translate>Right</option>
           </select>
         </div><!-- 2 -->
-        <label class="col-sm-offset-2 col-sm-1 control-label" id="rb">右下</label>
+        <label class="col-sm-offset-2 col-sm-1 control-label" translate>Bottom Right</label>
         <div class="col-sm-2">
           <select class="form-control" ng-model="rb1">
-            <option value="1">{{ i18n('fo') }}</option>
-            <option value="2">{{ i18n('bo') }}</option>
+            <option value="1" translate>Front</option>
+            <option value="2" translate>Background</option>
           </select>
         </div><!-- 2 -->
         <div class="col-sm-2">
           <select class="form-control" ng-model="rb2">
-            <option value="1">{{ i18n('lo') }}</option>
-            <option value="2">{{ i18n('ro') }}</option>
+            <option value="1" translate>Left</option>
+            <option value="2" translate>Right</option>
           </select>
         </div><!-- 2 -->
       </div><!-- row -->
     </div><!-- btn-group -->
   </div><!-- form-group -->
-  <div class="alert alert-success" id="h_drag">
+  <div class="alert alert-success" translate>
+    Super Drag and Drop
   </div>
 </form>
 <div class="page-header">
   <h2>
     <i class="glyphicon glyphicon-floppy-disk"></i>
-    <span id="i_bak2">云存储</span>
-    <small id="i_bak2_title">在云中匿名保存您的设置</small>
+    <span translate>Storage</span>
+    <small translate>Show settings</small>
   </h2>
 </div><!-- page-header  -->
   <div class="form-group">
     <div class="btn-group col-sm-10">
 <button class="btn btn-info" ng-click="read()">
   <i class="glyphicon glyphicon-cloud-upload"></i>
-  <span id="b_read">read</span>
+  <span translate>Read Settings</span>
 </button>
 <button class="btn btn-warning" ng-click="load2()">
   <i class="glyphicon glyphicon-cloud-download"></i>
-  <span id="b_save">load</span>
+  <span translate>Load Settings</span>
 </button>
     </div><!-- btn-group -->
 <textarea class="form-control" ng-bind="bakstr"></textarea>
@@ -200,8 +199,8 @@
 <div class="page-header">
   <h2>
     <i class="glyphicon glyphicon-cloud"></i>
-    <span id="i_bak">云存储</span>
-    <small id="i_bak_title">在云中匿名保存您的设置</small>
+    <span translate>Cloud Storage</span>
+    <small translate>Cloud Storage title</small>
   </h2>
 </div><!-- page-header  -->
 <div class="alert" id="i_help"></div>
@@ -210,8 +209,8 @@
 </alert>
 <form name="bak" class="form-horizontal">
   <div class="form-group">
-    <label class="col-sm-2 control-label" for="i_phrase" id="s_phrase">
-      验证短语
+    <label class="col-sm-2 control-label" for="i_phrase" translate>
+      Verify phrase
     </label>
     <div class="col-sm-4">
       <input type="text" class="form-control" id="i_phrase" maxlength="30"
@@ -223,11 +222,11 @@
     <div class="col-sm-offset-2 btn-group col-sm-10">
       <button class="btn btn-info" ng-click="save()">
         <i class="glyphicon glyphicon-cloud-upload"></i>
-        <span id="b_save">保存云端</span>
+        <span translate>Save Settings</span>
       </button>
       <button class="btn btn-warning" ng-click="load()">
         <i class="glyphicon glyphicon-cloud-download"></i>
-        <span id="b_load">加载设置</span>
+        <span translate>Load Settings</span>
       </button>
     </div><!-- btn-group -->
   </div><!-- form-group -->

@@ -11,3 +11,4 @@ logs/
 node_modules
 .idea
 .zcache/
+src/extension/lib/

@@ -7,13 +7,7 @@
     "short_name": "CM",
     "background": {
         "scripts": [
-            "js/iconv.min.js",
-            "js/chrome_ex_oauth.min.js",
-            "js/chrome.min.js",
-            "js/js-utils.min.js",
-            "js/qrcode.min.js",
-            "js/background.min.js",
-            "js/components.min.js"
+            "scripts/chromereload.js"
         ]
     },
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; object-src 'self'",
@@ -23,7 +17,7 @@
                 "http://cm.xuender.me/*"
             ],
             "js": [
-                "js/server.min.js"
+                "js/server.js"
             ]
         }
     ],

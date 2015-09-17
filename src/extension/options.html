@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html ng-app="search" data-ng-csp>
+<html ng-app="cm" data-ng-csp>
   <head>
     <meta charset="utf-8"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/chosen.min.css" rel="stylesheet"/>
-    <link href="css/options.min.css" rel="stylesheet"/>
 
-    <script src="js/jquery.min.js" defer></script>
-    <script src="js/angular.min.js" defer></script>
-    <script src="js/angular-route.min.js" defer></script>
-    <script src="js/ui-bootstrap-tpls.min.js" defer></script>
-    <script src="js/chosen.jquery.min.js" defer></script>
-    <script src="js/js-utils.min.js" defer></script>
-    <script src="js/chrome.min.js" defer></script>
-    <script src="js/components.min.js" defer></script>
-    <script src="js/options.min.js" defer></script>
-    <title id="i_title">右键搜 - 选项</title>
+    <!-- build:css css/lib.css -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="lib/chosen/chosen.min.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <!-- build:css css/options.css -->
+    <link href="css/options.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+    <title translate>Context Menus Option</title>
   </head>
-  <body ng-controller="BodyCtrl" >
+  <body><!-- ng-controller="BodyCtrl" -->
     <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
       <div class="container">
         <nav class="collapse navbar-collapse" role="navigation">
           <ul class="nav navbar-nav">
-            <li ng-class="{active:isActive('/about')}">
-              <a href="#/about">
+            <li ui-sref-active="active">
+              <a ui-sref="about">
                 <i class="glyphicon glyphicon-info-sign"></i>
                 <span id="i_about">关于</span>
               </a>
@@ -52,8 +48,8 @@
                 <span id="i_lin">链接菜单</span>
               </a>
             </li>
-            <li ng-class="{active:isActive('/settings')}">
-              <a href="#/settings">
+            <li ui-sref-active="active">
+              <a ui-sref="settings">
                 <i class="glyphicon glyphicon-wrench"></i>
                 <span id="i_settings">设置</span>
               </a>
@@ -89,13 +85,13 @@
       </div><!-- container -->
     </header>
     <div class="container">
-      <div ng-view></div>
+      <div ui-view></div>
     </div><!-- container -->
     <footer>
       <div class="container">
           <i class="glyphicon glyphicon-copyright-mark"></i>
           <a id="a_oldbean" href="http://cm.xuender.me" target="_blank">
-            cm.xuender.me</a> 2012-2014
+            cm.xuender.me</a> 2012-2015
           <a id="a_store" target="_blank" title="Chrome Web Store"
           href="https://chrome.google.com/webstore/detail/phlfmkfpmphogkomddckmggcfpmfchpn">
           <img src="img/chrome.png"/>
@@ -114,5 +110,23 @@
           </a>
       </div>
     </footer>
+    <!-- build:js js/lib.js -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/chosen/chosen.jquery.min.js"></script>
+    <script src="lib/js-utils/js/js-utils.min.js"></script>
+    <!-- endbuild -->
+    <!--
+    <script src="js/chrome.min.js"></script>
+    <script src="js/components.min.js"></script>
+    -->
+    <!-- build:js js/options.js -->
+    <script src="js/i18n.js"></script>
+    <script src="js/options.js"></script>
+    <!-- endbuild -->
   </body>
 </html>
