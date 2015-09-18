@@ -4,6 +4,7 @@ options 选项
 ###
 
 app = angular.module('cm', [
+  'ui.bootstrap'
   'ui.router'
   'pascalprecht.translate'
   'LocalStorageModule'
@@ -11,7 +12,6 @@ app = angular.module('cm', [
   'cm.services'
   #'search.directives'
   'utils.directives'
-  'ui.bootstrap'
 ])
 ctrls = angular.module('cm.controllers', [])
 services = angular.module('cm.services', [])
@@ -27,6 +27,7 @@ app.config([
     $translateProvider
     localStorageServiceProvider
   )->
+    # 本地设置
     localStorageServiceProvider.setPrefix('')
     # 多国语言
     for k of TRANSLATIONS_ZH_CN
@@ -52,11 +53,11 @@ app.config([
       url: '/settings'
       templateUrl: 'options/settings.html',
       controller: 'SettingsCtrl'
+    ).state('menu'
+      url: '/menu/:type'
+      templateUrl: 'options/menu.html',
+      controller: 'MenuCtrl'
     )
-  #when('/settings', {
-  #  templateUrl: 'partials/settings.html',
-  #  controller: SettingsCtrl
-  #}).
   #when('/menu/:type', {
   #  templateUrl: 'partials/menu.html',
   #  controller: MenCtrl

@@ -99,12 +99,21 @@ gulp.task('concat', ->
     .pipe(concat('bg_lib.js'))
     .pipe(gulp.dest('src/extension/js'))
 )
+
+gulp.task('test', ->
+  karma.start(
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  )
+)
+
 gulp.task('coffee', ->
   gulp.src([
     'src/extension/scripts/analytics.coffee'
     'src/extension/options/chosen.coffee'
     'src/extension/options/options.coffee'
     'src/extension/options/optionsCtrl.coffee'
+    'src/extension/options/menuCtrl.coffee'
     'src/extension/options/aboutCtrl.coffee'
     'src/extension/options/settingsCtrl.coffee'
     'src/extension/options/utilDirectives.coffee'

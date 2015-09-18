@@ -15,12 +15,17 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       //'bower_components/jquery/jquery.min.js',
-      //'bower_components/angular/angular.min.js',
       //'bower_components/angular-mocks/angular-mocks.js',
       //'bower_components/js-utils/js/js-utils.min.js',
       //'bower_components/js-utils/js/chrome.min.js',
       //'src/extension/js/ctrl/*.coffee',
       //'src/extension/coffee/lib/*.coffee',
+      'src/extension/i18n/en.coffee',
+      'src/extension/i18n/zh_CN.coffee',
+      'src/extension/lib/angular/angular.min.js',
+      'src/extension/lib/angular-mocks/angular-mocks.js',
+      'src/extension/options/options.coffee',
+      'src/extension/i18n/i18nService.coffee',
       'test/**/*Spec.coffee'
     ],
 
@@ -32,7 +37,8 @@ module.exports = function(config) {
 
 
     preprocessors: {
-      'test/**/*.coffee': ['coffee']
+      'test/**/*.coffee': ['coffee'],
+      'src/**/*.coffee': ['coffee']
     },
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'

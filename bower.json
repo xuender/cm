@@ -15,5 +15,8 @@
     "chosen": "~1.4.2",
     "jquery": "~2.1.4",
     "js-utils": "~1.0.16"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.6"
   }
 }
