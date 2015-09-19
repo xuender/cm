@@ -6,7 +6,9 @@ Distributed under terms of the MIT license.
 ###
 
 TRANSLATIONS_ZH_CN =
+  # 标题
   'Context Menus Option': '右键搜 - 选项'
+  # 关于页
   'Context Menus': '右键搜'
   'summary':'做最优秀的右键菜单扩展程序'
   'Sponsor': '赞助作者购买云存储服务器'
@@ -15,6 +17,7 @@ TRANSLATIONS_ZH_CN =
   'Precautions': '注意事项'
   'Precaution1': '本应用承诺遵守《谷歌浏览器扩展程序库服务条款》；'
   'Precaution2': '本应用是开源软件，所有源码均可在github上查看；'
+  # 设置页
   'Settings': '设置'
   'Advanced settings': '高级设置'
   'Language Selection': '语言选择'
@@ -44,12 +47,30 @@ TRANSLATIONS_ZH_CN =
   'Cloud Storage title': '在云中匿名保存您的设置'
   'Verify phrase': '验证短语'
   'Load Settings': '加载设置'
+  # 导航
   'About': '关于'
   'ContextMenu': '页面菜单'
   'SelectionMenu': '划词菜单'
   'ImageMenu': '图片菜单'
   'LinkMenu': '链接菜单'
+  # 反馈
   'Reviews': '评论'
   'Bug': '错误'
   'Question': '问题'
   'Feature': '功能'
+  # 菜单页
+  'ContextMenu title': '右击页面显示的菜单'
+  'Language Selection': '语言'
+  'Select': '选择'
+  'Get new Context menu': '获取右键菜单'
+  'Custom': '自定义'
+  'Custom title': '用户自定义功能菜单'
+  'error1': '名称重复，请修改。'
+  'help lin': '自定义网址中使用%s表示链接网址，例如: https://www.google.com/search?q=link%3A%s'
+  'help men': '自定义网址中使用%s表示当前页面网址，例如: https://twitter.com/intent/tweet?url=%s'
+  'help pic': '自定义网址中使用%s表示图片网址，例如: http://www.google.com/searchbyimage?image_url=%s'
+  'help txt': '在搜索引擎中输入“搜索文字”，显示结果页面后复制完整的链接(包括http://)到输入框，然后点击加号确认'
+
+  # 菜单名称
+  'c_version': '关于版本'
+

@@ -98,11 +98,13 @@ ctrls.controller('MenuCtrl',[
       ### 翻译菜单 ###
       ret = []
       for m in menus
-        n = i18n.get(m.c, m.n)
+        #n = i18n.get(m.c, m.n)
+        n = m.c#, m.n)
         if m.c of names
           n = names[m.c]
         ret.push(
-          t: i18n.get(m.t)
+          #t: i18n.get(m.t)
+          t: m.t
           n: n
           b: m.b
           c: m.c
