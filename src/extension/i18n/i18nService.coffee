@@ -6,8 +6,12 @@ Distributed under terms of the MIT license.
 ###
 
 services.factory('i18n', [
-  ->
-    $code = 'zh_CN'
+  'localStorageService'
+  (lls)->
+    $code = lls.get('locale')
+    if not $code
+      $code = 'zh_CN'
+    console.log 'i18n init', $code
 
     # 取值
     getValue = (value, def)->

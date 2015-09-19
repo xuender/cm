@@ -6,11 +6,13 @@ ctrls.controller('OptionsCtrl',[
   'localStorageService'
   '$translate'
   'menu'
+  'i18n'
   (
     $scope
     lls
     $translate
     menu
+    i18n
   )->
     console.log 'option ctrl'
     $scope.locale = lls.get('locale')
@@ -20,6 +22,7 @@ ctrls.controller('OptionsCtrl',[
       $scope.locale = 'en'
     $scope.$watch('locale', (n, o) ->
       lls.set('locale', n)
+      i18n.setLocale n
       $translate.use(n)
       menu.reset()
     )

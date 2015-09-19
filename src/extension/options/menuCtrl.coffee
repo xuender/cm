@@ -33,19 +33,6 @@ updateGroup = (items, all)->
     )
   ret
 
-updateCustom = (items)->
-  ### 创建自定义对象 ###
-  if not items
-    items = []
-  ret = []
-  for i in items
-    ret.push(
-      c: i[0]
-      l: 'all'
-      u: i[1]
-      t: 'custom'
-    )
-  ret
 
 
 ctrls.controller('MenuCtrl',[
@@ -84,27 +71,23 @@ ctrls.controller('MenuCtrl',[
     # select浮动窗口尺寸
     $scope.size = (window.innerHeight - 80)/60
     lls.bind($scope, 'back', false)
-
-    if $scope.back
-      $scope.i_back = i18n.get('i_current')
-    else
-      $scope.i_back = i18n.get('i_back')
     
     $scope.isHideIcon = (menu)->
       ### 判断是否是自定义 ###
       menu.t == 'custom' or 'g' of menu or not $scope.isEdit
 
+    # 翻译菜单
     $scope.menuI18n = (menus, names)->
-      ### 翻译菜单 ###
+      console.log 'i18n local', i18n.locale()
       ret = []
       for m in menus
-        #n = i18n.get(m.c, m.n)
-        n = m.c#, m.n)
+        n = i18n.get(m.c, m.n)
+        #n = m.c#, m.n)
         if m.c of names
           n = names[m.c]
         ret.push(
-          #t: i18n.get(m.t)
-          t: m.t
+          t: i18n.get(m.t)
+          #t: m.t
           n: n
           b: m.b
           c: m.c
@@ -118,6 +101,19 @@ ctrls.controller('MenuCtrl',[
           v: m.v
         )
       ret
+    $scope.updateCustom = (items)->
+      ### 创建自定义对象 ###
+      if not items
+        items = []
+      ret = []
+      for i in items
+        ret.push(
+          c: i[0]
+          l: 'all'
+          u: i[1]
+          t: i18n.get 'Custom'
+        )
+      ret
     $scope.init = ->
       ### 初始化 ###
       console.log('menu init')
@@ -129,7 +125,7 @@ ctrls.controller('MenuCtrl',[
         if d.m == name
           $scope.urls.push(d)
       $scope.groups = sumGroup(JU.groupBy($scope.urls, 't'))
-      $scope.custom = updateCustom(lls.get(custom))
+      $scope.custom = $scope.updateCustom(lls.get(custom))
       $scope.menus = $scope.custom.concat($scope.urls)
     
       $scope.groups.push(
@@ -251,10 +247,11 @@ ctrls.controller('MenuCtrl',[
         ga('send', 'event', 'group', menu.c)
     $scope.delGroup = (menu)->
       ### 删除组合 ###
-      if menu.select
-        menu.select = false
-        $scope.change(menu)
-      $scope.group.splice($scope.group.indexOf(menu), 1)
+      if confirm(i18n.get('r_del'))
+        if menu.select
+          menu.select = false
+          $scope.change(menu)
+        $scope.group.splice($scope.group.indexOf(menu), 1)
     $scope.newCustom = c: '', u: '', t: 'custom'
     $scope.addCustom = (menu)->
       ### 创建自定义菜单 ###
@@ -268,7 +265,7 @@ ctrls.controller('MenuCtrl',[
         menu.u = menu.u.replace('SEARCHTEXT','%s')
         menu.u = menu.u.replace('searchtext','%s')
         $scope.custom.push(angular.copy(menu))
-        $scope.newCustom = angular.copy({t:'custom'})
+        $scope.newCustom = angular.copy({t:i18n.get('custom')})
         $('#m_title').focus()
         ga('send', 'event', 'custom', menu.c)
     $scope.delCustom = (menu)->
@@ -277,7 +274,7 @@ ctrls.controller('MenuCtrl',[
         if menu.select
           menu.select = false
           $scope.change(menu)
-        $scope.custom.splice(scope.custom.indexOf(menu), 1)
+        $scope.custom.splice($scope.custom.indexOf(menu), 1)
     $scope.putDialog = (url)->
       #### 弹出上传窗口 ###
       #d = $modal.open(
