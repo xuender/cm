@@ -4,8 +4,8 @@ Copyright (C) 2015 ender xu <xuender@gmail.com>
 
 Distributed under terms of the MIT license.
 ###
-
 describe 'i18nService', ->
+  beforeEach module 'LocalStorageModule'
   beforeEach module 'cm.services'
   describe 'i18n', ->
     it 'get', inject (i18n) ->
