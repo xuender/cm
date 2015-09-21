@@ -139,11 +139,11 @@
           </div><!-- col-sm-3 -->
           <div class="input-group col-sm-6">
             <input id="i_url" type="url" required class="form-control" 
-            ng-model="newCustom.u" enter="addCustom(newCustom)"/>
+            ng-model="newCustom.u" enter="addCustom()"/>
             <div class="input-group-btn">
               <button class="btn btn-primary"
               title="{{ 'Added' | translate }}"
-              ng-click="addCustom(newCustom)">
+              ng-click="addCustom()">
                 <i class="glyphicon glyphicon-plus"></i>
               </button>
             </div><!-- input-group-btn -->

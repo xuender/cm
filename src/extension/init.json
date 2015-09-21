@@ -352,30 +352,6 @@
         "v": 10
     },
     {
-        "c": "bt",
-        "t": "movie",
-        "m": "TXT",
-        "u": "https://www.google.com/cse?cx=partner-pub-2754614460323177:1956378441&ie=UTF-8&q=%s&gsc=bt%E6%90%9C%E7%B4%A2#gsc.tab=0&gsc.q=%s&gsc.ref=bt%E6%90%9C%E7%B4%A2",
-        "l": "zh_CN",
-        "v": 10
-    },
-    {
-        "c": "EDonkey",
-        "t": "movie",
-        "m": "TXT",
-        "u": "https://www.google.com/cse?cx=partner-pub-2754614460323177:1956378441&ie=UTF-8&q=%s&gsc=%E7%94%B5%E9%A9%B4%E6%90%9C%E7%B4%A2#gsc.tab=0&gsc.q=%s&gsc.ref=%E7%94%B5%E9%A9%B4%E6%90%9C%E7%B4%A2",
-        "l": "zh_CN",
-        "v": 10
-    },
-    {
-        "c": "nds",
-        "t": "movie",
-        "m": "TXT",
-        "u": "https://www.google.com/cse?cx=partner-pub-2754614460323177:6285657766&ie=UTF-8&q=%s",
-        "l": "zh_CN",
-        "v": 10
-    },
-    {
         "c": "image_baidu",
         "t": "pic",
         "m": "TXT",

@@ -256,10 +256,11 @@ ctrls.controller('MenuCtrl',[
           menu.select = false
           $scope.change(menu)
         $scope.group.splice($scope.group.indexOf(menu), 1)
-    $scope.newCustom = c: '', u: '', t: 'custom'
-    $scope.addCustom = (menu)->
+    $scope.newCustom = c: '', u: '', t: i18n.get('Custom')
+    $scope.addCustom = ->
       ### 创建自定义菜单 ###
       if $scope.f_custom.$valid
+        menu = $scope.newCustom
         menu.n = menu.c
         menu.l = 'all'
         menu.u = menu.u.replace('%CB%D1%CB%F7%CE%C4%D7%D6','%g')
@@ -269,9 +270,7 @@ ctrls.controller('MenuCtrl',[
         menu.u = menu.u.replace('SEARCHTEXT','%s')
         menu.u = menu.u.replace('searchtext','%s')
         $scope.custom.push(angular.copy(menu))
-        $scope.newCustom = angular.copy({t:i18n.get('custom')})
-        $('#m_title').focus()
-        ga('send', 'event', 'custom', menu.c)
+        $scope.newCustom = angular.copy({t:i18n.get('Custom')})
     $scope.delCustom = (menu)->
       ### 删除自定义 ###
       if confirm(i18n.get('r_del'))

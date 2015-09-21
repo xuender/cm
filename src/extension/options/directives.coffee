@@ -2,7 +2,7 @@
 #directives 指令
 menucode 验证code的唯一性
 ###
-angular.module('search.directives', []).
+angular.module('cm.directives', []).
   directive('menucode',->
     {
       require: 'ngModel'

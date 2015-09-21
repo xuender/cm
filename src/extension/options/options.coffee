@@ -10,7 +10,7 @@ app = angular.module('cm', [
   'LocalStorageModule'
   'cm.controllers'
   'cm.services'
-  #'search.directives'
+  'cm.directives'
   'utils.directives'
 ])
 ctrls = angular.module('cm.controllers', [])
