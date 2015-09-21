@@ -26,20 +26,15 @@ ctrls.controller('PutCtrl',[
       $modalInstance.close('close')
     $scope.put = ->
       #  url: 'http://cm.xuender.me/url/put/'
-      $http(
-        method: 'POST'
-        url: 'http://cm.xuender.me/url/put/'
-        data: $.param(
+      $http.post('http://localhost/cm/url',
           name: $scope.name
           url: $scope.url
           nick: $scope.nick
           title: $scope.title
           hl: $scope.locale
           mode: $scope.type
-        )
       ).success((data, status, headers, config) ->
         $modalInstance.close(data)
-        dialog.alert('Shared success')
       ).error((data, status, headers, config) ->
         dialog.error('Server Error')
       )

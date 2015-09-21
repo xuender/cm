@@ -15,17 +15,20 @@ ctrls.controller('OptionsCtrl',[
     i18n
   )->
     console.log 'option ctrl'
-    $scope.locale = lls.get('locale')
-    if not $scope.locale
-      $scope.locale = navigator.language.replace('-', '_')
-    if $scope.locale not in ['ru', 'en', 'zh_CN', 'zh_TW']
-      $scope.locale = 'en'
+    $scope.initLocal = ->
+      $scope.locale = lls.get('locale')
+      if not $scope.locale
+        $scope.locale = navigator.language.replace('-', '_')
+      if $scope.locale not in ['ru', 'en', 'zh_CN', 'zh_TW']
+        $scope.locale = 'en'
+      lls.set('locale', $scope.locale)
     $scope.$watch('locale', (n, o) ->
       lls.set('locale', n)
       i18n.setLocale n
       $translate.use(n)
       $menu.reset()
     )
+    $scope.initLocal()
     #$scope.getI18n = (id)->
     #$s### i18n 字符串 ###
     #$si18n.get(id)

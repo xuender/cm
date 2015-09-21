@@ -42,6 +42,7 @@ ctrls.controller('MenuCtrl',[
   '$menu'
   'i18n'
   '$modal'
+  'dialog'
   (
     $scope
     $stateParams
@@ -49,6 +50,7 @@ ctrls.controller('MenuCtrl',[
     $menu
     i18n
     $modal
+    dialog
   )->
     ### 菜单控制器 ###
     $scope.type = $stateParams.type
@@ -294,14 +296,11 @@ ctrls.controller('MenuCtrl',[
       d.result.then((result)->
         if result
           if result == 'ok'
-            alert(i18n.get('i_put_ok'))
-            ga('send', 'event', 'put', 'share')
+            dialog.alert('Shared success')
           if result == 'have'
-            alert(i18n.get('i_have'))
-            ga('send', 'event', 'put', 'have')
+            dialog.alert('Already contained')
           if result == 'error'
             alert(i18n.get('error'))
-            ga('send', 'event', 'put', 'error')
       )
     # 弹出编辑窗口
     $scope.update = (menu)->

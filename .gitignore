@@ -1,6 +1,5 @@
 coverage/
 bower_components/
-dist/
 cms_dist/
 tmp/
 docs/
@@ -13,3 +12,6 @@ node_modules
 .zcache/
 src/extension/lib/
 src/extension/js/
+
+cache
+dist/

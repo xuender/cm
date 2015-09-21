@@ -189,7 +189,7 @@
   <i class="glyphicon glyphicon-cloud-upload"></i>
   <span translate>Read Settings</span>
 </button>
-<button class="btn btn-warning" ng-click="load2()">
+<button class="btn btn-warning" ng-click="load2()" ng-disabled="!bakstr">
   <i class="glyphicon glyphicon-cloud-download"></i>
   <span translate>Load Settings</span>
 </button>
@@ -210,17 +210,17 @@
     </label>
     <div class="col-sm-4">
       <input type="text" class="form-control" id="i_phrase" maxlength="30"
-      required
+      required title="{{ 'Verify phrase 8-30' | translate }}"
       ng-Maxlength="30" ng-model="phrase" ng-Minlength="8"/>
     </div><!-- sm-10 -->
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-offset-2 btn-group col-sm-10">
-      <button class="btn btn-info" ng-click="save()">
+      <button class="btn btn-info" ng-click="save()" ng-disabled="!phrase">
         <i class="glyphicon glyphicon-cloud-upload"></i>
         <span translate>Save Settings</span>
       </button>
-      <button class="btn btn-warning" ng-click="load()">
+      <button class="btn btn-warning" ng-click="load()" ng-disabled="!phrase">
         <i class="glyphicon glyphicon-cloud-download"></i>
         <span translate>Load Settings</span>
       </button>

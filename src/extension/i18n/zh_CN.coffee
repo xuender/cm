@@ -52,6 +52,10 @@ TRANSLATIONS_ZH_CN =
   'No': '否'
   'Yes': '是'
   'Confirm': '确认'
+  'Already contained': '已经包含'
+  'Settings string error': '设置数据错误'
+  'Verify phrase 8-30': '输入验证短语(8-30字符)'
+  'phrase help': "输入验证短语(8-30字符)，点<span class='label label-info'>保存设置</span>，当前配置将保存到云端。输入验证短语点<span class='label label-warning'>加载设置</span>，所有配置立刻恢复。可使用<code>cloud demo</code>测试。<br/>PS: 测试前，请先保存您的设置哦^_^"
   # 导航
   'About': '关于'
   'men': '页面菜单'
