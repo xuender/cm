@@ -6,7 +6,7 @@ Distributed under terms of the MIT license.
 ###
 
 TRANSLATIONS_EN =
-  'summary': 'Do the best context menu extension.'
+  'CM summary': 'Do the best context menu extension.'
   'Sponsor': 'Sponsor author to buy cloud storage server'
   'description': 'The extended menu, integrated 300+ function menu and super drag links.'
   'Precaution1': "Undertakes to comply with this app, \"Google Chrome Web Store Terms of Service\";"

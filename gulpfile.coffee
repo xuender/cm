@@ -114,10 +114,14 @@ gulp.task('coffee', ->
     'src/extension/options/options.coffee'
     'src/extension/options/optionsCtrl.coffee'
     'src/extension/options/menuCtrl.coffee'
+    'src/extension/options/putCtrl.coffee'
+    'src/extension/options/editCtrl.coffee'
+    'src/extension/options/putCtrl.coffee'
     'src/extension/options/aboutCtrl.coffee'
     'src/extension/options/settingsCtrl.coffee'
     'src/extension/options/utilDirectives.coffee'
     'src/extension/options/menuService.coffee'
+    'src/extension/options/dialogService.coffee'
     'src/extension/options/directives.coffee'
   ])
     .pipe(coffee({bare:true}))

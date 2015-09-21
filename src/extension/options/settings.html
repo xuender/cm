@@ -194,7 +194,7 @@
   <span translate>Load Settings</span>
 </button>
     </div><!-- btn-group -->
-<textarea class="form-control" ng-bind="bakstr"></textarea>
+<textarea class="form-control" ng-model="bakstr"></textarea>
   </div><!-- form-group -->
 <div class="page-header">
   <h2>
@@ -203,10 +203,6 @@
     <small translate>Cloud Storage title</small>
   </h2>
 </div><!-- page-header  -->
-<div class="alert" id="i_help"></div>
-<alert type="alert.type" close="closeAlert($index)" ng-repeat="alert in alerts">
-  {{alert.msg}}
-</alert>
 <form name="bak" class="form-horizontal">
   <div class="form-group">
     <label class="col-sm-2 control-label" for="i_phrase" translate>

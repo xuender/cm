@@ -115,11 +115,11 @@
             <input type="url" class="col-sm-6 form-control" required
             ng-model="c.u"/>
             <div class="input-group-btn">
-              <button class="btn btn-danger" title="{{ getI18n('i_del') }}"
+              <button class="btn btn-danger" title="{{ 'Delete' | translate }}"
               ng-click="delCustom(c)">
                 <i class="glyphicon glyphicon-trash"></i>
               </button>
-              <button class="btn btn-warning" title="{{ getI18n('i_share') }}"
+              <button class="btn btn-warning" title="{{ 'Share' | translate }}"
               ng-click="putDialog(c)">
                 <i class="glyphicon glyphicon-share"></i>
               </button>
@@ -140,6 +140,7 @@
             ng-model="newCustom.u" enter="addCustom(newCustom)"/>
             <div class="input-group-btn">
               <button class="btn btn-primary"
+              title="{{ 'Added' | translate }}"
               ng-click="addCustom(newCustom)">
                 <i class="glyphicon glyphicon-plus"></i>
               </button>
@@ -176,6 +177,7 @@
             </select>
             <div class="input-group-btn">
               <button class="btn btn-danger"
+              title="{{ 'Delete' | translate }}"
               ng-click="delGroup(c)">
                 <i class="glyphicon glyphicon-trash"></i>
               </button>
@@ -196,7 +198,8 @@
             ng-model="newGroup.g" ng-options="m.n group by m.t for m in menus" 
             chosen></select>
             <div class="input-group-btn">
-              <button class="btn btn-primary" title="{{ getI18n('i_add') }}"
+              <button class="btn btn-primary"
+              title="{{ 'Added' | translate }}"
               ng-click="addGroup(newGroup)">
                 <i class="glyphicon glyphicon-plus"></i>
               </button>

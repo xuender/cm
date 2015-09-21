@@ -5,13 +5,13 @@ ctrls.controller('OptionsCtrl',[
   '$scope'
   'localStorageService'
   '$translate'
-  'menu'
+  '$menu'
   'i18n'
   (
     $scope
     lls
     $translate
-    menu
+    $menu
     i18n
   )->
     console.log 'option ctrl'
@@ -24,8 +24,11 @@ ctrls.controller('OptionsCtrl',[
       lls.set('locale', n)
       i18n.setLocale n
       $translate.use(n)
-      menu.reset()
+      $menu.reset()
     )
+    #$scope.getI18n = (id)->
+    #$s### i18n 字符串 ###
+    #$si18n.get(id)
 ])
 #BodyCtrl = (scope, log, http, $location, lsGetItem, lsSetItem)->
 #  ### 页面控制器 ###
@@ -55,8 +58,5 @@ ctrls.controller('OptionsCtrl',[
 #      $('#i_s').text(ci18n.getMessage("i_#{type}_title"))
 #      $('#i_l').text(ci18n.getMessage("i_s#{type}"))
 #    1
-#  scope.getI18n = (id)->
-#    ### i18n 字符串 ###
-#    ci18n.getMessage(id)
 #BodyCtrl.$inject = ['$scope', '$log', '$http', '$location', 'lsGetItem',
 #  'lsSetItem']

@@ -5,12 +5,14 @@ ctrls.controller('SettingsCtrl',[
   '$scope'
   '$http'
   'localStorageService'
-  'menu'
+  '$menu'
+  'dialog'
   (
     $scope
     $http
     lls
-    menu
+    $menu
+    dialog
   )->
     ### 设置控制器 ###
     lls.bind($scope, 'lt1', '1')
@@ -42,44 +44,59 @@ ctrls.controller('SettingsCtrl',[
           return m.n
       'None'
     lls.bind($scope, 'shorten', 'googl')
-    # 提示信息
-    $scope.alert = (msg) ->
-      $scope.alerts.push(msg: msg)
-    # 删除提示信息
-    $scope.closeAlert = (index) ->
-      $scope.alerts.splice(index, 1)
     # 读取设置信息
     $scope.read = ->
       $scope.bakstr = JSON.stringify(localStorage)
+      dialog.alert('Read Settings')
     # 加载2
     $scope.load2 = ->
-      if confirm(ci18n.getMessage('r_bak'))
+      dialog.confirm('Are you sure Load Settings?', ->
         data = JSON.parse($scope.bakstr)
         for i of data
           localStorage[i] = data[i]
-        $scope.alert(ci18n.getMessage('b_load'))
-        menu.reset()
+        $menu.reset()
+        dialog.alert('Load Settings')
+      )
     $scope.load = ->
-      if $scope.bak.$valid and confirm(ci18n.getMessage('r_bak'))
-        http(
-          method: 'POST'
-          url: 'http://cm.xuender.me/cmget/'
-          data: $.param(
-            k: hex_sha1($scope.phrase)
+      if $scope.bak.$valid
+        dialog.confirm('Are you sure Load Settings?', ->
+          $http(
+            method: 'POST'
+            url: 'http://cm.xuender.me/cmget/'
+            data: $.param(
+              k: hex_sha1($scope.phrase)
+            )
+          ).success((data, status, headers, config) ->
+            if data == 'error' or data == ''
+              console.error 'load...%s', data
+              return
+            for i of data
+              localStorage[i] = data[i]
+            dialog.alert('Load Settings')
+            menu.reset()
+          ).error((data, status, headers, config) ->
+            dialog.error('The wrong pass phrase')
           )
-        ).success((data, status, headers, config) ->
-          if data == 'error' or data == ''
-            console.error 'load...%s', data
-            return
-          for i of data
-            localStorage[i] = data[i]
-          $scope.alert(ci18n.getMessage('b_load'))
-          menu.reset()
-          ga('send', 'event', 'bak', 'new_load')
-        ).error((data, status, headers, config) ->
-          $scope.alert(ci18n.getMessage('error_ps'))
-          ga('send', 'event', 'bak', 'new_error')
         )
+          
+      #if $scope.bak.$valid and confirm(ci18n.getMessage('r_bak'))
+      #  http(
+      #    method: 'POST'
+      #    url: 'http://cm.xuender.me/cmget/'
+      #    data: $.param(
+      #      k: hex_sha1($scope.phrase)
+      #    )
+      #  ).success((data, status, headers, config) ->
+      #    if data == 'error' or data == ''
+      #      console.error 'load...%s', data
+      #      return
+      #    for i of data
+      #      localStorage[i] = data[i]
+      #    dialog.alert('Load Settings')
+      #    menu.reset()
+      #  ).error((data, status, headers, config) ->
+      #    dialog.error('The wrong pass phrase')
+      #  )
     # 保存
     $scope.save = (msg=true)->
       if $scope.bak.$valid

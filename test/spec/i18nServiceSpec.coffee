@@ -19,6 +19,8 @@ describe 'i18nService', ->
       i18n.setLocale('en')
       expect(i18n.locale()).toEqual('en')
 
-describe '测试', ->
-  it '测试1', ->
-    expect(1).toEqual(1)
+describe 'bootstrap', ->
+  beforeEach module 'ui.bootstrap'
+  describe 'modal', ->
+    it 'get', inject ($modal) ->
+      expect(1).toEqual(1)

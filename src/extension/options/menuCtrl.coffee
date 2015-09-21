@@ -39,14 +39,16 @@ ctrls.controller('MenuCtrl',[
   '$scope'
   '$stateParams'
   'localStorageService'
-  'menu'
+  '$menu'
   'i18n'
+  '$modal'
   (
     $scope
     $stateParams
     lls
-    menu
+    $menu
     i18n
+    $modal
   )->
     ### 菜单控制器 ###
     $scope.type = $stateParams.type
@@ -74,7 +76,7 @@ ctrls.controller('MenuCtrl',[
     
     $scope.isHideIcon = (menu)->
       ### 判断是否是自定义 ###
-      menu.t == 'custom' or 'g' of menu or not $scope.isEdit
+      menu.t == i18n.get('Custom') or 'g' of menu or not $scope.isEdit
 
     # 翻译菜单
     $scope.menuI18n = (menus, names)->
@@ -173,7 +175,7 @@ ctrls.controller('MenuCtrl',[
         lls.set(select, s)
         lls.set(back, b)
         lls.set(incognito, ia)
-        menu.reset()
+        $menu.reset()
       , true)
       #scope.$apply()
 
@@ -275,59 +277,58 @@ ctrls.controller('MenuCtrl',[
           menu.select = false
           $scope.change(menu)
         $scope.custom.splice($scope.custom.indexOf(menu), 1)
+    # 弹出上传窗口
     $scope.putDialog = (url)->
-      #### 弹出上传窗口 ###
-      #d = $modal.open(
-      #  backdrop: true
-      #  keyboard: true
-      #  backdropClick: true
-      #  templateUrl: 'partials/putUrl.html'
-      #  controller: 'PutCtrl'
-      #  resolve:
-      #    url: ->
-      #      angular.copy(url)
-      #    type: ->
-      #      $scope.type
-      #)
-      #d.result.then((result)->
-      #  if result
-      #    if result == 'ok'
-      #      alert(scope.getI18n('i_put_ok'))
-      #      ga('send', 'event', 'put', 'share')
-      #    if result == 'have'
-      #      alert(scope.getI18n('i_have'))
-      #      ga('send', 'event', 'put', 'have')
-      #    if result == 'error'
-      #      alert(scope.getI18n('error'))
-      #      ga('send', 'event', 'put', 'error')
-      #)
+      d = $modal.open(
+        backdrop: true
+        keyboard: true
+        backdropClick: true
+        templateUrl: 'options/putUrl.html'
+        controller: 'PutCtrl'
+        resolve:
+          url: ->
+            angular.copy(url)
+          type: ->
+            $scope.type
+      )
+      d.result.then((result)->
+        if result
+          if result == 'ok'
+            alert(i18n.get('i_put_ok'))
+            ga('send', 'event', 'put', 'share')
+          if result == 'have'
+            alert(i18n.get('i_have'))
+            ga('send', 'event', 'put', 'have')
+          if result == 'error'
+            alert(i18n.get('error'))
+            ga('send', 'event', 'put', 'error')
+      )
+    # 弹出编辑窗口
     $scope.update = (menu)->
-      #### 弹出编辑窗口 ###
-      #d = $modal.open(
-      #  backdrop: true
-      #  keyboard: true
-      #  backdropClick: true
-      #  templateUrl: 'partials/editMenu.html'
-      #  controller: 'EditCtrl'
-      #  resolve:
-      #    menu: ->
-      #      angular.copy(menu)
-      #)
-      #d.result.then((result)->
-      #  if result
-      #    if result == 'del'
-      #      $scope.remove(menu)
-      #    else if result != 'close'
-      #      if menu.n != result
-      #        menu.n = result
-      #        $scope.names[menu.c] = result
-      #        ga('send', 'event', 'edit', 'rename')
-      #)
+      d = $modal.open(
+        backdrop: true
+        keyboard: true
+        backdropClick: true
+        templateUrl: 'options/editMenu.html'
+        controller: 'EditCtrl'
+        resolve:
+          menu: ->
+            angular.copy(menu)
+      )
+      d.result.then((result)->
+        if result
+          if result == 'del'
+            $scope.remove(menu)
+          else if result != 'close'
+            if menu.n != result
+              menu.n = result
+              $scope.names[menu.c] = result
+      )
     $scope.init()
+    # 删除菜单
     $scope.remove = (menu)->
-      ### 删除菜单 ###
       menu.select = false
-      JU.removeArray(scope.select, menu)
+      JU.removeArray($scope.select, menu)
       for g in $scope.groups
         JU.removeArray(g.items, menu)
       all = JU.lsGet('all', [])
@@ -338,5 +339,4 @@ ctrls.controller('MenuCtrl',[
         for g in gs.g
           if g.c == menu.c
             JU.removeArray(gs.g, g)
-      ga('send', 'event', 'edit', 'del')
 ])

@@ -5,7 +5,7 @@ Copyright (C) 2015 ender xu <xuender@gmail.com>
 Distributed under terms of the MIT license.
 ###
 
-services.factory('menu', [
+services.factory('$menu', [
   ->
     console.log 'menu service'
     # 菜单重置
