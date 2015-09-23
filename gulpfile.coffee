@@ -114,6 +114,7 @@ gulp.task('coffee', ->
     'src/extension/options/options.coffee'
     'src/extension/options/optionsCtrl.coffee'
     'src/extension/options/menuCtrl.coffee'
+    'src/extension/options/menusCtrl.coffee'
     'src/extension/options/putCtrl.coffee'
     'src/extension/options/editCtrl.coffee'
     'src/extension/options/putCtrl.coffee'

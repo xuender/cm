@@ -12,7 +12,6 @@ services.factory('dialog', [
   ($modal, $rootScope, i18n)->
     console.log 'dialog service'
     dialog = (msg, type='alert', close='Close', other='', cb)->
-      console.log 'dialog', msg
       alertScope = $rootScope.$new(true)
       alertScope.msg = msg
       alertScope.type = type

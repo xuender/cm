@@ -7,53 +7,30 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/robfig/cron"
 	"github.com/syndtr/goleveldb/leveldb"
+	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
+	//	"reflect"
 	"sort"
 	"strings"
-	//	"reflect"
 )
 
 var CACHE *Cache
-var MENUS []Menu
-
-type Menu struct {
-	C string
-	T string
-	M string
-	U string
-	L string
-	V int
-}
-type MenuList []Menu
-
-func (list MenuList) Len() int {
-	return len(list)
-}
-func (list MenuList) Less(i, j int) bool {
-	return list[i].V > list[j].V
-}
-func (list MenuList) Swap(i, j int) {
-	var temp Menu = list[i]
-	list[i] = list[j]
-	list[j] = temp
-}
 
 type Cache struct {
-	db *leveldb.DB
+	db    *leveldb.DB
+	menus []Menu
 }
 
-func (cache *Cache) All() error {
+func (cache *Cache) findMenus() (menus []Menu) {
 	iter := cache.db.NewIterator(nil, nil)
-	var menus []Menu
 	for iter.Next() {
-		key := iter.Key()
-		log.Println(string(key))
+		//key := iter.Key()
 		//value := iter.Value()
 		var settings map[string]interface{}
 		dec := gob.NewDecoder(bytes.NewBuffer(iter.Value()))
 		dec.Decode(&settings)
-		//json.Unmarshal(str.([]byte), &settings)
 		str, ok := settings["all"]
 		var all []Menu
 		if ok {
@@ -65,11 +42,29 @@ func (cache *Cache) All() error {
 			if ok {
 				json.Unmarshal([]byte(str.(string)), &txtSelect)
 			}
+			// TODO 根据mcGroup增加选择ID
+			//str, ok = settings[t[0:1]+"cGroup"]
+			//var mcGroup [][]interface{}
+			//if ok {
+			//	json.Unmarshal([]byte(str.(string)), &mcGroup)
+			//	log.Println(mcGroup)
+			//}
 			str, ok = settings[t+"Custom"]
 			var txtCustom [][]string
 			if ok {
 				json.Unmarshal([]byte(str.(string)), &txtCustom)
 			}
+			//var ids []string
+			//for _, s := range txtSelect {
+			//	for _, mc := range mcGroup {
+			//		if mc[0] == s {
+			//			log.Println(reflect.TypeOf(mc[1]))
+			//			ids = append(ids, mc[1].([]string)...)
+			//			//txtSelect = append(txtSelect, mc[1].([]string)...)
+			//		}
+			//	}
+			//}
+			//log.Println(ids)
 			for _, s := range txtSelect {
 				for _, menu := range all {
 					if menu.C == s {
@@ -88,7 +83,28 @@ func (cache *Cache) All() error {
 	iter.Release()
 	err := iter.Error()
 	if err != nil {
-		return err
+		return nil
+	}
+	return
+}
+func readMenus() ([]Menu, error) {
+	bytes, err := ioutil.ReadFile("menus.json")
+	if err != nil {
+		log.Println("ReadFile: ", err.Error())
+		return nil, err
+	}
+	var menus []Menu
+	if err := json.Unmarshal(bytes, &menus); err != nil {
+		log.Println("Unmarshal: ", err.Error())
+		return nil, err
+	}
+	return menus, nil
+}
+func (cache *Cache) All() error {
+	menus := cache.findMenus()
+	jsonMenus, je := readMenus()
+	if je == nil {
+		menus = append(menus, jsonMenus...)
 	}
 	menuMap := make(map[string]Menu)
 	countMap := make(map[string]map[string]int)
@@ -128,10 +144,8 @@ func (cache *Cache) All() error {
 				menus[i].C = k
 			}
 		}
-		log.Println(c)
-		log.Println(menus[i].C)
 	}
-	MENUS = menus
+	cache.menus = menus
 	return nil
 }
 func (cache *Cache) Close() {
@@ -169,6 +183,28 @@ func NewCache(path string) *Cache {
 	return &ldb
 }
 
+type Menu struct {
+	C string
+	T string
+	M string
+	U string
+	L string
+	V int
+}
+type MenuList []Menu
+
+func (list MenuList) Len() int {
+	return len(list)
+}
+func (list MenuList) Less(i, j int) bool {
+	return list[i].V > list[j].V
+}
+func (list MenuList) Swap(i, j int) {
+	var temp Menu = list[i]
+	list[i] = list[j]
+	list[j] = temp
+}
+
 func getSettings(c *gin.Context) {
 	phrase := c.DefaultQuery("phrase", "")
 	if !CACHE.Has(phrase) {
@@ -204,8 +240,12 @@ func init() {
 	c := cron.New()
 	//c.AddFunc("5 0 0 * * ?", func() {
 	c.AddFunc("5 * * * * ?", func() {
-		log.Println("定时统计")
+		log.Println("定时统计启动")
+		start := time.Now()
 		CACHE.All()
+		end := time.Now()
+		latency := end.Sub(start)
+		log.Printf("定时完毕:%13v\n", latency)
 	})
 	c.Start()
 }
@@ -218,7 +258,7 @@ func main() {
 	g.POST("/cm/settings", postSettings)
 	g.GET("/cm/settings", getSettings)
 	g.GET("/cm/menus", func(c *gin.Context) {
-		c.JSON(http.StatusOK, MENUS)
+		c.JSON(http.StatusOK, CACHE.menus)
 	})
 	g.NoRoute(func(c *gin.Context) {
 		c.String(http.StatusNotFound, "404")

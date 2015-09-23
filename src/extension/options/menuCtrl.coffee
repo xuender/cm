@@ -85,13 +85,13 @@ ctrls.controller('MenuCtrl',[
       console.log 'i18n local', i18n.locale()
       ret = []
       for m in menus
-        n = i18n.get(m.c, m.n)
-        #n = m.c#, m.n)
+        #n = i18n.get(m.c, m.n)
+        n = m.c#, m.n)
         if m.c of names
           n = names[m.c]
         ret.push(
-          t: i18n.get(m.t)
-          #t: m.t
+          #t: i18n.get(m.t)
+          t: m.t
           n: n
           b: m.b
           c: m.c
@@ -133,13 +133,13 @@ ctrls.controller('MenuCtrl',[
       $scope.menus = $scope.custom.concat($scope.urls)
     
       $scope.groups.push(
-        label: i18n.get('i_custom')
+        label: 'Custom'
         items: $scope.custom
       )
       $scope.group = updateGroup(lls.get(group), $scope.menus)
       $scope.select = $scope.getSelect()
       $scope.groups.push(
-        label: i18n.get('i_group')
+        label: 'Group'
         items: $scope.group
       )
       showSelect($scope.select, $scope.groups)
@@ -215,9 +215,9 @@ ctrls.controller('MenuCtrl',[
               ret.push(m)
               break
       ret
-    $scope.hide =(menu)->
+    $scope.showMenu =(menu)->
       ### 是否隐藏菜单 ###
-      not (menu.l == 'all' or $scope[menu.l])
+      menu.l == 'all' or $scope[menu.l]
     $scope.show = (code)->
       ### 根据代码显示标题 ###
       for a in [$scope.menus, $scope.custom, $scope.group]
@@ -251,11 +251,12 @@ ctrls.controller('MenuCtrl',[
         ga('send', 'event', 'group', menu.c)
     $scope.delGroup = (menu)->
       ### 删除组合 ###
-      if confirm(i18n.get('r_del'))
+      dialog.confirm('r_del', ->
         if menu.select
           menu.select = false
           $scope.change(menu)
         $scope.group.splice($scope.group.indexOf(menu), 1)
+      )
     $scope.newCustom = c: '', u: '', t: i18n.get('Custom')
     $scope.addCustom = ->
       ### 创建自定义菜单 ###
@@ -273,11 +274,12 @@ ctrls.controller('MenuCtrl',[
         $scope.newCustom = angular.copy({t:i18n.get('Custom')})
     $scope.delCustom = (menu)->
       ### 删除自定义 ###
-      if confirm(i18n.get('r_del'))
+      dialog.confirm('r_del', ->
         if menu.select
           menu.select = false
           $scope.change(menu)
         $scope.custom.splice($scope.custom.indexOf(menu), 1)
+      )
     # 弹出上传窗口
     $scope.putDialog = (url)->
       d = $modal.open(
@@ -300,6 +302,35 @@ ctrls.controller('MenuCtrl',[
             dialog.alert('Already contained')
           if result == 'error'
             alert(i18n.get('error'))
+      )
+    $scope.getMenus = ->
+      d = $modal.open(
+        backdrop: true
+        keyboard: true
+        backdropClick: true
+        size: 'lg'
+        templateUrl: 'options/menus.html'
+        controller: 'MenusCtrl'
+        resolve:
+          type: ->
+            $scope.type
+          groups: ->
+            $scope.groups
+      )
+      d.result.then((result)->
+        if result
+          #console.log $scope.groups
+          if result != 'close'
+            console.log result
+            # 增加
+            all = JU.lsGet('all', [])
+            for m in result
+              nm = {n:m.C, c: m.C, t: m.T, m: m.M, u: m.U, l: m.L, v: m.V}
+              all.push nm
+              for g in $scope.groups
+                if g.label == m.T
+                  g.items.push nm
+            JU.lsSet('all', all)
       )
     # 弹出编辑窗口
     $scope.update = (menu)->

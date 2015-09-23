@@ -6,7 +6,7 @@
 </div><!-- modal-header -->
 <div class="modal-body" translate>{{ msg }}</div>
 <div class="modal-footer">
-  <button class="btn" ng-show="other"
+  <button class="btn" ng-if="other"
   ng-click="cb()">
     {{ other | translate }}
   </button>

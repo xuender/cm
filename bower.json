@@ -8,10 +8,12 @@
   "dependencies": {
     "angular-bootstrap": "~0.13.*",
     "angular-local-storage": "~0.2.2",
+    "angular-touch": "~1.4.6",
     "angular-translate": "~2.7.2",
     "angular-ui-router": "~0.2.15",
     "bootstrap": "~3.3.*",
     "chosen": "~1.4.2",
+    "fastclick": "~1.0.6",
     "jquery": "~2.1.4",
     "js-utils": "~1.0.16"
   },

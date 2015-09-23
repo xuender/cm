@@ -21,6 +21,7 @@ ctrls.controller('EditCtrl',[
       $modalInstance.close($scope.name)
       dialog.alert('Save success')
     $scope.del = ->
-      $modalInstance.close('del')
-      dialog.alert('Delete success')
+      dialog.confirm('Are you sure delete this menu?', ->
+        $modalInstance.close('del')
+      )
 ])
