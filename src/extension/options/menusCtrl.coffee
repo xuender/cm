@@ -29,6 +29,7 @@ ctrls.controller('MenusCtrl',[
       'shop'
       'sns'
       'utils'
+      'Custom'
     ]
     $scope.type = {}
     for t in $scope.typeValue
@@ -46,8 +47,10 @@ ctrls.controller('MenusCtrl',[
       $scope.menus = []
       for m in $scope.all
         if m.M == type.toUpperCase()
+          console.log m.T
           if $scope.type[m.T]
             b = true
+            console.log m.C
             for g in groups
               for i in g.items
                 if i.c == m.C

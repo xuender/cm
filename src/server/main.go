@@ -4,16 +4,16 @@ import (
 	"bytes"
 	"encoding/gob"
 	"encoding/json"
+	//"github.com/gin-gonic/contrib/gzip"
 	"github.com/gin-gonic/gin"
 	"github.com/robfig/cron"
 	"github.com/syndtr/goleveldb/leveldb"
 	"io/ioutil"
 	"log"
 	"net/http"
-	"time"
-	//	"reflect"
 	"sort"
 	"strings"
+	"time"
 )
 
 var CACHE *Cache
@@ -120,7 +120,7 @@ func (cache *Cache) All() error {
 				countMap[m.U][m.C] = 1
 			}
 		} else {
-			m.V = 1
+			//m.V = 1
 			menuMap[m.U] = m
 			countMap[m.U] = make(map[string]int)
 			countMap[m.U][m.C] = 1
@@ -128,7 +128,9 @@ func (cache *Cache) All() error {
 	}
 	menus = []Menu{}
 	for _, m := range menuMap {
-		menus = append(menus, m)
+		if strings.Contains(m.U, "%") {
+			menus = append(menus, m)
+		}
 	}
 	sort.Sort(MenuList(menus))
 	l := len(menus)
@@ -238,23 +240,23 @@ func postSettings(c *gin.Context) {
 
 func init() {
 	c := cron.New()
-	//c.AddFunc("5 0 0 * * ?", func() {
-	c.AddFunc("5 * * * * ?", func() {
-		log.Println("定时统计启动")
+	//c.AddFunc("5 * * * * ?", func() {
+	c.AddFunc("5 0 0 * * ?", func() {
 		start := time.Now()
 		CACHE.All()
 		end := time.Now()
 		latency := end.Sub(start)
-		log.Printf("定时完毕:%13v\n", latency)
+		log.Printf("cron: %13v\n", latency)
 	})
 	c.Start()
 }
 func main() {
-	log.Printf("CM Start")
+	log.Printf("CM Server Start")
 	CACHE = NewCache("cache")
 	defer CACHE.Close()
 	CACHE.All()
 	g := gin.Default()
+	//g.Use(gzip.Gzip(gzip.DefaultCompression))
 	g.POST("/cm/settings", postSettings)
 	g.GET("/cm/settings", getSettings)
 	g.GET("/cm/menus", func(c *gin.Context) {

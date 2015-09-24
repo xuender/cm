@@ -84,6 +84,19 @@ ctrls.controller('SettingsCtrl',[
         )
     # 保存
     $scope.save = (msg=true)->
+      #p = ''
+      #ps = []
+      #for l, i in $scope.bakstr.split('\n')
+      #  if i % 2
+      #    ps.push(
+      #      p: p
+      #      j: JSON.parse(l)
+      #    )
+      #    json = l
+      #  else
+      #    p = l
+      #  for i in ps
+      #    $http.post("http://localhost/cm/settings?phrase=#{i.p}", i.j)
       if $scope.bak.$valid
         lls.set('phrase', $scope.phrase)
         $http.post("http://localhost/cm/settings?phrase=#{hex_sha1($scope.phrase)}",localStorage)
