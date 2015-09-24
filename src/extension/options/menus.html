@@ -5,15 +5,19 @@
   </h3>
 </div><!-- modal-header -->
 <div class="modal-body">
-  <div class="btn-group">
-    <button type="button" class="btn btn-sm btn-success" btn-checkbox
-    ng-model="type[c]" ng-repeat="c in typeValue">
-      {{ c | translate }}
-    </button>
-  </div><!-- btn-group -->
+  <label>
+    {{ 'Type' | translate }}
+    <div class="btn-group">
+      <label type="button" class="btn btn-sm btn-success" btn-checkbox
+      ng-model="type[c]" ng-repeat="c in typeValue">
+        {{ c | translate }}
+      </label>
+    </div><!-- btn-group -->
+  </label>
   <table class="table table-bordered table-hover table-condensed">
     <thead>
       <tr>
+        <th class="cm-flag"></th>
         <th translate>Name</th>
         <th translate>Type</th>
         <th translate>URL</th>
@@ -26,7 +30,8 @@
     </thead>
     <tbody>
       <tr ng-repeat="u in menus" ng-class="{'active':u.s}">
-        <td><i class="{{ u.L }}"></i>{{ u.C | translate }}</td>
+        <td><i class="{{ u.L }}"></i></td>
+        <td>{{ u.C | translate }}</td>
         <td>{{ u.T | translate }}</td>
         <td><input class="form-control" type="url"
         ng-model="u.U"
@@ -34,19 +39,19 @@
         readonly/></td>
         <td>{{ u.V }}</td>
         <td>
-          <button class="btn btn-default"
-          ng-model="u.s" translate btn-checkbox>Select</button>
+          <label class="btn btn-default"
+          ng-model="u.s" translate btn-checkbox>Select</label>
         </td>
       </tr>
     </tbody>
   </table>
 </div><!-- modal-body -->
 <div class="modal-footer">
-  <button ng-click="down()" class="btn btn-primary" ng-disabled="num == 0">
+  <label ng-click="down()" class="btn btn-primary" ng-disabled="num == 0">
     <i class="glyphicon glyphicon-download"></i>
     {{ 'Download' | translate }} {{ num }}
-  </button>
-  <button ng-click="close()" class="btn" translate>
+  </label>
+  <label ng-click="close()" class="btn btn-warning" translate>
     Close
-  </button>
+  </label>
 </div><!-- model-footer -->

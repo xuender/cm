@@ -51,7 +51,7 @@ gulp.task('usemin', ->
 )
 
 gulp.task('sass', ->
-  gulp.src('src/extension/sass/options.sass')
+  gulp.src(['src/extension/popup/popup.sass', 'src/extension/options/options.sass'])
     .pipe(sass(
       errLogToConsole: true
       indentedSyntax: true
@@ -110,6 +110,15 @@ gulp.task('test', ->
 gulp.task('coffee', ->
   gulp.src([
     'src/extension/scripts/analytics.coffee'
+    'src/extension/popup/popup.coffee'
+    'src/extension/popup/popupCtrl.coffee'
+    'src/extension/scripts/utilDirectives.coffee'
+  ])
+    .pipe(coffee({bare:true}))
+    .pipe(concat('popup.js'))
+    .pipe(gulp.dest('src/extension/js'))
+  gulp.src([
+    'src/extension/scripts/analytics.coffee'
     'src/extension/options/chosen.coffee'
     'src/extension/options/options.coffee'
     'src/extension/options/optionsCtrl.coffee'
@@ -120,19 +129,14 @@ gulp.task('coffee', ->
     'src/extension/options/putCtrl.coffee'
     'src/extension/options/aboutCtrl.coffee'
     'src/extension/options/settingsCtrl.coffee'
-    'src/extension/options/utilDirectives.coffee'
+    'src/extension/scripts/utilDirectives.coffee'
     'src/extension/options/menuService.coffee'
     'src/extension/options/dialogService.coffee'
+    'src/extension/options/i18nService.coffee'
     'src/extension/options/directives.coffee'
   ])
     .pipe(coffee({bare:true}))
     .pipe(concat('options.js'))
-    .pipe(gulp.dest('src/extension/js'))
-  gulp.src([
-    'src/extension/coffee/server.coffee'
-  ])
-    .pipe(coffee({bare:true}))
-    .pipe(concat('server.js'))
     .pipe(gulp.dest('src/extension/js'))
   gulp.src([
     'src/extension/i18n/*.coffee'
@@ -143,10 +147,9 @@ gulp.task('coffee', ->
   gulp.src([
     'src/extension/background/code.coffee'
     'src/extension/background/tools.coffee'
-    'src/extension/background/bg_server.coffee'
     'src/extension/background/background.coffee'
     'src/extension/scripts/analytics.coffee'
-    'src/extension/background/chromereload.coffee' # 正式发布需要删除这行
+    #'src/extension/background/chromereload.coffee' # 正式发布需要删除这行
   ])
     .pipe(coffee({bare:true}))
     .pipe(concat('background.js'))

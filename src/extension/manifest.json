@@ -7,21 +7,12 @@
     "short_name": "CM",
     "background": {
         "scripts": [
+            "js/i18n.js",
             "js/bg_lib.js",
             "js/background.js"
         ]
     },
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; object-src 'self'",
-    "content_scripts": [
-        {
-            "matches": [
-                "http://cm.xuender.me/*"
-            ],
-            "js": [
-                "js/server.js"
-            ]
-        }
-    ],
     "offline_enabled": false,
     "permissions": [
         "contextMenus",

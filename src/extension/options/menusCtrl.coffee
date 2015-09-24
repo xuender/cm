@@ -51,7 +51,6 @@ ctrls.controller('MenusCtrl',[
             for g in groups
               for i in g.items
                 if i.c == m.C
-                  console.log i.c, m.C
                   b = false
             if b
               $scope.menus.push m

@@ -19,7 +19,7 @@ ctrls.controller('OptionsCtrl',[
       $scope.locale = lls.get('locale')
       if not $scope.locale
         $scope.locale = navigator.language.replace('-', '_')
-      if $scope.locale not in ['ru', 'en', 'zh_CN', 'zh_TW']
+      if $scope.locale not in LANGUAGE
         $scope.locale = 'en'
       lls.set('locale', $scope.locale)
     $scope.$watch('locale', (n, o) ->

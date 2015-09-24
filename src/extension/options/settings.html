@@ -11,18 +11,18 @@
       <span translate>Language Selection</span>
     </label>
     <div class="btn-group col-sm-10">
-      <button class="btn btn-default" ng-model="$parent.locale" btn-radio="'en'">
+      <label class="btn btn-default" ng-model="$parent.locale" btn-radio="'en'">
         <i class="en"></i>
-      </button>
-      <button class="btn btn-default" ng-model="$parent.locale" btn-radio="'zh_CN'">
+      </label>
+      <label class="btn btn-default" ng-model="$parent.locale" btn-radio="'zh_CN'">
         <i class="zh_CN"></i>
-      </button>
-      <button class="btn btn-default" ng-model="$parent.locale" btn-radio="'zh_TW'">
+      </label>
+      <label class="btn btn-default" ng-model="$parent.locale" btn-radio="'zh_TW'">
         <i class="zh_TW"></i>
-      </button>
-      <button class="btn btn-default" ng-model="$parent.locale" btn-radio="'ru'">
+      </label>
+      <label class="btn btn-default" ng-model="$parent.locale" btn-radio="'ru'">
         <i class="ru"></i>
-      </button>
+      </label>
     </div><!-- btn-group -->
   </div><!-- form-group -->
   <div class="form-group">
@@ -68,22 +68,22 @@
       Select Short URL Generator Website
     </label>
     <div class="btn-group col-sm-10">
-      <button class="btn btn-success"
+      <label class="btn btn-success"
       ng-model="shorten" btn-radio="'googl'">
         Goo.gl
-      </button>
-      <button class="btn btn-success"
+      </label>
+      <label class="btn btn-success"
       ng-model="shorten" btn-radio="'sinat'">
         t.cn
-      </button>
-      <button class="btn btn-success"
+      </label>
+      <label class="btn btn-success"
       ng-model="shorten" btn-radio="'urlcn'">
         url.cn
-      </button>
-      <button class="btn btn-success"
+      </label>
+      <label class="btn btn-success"
       ng-model="shorten" btn-radio="'dwz'">
         dwz.cn
-      </button>
+      </label>
     </div><!-- btn-group -->
   </div><!-- form-group -->
   <div class="form-group">
@@ -185,14 +185,14 @@
 </div><!-- page-header  -->
   <div class="form-group">
     <div class="btn-group col-sm-10">
-<button class="btn btn-info" ng-click="read()">
+<label class="btn btn-info" ng-click="read()">
   <i class="glyphicon glyphicon-cloud-upload"></i>
   <span translate>Read Settings</span>
-</button>
-<button class="btn btn-warning" ng-click="load2()" ng-disabled="!bakstr">
+</label>
+<label class="btn btn-warning" ng-click="load2()" ng-disabled="!bakstr">
   <i class="glyphicon glyphicon-cloud-download"></i>
   <span translate>Load Settings</span>
-</button>
+</label>
     </div><!-- btn-group -->
 <textarea class="form-control" ng-model="bakstr"></textarea>
   </div><!-- form-group -->
@@ -217,14 +217,14 @@
   </div><!-- form-group -->
   <div class="form-group">
     <div class="col-sm-offset-2 btn-group col-sm-10">
-      <button class="btn btn-info" ng-click="save()" ng-disabled="!phrase">
+      <label class="btn btn-info" ng-click="save()" ng-disabled="!phrase">
         <i class="glyphicon glyphicon-cloud-upload"></i>
         <span translate>Save Settings</span>
-      </button>
-      <button class="btn btn-warning" ng-click="load()" ng-disabled="!phrase">
+      </label>
+      <label class="btn btn-warning" ng-click="load()" ng-disabled="!phrase">
         <i class="glyphicon glyphicon-cloud-download"></i>
         <span translate>Load Settings</span>
-      </button>
+      </label>
     </div><!-- btn-group -->
   </div><!-- form-group -->
 </form>

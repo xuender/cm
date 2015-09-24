@@ -47,15 +47,19 @@ ctrls.controller('SettingsCtrl',[
     # 读取设置信息
     $scope.read = ->
       $scope.bakstr = JSON.stringify(localStorage)
-      dialog.alert('Read Settings')
+      #dialog.alert('Read Settings')
     # 加载2
     $scope.load2 = ->
       dialog.confirm('Are you sure Load Settings?', ->
         data = JSON.parse($scope.bakstr)
-        for i of data
-          localStorage[i] = data[i]
-        $menu.reset()
-        dialog.alert('Load Settings')
+        if typeof(data) == 'object'
+          for i of localStorage
+            if i of data
+              localStorage[i] = data[i]
+          $menu.reset()
+        else
+          dialog.error('Settings string error')
+        return true
       )
     $scope.load = ->
       if $scope.bak.$valid

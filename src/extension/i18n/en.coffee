@@ -5,7 +5,10 @@ Copyright (C) 2015 ender xu <xuender@gmail.com>
 Distributed under terms of the MIT license.
 ###
 
-TRANSLATIONS_EN =
+LANGUAGE = LANGUAGE || []
+LANGUAGE.push 'en'
+TRANSLATIONS = TRANSLATIONS || {}
+TRANSLATIONS['en'] =
   'CM summary': 'Do the best context menu extension.'
   'Sponsor': 'Sponsor author to buy cloud storage server'
   'description': 'The extended menu, integrated 300+ function menu and super drag links.'

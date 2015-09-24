@@ -6,9 +6,9 @@ Distributed under terms of the MIT license.
 ###
 
 LANGUAGE = LANGUAGE || []
-LANGUAGE.push 'zh_CN'
+LANGUAGE.push 'ru'
 TRANSLATIONS = TRANSLATIONS || {}
-TRANSLATIONS['zh_CN'] =
+TRANSLATIONS['ru'] =
   # 标题
   'Context Menus Option': '右键搜 - 选项'
   # 关于页

@@ -8,7 +8,7 @@
             ng-click="unSelect(s)">
               &times;
             </label>
-            {{ s.n | translate}}
+            {{ s.n }}
             <br/>
             <div class="btn-group">
               <label class="btn btn-sm btn-success incognito"
@@ -74,12 +74,12 @@
         <span translate>Download new menus</span>
       </label>
       <div class="row" ng-repeat="g in groups">
-        <h4 ng-if="g.items.length > 0">{{ g.label | translate }}</h4>
+        <h4 ng-if="g.items.length > 0">{{ g.label }}</h4>
         <table class="table table-bordered table-hover table-condensed"
         ng-if="g.items.length > 0">
           <tbody>
             <tr ng-if="showMenu(menu)" ng-repeat="menu in g.items">
-              <td style="width:30px;">
+              <td class="cm-flag">
                   <i ng-class="{true:menu.l, false:''}[isFlag]"></i>
               </td>
               <td>
@@ -91,7 +91,7 @@
                 <label>
                   <input type="checkbox"
                   ng-model="menu.select" ng-change="change(menu)"/>
-                  {{menu.n | translate}}
+                  {{ menu.n }}
                 </label>
               </td>
             </tr>

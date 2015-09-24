@@ -210,9 +210,9 @@ openTab = (id, type, value, tab, x=1, fg=null)->
 getCi18n = ->
   if 'ci18n' not in window
     code = JU.lsGet('locale', navigator.language.replace('-', '_'))
-    if code not in ['en', 'zh_CN', 'zh_TW']
+    if code not in LANGUAGE
       code = 'en'
-    window.ci18n = new JU.I18n(code)
+    window.ci18n = new JU.I18n2(TRANSLATIONS[code])
   window.ci18n
 
 menuReset = ->
@@ -338,5 +338,4 @@ chrome.runtime.onMessageExternal.addListener((request, sender, sendResponse)->
 #  )
 #)
 if run
-  console.info 'run'
   menuReset()

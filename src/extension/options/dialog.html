@@ -6,12 +6,12 @@
 </div><!-- modal-header -->
 <div class="modal-body" translate>{{ msg }}</div>
 <div class="modal-footer">
-  <button class="btn" ng-if="other"
+  <label class="btn btn-success" ng-if="other"
   ng-click="cb()">
     {{ other | translate }}
-  </button>
-  <button class="btn btn-primary"
+  </label>
+  <label class="btn btn-primary"
   ng-click="close()">
     {{ closeTxt | translate }}
-  </button>
+  </label>
 </div><!-- model-footer -->

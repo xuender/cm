@@ -211,7 +211,7 @@
         "c": "thepiratebay",
         "t": "movie",
         "m": "TXT",
-        "u": "http://thepiratebay.sx/search/%s",
+        "u": "http://thepiratebay.ee/s/%s",
         "l": "all",
         "v": 10
     },

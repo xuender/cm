@@ -2,7 +2,7 @@ _gaq = _gaq || []
 _gaq.push(['_setAccount', 'UA-35761644-1'])
 _gaq.push(['_trackPageview'])
 ((i, s, o, g, r, a, m)->
-  if JU.lsGet('analytics', true)
+  if localStorage['analytics']
     #i['GoogleAnalyticsObject'] = r
     #i[r] = i[r] || ->
     #  (i[r].q = i[r].q || []).push(arguments)

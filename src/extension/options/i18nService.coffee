@@ -11,7 +11,6 @@ services.factory('i18n', [
     $code = lls.get('locale')
     if not $code
       $code = 'zh_CN'
-    console.log 'i18n init', $code
 
     # 取值
     getValue = (value, def)->
@@ -19,10 +18,7 @@ services.factory('i18n', [
 
     # 获取翻译
     get = (key, def=key)->
-      switch $code
-        when 'zh_CN'
-          return getValue(TRANSLATIONS_ZH_CN[key], def)
-      getValue(TRANSLATIONS_EN[key], def)
+      getValue(TRANSLATIONS[$code][key], def)
     {
       setLocale: (code)->
         $code = code

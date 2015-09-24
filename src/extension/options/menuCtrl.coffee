@@ -85,13 +85,13 @@ ctrls.controller('MenuCtrl',[
       console.log 'i18n local', i18n.locale()
       ret = []
       for m in menus
-        #n = i18n.get(m.c, m.n)
-        n = m.c#, m.n)
+        n = i18n.get(m.c, m.n)
+        #n = m.c#, m.n)
         if m.c of names
           n = names[m.c]
         ret.push(
-          #t: i18n.get(m.t)
-          t: m.t
+          t: i18n.get(m.t)
+          #t: m.t
           n: n
           b: m.b
           c: m.c
@@ -133,13 +133,13 @@ ctrls.controller('MenuCtrl',[
       $scope.menus = $scope.custom.concat($scope.urls)
     
       $scope.groups.push(
-        label: 'Custom'
+        label: i18n.get 'Custom'
         items: $scope.custom
       )
       $scope.group = updateGroup(lls.get(group), $scope.menus)
       $scope.select = $scope.getSelect()
       $scope.groups.push(
-        label: 'Group'
+        label: i18n.get 'Group'
         items: $scope.group
       )
       showSelect($scope.select, $scope.groups)
@@ -238,7 +238,7 @@ ctrls.controller('MenuCtrl',[
       ### 取消选择 ###
       menu.select = false
       JU.removeArray($scope.select, menu)
-    $scope.newGroup = g:[], c:'', t: 'group'
+    $scope.newGroup = g:[], c:'', t: i18n.get('Group')
     $scope.addGroup = (menu)->
       ### 创建自定义组合 ###
       if menu.g and menu.g.length > 0 and $scope.f_group.$valid
@@ -268,8 +268,8 @@ ctrls.controller('MenuCtrl',[
         menu.u = menu.u.replace('%B7j%AF%C1%A4%E5%A6r','%t')
         menu.u = menu.u.replace('%E6%90%9C%E7%B4%A2%E6%96%87%E5%AD%97','%s')
         menu.u = menu.u.replace('搜索文字','%s')
-        menu.u = menu.u.replace('SEARCHTEXT','%s')
-        menu.u = menu.u.replace('searchtext','%s')
+        menu.u = menu.u.replace(/SEARCHTEXT/i,'%s')
+        #menu.u = menu.u.replace('searchtext','%s')
         $scope.custom.push(angular.copy(menu))
         $scope.newCustom = angular.copy({t:i18n.get('Custom')})
     $scope.delCustom = (menu)->

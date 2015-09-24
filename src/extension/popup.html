@@ -2,30 +2,40 @@
 <html ng-app="popup" data-ng-csp>
   <head>
     <meta charset="utf-8"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/popup.min.css" rel="stylesheet"/>
-    <script src="js/jquery.min.js" defer></script>
-    <script src="js/angular.min.js" defer></script>
-    <script src="js/bootstrap.min.js" defer></script>
-    <script src="js/js-utils.min.js" defer></script>
-    <script src="js/chrome.min.js" defer></script>
-    <script src="js/components.min.js" defer></script>
-    <script src="js/popup.min.js" defer></script>
-    <title>行为菜单</title>
+    <!-- build:css css/plib.css -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <!-- build:css css/popup.css -->
+    <link href="css/popup.css" rel="stylesheet"/>
+    <!-- endbuild -->
+    <title></title>
   </head>
   <body ng-controller="PopupCtrl">
     <input type="text" id="searchText" class="form-control" 
     ng-model="text" enter="defaultSearch()"/>
     <div class="btn-group">
-      <button class="btn btn-sm"
+      <label class="btn btn-sm"
       ng-repeat="b in btns" ng-click="search(b.id)" 
-      ng-class="{true:'btn-primary',false:'btn-info'}[$first]" >
-        {{ b.name }}
-      </button>
+      ng-class="{true:'btn-primary',false:'btn-info'}[$first]">
+        {{ b.name | translate}}
+      </label>
     </div>
-    <button target="_blank" class="btn btn-xs btn-success pull-right" ng-click="search('i_title')">
+    <label class="btn btn-xs btn-success pull-right" ng-click="search('i_title')">
       <i class="glyphicon glyphicon-wrench"></i>
-    </button>
+    </label>
+    <!-- build:js js/plib.js -->
+    <script src="lib/fastclick/lib/fastclick.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="lib/js-utils/js/js-utils.min.js"></script>
+    <!-- endbuild -->
+    <script src="js/i18n.js"></script>
+    <!-- build:js js/popup.js -->
+    <script src="js/popup.js" defer></script>
+    <!-- endbuild -->
   </body>
 </html>
 

@@ -2,6 +2,7 @@
 #utilsDirectives 工具指令
 * enter 回车跳转或回车运行方法
 * integer 整数校验
+* json 加载JSON并显示某值
 ###
 # 回车
 utilsDirectives.directive('enter',->
@@ -17,8 +18,8 @@ utilsDirectives.directive('enter',->
     )
 )
 # 整数
-INTEGER_REGEXP = /^\-?\d*$/
 utilsDirectives.directive('integer',->
+  INTEGER_REGEXP = /^\-?\d*$/
   {
     require: 'ngModel'
     link: (scope, elm, attrs, ctrl)->
@@ -30,5 +31,25 @@ utilsDirectives.directive('integer',->
           ctrl.$setValidity('integer', false)
           return undefined
       )
+  }
+)
+
+utilsDirectives.directive('json', ->
+  {
+    replace: true
+    template: '<span>{{ value }}</span>'
+    restrict: 'E'
+    link: (scope, el, attrs)->
+      url = attrs['url']
+      if url
+        xhr = new XMLHttpRequest()
+        xhr.open("GET", chrome.extension.getURL(url))
+        xhr.onreadystatechange = ->
+          if this.readyState == 4 and this.responseText
+            key = attrs['key']
+            if key
+              scope.value = JSON.parse(this.responseText)[key]
+        try
+          xhr.send()
   }
 )

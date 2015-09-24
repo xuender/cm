@@ -6,7 +6,6 @@ options 选项
 app = angular.module('cm', [
   'ui.bootstrap'
   'ui.router'
-  'ngTouch'
   'pascalprecht.translate'
   'LocalStorageModule'
   'cm.controllers'
@@ -31,15 +30,17 @@ app.config([
     # 本地设置
     localStorageServiceProvider.setPrefix('')
     # 多国语言
-    for k of TRANSLATIONS_ZH_CN
-      if k not of TRANSLATIONS_EN
-        TRANSLATIONS_EN[k] = k
-    $translateProvider.translations('zh', TRANSLATIONS_ZH_CN)
-      .translations('en', TRANSLATIONS_EN)
-      .registerAvailableLanguageKeys(['zh', 'en'],
-        'zh-cn': 'zh'
-        'zh-tw': 'zh'
+    for k of TRANSLATIONS['zh_CN']
+      for l in LANGUAGE
+        if k not of TRANSLATIONS[l]
+          TRANSLATIONS[l][k] = k
+    for l in LANGUAGE
+      $translateProvider.translations(l, TRANSLATIONS[l])
+    $translateProvider.registerAvailableLanguageKeys(LANGUAGE,
+        'zh-cn': 'zh_CN'
+        'zh-tw': 'zh_TW'
         'en': 'en'
+        'ru': 'ru'
       )
       .determinePreferredLanguage()
       .fallbackLanguage('en')
@@ -59,22 +60,4 @@ app.config([
       templateUrl: 'options/menu.html',
       controller: 'MenuCtrl'
     )
-  #when('/menu/:type', {
-  #  templateUrl: 'partials/menu.html',
-  #  controller: MenCtrl
-  #}).
-  #otherwise({
-  #  redirectTo: '/about'
-  #})
 ])
-#$ ->
-#  ga('send', 'event', 'i18n', navigator.language)
-#  JU.syncFetch('/manifest.json', (result)->
-#    ga('send', 'event', 'ver', JSON.parse(result).version)
-#  )
-#(->
-#  code = JU.lsGet('locale', navigator.language.replace('-', '_'))
-#  if code not in ['en', 'zh_CN', 'zh_TW']
-#    code = 'en'
-#  window.ci18n = new JU.I18n(code)
-#)()
