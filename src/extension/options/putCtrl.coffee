@@ -25,8 +25,7 @@ ctrls.controller('PutCtrl',[
       console.log('close')
       $modalInstance.close('close')
     $scope.put = ->
-      #  url: 'http://cm.xuender.me/url/put/'
-      $http.post('http://localhost/cm/url',
+      $http.post('http://oldbean.cn/cm/url',
           name: $scope.name
           url: $scope.url
           nick: $scope.nick

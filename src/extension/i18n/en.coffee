@@ -10,6 +10,10 @@ LANGUAGE.push 'en'
 TRANSLATIONS = TRANSLATIONS || {}
 TRANSLATIONS['en'] =
   'CM summary': 'Do the best context menu extension.'
+  'zh_CN': 'Simplified Chinese'
+  'zh_TW': 'Traditional Chinese'
+  'en': 'English'
+  'ru': 'Russian'
   'Sponsor': 'Sponsor author to buy cloud storage server'
   'description': 'The extended menu, integrated 300+ function menu and super drag links.'
   'Precaution1': "Undertakes to comply with this app, \"Google Chrome Web Store Terms of Service\";"

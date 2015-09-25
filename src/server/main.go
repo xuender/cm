@@ -4,19 +4,24 @@ import (
 	"bytes"
 	"encoding/gob"
 	"encoding/json"
-	//"github.com/gin-gonic/contrib/gzip"
+	"fmt"
+	"github.com/gin-gonic/contrib/gzip"
 	"github.com/gin-gonic/gin"
+	"github.com/penlook/daemon"
 	"github.com/robfig/cron"
 	"github.com/syndtr/goleveldb/leveldb"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"sort"
 	"strings"
 	"time"
 )
 
 var CACHE *Cache
+var PATH_SEPARATOR = fmt.Sprintf("%c", os.PathSeparator)
+var PATH = GetDir(os.Args[0]) + PATH_SEPARATOR
 
 type Cache struct {
 	db    *leveldb.DB
@@ -88,7 +93,7 @@ func (cache *Cache) findMenus() (menus []Menu) {
 	return
 }
 func readMenus() ([]Menu, error) {
-	bytes, err := ioutil.ReadFile("menus.json")
+	bytes, err := ioutil.ReadFile(PATH + "menus.json")
 	if err != nil {
 		log.Println("ReadFile: ", err.Error())
 		return nil, err
@@ -127,17 +132,20 @@ func (cache *Cache) All() error {
 		}
 	}
 	menus = []Menu{}
-	for _, m := range menuMap {
-		if strings.Contains(m.U, "%") {
-			menus = append(menus, m)
+	for _, mode := range []string{"MEN", "TXT", "PIC", "LIN"} {
+		ms := []Menu{}
+		for _, m := range menuMap {
+			if m.M == mode {
+				ms = append(ms, m)
+			}
 		}
+		sort.Sort(MenuList(ms))
+		l := len(ms)
+		if len(ms) > 100 {
+			l = 100
+		}
+		menus = append(menus, ms[:l]...) // top 100
 	}
-	sort.Sort(MenuList(menus))
-	l := len(menus)
-	if len(menus) > 100 {
-		l = 100
-	}
-	menus = menus[:l] // top 100
 	for i, m := range menus {
 		c := 0
 		for k, v := range countMap[m.U] {
@@ -250,13 +258,63 @@ func init() {
 	})
 	c.Start()
 }
-func main() {
+
+type Service struct {
+	daemon.Daemon
+}
+
+func (service *Service) Manage(name string, gomain func()) (string, error) {
+	usage := "Usage: " + name + " install | remove | start | stop | status"
+	if len(os.Args) > 1 {
+		command := os.Args[1]
+		switch command {
+		case "install":
+			return service.Install()
+		case "remove":
+			return service.Remove()
+		case "start":
+			return service.Start()
+		case "stop":
+			return service.Stop()
+		case "status":
+			return service.Status()
+		default:
+			return usage, nil
+		}
+	}
+	gomain()
+	return usage, nil
+}
+
+func GetDir(path string) string {
+	ds := strings.Split(path, PATH_SEPARATOR)
+	if len(ds) == 0 {
+		return ""
+	}
+	return strings.Join(ds[:len(ds)-1], PATH_SEPARATOR)
+}
+func ServiceRun(name, description string, gomain func()) {
+	srv, err := daemon.New(name, description)
+	if err != nil {
+		log.Println("Error: ", err)
+		os.Exit(1)
+	}
+	service := &Service{srv}
+	status, err := service.Manage(name, gomain)
+	if err != nil {
+		log.Println(status, "\nError: ", err)
+		os.Exit(1)
+	}
+	log.Println(status)
+}
+func run() {
 	log.Printf("CM Server Start")
-	CACHE = NewCache("cache")
+	CACHE = NewCache(PATH + "cache")
 	defer CACHE.Close()
 	CACHE.All()
+	gin.SetMode(gin.ReleaseMode)
 	g := gin.Default()
-	//g.Use(gzip.Gzip(gzip.DefaultCompression))
+	g.Use(gzip.Gzip(gzip.DefaultCompression))
 	g.POST("/cm/settings", postSettings)
 	g.GET("/cm/settings", getSettings)
 	g.GET("/cm/menus", func(c *gin.Context) {
@@ -266,4 +324,7 @@ func main() {
 		c.String(http.StatusNotFound, "404")
 	})
 	g.Run(":8011")
+}
+func main() {
+	ServiceRun("cmserver", "CM server", run)
 }

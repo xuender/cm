@@ -11,6 +11,10 @@ TRANSLATIONS = TRANSLATIONS || {}
 TRANSLATIONS['zh_CN'] =
   # 标题
   'Context Menus Option': '右键搜 - 选项'
+  'zh_CN': '简体中文'
+  'zh_TW': '繁体中文'
+  'en': '英文'
+  'ru': '俄文'
   # 关于页
   'Context Menus': '右键搜'
   'CM summary':'做最优秀的右键菜单扩展程序'
@@ -105,6 +109,7 @@ TRANSLATIONS['zh_CN'] =
   'Type': '类型'
   'URL': '网址'
   'Count': '次数'
+  'Points': '积分'
   'Multilingual': '多国语言'
   'Summary': '简介'
   'Author': '作者'

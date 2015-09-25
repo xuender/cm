@@ -64,7 +64,7 @@ ctrls.controller('SettingsCtrl',[
     $scope.load = ->
       if $scope.bak.$valid
         dialog.confirm('Are you sure Load Settings?', ->
-          $http.get("http://localhost/cm/settings?phrase=#{hex_sha1($scope.phrase)}")
+          $http.get("http://oldbean.cn/cm/settings?phrase=#{hex_sha1($scope.phrase)}")
             .success((data, status, headers, config) ->
               if data == 'error' or data == ''
                 dialog.error('Server Error')
@@ -96,10 +96,10 @@ ctrls.controller('SettingsCtrl',[
       #  else
       #    p = l
       #  for i in ps
-      #    $http.post("http://localhost/cm/settings?phrase=#{i.p}", i.j)
+      #    $http.post("http://oldbean.cn/cm/settings?phrase=#{i.p}", i.j)
       if $scope.bak.$valid
         lls.set('phrase', $scope.phrase)
-        $http.post("http://localhost/cm/settings?phrase=#{hex_sha1($scope.phrase)}",localStorage)
+        $http.post("http://oldbean.cn/cm/settings?phrase=#{hex_sha1($scope.phrase)}",localStorage)
           .success((data, status, headers, config) ->
             if 'ok' == data
               if msg

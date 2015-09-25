@@ -6,6 +6,7 @@ options 选项
 app = angular.module('cm', [
   'ui.bootstrap'
   'ui.router'
+  'ngTable'
   'pascalprecht.translate'
   'LocalStorageModule'
   'cm.controllers'
