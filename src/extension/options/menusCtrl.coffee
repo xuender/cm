@@ -4,22 +4,22 @@ ctrls.controller('MenusCtrl',[
   '$modalInstance'
   '$http'
   'dialog'
-  'type'
-  'groups'
   'i18n'
   'NgTableParams'
   '$q'
+  'type'
+  'groups'
   (
     $scope
     lls
     $modalInstance
     $http
     dialog
-    type
-    groups
     i18n
     NgTableParams
     $q
+    type
+    groups
   )->
     $scope.typeValue = [
       'all'
@@ -47,7 +47,13 @@ ctrls.controller('MenusCtrl',[
       .success((data)->
         for m in data
           if m.M == type.toUpperCase()
-            $scope.menus.push m
+            b = true
+            for g in groups
+              for i in g.items
+                if i.c == m.C
+                  b = false
+            if b
+              $scope.menus.push m
         $scope.tableParams = new NgTableParams(
           page: 1
           count: 10

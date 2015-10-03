@@ -7,8 +7,8 @@
 <div class="modal-body">
   <table ng-table="tableParams" class="table table-hover table-condensed" show-filter="true">
       <tr ng-repeat="u in $data" ng-class="{'active':u.s}">
-        <td class="cm-flag" filter="{ T: 'select'}"
-        filter-data="selectLanguage()" sortable="'T'">
+        <td class="cm-flag" filter="{ L: 'select'}"
+        filter-data="selectLanguage()" sortable="'L'">
           <i class="{{ u.L }}"></i>
         </td>
         <td title="lname" sortable="'C'">

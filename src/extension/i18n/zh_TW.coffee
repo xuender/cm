@@ -9,7 +9,8 @@ LANGUAGE = LANGUAGE || []
 LANGUAGE.push 'zh_TW'
 TRANSLATIONS = TRANSLATIONS || {}
 TRANSLATIONS['zh_TW'] =
-#標題
+  'Notice1': '重要陞級：啟用新服務器，修復雲存儲，選單下載，QR碼生成等錯誤；'
+  'i18n': 'tw'
   'Context Menus Option':'右鍵搜-選項'
   'zh_CN': '簡體中文'
   'zh_TW': '正體中文'

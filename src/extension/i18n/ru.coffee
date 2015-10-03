@@ -9,6 +9,8 @@ LANGUAGE = LANGUAGE || []
 LANGUAGE.push 'ru'
 TRANSLATIONS = TRANSLATIONS || {}
 TRANSLATIONS['ru'] =
+  'Notice1': 'важные обновления: включить новый сервер,ремонт облачного хранения, меню загрузки, QR - код ошибки и т.д.;'
+  'i18n': 'ru'
   'Context Menus Option': 'правой кнопкой Поиск вариантов',
   zh_CN: 'упрощенный китайский',
   zh_TW: 'традиционный китайский',

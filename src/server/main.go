@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/gob"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"github.com/gin-gonic/contrib/gzip"
 	"github.com/gin-gonic/gin"
@@ -308,12 +309,21 @@ func ServiceRun(name, description string, gomain func()) {
 	log.Println(status)
 }
 func run() {
+	logFile, logErr := os.OpenFile(*logFileName, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
+	if logErr != nil {
+		fmt.Println("Fail to find", *logFile, "cServer start Failed")
+		os.Exit(1)
+	}
+	log.SetOutput(logFile)
 	log.Printf("CM Server Start")
 	CACHE = NewCache(PATH + "cache")
 	defer CACHE.Close()
 	CACHE.All()
 	gin.SetMode(gin.ReleaseMode)
-	g := gin.Default()
+	//g := gin.Default()
+	g := gin.New()
+	g.Use(gin.Recovery())
+	g.Use(gin.LoggerWithWriter(logFile))
 	g.Use(gzip.Gzip(gzip.DefaultCompression))
 	g.POST("/cm/settings", postSettings)
 	g.GET("/cm/settings", getSettings)
@@ -325,6 +335,11 @@ func run() {
 	})
 	g.Run(":8011")
 }
+
+var (
+	logFileName = flag.String("log", "/var/log/cmServer.log", "Log file name")
+)
+
 func main() {
 	ServiceRun("cmserver", "CM server", run)
 }

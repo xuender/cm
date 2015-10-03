@@ -208,6 +208,14 @@
     "v": 10
   },
   {
+    "c": "Baidu fanyi",
+    "t": "fy",
+    "m": "TXT",
+    "u": "http://fanyi.baidu.com/?#en/zh/%s",
+    "l": "all",
+    "v": 10
+  },
+  {
     "c": "thepiratebay",
     "t": "movie",
     "m": "TXT",

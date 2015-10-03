@@ -44,7 +44,7 @@ createUrl()
 createQR = (value, tab, back, incognito)->
   ### 生成QR码 ###
   size = JU.lsGet('qr_size', 250)
-  show("http://chart.apis.google.com/chart?chs=#{size}x#{size}&cht=qr&chl=%s",
+  show("http://qr.liantu.com/api.php?w=#{size}&text=%s",
     value, tab, back, incognito)
 qrcode.callback = (str)->
   ### QR码解析回调函数 ###

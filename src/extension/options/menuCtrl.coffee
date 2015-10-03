@@ -78,7 +78,11 @@ ctrls.controller('MenuCtrl',[
     
     $scope.isHideIcon = (menu)->
       ### 判断是否是自定义 ###
-      menu.t == i18n.get('Custom') or 'g' of menu or not $scope.isEdit
+      isC = false
+      for c in $scope.custom
+        if menu.c == c.c
+          isC = true
+      isC or 'g' of menu or not $scope.isEdit
 
     # 翻译菜单
     $scope.menuI18n = (menus, names)->
@@ -321,15 +325,16 @@ ctrls.controller('MenuCtrl',[
         if result
           #console.log $scope.groups
           if result != 'close'
-            console.log result
             # 增加
             all = JU.lsGet('all', [])
             for m in result
               nm = {n:m.C, c: m.C, t: m.T, m: m.M, u: m.U, l: m.L, v: m.V}
               all.push nm
               for g in $scope.groups
-                if g.label == m.T
+                if g.label == i18n.get(m.T)
+                  nm.n = i18n.get(nm.c)
                   g.items.push nm
+                  break
             JU.lsSet('all', all)
       )
     # 弹出编辑窗口

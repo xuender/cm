@@ -23,13 +23,13 @@ chrome.runtime.onInstalled.addListener(->
       ga('send', 'event', 'db', 'ninit')
     )
   ci18n = getCi18n()
-  if not JU.lsGet('three_run', false)
+  if not JU.lsGet('run4', false)
     i18n = ci18n.getMessage('i18n')
     JU.lsSet('en', true)
     if i18n == 'cn'
       JU.lsSet('zh_CN', true)
       data =
-        txtSelect: ['baidu', 'translate', 'amazon']
+        txtSelect: ['baidu', 'Baidu fanyi', 'qr_txt']
         picSelect: ['google_pic', 'baidu_pic', 'su_pic', 'qr_decode']
         linSelect: ['weibo_lin', 'gmail_lin', 'qr_lin']
         menSelect: ['i_title']
@@ -46,7 +46,7 @@ chrome.runtime.onInstalled.addListener(->
     for key of data
       JU.lsSet(key, JU.lsGet(key, data[key]))
     chrome.tabs.create({url:'options.html', selected: true})
-    JU.lsSet('three_run', true)
+    JU.lsSet('run4', true)
     ga('send', 'event', 'option', 'init')
   menuReset()
 )

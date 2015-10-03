@@ -9,6 +9,8 @@ LANGUAGE = LANGUAGE || []
 LANGUAGE.push 'en'
 TRANSLATIONS = TRANSLATIONS || {}
 TRANSLATIONS['en'] =
+  'Notice1': 'Important upgrade: enable the new server, repair the cloud storage, menu download, QR code generation, and so on;'
+  'i18n': 'en'
   'CM summary': 'Do the best context menu extension.'
   'zh_CN': 'Simplified Chinese'
   'zh_TW': 'Traditional Chinese'
