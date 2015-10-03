@@ -9,7 +9,7 @@ LANGUAGE = LANGUAGE || []
 LANGUAGE.push 'zh_CN'
 TRANSLATIONS = TRANSLATIONS || {}
 TRANSLATIONS['zh_CN'] =
-  'Notice1': '重要升级:启用新服务器,修复云存储,菜单下载,QR码生成等错误;'
+  'Notice1': '重要升级:启用新云服务器,修复云存储,菜单下载,QR码生成等错误;'
   'i18n': 'cn'
   # 标题
   'Context Menus Option': '右键搜 - 选项'

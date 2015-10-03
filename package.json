@@ -1,6 +1,6 @@
 {
   "name": "ContextMenus",
-  "version": "4.1.312",
+  "version": "4.1.313",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-chrome-manifest": "0.0.11",

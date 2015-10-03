@@ -72,30 +72,45 @@ gulp.task('sass', ->
     .pipe(gulp.dest('src/extension/css'))
 )
 
-gulp.task('copy', ->
+gulp.task('copy1', ->
   gulp.src([
     'src/extension/js/background.js'
     'src/extension/js/bg_lib.js'
     'src/extension/js/i18n.js'
   ])
     .pipe(gulp.dest('dist/extension/js'))
+)
+gulp.task('copy2', ->
   gulp.src([
     'src/extension/*.json'
   ])
     .pipe(gulp.dest('dist/extension'))
+)
+gulp.task('copy3', ->
   gulp.src([
     'src/extension/_locales/**'
   ])
     .pipe(gulp.dest('dist/extension/_locales'))
+)
+gulp.task('copy4', ->
   gulp.src([
     'src/extension/img/**'
   ])
     .pipe(gulp.dest('dist/extension/img'))
+)
+gulp.task('copy5', ->
   gulp.src([
     'src/extension/lib/bootstrap/fonts/*'
   ])
     .pipe(gulp.dest('dist/extension/fonts'))
 )
+gulp.task('copy6', ->
+  gulp.src([
+    'src/extension/lib/chosen/*.png'
+  ])
+    .pipe(gulp.dest('dist/extension/css'))
+)
+gulp.task('copy', sequence(['copy1', 'copy2', 'copy3', 'copy4', 'copy5', 'copy6']))
 
 gulp.task('concat', ->
   gulp.src([
@@ -132,8 +147,8 @@ gulp.task('coffee1', ->
 gulp.task('coffee2', ->
   t = gulp.src([
     'src/extension/scripts/analytics.coffee'
-    'src/extension/options/chosen.coffee'
     'src/extension/options/options.coffee'
+    'src/extension/options/chosen.coffee'
     'src/extension/options/optionsCtrl.coffee'
     'src/extension/options/menuCtrl.coffee'
     'src/extension/options/menusCtrl.coffee'
@@ -179,7 +194,9 @@ gulp.task('coffee4', ->
   t.pipe(gulp.dest('src/extension/js'))
 )
 
-gulp.task('coffee', sequence(['coffee1','coffee2', 'coffee3', 'coffee4']))
+gulp.task('coffee', (cb)->
+  sequence(['coffee1','coffee2', 'coffee3', 'coffee4'], cb)
+)
 
 gulp.task('manifest', ->
   gulp.src('src/extension/manifest.json')
@@ -225,9 +242,9 @@ gulp.task('bump', ->
     .pipe(gulp.dest('./'))
 )
 
-gulp.task('dev', ->
+gulp.task('dev', (cb)->
   dev = true
-  sequence('clean', ['coffee', 'concat'], ['sass', 'copy'], 'usemin')
+  sequence('clean', ['coffee', 'concat'], ['sass', 'copy'], 'usemin', cb)
 )
 
 gulp.task('dist', sequence('dev','manifest', 'zip'))

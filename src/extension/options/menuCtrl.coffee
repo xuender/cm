@@ -73,7 +73,7 @@ ctrls.controller('MenuCtrl',[
     # 重命名
     lls.bind($scope, 'names', {})
     # select浮动窗口尺寸
-    $scope.size = (window.innerHeight - 80)/60
+    $scope.size = (window.innerHeight - 200)/74
     lls.bind($scope, 'back', false)
     
     $scope.isHideIcon = (menu)->
