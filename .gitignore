@@ -1,6 +1,5 @@
 coverage/
 bower_components/
-dist/
 cms_dist/
 tmp/
 docs/
@@ -11,3 +10,8 @@ logs/
 node_modules
 .idea
 .zcache/
+src/extension/lib/
+src/extension/js/
+
+cache
+dist/

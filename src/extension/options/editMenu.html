@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h3>
+    {{ 'Edit' | translate }}
+    <i class="glyphicon glyphicon-edit"></i>
+  </h3>
+</div><!-- modal-header -->
+<div class="modal-body">
+  <form name="formPut" class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="urlName" translate>
+        Name
+      </label>
+      <div class="col-sm-8">
+        <input id="urlName" class="form-control" type="text" maxlength="200" 
+        required
+        ng-model="name" ng-Maxlength="200" ng-Minlength="2"/>
+      </div><!-- col-sm-8 -->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="urlTitle" translate>
+        Summary
+      </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="urlTitle" readonly
+        ng-model="title"/>
+      </div><!-- col-sm-8 -->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="nick" translate>
+        Author
+      </label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="nick" readonly
+        ng-model="nick"/>
+      </div><!-- col-sm-8 -->
+    </div><!-- form-group -->
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-8">
+        <i class="glyphicon glyphicon-thumbs-up"></i>
+        {{ menu.v }}
+      </div><!-- controls -->
+    </div><!-- control-group -->
+  </form>
+</div><!-- modal-body -->
+<div class="modal-footer">
+  <label ng-click="del()" class="btn btn-danger">
+    <i class="glyphicon glyphicon-trash"></i>
+    {{ 'Delete' | translate }}
+  </label>
+  <label ng-click="save()" class="btn btn-primary">
+    <i class="glyphicon glyphicon-floppy-disk"></i>
+    {{ 'Save' | translate }}
+  </label>
+  <label ng-click="close()" class="btn btn-warning" translate>
+    Close
+  </label>
+</div><!-- model-footer -->

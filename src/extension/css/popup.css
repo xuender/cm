@@ -1,8 +1,1 @@
-body {
-  min-width: 500px;
-  min-height: 60px;
-  padding: 10px;
-}
-input {
-  width: 400px;
-}
+body{min-width:500px;min-height:60px;padding:10px}input{width:400px}

@@ -1,7 +1,7 @@
 {
     "name": "__MSG_cmm_name__",
     "manifest_version": 2,
-    "version": "1.0.4",
+    "version": "1.0.6",
     "description": "__MSG_cmm_description__",
     "author": "ender",
     "short_name": "CMM",

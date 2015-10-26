@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <h3>
+    {{ 'Download new menus' | translate }}
+    <i class="glyphicon glyphicon-download"></i>
+  </h3>
+</div><!-- modal-header -->
+<div class="modal-body">
+  <table ng-table="tableParams" class="table table-hover table-condensed" show-filter="true">
+      <tr ng-repeat="u in $data" ng-class="{'active':u.s}">
+        <td class="cm-flag" filter="{ L: 'select'}"
+        filter-data="selectLanguage()" sortable="'L'">
+          <i class="{{ u.L }}"></i>
+        </td>
+        <td title="lname" sortable="'C'">
+          {{u.C | translate}}
+        </td>
+        <td title="ltype" filter="{ T: 'select'}"
+        filter-data="selectType()" sortable="'T'">
+          {{u.T | translate}}
+        </td>
+        <td title="lurl" filter="{ U: 'text'}" sortable="'U'" width="40%">
+          <input class="form-control" type="url"
+          ng-model="u.U"
+          ng-if="check(u.U)"
+          readonly/>
+        </td>
+        <td title="lcount" filter="{ V: 'number'}" sortable="'V'" width="100px">
+          {{u.V}}
+        </td>
+        <td>
+          <label class="btn btn-default"
+          ng-model="u.s" translate btn-checkbox>Select</label>
+        </td>
+      </tr>
+  </table>
+</div><!-- modal-body -->
+<div class="modal-footer">
+  <label ng-click="down()" class="btn btn-primary" ng-disabled="num == 0">
+    <i class="glyphicon glyphicon-download"></i>
+    {{ 'Download' | translate }} {{ num }}
+  </label>
+  <label ng-click="close()" class="btn btn-warning" translate>
+    Close
+  </label>
+</div><!-- model-footer -->

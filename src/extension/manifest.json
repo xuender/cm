@@ -1,32 +1,18 @@
 {
     "name": "__MSG_name__",
     "manifest_version": 2,
-    "version": "4.1.308",
+    "version": "4.1.310",
     "description": "__MSG_description__",
     "author": "ender",
     "short_name": "CM",
     "background": {
         "scripts": [
-            "js/iconv.min.js",
-            "js/chrome_ex_oauth.min.js",
-            "js/chrome.min.js",
-            "js/js-utils.min.js",
-            "js/qrcode.min.js",
-            "js/background.min.js",
-            "js/components.min.js"
+            "js/i18n.js",
+            "js/bg_lib.js",
+            "js/background.js"
         ]
     },
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com https://ajax.googleapis.com; object-src 'self'",
-    "content_scripts": [
-        {
-            "matches": [
-                "http://cm.xuender.me/*"
-            ],
-            "js": [
-                "js/server.min.js"
-            ]
-        }
-    ],
     "offline_enabled": false,
     "permissions": [
         "contextMenus",
