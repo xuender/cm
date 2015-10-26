@@ -181,7 +181,7 @@ gulp.task('coffee3', ->
 )
 gulp.task('coffee4', ->
   t = gulp.src([
-    'src/extension/background/code.coffee'
+    'src/extension/background/coden.coffee'
     'src/extension/background/tools.coffee'
     'src/extension/background/background.coffee'
     'src/extension/scripts/analytics.coffee'

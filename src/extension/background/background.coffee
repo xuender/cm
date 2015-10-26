@@ -223,7 +223,7 @@ menuReset = ->
     for type in ['men', 'txt', 'pic', 'lin']
         ### 创建菜单 ###
         select = JU.lsGet(type + 'Select', [])
-        if type == 'lin'
+        if type == 'lin' and select.length > 0
           chrome.contextMenus.create(
             "contexts": ['link']
             'type': 'separator'

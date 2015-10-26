@@ -129,3 +129,4 @@ TRANSLATIONS['en'] =
   'su_lin_alert': 'link Short URL'
   'su_lin': 'short URL of the link and copy'
   'qr_lin': 'QR for link'
+  'phrase help': "Enter the verification phrase(8-30 characters), click <span class='label label-info'> Save Settings </span>, the current configuration will be saved to the cloud. At other times or other machines input validation phrase, click <span class='label label-warning'> Load Settings </span>, all configurations natural recovery. Enter verification phrase <code> cloud demo </code> to be tested. <br/> PS: Before testing, please save your settings oh ^_^"

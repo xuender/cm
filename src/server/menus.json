@@ -1219,7 +1219,7 @@
     "c": "淘宝",
     "t": "shop",
     "m": "TXT",
-    "u": "http://s8.taobao.com/search?q=%g&bucket_id=11&pid=mm_31528417_3400431_10960519",
+    "u": "http://s.taobao.com/search?q=%s",
     "l": "zh_CN",
     "v": 8
   },
@@ -1227,7 +1227,7 @@
     "c": "京东网",
     "t": "shop",
     "m": "TXT",
-    "u": "http://click.union.jd.com/JdClick/?unionId=12760139&to=http%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%g",
+    "u": "http://search.jd.com/Search?keyword=%g",
     "l": "zh_CN",
     "v": 8
   },
@@ -1235,7 +1235,7 @@
     "c": "一淘",
     "t": "shop",
     "m": "TXT",
-    "u": "http://s8.etao.com/search?tb_lm_id=etao_mmsearch_ziya&pid=mm_31528417_3400431_10960519&q=%s",
+    "u": "http://s.etao.com/search?q=%g",
     "l": "zh_CN",
     "v": 8
   },
@@ -1715,7 +1715,7 @@
     "c": "天猫",
     "t": "shop",
     "m": "TXT",
-    "u": "http://s8.taobao.com/search?user_action=initiative&f=D9_5_1&at_topsearch=1&sort=&spercent=0&search_type=auction&commend=all&style=grid&q=%g&cat=&pid=mm_31528417_3400431_10960519&unid=&mode=66&refpos=&viewIndex=10&user_type=1&clk1=aa73e7b13583a7307180",
+    "u": "https://list.tmall.com/search_product.htm?q=%g",
     "l": "zh_CN",
     "v": 8
   },
