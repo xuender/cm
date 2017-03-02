@@ -1,4 +1,4 @@
-Chrome extension Context Menus
+Chrome extension Context Menus（右键搜）
 ==
 > Do the best context menu extension.
 
