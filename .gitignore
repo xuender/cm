@@ -1,6 +1,4 @@
 coverage/
-bower_components/
-cms_dist/
 tmp/
 docs/
 logs/
@@ -10,8 +8,8 @@ logs/
 node_modules
 .idea
 .zcache/
-src/extension/lib/
-src/extension/js/
 
 cache
 dist/
+old/
+4.1.314_0/

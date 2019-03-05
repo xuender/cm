@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title translate>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group [(ngModel)]="language" name="language">
+      <ion-list-header>
+        <ion-label translate>Language</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label translate>English</ion-label>
+        <ion-radio slot="start" value="en"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label translate>Simplified Chinese</ion-label>
+        <ion-radio slot="start" value="zh_CN"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
