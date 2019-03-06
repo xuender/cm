@@ -21,5 +21,11 @@
         <ion-radio slot="start" value="zh_CN"></ion-radio>
       </ion-item>
     </ion-radio-group>
+    <ion-item>
+      <ion-range min="50" max="800" color="secondary" [(ngModel)]="storage.qrSize" name="qrSize">
+        <ion-label slot="start" translate>Size of QR code</ion-label>
+        <ion-label slot="end">{{ storage.qrSize }}</ion-label>
+      </ion-range>
+    </ion-item>
   </ion-list>
 </ion-content>

@@ -6,4 +6,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ng-container *ngFor="let t of types">
+    <ion-list *ngIf="menuService.hasType(t)">
+      <ion-list-header>
+        <ion-label>{{ t | translate }}</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let m of group(t)">
+        <ion-label>
+          {{ m.n }}
+        </ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="m.s"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <ion-list>
+    <ion-item>
+      <ion-label translate>Custom</ion-label>
+      <ion-input placeholder="{{ 'Name' | translate }}" [(ngModel)]="name" name="name"></ion-input>
+      <ion-input placeholder="{{ 'URL' | translate }}" [(ngModel)]="url" name="url"></ion-input>
+      <ion-button slot="end" (click)="create()" [disabled]="menuService.hasMenu(name)">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

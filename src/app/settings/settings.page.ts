@@ -10,7 +10,7 @@ import { StorageService } from '../api/storage.service';
 })
 export class SettingsPage {
   constructor(
-    private storage: StorageService,
+    public storage: StorageService,
     private translate: TranslateService,
   ) { }
 

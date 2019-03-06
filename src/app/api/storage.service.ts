@@ -6,47 +6,64 @@ import { isString } from 'lodash'
   providedIn: 'root'
 })
 export class StorageService {
-  private cache = new Map()
+  private cache = new Map<string, any>()
 
   get language() {
-    return this.getVariable('language', 'en', 'language', 'locale')
+    return this.getCache('en', 'language', 'locale')
   }
 
   set language(value: string) {
-    this.setVariable('language', value, 'language', 'locale')
+    this.setCache(value, 'language', 'locale')
   }
 
-  private getVariable(variable: string, def: string, ...keys: string[]) {
-    if (this.cache.has(variable)) {
-      return this.cache.get(variable)
+  get qrSize() {
+    return this.getCache(250, 'qrSize', 'qr_size')
+  }
+
+  set qrSize(value: number) {
+    this.setCache(value, 'qrSize', 'qr_size')
+  }
+
+  private getCache(def: any, ...keys: string[]) {
+    if (keys.length < 1) {
+      return def
+    }
+    if (this.cache.has(keys[0])) {
+      return this.cache.get(keys[0])
     }
     const v = this.getItem(def, ...keys)
-    this.cache.set(variable, v)
+    this.cache.set(keys[0], v)
     return v
   }
 
-  private setVariable(variable: string, value: string, ...keys: string[]) {
-    this.cache.set(variable, value)
-    this.setItem(value, ...keys)
+  private setCache(value: any, ...keys: string[]) {
+    if (keys.length > 0) {
+      this.cache.set(keys[0], value)
+      this.setItem(value, ...keys)
+    }
   }
 
-  getItem(def: string, ...keys: string[]) {
+  getItem(def: any, ...keys: string[]) {
     for (const key of keys) {
-      const t = window.localStorage.getItem(key)
-      if (isString(t)) {
-        return t
+      const value = window.localStorage.getItem(key)
+      if (value && isString(value)) {
+        try {
+          return JSON.parse(value)
+        } catch (e) {
+          return value
+        }
       }
     }
     return def
   }
 
-  setItem(value: string, ...keys: string[]) {
+  setItem(value: any, ...keys: string[]) {
     if (keys.length < 1) {
       return
     }
     for (const key of keys) {
       window.localStorage.removeItem(key)
     }
-    window.localStorage.setItem(keys[0], value)
+    window.localStorage.setItem(keys[0], JSON.stringify(value))
   }
 }
