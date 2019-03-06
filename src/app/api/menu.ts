@@ -39,6 +39,10 @@ export class Menu {
    * select
    */
   s?: boolean
+  /**
+   * order
+   */
+  o?: number
   // h: m.h
   // k: m.k
 }

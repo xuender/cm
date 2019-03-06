@@ -15,7 +15,14 @@ import { MenuPage } from './menu.page';
     FormsModule,
     TranslateModule,
     NgPipesModule,
-    RouterModule.forChild([{ path: '', component: MenuPage }])
+    RouterModule.forChild([
+      { path: ':id', component: MenuPage },
+      {
+        path: '',
+        redirectTo: 'page',
+        pathMatch: 'full'
+      }
+    ])
   ],
   declarations: [MenuPage]
 })

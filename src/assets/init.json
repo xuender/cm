@@ -1,0 +1,578 @@
+[
+  {
+    "c": "i_title",
+    "t": "all",
+    "m": "page",
+    "u": "options.html",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_bookmarks",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://bookmarks/#1",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_clearBD",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://settings/clearBrowserData",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_downloads",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://downloads/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_extensions",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://extensions/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_flags",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://flags/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_history",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://history/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_plugins",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://plugins/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_settings",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://settings/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_version",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://version/",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "facebook_menu",
+    "t": "sns",
+    "m": "page",
+    "u": "https://www.facebook.com/dialog/feed?app_id=365325133587367&link=%s&redirect_uri=https%3A//www.facebook.com",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "gmail_page",
+    "t": "sns",
+    "m": "page",
+    "u": "https://mail.google.com/mail/?view=cm&fs=1&tf=1&source=mailto&body=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "qr",
+    "t": "utils",
+    "m": "page",
+    "u": "qr",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "su",
+    "t": "utils",
+    "m": "page",
+    "u": "su",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "su_alert",
+    "t": "utils",
+    "m": "page",
+    "u": "su_alert",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "tab_close",
+    "t": "utils",
+    "m": "page",
+    "u": "tab_close",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "c_appcache",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://appcache-internals",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "c_credits",
+    "t": "chrome",
+    "m": "page",
+    "u": "chrome://credits/",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "twitter_men",
+    "t": "sns",
+    "m": "page",
+    "u": "https://twitter.com/intent/tweet?url=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "qzone",
+    "t": "sns",
+    "m": "page",
+    "u": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%s&title=%l",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "weibo",
+    "t": "sns",
+    "m": "page",
+    "u": "http://service.weibo.com/share/share.php?appkey=1144650722&url=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "bing",
+    "t": "all",
+    "m": "selection",
+    "u": "http://www.bing.com/search?q=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "duckduckgo",
+    "t": "all",
+    "m": "selection",
+    "u": "https://duckduckgo.com/?q=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "google",
+    "t": "all",
+    "m": "selection",
+    "u": "https://www.google.com/#newwindow=1&q=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "translate",
+    "t": "fy",
+    "m": "selection",
+    "u": "http://translate.google.com/?q=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "Baidu fanyi",
+    "t": "fy",
+    "m": "selection",
+    "u": "http://fanyi.baidu.com/?#en/zh/%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "thepiratebay",
+    "t": "movie",
+    "m": "selection",
+    "u": "http://thepiratebay.ee/s/%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "youtube",
+    "t": "movie",
+    "m": "selection",
+    "u": "http://www.youtube.com/results?search_query=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "bing_images",
+    "t": "pic",
+    "m": "selection",
+    "u": "http://www.bing.com/images/search?q=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "google_img",
+    "t": "pic",
+    "m": "selection",
+    "u": "https://www.google.com/search?q=%s&tbm=isch",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "facebook",
+    "t": "sns",
+    "m": "selection",
+    "u": "http://www.facebook.com/search/results.php?q=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "gmail_txt",
+    "t": "sns",
+    "m": "selection",
+    "u": "https://mail.google.com/mail/?view=cm&fs=1&tf=1&body=%s&source=mailto",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "google_plus",
+    "t": "sns",
+    "m": "selection",
+    "u": "https://plus.google.com/s/%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "qr_txt",
+    "t": "utils",
+    "m": "selection",
+    "u": "qr_txt",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "Yahoo",
+    "t": "all",
+    "m": "selection",
+    "u": "http://search.yahoo.com/search?p=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "Amazon_com",
+    "t": "shop",
+    "m": "selection",
+    "u": "http://www.amazon.com/gp/s?keyword=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "twitter",
+    "t": "sns",
+    "m": "selection",
+    "u": "https://twitter.com/search?q=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "twitter_share",
+    "t": "sns",
+    "m": "selection",
+    "u": "https://twitter.com/intent/tweet?text=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "en_wikipedia",
+    "t": "utils",
+    "m": "selection",
+    "u": "http://en.wikipedia.org/wiki/Special:Search?search=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "baidu",
+    "t": "all",
+    "m": "selection",
+    "u": "http://www.baidu.com/s?wd=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "baidu_site",
+    "t": "all",
+    "m": "selection",
+    "u": "http://www.baidu.com/s?wd=site%3A%u+%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "google_hk",
+    "t": "all",
+    "m": "selection",
+    "u": "https://www.google.hk/search?hl=zh-CN&q=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "scholar",
+    "t": "book",
+    "m": "selection",
+    "u": "https://scholar.google.com/scholar?q=%s&hl=zh-CN",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "wenku",
+    "t": "book",
+    "m": "selection",
+    "u": "http://wenku.baidu.com/search?word=%g",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "image_baidu",
+    "t": "pic",
+    "m": "selection",
+    "u": "http://image.baidu.com/i?ie=utf-8&word=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "amazon",
+    "t": "shop",
+    "m": "selection",
+    "u": "http://www.amazon.cn/s/?field-keywords=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "ditu",
+    "t": "utils",
+    "m": "selection",
+    "u": "https://ditu.google.com/maps?hl=zh-cn&newwindow=1&q=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "ditu_bing",
+    "t": "utils",
+    "m": "selection",
+    "u": "http://cn.bing.com/ditu/?q=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "kd",
+    "t": "utils",
+    "m": "selection",
+    "u": "kd",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "wikipedia",
+    "t": "utils",
+    "m": "selection",
+    "u": "http://zh.wikipedia.org/wiki/Special:Search?search=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "google_tw",
+    "t": "all",
+    "m": "selection",
+    "u": "https://www.google.tw/search?hl=zh-TW&q=%s",
+    "l": "zh_TW",
+    "v": 10
+  },
+  {
+    "c": "tw_wikipedia",
+    "t": "utils",
+    "m": "selection",
+    "u": "http://tw.wikipedia.org/wiki/Special:Search?search=%s",
+    "l": "zh_TW",
+    "v": 10
+  },
+  {
+    "c": "google_pic",
+    "t": "all",
+    "m": "image",
+    "u": "http://www.google.com/searchbyimage?image_url=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "facebook_pic",
+    "t": "sns",
+    "m": "image",
+    "u": "https://www.facebook.com/dialog/feed?app_id=365325133587367&picture=%s&redirect_uri=https%3A//www.facebook.com",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "gmail_pic",
+    "t": "sns",
+    "m": "image",
+    "u": "https://mail.google.com/mail/?view=cm&tf=1&source=mailto&body=%s&fs=1",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "qr_decode",
+    "t": "utils",
+    "m": "image",
+    "u": "qr_decode",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "qr_pic",
+    "t": "utils",
+    "m": "image",
+    "u": "qr_pic",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "su_pic",
+    "t": "utils",
+    "m": "image",
+    "u": "su_pic",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "su_pic_alert",
+    "t": "utils",
+    "m": "image",
+    "u": "su_pic_alert",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "exif",
+    "t": "pic",
+    "m": "image",
+    "u": "http://regex.info/exif.cgi?dummy=on&imgurl=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "twitter_pic",
+    "t": "sns",
+    "m": "image",
+    "u": "https://twitter.com/intent/tweet?url=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "weibo_pic",
+    "t": "sns",
+    "m": "image",
+    "u": "http://service.weibo.com/share/share.php?appkey=1144650722&pic=%s",
+    "l": "zh_CN",
+    "v": 10
+  },
+  {
+    "c": "bing_site",
+    "t": "all",
+    "m": "link",
+    "u": "http://www.bing.com/search?q=site%3A%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "google_link",
+    "t": "all",
+    "m": "link",
+    "u": "https://www.google.com/search?q=link%3A%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "google_site",
+    "t": "all",
+    "m": "link",
+    "u": "https://www.google.com/search?q=site%3A%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "facebook_lin",
+    "t": "sns",
+    "m": "link",
+    "u": "https://www.facebook.com/dialog/feed?app_id=365325133587367&redirect_uri=https%3A//www.facebook.com&link=%s",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "gmail_lin",
+    "t": "sns",
+    "m": "link",
+    "u": "https://mail.google.com/mail/?view=cm&fs=1&source=mailto&body=%s&tf=1",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "qr_lin",
+    "t": "utils",
+    "m": "link",
+    "u": "qr_lin",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "su_lin",
+    "t": "utils",
+    "m": "link",
+    "u": "su_lin",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "su_lin_alert",
+    "t": "utils",
+    "m": "link",
+    "u": "su_lin_alert",
+    "l": "all",
+    "v": 10
+  },
+  {
+    "c": "twitter_lin",
+    "t": "sns",
+    "m": "link",
+    "u": "https://twitter.com/intent/tweet?url=%s",
+    "l": "en",
+    "v": 10
+  },
+  {
+    "c": "weibo_lin",
+    "t": "sns",
+    "m": "link",
+    "u": "http://service.weibo.com/share/share.php?url=%s&appkey=1144650722",
+    "l": "zh_CN",
+    "v": 10
+  }
+]
