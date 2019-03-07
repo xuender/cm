@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="success">
     <ion-buttons slot="secondary">
-      <ion-button>
+      <ion-button (click)="menuService.edit()">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -28,6 +28,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <router-outlet></router-outlet>
 </ion-content>

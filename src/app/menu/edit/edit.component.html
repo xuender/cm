@@ -1,3 +1,42 @@
-<p>
-  edit works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="cancel()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{ title | translate }}
+      {{ menu.n }}
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="save()">
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label translate>Name</ion-label>
+      <ion-input [(ngModel)]="menu.n" name="n"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label translate>URL</ion-label>
+      <ion-input [(ngModel)]="menu.u" name="u"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label translate>Select</ion-label>
+      <ion-toggle slot="end" [(ngModel)]="menu.s" menu="s"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer *ngIf="title == 'Edit'">
+  <ion-toolbar>
+    <ion-button color="danger" expand="block" (click)="remove()">
+      <ion-icon name="trash"></ion-icon>
+      <ion-label translate>Delete</ion-label>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -8,6 +8,7 @@ import { NgPipesModule } from 'ngx-pipes';
 
 import { MenuPage } from './menu.page';
 import { ListComponent } from './list/list.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   imports: [

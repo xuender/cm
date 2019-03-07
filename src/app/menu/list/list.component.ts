@@ -35,12 +35,6 @@ export class ListComponent implements OnInit {
       .sortBy(['o', 'n'])
       .value()
   }
-  create() {
-    if (this.menuService.create(this.name, this.url, this.id)) {
-      this.name = ''
-      this.url = ''
-    }
-  }
   reorderHandler(event) {
     forEach(event.detail.complete(this.select()), (m: Menu, o: number) => {
       m.o = o

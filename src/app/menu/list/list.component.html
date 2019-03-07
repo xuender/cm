@@ -8,7 +8,9 @@
         <ion-reorder-group disabled="false" (ionItemReorder)="reorderHandler($event)">
           <ion-reorder *ngFor="let m of select()">
             <ion-item>
-              <ion-label> {{ m.n }}</ion-label>
+              <ion-label>
+                {{ m.n ? m.n : m.c | translate }}
+              </ion-label>
             </ion-item>
           </ion-reorder>
         </ion-reorder-group>
@@ -20,28 +22,14 @@
           <ion-list-header>
             <ion-label>{{ t | translate }}</ion-label>
           </ion-list-header>
-          <ion-item *ngFor="let m of group(t)">
-            <ion-toggle slot="start" [(ngModel)]="m.s"></ion-toggle>
+          <ion-item *ngFor="let m of group(t)" (click)="menuService.edit(m)" button>
+            <ion-toggle slot="start" [(ngModel)]="m.s" (click)="$event.stopPropagation()"></ion-toggle>
             <ion-label>
-              {{ m.n }}
+              {{ m.n ? m.n : m.c | translate }}
             </ion-label>
-            <ion-button slot="end" color="danger">
-              <ion-icon name="open"></ion-icon>
-            </ion-button>
           </ion-item>
         </ion-list>
       </ng-container>
     </ion-col>
   </ion-row>
 </ion-grid>
-
-<ion-list>
-  <ion-item>
-    <ion-label translate>Custom</ion-label>
-    <ion-input placeholder="{{ 'Name' | translate }}" [(ngModel)]="name" name="name"></ion-input>
-    <ion-input placeholder="{{ 'URL' | translate }}" [(ngModel)]="url" name="url"></ion-input>
-    <ion-button slot="end" (click)="create()" [disabled]="menuService.hasMenu(name)">
-      <ion-icon name="add-circle"></ion-icon>
-    </ion-button>
-  </ion-item>
-</ion-list>
