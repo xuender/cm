@@ -5,9 +5,7 @@ class CmBackground {
     this.reset()
   }
   onClicked(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
-    // type = info.menuItemId[0]
     // id = info.menuItemId[1..]
-    // type = getType(type)
     // value = getValue(info, tab, type)
     // openTab(id, type, value, tab)
     console.debug('click', info, tab)

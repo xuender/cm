@@ -47,6 +47,7 @@
     "@types/chrome": "0.0.81",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/lodash": "^4.14.122",
     "@types/node": "~10.12.0",
     "codelyzer": "~4.5.0",
     "cz-conventional-changelog": "^2.1.0",

@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgPipesModule } from 'ngx-pipes';
 
 import { MenuPage } from './menu.page';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   imports: [
@@ -16,14 +17,26 @@ import { MenuPage } from './menu.page';
     TranslateModule,
     NgPipesModule,
     RouterModule.forChild([
-      { path: ':id', component: MenuPage },
       {
         path: '',
-        redirectTo: 'page',
-        pathMatch: 'full'
+        component: MenuPage,
+        children: [
+          {
+            path: ':id',
+            component: ListComponent,
+          },
+          {
+            path: '',
+            redirectTo: 'page',
+            pathMatch: "full"
+          }
+        ]
       }
     ])
   ],
-  declarations: [MenuPage]
+  declarations: [
+    MenuPage,
+    ListComponent,
+  ]
 })
 export class MenuPageModule { }
