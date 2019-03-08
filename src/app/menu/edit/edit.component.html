@@ -22,17 +22,32 @@
       <ion-label translate>Name</ion-label>
       <ion-input [(ngModel)]="menu.n" name="n"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item *ngIf="isURL">
       <ion-label translate>URL</ion-label>
       <ion-input [(ngModel)]="menu.u" name="u"></ion-input>
     </ion-item>
+    <ion-radio-group [(ngModel)]="menu.m" name="m">
+      <ion-item *ngFor="let t of typeService.types">
+        <ion-icon [name]="t.icon" slot="start"></ion-icon>
+        <ion-label translate>{{ t.name | titlecase }} Menu</ion-label>
+        <ion-radio slot="end" value="page"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <ion-item>
+      <ion-icon slot="start" name="pricetags"></ion-icon>
+      <ion-label translate>Labels</ion-label>
+      <ion-select [(ngModel)]="menu.t" multiple="true" cancelText="{{ 'Cancel' | translate }}"
+        okText="{{ 'Ok' | translate }}">
+        <ion-select-option *ngFor="let t of typeService.tags" [value]="t">{{ t | translate }}</ion-select-option>
+      </ion-select>
+    </ion-item>
     <ion-item>
       <ion-label translate>Select</ion-label>
-      <ion-toggle slot="end" [(ngModel)]="menu.s" menu="s"></ion-toggle>
+      <ion-toggle slot="start" [(ngModel)]="menu.s" menu="s"></ion-toggle>
     </ion-item>
   </ion-list>
 </ion-content>
-<ion-footer *ngIf="title == 'Edit'">
+<ion-footer *ngIf="title == 'Edit' && isURL">
   <ion-toolbar>
     <ion-button color="danger" expand="block" (click)="remove()">
       <ion-icon name="trash"></ion-icon>

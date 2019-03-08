@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, ActionSheetController } from '@ionic/angular';
-import { now } from 'lodash'
+import { now, includes } from 'lodash'
 import { Menu } from 'src/app/api/menu';
 import { TranslateService } from '@ngx-translate/core';
+import { TypeService } from 'src/app/api/type.service';
 
 @Component({
   selector: 'cm-edit',
@@ -25,11 +26,19 @@ export class EditComponent implements OnInit {
     private modal: ModalController,
     private translate: TranslateService,
     private actionSheet: ActionSheetController,
+    public typeService: TypeService,
   ) { }
   cancel() {
     this.modal.dismiss()
   }
-  save() {
+  get isURL() {
+    return includes(this.menu.u, '/')
+  }
+  async save() {
+    const name = await this.translate.get(this.menu.c).toPromise()
+    if (name == this.menu.n) {
+      this.menu.n = ''
+    }
     Object.assign(this.data, this.menu)
     this.modal.dismiss(this.menu, this.title)
   }

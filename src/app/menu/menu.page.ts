@@ -1,45 +1,24 @@
 import { Component } from '@angular/core';
-import { includes, some, findIndex, chain, forEach, find } from 'lodash';
+import { includes, some, findIndex, chain, forEach } from 'lodash';
 
 import { MenuService } from '../api/menu.service';
 import { Menu } from '../api/menu';
-import { Type } from './type';
-import { TranslateService } from '@ngx-translate/core';
+import { Type } from '../api/type';
+import { TypeService } from '../api/type.service';
 @Component({
   selector: 'cm-menu',
   templateUrl: 'menu.page.html',
   styleUrls: ['menu.page.scss']
 })
 export class MenuPage {
-  types: Type[] = [
-    { name: 'page', open: true, icon: 'menu' },
-    { name: 'selection', open: false, icon: 'crop' },
-    { name: 'image', open: false, icon: 'image' },
-    { name: 'link', open: false, icon: 'link' },
-  ]
   tagSet = new Set<String>()
   search = ''
   constructor(
     public menuService: MenuService,
+    public typeService: TypeService,
   ) { }
 
-  icon(type: string) {
-    return chain<Type[]>(this.types)
-      .filter(t => t.name == type)
-      .first()
-      .value().icon
-  }
   ngOnInit(): void {
-    // forEach(this.menuService.menus, m => forEach(m.t, t => this.tags.add(t)))
-  }
-  get tags() {
-    const tags = new Set<String>()
-    chain<Menu[]>(this.menuService.menus)
-      .filter(m => some<Type>(this.types, { name: m.m, open: true }))
-      .forEach(m => forEach(m.t, t => tags.add(t)))
-      .value()
-    // console.log('tags', tags)
-    return tags
   }
   preview(type: string) {
     return chain<Menu[]>(this.menuService.menus)
@@ -60,7 +39,7 @@ export class MenuPage {
   }
   get menus() {
     return chain<Menu[]>(this.menuService.menus)
-      .filter(m => some<Type>(this.types, { name: m.m, open: true }))
+      .filter(m => this.typeService.inTypes(m))
       .filter(m => this.tagSet.size == 0 || !m.t || some(m.t, t => this.tagSet.has(t)))
       .filter(m => !this.search
         || includes(m.n, this.search) // name
@@ -68,7 +47,17 @@ export class MenuPage {
         || includes(m.u, this.search) // url
         || includes(this.menuService.codeMap.get(m.c), this.search) // translate
       )
-      .sortBy(m => `${findIndex(this.types, t => t.name == m.m)}${m.n}${m.c}`)
+      .sortBy(m => this.typeService.sort(m))
       .value()
+  }
+
+  toggle(type: Type) {
+    type.open = !type.open
+    const tags = this.menuService.typeTags
+    for (const t of this.tagSet) {
+      if (!tags.has(t)) {
+        this.tagSet.delete(t)
+      }
+    }
   }
 }

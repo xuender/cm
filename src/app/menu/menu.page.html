@@ -19,11 +19,11 @@
           <ion-list-header>
             <ion-label translate>菜单预览</ion-label>
           </ion-list-header>
-          <ion-item-group *ngFor="let t of types">
+          <ion-item-group *ngFor="let t of typeService.types">
             <ion-item-divider>
-              <ion-icon [name]="t.icon"></ion-icon>
+              <ion-icon slot="start" [name]="t.icon"></ion-icon>
               <ion-label translate>{{ t.name | titlecase }} Menu</ion-label>
-              <ion-button fill="clear" slot="end" (click)="t.open = !t.open">
+              <ion-button fill="clear" slot="end" (click)="toggle(t)">
                 <ion-icon slot="icon-only" [name]="t.open ? 'arrow-dropdown' : 'arrow-dropleft'"></ion-icon>
               </ion-button>
             </ion-item-divider>
@@ -42,10 +42,10 @@
 
       <ion-col size="12" size-sm="9">
         <ion-searchbar [(ngModel)]="search" placeholder="{{ 'Search' | translate }}"></ion-searchbar>
-        <ion-chip *ngFor="let t of types" (click)="t.open = !t.open" [color]="t.open?'primary':''" outline>
+        <ion-chip *ngFor="let t of typeService.types" (click)="toggle(t)" [color]="t.open?'primary':''" outline>
           {{ t.name + ' Menu' | titlecase | translate }}
         </ion-chip>
-        <ion-chip *ngFor="let t of tags" (click)="tagSet.has(t)?tagSet.delete(t):tagSet.add(t)"
+        <ion-chip *ngFor="let t of menuService.typeTags" (click)="tagSet.has(t)?tagSet.delete(t):tagSet.add(t)"
           [color]="tagSet.has(t)?'tertiary':''">
           {{ t | translate }}
         </ion-chip>
@@ -53,8 +53,8 @@
         <ion-list>
           <ion-item *ngFor="let m of menus" (click)="menuService.edit(m)" button>
             <ion-toggle slot="start" [(ngModel)]="m.s" (click)="select($event)"></ion-toggle>
+            <ion-icon [name]="typeService.icon(m.m)" slot="start"></ion-icon>
             <ion-label>
-              <ion-icon [name]="icon(m.m)"></ion-icon>
               {{ m.n ? m.n : m.c | translate }}
             </ion-label>
             <ion-badge color="tertiary" *ngFor="let t of m.t">
