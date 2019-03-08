@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="success">
-    <ion-buttons slot="secondary">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="primary">
       <ion-button (click)="menuService.edit()">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
@@ -8,26 +8,61 @@
     <ion-title translate>
       Menus
     </ion-title>
-    <ion-buttons slot="primary">
-      <ion-button routerLink="/tabs/menu/page" routerLinkActive="active">
-        <ion-icon slot="icon-only" name="list-box"></ion-icon>
-      </ion-button>
-
-      <ion-button routerLink="/tabs/menu/selection" routerLinkActive="active">
-        <ion-icon slot="icon-only" name="crop"></ion-icon>
-      </ion-button>
-
-      <ion-button routerLink="/tabs/menu/image" routerLinkActive="active">
-        <ion-icon slot="icon-only" name="image"></ion-icon>
-      </ion-button>
-
-      <ion-button routerLink="/tabs/menu/link" routerLinkActive="active">
-        <ion-icon slot="icon-only" name="link"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <router-outlet></router-outlet>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="3">
+        <ion-list>
+          <ion-list-header>
+            <ion-label translate>菜单预览</ion-label>
+          </ion-list-header>
+          <ion-item-group *ngFor="let t of types">
+            <ion-item-divider>
+              <ion-icon [name]="t.icon"></ion-icon>
+              <ion-label translate>{{ t.name | titlecase }} Menu</ion-label>
+              <ion-button fill="clear" slot="end" (click)="t.open = !t.open">
+                <ion-icon slot="icon-only" [name]="t.open ? 'arrow-dropdown' : 'arrow-dropleft'"></ion-icon>
+              </ion-button>
+            </ion-item-divider>
+            <ion-reorder-group *ngIf="t.open" disabled="false" (ionItemReorder)="reorderHandler($event, t.name)">
+              <ion-reorder *ngFor="let m of preview(t.name)">
+                <ion-item>
+                  <ion-label>
+                    {{ m.n ? m.n : m.c | translate }}
+                  </ion-label>
+                </ion-item>
+              </ion-reorder>
+            </ion-reorder-group>
+          </ion-item-group>
+        </ion-list>
+      </ion-col>
+
+      <ion-col size="12" size-sm="9">
+        <ion-searchbar [(ngModel)]="search" placeholder="{{ 'Search' | translate }}"></ion-searchbar>
+        <ion-chip *ngFor="let t of types" (click)="t.open = !t.open" [color]="t.open?'primary':''" outline>
+          {{ t.name + ' Menu' | titlecase | translate }}
+        </ion-chip>
+        <ion-chip *ngFor="let t of tags" (click)="tagSet.has(t)?tagSet.delete(t):tagSet.add(t)"
+          [color]="tagSet.has(t)?'tertiary':''">
+          {{ t | translate }}
+        </ion-chip>
+
+        <ion-list>
+          <ion-item *ngFor="let m of menus" (click)="menuService.edit(m)" button>
+            <ion-toggle slot="start" [(ngModel)]="m.s" (click)="select($event)"></ion-toggle>
+            <ion-label>
+              <ion-icon [name]="icon(m.m)"></ion-icon>
+              {{ m.n ? m.n : m.c | translate }}
+            </ion-label>
+            <ion-badge color="tertiary" *ngFor="let t of m.t">
+              {{ t | translate }}
+            </ion-badge>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

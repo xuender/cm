@@ -15,7 +15,7 @@ export class EditComponent implements OnInit {
     n: '',
     c: `${now()}`,
     m: 'page',
-    t: 'Custom',
+    t: ['Custom'],
     u: '',
     l: 'all',
     s: true,

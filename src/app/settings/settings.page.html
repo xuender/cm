@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="primary">
     <ion-title translate>Settings</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,6 +21,7 @@
         <ion-radio slot="start" value="zh_CN"></ion-radio>
       </ion-item>
     </ion-radio-group>
+
     <ion-item>
       <ion-range min="50" max="800" color="secondary" [(ngModel)]="storage.qrSize" name="qrSize">
         <ion-label slot="start" translate>Size of QR code</ion-label>

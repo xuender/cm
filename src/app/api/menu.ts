@@ -1,8 +1,8 @@
-export class Menu {
+export interface Menu {
   /**
-   * type: all, chrome...
+   * tag: all, chrome...
    */
-  t: string
+  t?: string[]
   /**
    * name
    */
@@ -20,7 +20,8 @@ export class Menu {
    */
   i?: boolean
   /**
-   * menu: TXT, MEN, PIC, LIN
+   * menu type: now: page, selection, image, link
+   * old:TXT, MEN, PIC, LIN
    */
   m: string
   /**

@@ -1,7 +1,9 @@
 [
   {
     "c": "i_title",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "page",
     "u": "options.html",
     "l": "all",
@@ -9,7 +11,9 @@
   },
   {
     "c": "c_bookmarks",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://bookmarks/#1",
     "l": "all",
@@ -17,7 +21,9 @@
   },
   {
     "c": "c_clearBD",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://settings/clearBrowserData",
     "l": "all",
@@ -25,7 +31,9 @@
   },
   {
     "c": "c_downloads",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://downloads/",
     "l": "all",
@@ -33,7 +41,9 @@
   },
   {
     "c": "c_extensions",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://extensions/",
     "l": "all",
@@ -41,7 +51,9 @@
   },
   {
     "c": "c_flags",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://flags/",
     "l": "all",
@@ -49,7 +61,9 @@
   },
   {
     "c": "c_history",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://history/",
     "l": "all",
@@ -57,7 +71,9 @@
   },
   {
     "c": "c_plugins",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://plugins/",
     "l": "all",
@@ -65,7 +81,9 @@
   },
   {
     "c": "c_settings",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://settings/",
     "l": "all",
@@ -73,7 +91,9 @@
   },
   {
     "c": "c_version",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://version/",
     "l": "all",
@@ -81,7 +101,9 @@
   },
   {
     "c": "facebook_menu",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "page",
     "u": "https://www.facebook.com/dialog/feed?app_id=365325133587367&link=%s&redirect_uri=https%3A//www.facebook.com",
     "l": "all",
@@ -89,7 +111,9 @@
   },
   {
     "c": "gmail_page",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "page",
     "u": "https://mail.google.com/mail/?view=cm&fs=1&tf=1&source=mailto&body=%s",
     "l": "all",
@@ -97,7 +121,9 @@
   },
   {
     "c": "qr",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "page",
     "u": "qr",
     "l": "all",
@@ -105,7 +131,9 @@
   },
   {
     "c": "su",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "page",
     "u": "su",
     "l": "all",
@@ -113,7 +141,9 @@
   },
   {
     "c": "su_alert",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "page",
     "u": "su_alert",
     "l": "all",
@@ -121,7 +151,9 @@
   },
   {
     "c": "tab_close",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "page",
     "u": "tab_close",
     "l": "all",
@@ -129,7 +161,9 @@
   },
   {
     "c": "c_appcache",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://appcache-internals",
     "l": "en",
@@ -137,7 +171,9 @@
   },
   {
     "c": "c_credits",
-    "t": "chrome",
+    "t": [
+      "chrome"
+    ],
     "m": "page",
     "u": "chrome://credits/",
     "l": "en",
@@ -145,7 +181,9 @@
   },
   {
     "c": "twitter_men",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "page",
     "u": "https://twitter.com/intent/tweet?url=%s",
     "l": "en",
@@ -153,7 +191,9 @@
   },
   {
     "c": "qzone",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "page",
     "u": "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=%s&title=%l",
     "l": "zh_CN",
@@ -161,7 +201,9 @@
   },
   {
     "c": "weibo",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "page",
     "u": "http://service.weibo.com/share/share.php?appkey=1144650722&url=%s",
     "l": "zh_CN",
@@ -169,7 +211,9 @@
   },
   {
     "c": "bing",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "http://www.bing.com/search?q=%s",
     "l": "all",
@@ -177,7 +221,9 @@
   },
   {
     "c": "duckduckgo",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "https://duckduckgo.com/?q=%s",
     "l": "all",
@@ -185,7 +231,9 @@
   },
   {
     "c": "google",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "https://www.google.com/#newwindow=1&q=%s",
     "l": "all",
@@ -193,7 +241,9 @@
   },
   {
     "c": "translate",
-    "t": "fy",
+    "t": [
+      "fy"
+    ],
     "m": "selection",
     "u": "http://translate.google.com/?q=%s",
     "l": "all",
@@ -201,7 +251,9 @@
   },
   {
     "c": "Baidu fanyi",
-    "t": "fy",
+    "t": [
+      "fy"
+    ],
     "m": "selection",
     "u": "http://fanyi.baidu.com/?#en/zh/%s",
     "l": "all",
@@ -209,7 +261,9 @@
   },
   {
     "c": "thepiratebay",
-    "t": "movie",
+    "t": [
+      "movie"
+    ],
     "m": "selection",
     "u": "http://thepiratebay.ee/s/%s",
     "l": "all",
@@ -217,7 +271,9 @@
   },
   {
     "c": "youtube",
-    "t": "movie",
+    "t": [
+      "movie"
+    ],
     "m": "selection",
     "u": "http://www.youtube.com/results?search_query=%s",
     "l": "all",
@@ -225,7 +281,9 @@
   },
   {
     "c": "bing_images",
-    "t": "pic",
+    "t": [
+      "pic"
+    ],
     "m": "selection",
     "u": "http://www.bing.com/images/search?q=%s",
     "l": "all",
@@ -233,7 +291,9 @@
   },
   {
     "c": "google_img",
-    "t": "pic",
+    "t": [
+      "pic"
+    ],
     "m": "selection",
     "u": "https://www.google.com/search?q=%s&tbm=isch",
     "l": "all",
@@ -241,7 +301,9 @@
   },
   {
     "c": "facebook",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "selection",
     "u": "http://www.facebook.com/search/results.php?q=%s",
     "l": "all",
@@ -249,7 +311,9 @@
   },
   {
     "c": "gmail_txt",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "selection",
     "u": "https://mail.google.com/mail/?view=cm&fs=1&tf=1&body=%s&source=mailto",
     "l": "all",
@@ -257,7 +321,9 @@
   },
   {
     "c": "google_plus",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "selection",
     "u": "https://plus.google.com/s/%s",
     "l": "all",
@@ -265,7 +331,9 @@
   },
   {
     "c": "qr_txt",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "qr_txt",
     "l": "all",
@@ -273,7 +341,9 @@
   },
   {
     "c": "Yahoo",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "http://search.yahoo.com/search?p=%s",
     "l": "en",
@@ -281,7 +351,9 @@
   },
   {
     "c": "Amazon_com",
-    "t": "shop",
+    "t": [
+      "shop"
+    ],
     "m": "selection",
     "u": "http://www.amazon.com/gp/s?keyword=%s",
     "l": "en",
@@ -289,7 +361,9 @@
   },
   {
     "c": "twitter",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "selection",
     "u": "https://twitter.com/search?q=%s",
     "l": "en",
@@ -297,7 +371,9 @@
   },
   {
     "c": "twitter_share",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "selection",
     "u": "https://twitter.com/intent/tweet?text=%s",
     "l": "en",
@@ -305,7 +381,9 @@
   },
   {
     "c": "en_wikipedia",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "http://en.wikipedia.org/wiki/Special:Search?search=%s",
     "l": "en",
@@ -313,7 +391,9 @@
   },
   {
     "c": "baidu",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "http://www.baidu.com/s?wd=%s",
     "l": "zh_CN",
@@ -321,7 +401,9 @@
   },
   {
     "c": "baidu_site",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "http://www.baidu.com/s?wd=site%3A%u+%s",
     "l": "zh_CN",
@@ -329,7 +411,9 @@
   },
   {
     "c": "google_hk",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "https://www.google.hk/search?hl=zh-CN&q=%s",
     "l": "zh_CN",
@@ -337,7 +421,9 @@
   },
   {
     "c": "scholar",
-    "t": "book",
+    "t": [
+      "book"
+    ],
     "m": "selection",
     "u": "https://scholar.google.com/scholar?q=%s&hl=zh-CN",
     "l": "zh_CN",
@@ -345,7 +431,9 @@
   },
   {
     "c": "wenku",
-    "t": "book",
+    "t": [
+      "book"
+    ],
     "m": "selection",
     "u": "http://wenku.baidu.com/search?word=%g",
     "l": "zh_CN",
@@ -353,7 +441,9 @@
   },
   {
     "c": "image_baidu",
-    "t": "pic",
+    "t": [
+      "pic"
+    ],
     "m": "selection",
     "u": "http://image.baidu.com/i?ie=utf-8&word=%s",
     "l": "zh_CN",
@@ -361,7 +451,9 @@
   },
   {
     "c": "amazon",
-    "t": "shop",
+    "t": [
+      "shop"
+    ],
     "m": "selection",
     "u": "http://www.amazon.cn/s/?field-keywords=%s",
     "l": "zh_CN",
@@ -369,7 +461,9 @@
   },
   {
     "c": "ditu",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "https://ditu.google.com/maps?hl=zh-cn&newwindow=1&q=%s",
     "l": "zh_CN",
@@ -377,7 +471,9 @@
   },
   {
     "c": "ditu_bing",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "http://cn.bing.com/ditu/?q=%s",
     "l": "zh_CN",
@@ -385,7 +481,9 @@
   },
   {
     "c": "kd",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "kd",
     "l": "zh_CN",
@@ -393,7 +491,9 @@
   },
   {
     "c": "wikipedia",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "http://zh.wikipedia.org/wiki/Special:Search?search=%s",
     "l": "zh_CN",
@@ -401,7 +501,9 @@
   },
   {
     "c": "google_tw",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "selection",
     "u": "https://www.google.tw/search?hl=zh-TW&q=%s",
     "l": "zh_TW",
@@ -409,7 +511,9 @@
   },
   {
     "c": "tw_wikipedia",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "selection",
     "u": "http://tw.wikipedia.org/wiki/Special:Search?search=%s",
     "l": "zh_TW",
@@ -417,7 +521,9 @@
   },
   {
     "c": "google_pic",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "image",
     "u": "http://www.google.com/searchbyimage?image_url=%s",
     "l": "all",
@@ -425,7 +531,9 @@
   },
   {
     "c": "facebook_pic",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "image",
     "u": "https://www.facebook.com/dialog/feed?app_id=365325133587367&picture=%s&redirect_uri=https%3A//www.facebook.com",
     "l": "all",
@@ -433,7 +541,9 @@
   },
   {
     "c": "gmail_pic",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "image",
     "u": "https://mail.google.com/mail/?view=cm&tf=1&source=mailto&body=%s&fs=1",
     "l": "all",
@@ -441,7 +551,9 @@
   },
   {
     "c": "qr_decode",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "image",
     "u": "qr_decode",
     "l": "all",
@@ -449,7 +561,9 @@
   },
   {
     "c": "qr_pic",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "image",
     "u": "qr_pic",
     "l": "all",
@@ -457,7 +571,9 @@
   },
   {
     "c": "su_pic",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "image",
     "u": "su_pic",
     "l": "all",
@@ -465,7 +581,9 @@
   },
   {
     "c": "su_pic_alert",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "image",
     "u": "su_pic_alert",
     "l": "all",
@@ -473,7 +591,9 @@
   },
   {
     "c": "exif",
-    "t": "pic",
+    "t": [
+      "pic"
+    ],
     "m": "image",
     "u": "http://regex.info/exif.cgi?dummy=on&imgurl=%s",
     "l": "en",
@@ -481,7 +601,9 @@
   },
   {
     "c": "twitter_pic",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "image",
     "u": "https://twitter.com/intent/tweet?url=%s",
     "l": "en",
@@ -489,7 +611,9 @@
   },
   {
     "c": "weibo_pic",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "image",
     "u": "http://service.weibo.com/share/share.php?appkey=1144650722&pic=%s",
     "l": "zh_CN",
@@ -497,7 +621,9 @@
   },
   {
     "c": "bing_site",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "link",
     "u": "http://www.bing.com/search?q=site%3A%s",
     "l": "all",
@@ -505,7 +631,9 @@
   },
   {
     "c": "google_link",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "link",
     "u": "https://www.google.com/search?q=link%3A%s",
     "l": "all",
@@ -513,7 +641,9 @@
   },
   {
     "c": "google_site",
-    "t": "all",
+    "t": [
+      "all"
+    ],
     "m": "link",
     "u": "https://www.google.com/search?q=site%3A%s",
     "l": "all",
@@ -521,7 +651,9 @@
   },
   {
     "c": "facebook_lin",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "link",
     "u": "https://www.facebook.com/dialog/feed?app_id=365325133587367&redirect_uri=https%3A//www.facebook.com&link=%s",
     "l": "all",
@@ -529,7 +661,9 @@
   },
   {
     "c": "gmail_lin",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "link",
     "u": "https://mail.google.com/mail/?view=cm&fs=1&source=mailto&body=%s&tf=1",
     "l": "all",
@@ -537,7 +671,9 @@
   },
   {
     "c": "qr_lin",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "link",
     "u": "qr_lin",
     "l": "all",
@@ -545,7 +681,9 @@
   },
   {
     "c": "su_lin",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "link",
     "u": "su_lin",
     "l": "all",
@@ -553,7 +691,9 @@
   },
   {
     "c": "su_lin_alert",
-    "t": "utils",
+    "t": [
+      "utils"
+    ],
     "m": "link",
     "u": "su_lin_alert",
     "l": "all",
@@ -561,7 +701,9 @@
   },
   {
     "c": "twitter_lin",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "link",
     "u": "https://twitter.com/intent/tweet?url=%s",
     "l": "en",
@@ -569,7 +711,9 @@
   },
   {
     "c": "weibo_lin",
-    "t": "sns",
+    "t": [
+      "sns"
+    ],
     "m": "link",
     "u": "http://service.weibo.com/share/share.php?url=%s&appkey=1144650722",
     "l": "zh_CN",

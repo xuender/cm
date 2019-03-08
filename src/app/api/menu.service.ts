@@ -13,6 +13,7 @@ import { EditComponent } from '../menu/edit/edit.component';
 })
 export class MenuService {
   menus: Menu[]
+  codeMap = new Map<string, string>()
   constructor(
     private storage: StorageService,
     private http: HttpClient,
@@ -26,7 +27,16 @@ export class MenuService {
         .subscribe(menus => {
           this.menus = menus
           this.save()
+          this.language()
         })
+    } else {
+      this.language()
+    }
+  }
+  async language() {
+    this.codeMap.clear()
+    for (const m of this.menus) {
+      this.codeMap.set(m.c, await this.translate.get(m.c).toPromise())
     }
   }
   hasMenu(code: string) {
@@ -55,6 +65,7 @@ export class MenuService {
           await this.message(await this.translate.get('delete menu ok', data.data).toPromise())
           break
       }
+      this.save()
     }
   }
 
