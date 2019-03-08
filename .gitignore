@@ -13,3 +13,4 @@ cache
 dist/
 old/
 4.1.314_0/
+package-lock.json
