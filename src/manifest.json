@@ -19,7 +19,7 @@
     "clipboardRead",
     "tabs"
   ],
-  "options_page": "index.html",
+  "options_page": "options.html",
   "default_locale": "en",
   "icons": {
     "16": "assets/icon/16.png",

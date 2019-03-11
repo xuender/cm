@@ -5,6 +5,7 @@ import { MenuService } from '../api/menu.service';
 import { Menu } from '../api/menu';
 import { Type } from '../api/type';
 import { TypeService } from '../api/type.service';
+import { sleep } from '../api/utils';
 @Component({
   selector: 'cm-menu',
   templateUrl: 'menu.page.html',
@@ -33,9 +34,10 @@ export class MenuPage {
     })
     this.menuService.save()
   }
-  select(event) {
+  async select(event) {
     event.stopPropagation()
-    this.menuService.save()
+    await sleep(100)
+    await this.menuService.save()
   }
   get menus() {
     return chain<Menu[]>(this.menuService.menus)

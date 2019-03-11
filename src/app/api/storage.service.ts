@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { isString } from 'lodash'
+import { setItem, getItem } from './utils';
 
 
 @Injectable({
@@ -31,7 +31,7 @@ export class StorageService {
     if (this.cache.has(keys[0])) {
       return this.cache.get(keys[0])
     }
-    const v = this.getItem(def, ...keys)
+    const v = getItem(def, ...keys)
     this.cache.set(keys[0], v)
     return v
   }
@@ -39,31 +39,13 @@ export class StorageService {
   private setCache(value: any, ...keys: string[]) {
     if (keys.length > 0) {
       this.cache.set(keys[0], value)
-      this.setItem(value, ...keys)
+      setItem(value, ...keys)
     }
   }
-
   getItem(def: any, ...keys: string[]) {
-    for (const key of keys) {
-      const value = window.localStorage.getItem(key)
-      if (value && isString(value)) {
-        try {
-          return JSON.parse(value)
-        } catch (e) {
-          return value
-        }
-      }
-    }
-    return def
+    return getItem(def, ...keys)
   }
-
   setItem(value: any, ...keys: string[]) {
-    if (keys.length < 1) {
-      return
-    }
-    for (const key of keys) {
-      window.localStorage.removeItem(key)
-    }
-    window.localStorage.setItem(keys[0], JSON.stringify(value))
+    setItem(value, ...keys)
   }
 }

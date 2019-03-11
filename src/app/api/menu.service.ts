@@ -112,7 +112,23 @@ export class MenuService {
     return true
   }
   */
-  save() {
+  async save() {
+    for (const m of this.menus) {
+      // title
+      if (m.s) {
+        m.e = m.n ? m.n : await this.translate.get(m.c).toPromise()
+      } else {
+        delete m.e
+        delete m.s
+      }
+
+    }
     this.storage.setItem(this.menus, 'menus')
+    chrome.runtime.getBackgroundPage(backgroundPage => {
+      const cm = backgroundPage['cm']
+      if (cm) {
+        cm.reset()
+      }
+    })
   }
 }

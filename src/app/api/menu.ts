@@ -8,6 +8,10 @@ export interface Menu {
    */
   n?: string
   /**
+   * title
+   */
+  e?: string
+  /**
    * back
    */
   b?: boolean
