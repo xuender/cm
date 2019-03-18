@@ -1,53 +1,53 @@
 export interface Menu {
   /**
-   * tag: all, chrome...
+   * tags: all, chrome...
    */
-  t?: string[]
+  tags?: string[]
   /**
    * name
    */
-  n?: string
+  name?: string
   /**
    * title
    */
-  e?: string
+  title?: string
   /**
    * back
    */
-  b?: boolean
+  back?: boolean
   /**
    * code
    */
-  c: string
+  code: string
   /**
    * incognito
    */
-  i?: boolean
+  incognito?: boolean
   /**
-   * menu type: now: page, selection, image, link
+   * contexts: "all", "page", "frame", "selection", "link", "editable", "image", "video", "audio"
    * old:TXT, MEN, PIC, LIN
    */
-  m: string
+  contexts: string[]
   /**
    * language
    */
-  l: string
+  language: string
   /**
    * URL
    */
-  u: string
+  url: string
   /**
    * value
    */
-  v?: number
+  value?: number
   /**
    * select
    */
-  s?: boolean
+  select?: boolean
   /**
    * order
    */
-  o?: number
+  order?: number
   // h: m.h
   // k: m.k
 }

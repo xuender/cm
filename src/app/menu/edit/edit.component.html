@@ -27,7 +27,7 @@
       <ion-input [(ngModel)]="menu.u" name="u"></ion-input>
     </ion-item>
     <ion-radio-group [(ngModel)]="menu.m" name="m">
-      <ion-item *ngFor="let t of typeService.types">
+      <ion-item *ngFor="let t of contextService.contexts">
         <ion-icon [name]="t.icon" slot="start"></ion-icon>
         <ion-label translate>{{ t.name | titlecase }} Menu</ion-label>
         <ion-radio slot="end" value="page"></ion-radio>
@@ -38,7 +38,7 @@
       <ion-label translate>Labels</ion-label>
       <ion-select [(ngModel)]="menu.t" multiple="true" cancelText="{{ 'Cancel' | translate }}"
         okText="{{ 'Ok' | translate }}">
-        <ion-select-option *ngFor="let t of typeService.tags" [value]="t">{{ t | translate }}</ion-select-option>
+        <ion-select-option *ngFor="let t of contextService.tags" [value]="t">{{ t | translate }}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>

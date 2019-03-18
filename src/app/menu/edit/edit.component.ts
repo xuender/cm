@@ -3,7 +3,7 @@ import { ModalController, ActionSheetController } from '@ionic/angular';
 import { now, includes } from 'lodash'
 import { Menu } from 'src/app/api/menu';
 import { TranslateService } from '@ngx-translate/core';
-import { TypeService } from 'src/app/api/type.service';
+import { ContextService } from 'src/app/api/context.service';
 
 @Component({
   selector: 'cm-edit',
@@ -13,31 +13,34 @@ import { TypeService } from 'src/app/api/type.service';
 export class EditComponent implements OnInit {
   title = 'Create'
   menu: Menu = {
-    n: '',
-    c: `${now()}`,
-    m: 'page',
-    t: ['Custom'],
-    u: '',
-    l: 'all',
-    s: true,
+    name: '',
+    code: `${now()}`,
+    contexts: ['page'],
+    tags: ['Custom'],
+    url: '',
+    language: 'all',
+    select: true,
   }
   data: any
   constructor(
     private modal: ModalController,
     private translate: TranslateService,
     private actionSheet: ActionSheetController,
-    public typeService: TypeService,
+    public contextService: ContextService,
   ) { }
+
   cancel() {
     this.modal.dismiss()
   }
+
   get isURL() {
-    return includes(this.menu.u, '/')
+    return includes(this.menu.url, '/')
   }
+
   async save() {
-    const name = await this.translate.get(this.menu.c).toPromise()
-    if (name == this.menu.n) {
-      this.menu.n = ''
+    const name = await this.translate.get(this.menu.code).toPromise()
+    if (name == this.menu.name) {
+      this.menu.name = ''
     }
     Object.assign(this.data, this.menu)
     this.modal.dismiss(this.menu, this.title)
@@ -47,9 +50,9 @@ export class EditComponent implements OnInit {
     if (this.data) {
       this.title = 'Edit'
       this.menu = Object.assign({}, this.data)
-      if (!this.menu.n) {
-        this.translate.get(this.menu.c)
-          .subscribe(n => this.menu.n = n)
+      if (!this.menu.name) {
+        this.translate.get(this.menu.code)
+          .subscribe(n => this.menu.name = n)
       }
     } else {
       this.data = {}
