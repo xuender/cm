@@ -9,6 +9,7 @@ import { StorageService } from './storage.service';
 import { EditComponent } from '../menu/edit/edit.component';
 import { Type } from './type';
 import { TypeService } from './type.service';
+import { getBackgroundPage } from './utils';
 
 @Injectable({
   providedIn: 'root'
@@ -124,11 +125,16 @@ export class MenuService {
 
     }
     this.storage.setItem(this.menus, 'menus')
-    chrome.runtime.getBackgroundPage(backgroundPage => {
+    try {
+      const backgroundPage = await getBackgroundPage()
       const cm = backgroundPage['cm']
       if (cm) {
         cm.reset()
       }
-    })
+      console.debug('cm', cm, backgroundPage)
+      // debugger
+    } catch (e) {
+      console.error(e)
+    }
   }
 }

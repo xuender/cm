@@ -1,5 +1,5 @@
-import { chain, filter, find, includes } from 'lodash'
-import { getItem } from './app/api/utils';
+import { chain, filter, find } from 'lodash'
+import { getItem, removeAll } from './app/api/utils';
 import { Menu } from './app/api/menu';
 
 class CmBackground {
@@ -30,7 +30,7 @@ class CmBackground {
   }
   async reset() {
     console.debug('reset')
-    await this.removeAll()
+    await removeAll()
     this.menus = chain<Menu[]>(getItem([], 'menus'))
       .filter(m => m.s)
       .sortBy(['o', 'n'])
@@ -41,12 +41,6 @@ class CmBackground {
         await this.createMenu(title, m.c, type)
       }
     }
-  }
-  removeAll() {
-    console.debug('removeAll')
-    return new Promise(resolve => {
-      chrome.contextMenus.removeAll(resolve)
-    })
   }
   private createMenu(title: string, id: string, ...contexts: string[]) {
     console.debug('createMenu:', title)
@@ -59,4 +53,4 @@ class CmBackground {
     })
   }
 }
-const cm = new CmBackground()
+window['cm'] = new CmBackground()

@@ -29,3 +29,25 @@ export function sleep(ms: number) {
     setTimeout(resolve, ms)
   )
 }
+
+export function removeAll() {
+  return getChrome('chrome.contextMenus.removeAll')
+}
+
+export function getBackgroundPage() {
+  return getChrome('chrome.runtime.getBackgroundPage')
+}
+
+function getChrome(key: string) {
+  return new Promise((resolve, reject) => {
+    let obj = window as any
+    for (const k of key.split('.')) {
+      obj = obj[k] as any
+      if (!obj) {
+        reject(`Missing ${k} by ${key}.`)
+        return
+      }
+    }
+    obj(resolve)
+  })
+}
