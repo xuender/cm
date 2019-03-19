@@ -48,9 +48,9 @@ export class MenuPage {
       .filter(m => this.tagSet.size == 0 || !m.tags || some(m.tags, t => this.tagSet.has(t)))
       .filter(m => !this.search
         || includes(m.name, this.search)
-        || includes(m.code, this.search)
+        || includes(m.id, this.search)
         || includes(m.url, this.search)
-        || includes(this.menuService.codeMap.get(m.code), this.search)
+        || includes(this.menuService.idMap.get(m.id), this.search)
       )
       .sortBy(m => this.contextService.sort(m))
       .value()

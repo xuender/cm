@@ -16,13 +16,14 @@ import { getBackgroundPage } from './utils';
 })
 export class MenuService {
   menus: Menu[]
-  codeMap = new Map<string, string>()
+  idMap = new Map<string, string>()
   private keyMap = new Map<string, string>([
     ['t', 'tags'],
     ['n', 'name'],
     ['e', 'title'],
     ['b', 'back'],
-    ['c', 'code'],
+    ['c', 'id'],
+    ['code', 'id'], // TODO remove
     ['i', 'incognito'],
     ['m', 'contexts'],
     ['l', 'language'],
@@ -86,14 +87,14 @@ export class MenuService {
   }
 
   async language() {
-    this.codeMap.clear()
+    this.idMap.clear()
     for (const m of this.menus) {
-      this.codeMap.set(m.code, await this.translate.get(m.code).toPromise())
+      this.idMap.set(m.id, await this.translate.get(m.id).toPromise())
     }
   }
 
-  hasMenu(code: string) {
-    return code && some(this.menus, { code: code })
+  hasMenu(id: string) {
+    return id && some(this.menus, { id: id })
   }
 
   hasType(type: string) {
@@ -117,7 +118,7 @@ export class MenuService {
           await this.message(await this.translate.get('create menu ok', data.data).toPromise())
           break
         case 'Remove':
-          pullAllBy(this.menus, [{ c: data.data.code }], 'code')
+          pullAllBy(this.menus, [{ id: data.data.id }], 'id')
           await this.message(await this.translate.get('delete menu ok', data.data).toPromise())
           break
         case 'backdrop':
@@ -157,7 +158,7 @@ export class MenuService {
   async save() {
     for (const m of this.menus) {
       if (m.select) {
-        m.title = m.name ? m.name : await this.translate.get(m.code).toPromise()
+        m.title = m.name ? m.name : await this.translate.get(m.id).toPromise()
       } else {
         delete m.title
         delete m.select

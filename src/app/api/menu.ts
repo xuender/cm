@@ -1,5 +1,9 @@
 export interface Menu {
   /**
+   * id
+   */
+  id: string
+  /**
    * tags: all, chrome...
    */
   tags?: string[]
@@ -15,10 +19,6 @@ export interface Menu {
    * back
    */
   back?: boolean
-  /**
-   * code
-   */
-  code: string
   /**
    * incognito
    */

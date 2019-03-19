@@ -27,7 +27,7 @@ export class ContextService {
   }
 
   sort(m: Menu) {
-    return `${findIndex(this.contexts, t => includes(m.contexts, t.name))}${m.name}${m.code}`
+    return `${findIndex(this.contexts, t => includes(m.contexts, t.name))}${m.name}${m.id}`
   }
 
   isOpen(m: Menu) {

@@ -14,7 +14,7 @@ export class EditComponent implements OnInit {
   title = 'Create'
   menu: Menu = {
     name: '',
-    code: `${now()}`,
+    id: `${now()}`,
     contexts: ['page'],
     tags: ['Custom'],
     url: '',
@@ -38,9 +38,16 @@ export class EditComponent implements OnInit {
   }
 
   async save() {
-    const name = await this.translate.get(this.menu.code).toPromise()
+    const name = await this.translate.get(this.menu.id).toPromise()
     if (name == this.menu.name) {
-      this.menu.name = ''
+      delete this.menu.name
+    }
+    this.menu.contexts = []
+    for (const c of this.contextService.contexts) {
+      if (this.menu[c.name]) {
+        this.menu.contexts.push(c.name)
+      }
+      delete this.menu[c.name]
     }
     Object.assign(this.data, this.menu)
     this.modal.dismiss(this.menu, this.title)
@@ -51,11 +58,14 @@ export class EditComponent implements OnInit {
       this.title = 'Edit'
       this.menu = Object.assign({}, this.data)
       if (!this.menu.name) {
-        this.translate.get(this.menu.code)
+        this.translate.get(this.menu.id)
           .subscribe(n => this.menu.name = n)
       }
     } else {
       this.data = {}
+    }
+    for (const c of this.menu.contexts) {
+      this.menu[c] = true
     }
   }
 

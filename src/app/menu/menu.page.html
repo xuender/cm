@@ -31,7 +31,7 @@
               <ion-reorder *ngFor="let m of preview(t.name)">
                 <ion-item>
                   <ion-label>
-                    {{ m.name ? m.name : m.code | translate }}
+                    {{ m.name ? m.name : m.id | translate }}
                   </ion-label>
                 </ion-item>
               </ion-reorder>
@@ -55,7 +55,7 @@
             <ion-toggle slot="start" [(ngModel)]="m.select" (click)="select($event)"></ion-toggle>
             <ion-icon [name]="contextService.icon(c)" *ngFor="let c of m.contexts" slot="start"></ion-icon>
             <ion-label>
-              {{ m.name ? m.name : m.code | translate }}
+              {{ m.name ? m.name : m.id | translate }}
             </ion-label>
             <ion-badge color="tertiary" *ngFor="let t of m.tags">
               {{ t | translate }}

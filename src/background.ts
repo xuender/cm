@@ -14,7 +14,7 @@ class CmBackground {
 
   async open(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
     console.debug('click', info, tab)
-    const menu = find<Menu>(this.menus, { code: info.menuItemId })
+    const menu = find<Menu>(this.menus, { id: info.menuItemId })
     console.dir(menu)
     const isPage = /\/|.htm/.test(menu.url)
     console.debug(isPage)
@@ -32,21 +32,19 @@ class CmBackground {
       .filter(m => m.select)
       .sortBy(['order', 'name'])
       .value()
-    for (const c of this.contexts) {
-      for (const m of filter<Menu>(this.menus, m => includes(m.contexts, c))) {
-        let title = m.title ? m.title : (m.name ? m.name : m.code)
-        await this.createMenu(title, m.code, c)
-      }
+    for (const m of this.menus) {
+      await this.createMenu(m)
     }
   }
 
-  private createMenu(title: string, id: string, ...contexts: string[]) {
+  private createMenu(menu: Menu) {
+    const title = menu.title ? menu.title : (menu.name ? menu.name : menu.id)
     console.debug('createMenu:', title)
     return new Promise(resolve => {
       chrome.contextMenus.create({
-        contexts: contexts,
+        contexts: menu.contexts,
         title: title,
-        id: id,
+        id: menu.id,
       }, resolve)
     })
   }
