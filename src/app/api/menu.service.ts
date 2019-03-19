@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TranslateService } from '@ngx-translate/core';
 import { ModalController, ToastController } from '@ionic/angular';
+
+import { TranslateService } from '@ngx-translate/core';
 import { some, pullAllBy, forEach, chain, map, isString } from 'lodash'
 
 import { Menu } from './menu';
 import { StorageService } from './storage.service';
 import { EditComponent } from '../menu/edit/edit.component';
-import { Context } from './context';
 import { ContextService } from './context.service';
 import { getBackgroundPage } from './utils';
 
@@ -17,7 +17,20 @@ import { getBackgroundPage } from './utils';
 export class MenuService {
   menus: Menu[]
   codeMap = new Map<string, string>()
-  private keyMap = new Map<string, string>()
+  private keyMap = new Map<string, string>([
+    ['t', 'tags'],
+    ['n', 'name'],
+    ['e', 'title'],
+    ['b', 'back'],
+    ['c', 'code'],
+    ['i', 'incognito'],
+    ['m', 'contexts'],
+    ['l', 'language'],
+    ['u', 'url'],
+    ['v', 'value'],
+    ['s', 'select'],
+    ['o', 'order'],
+  ])
   constructor(
     private storage: StorageService,
     private http: HttpClient,
@@ -26,18 +39,6 @@ export class MenuService {
     private toast: ToastController,
     private contextService: ContextService,
   ) {
-    this.keyMap.set('t', 'tags')
-    this.keyMap.set('n', 'name')
-    this.keyMap.set('e', 'title')
-    this.keyMap.set('b', 'back')
-    this.keyMap.set('c', 'code')
-    this.keyMap.set('i', 'incognito')
-    this.keyMap.set('m', 'contexts')
-    this.keyMap.set('l', 'language')
-    this.keyMap.set('u', 'url')
-    this.keyMap.set('v', 'value')
-    this.keyMap.set('s', 'select')
-    this.keyMap.set('o', 'order')
     this.menus = this.oldMenu(storage.getItem([], 'menus'))
     if (this.menus.length == 0) {
       this.http.get<Menu[]>('/assets/init.json')
@@ -72,7 +73,7 @@ export class MenuService {
   get contextTags() {
     const tags = new Set<String>()
     chain<Menu[]>(this.menus)
-      .filter(m => this.contextService.inContexts(m))
+      .filter(m => this.contextService.isOpen(m))
       .forEach(m => forEach(m.tags, t => tags.add(t)))
       .value()
     // console.log('tags', tags)
@@ -155,7 +156,6 @@ export class MenuService {
   */
   async save() {
     for (const m of this.menus) {
-      // title
       if (m.select) {
         m.title = m.name ? m.name : await this.translate.get(m.code).toPromise()
       } else {
