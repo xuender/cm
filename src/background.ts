@@ -1,28 +1,19 @@
-import { chain, filter, find, includes } from 'lodash'
+import { chain, find } from 'lodash'
 
 import { getItem, removeAll } from './app/api/utils';
 import { Menu } from './app/api/menu';
 
 class CmBackground {
   menus: Menu[] = []
-  contexts = ['page', 'selection', 'image', 'link']
+  private replaceMap = new Map([
+    [/%s|%S/g, encodeURIComponent],
+    [/%g|%G/g, encodeURIComponent],
+    [/%t|%T/g, encodeURIComponent],
+  ])
   constructor() {
-    chrome.runtime.onStartup.addListener(this.reset)
-    chrome.contextMenus.onClicked.addListener((info, tab) => this.open(info, tab))
+    console.log('start')
     this.reset()
-  }
-
-  async open(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
-    console.debug('click', info, tab)
-    const menu = find<Menu>(this.menus, { id: info.menuItemId })
-    console.dir(menu)
-    const isPage = /\/|.htm/.test(menu.url)
-    console.debug(isPage)
-    const back = false
-    let url = tab.url
-    let ni = tab.index + 1
-    url = menu.url
-    chrome.tabs.create({ url: url, selected: !back, index: ni })
+      .then(() => chrome.runtime.onStartup.addListener(this.reset))
   }
 
   async reset() {
@@ -40,13 +31,64 @@ class CmBackground {
   private createMenu(menu: Menu) {
     const title = menu.title ? menu.title : (menu.name ? menu.name : menu.id)
     console.debug('createMenu:', title)
-    return new Promise(resolve => {
-      chrome.contextMenus.create({
-        contexts: menu.contexts,
-        title: title,
-        id: menu.id,
-      }, resolve)
-    })
+    const createProperties: chrome.contextMenus.CreateProperties = {
+      id: menu.id,
+      title: title,
+      contexts: menu.contexts,
+    }
+    if (menu.type) {
+      createProperties.type = menu.type
+    }
+    if ('separator' != menu.type) {
+      createProperties.onclick = (info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) =>
+        this.onClicked(info, tab)
+    }
+    return new Promise(resolve => chrome.contextMenus.create(createProperties, resolve))
+  }
+
+  async onClicked(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
+    console.debug('click', info, tab)
+    const menu = find<Menu>(this.menus, { id: info.menuItemId })
+    console.dir(menu)
+    const isPage = /\/|.htm/.test(menu.url)
+    console.debug(isPage)
+    const value = chain([info.selectionText, info.srcUrl, info.linkUrl, info.frameUrl, info.pageUrl])
+      .compact()
+      .head()
+      .value()
+    console.debug('value', value)
+    if (isPage) {
+      let url = menu.url
+      url = url.replace(/%l|%L/g, encodeURIComponent(tab.title))
+      for (const k of this.replaceMap) {
+        if (k[0].test(url)) {
+          console.debug('k[0]', k[0], url)
+          url = url.replace(k[0], k[1](value))
+        }
+      }
+      console.debug('url', url)
+      if (menu.incognito) {
+        // TODO find window
+        await this.createWindow({ url: url, incognito: true, })
+        return
+      }
+      // TODO newWindow
+      // TODO find window
+      const createProperties: chrome.tabs.CreateProperties = {
+        url: url,
+        selected: !menu.back,
+        index: tab.index + 1,
+      }
+      await this.createTab(createProperties)
+    }
+  }
+
+  private createTab(createProperties: chrome.tabs.CreateProperties) {
+    return new Promise(resolve => chrome.tabs.create(createProperties, resolve))
+  }
+
+  private createWindow(createData: chrome.windows.CreateData) {
+    return new Promise(resolve => chrome.windows.create(createData, resolve))
   }
 }
 

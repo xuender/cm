@@ -9,6 +9,7 @@ import { Menu } from './menu';
   providedIn: 'root'
 })
 export class ContextService {
+  // "all", "page", "frame", "selection", "link", "editable", "image", "video", "audio", "launcher", "browser_action", or "page_action"
   contexts: Context[] = [
     { name: 'page', open: true, icon: 'menu' },
     { name: 'selection', open: false, icon: 'crop' },

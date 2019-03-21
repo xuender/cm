@@ -16,6 +16,10 @@ export interface Menu {
    */
   title?: string
   /**
+   * "normal", "checkbox", "radio", "separator"
+   */
+  type?: string
+  /**
    * back
    */
   back?: boolean
@@ -24,7 +28,7 @@ export interface Menu {
    */
   incognito?: boolean
   /**
-   * contexts: "all", "page", "frame", "selection", "link", "editable", "image", "video", "audio"
+   * contexts: "all", "page", "frame", "selection", "link", "editable", "image", "video", "audio", "launcher", "browser_action", "page_action"
    * old:TXT, MEN, PIC, LIN
    */
   contexts: string[]
