@@ -31,7 +31,7 @@
               <ion-reorder *ngFor="let m of preview(t.name)">
                 <ion-item>
                   <ion-label>
-                    {{ m.name ? m.name : m.id | translate }}
+                    {{ m.incognito ? '☢' : '' }} {{ m.back ? '₪' : '' }} {{ m.name ? m.name : m.id | translate }}
                   </ion-label>
                 </ion-item>
               </ion-reorder>
@@ -57,6 +57,12 @@
             <ion-label>
               {{ m.name ? m.name : m.id | translate }}
             </ion-label>
+            <ion-badge color="light" *ngIf="m.incognito" title="{{ 'Incognito' | translate}}">
+              <ion-icon name="nuclear"></ion-icon>
+            </ion-badge>
+            <ion-badge color="light" *ngIf="m.back" title="{{ 'Back' | translate}}">
+              <ion-icon name="repeat"></ion-icon>
+            </ion-badge>
             <ion-badge color="tertiary" *ngFor="let t of m.tags">
               {{ t | translate }}
             </ion-badge>

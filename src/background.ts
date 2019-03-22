@@ -5,6 +5,7 @@ import { Menu } from './app/api/menu';
 
 class CmBackground {
   menus: Menu[] = []
+  private clipboardInput = document.createElement('input')
   private replaceMap = new Map([
     [/%s|%S/g, encodeURIComponent],
     [/%g|%G/g, encodeURIComponent],
@@ -12,6 +13,8 @@ class CmBackground {
   ])
   constructor() {
     console.log('start')
+    this.clipboardInput.type = 'text'
+    document.body.appendChild(this.clipboardInput)
     this.reset()
       .then(() => chrome.runtime.onStartup.addListener(this.reset))
   }
@@ -28,8 +31,19 @@ class CmBackground {
     }
   }
 
+  private readClipboard() {
+    this.clipboardInput.select()
+    document.execCommand('paste')
+    return this.clipboardInput.value
+  }
   private createMenu(menu: Menu) {
-    const title = menu.title ? menu.title : (menu.name ? menu.name : menu.id)
+    let title = menu.title ? menu.title : (menu.name ? menu.name : menu.id)
+    if (menu.back) {
+      title = `₪ ${title}`
+    }
+    if (menu.incognito) {
+      title = `☢ ${title}`
+    }
     console.debug('createMenu:', title)
     const createProperties: chrome.contextMenus.CreateProperties = {
       id: menu.id,
@@ -59,7 +73,15 @@ class CmBackground {
     console.debug('value', value)
     if (isPage) {
       let url = menu.url
-      url = url.replace(/%l|%L/g, encodeURIComponent(tab.title))
+      if (/%u|%U/g.test(url)) {
+        url = url.replace(/%u|%U/g, tab.url.split('/')[2])
+      }
+      if (/%l|%L/g.test(url)) {
+        url = url.replace(/%l|%L/g, encodeURIComponent(tab.title))
+      }
+      if (/%p|%P/g.test(url)) {
+        url = url.replace(/%p|%P/g, encodeURIComponent(this.readClipboard()))
+      }
       for (const k of this.replaceMap) {
         if (k[0].test(url)) {
           console.debug('k[0]', k[0], url)

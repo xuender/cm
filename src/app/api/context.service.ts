@@ -15,6 +15,7 @@ export class ContextService {
     { name: 'selection', open: false, icon: 'crop' },
     { name: 'image', open: false, icon: 'image' },
     { name: 'link', open: false, icon: 'link' },
+    { name: 'all', open: false, icon: 'star' },
   ]
   tags = new Set<string>()
   constructor() { }

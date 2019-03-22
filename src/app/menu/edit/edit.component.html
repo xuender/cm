@@ -32,21 +32,22 @@
       <ion-checkbox slot="end" [(ngModel)]="menu[c.name]"></ion-checkbox>
     </ion-item>
     <ion-item>
-      <ion-label translate>Contexts</ion-label>
-      <ion-select [(ngModel)]="menu.contexts" multiple="true" cancelText="{{ 'Cancel' | translate }}"
-        okText="{{ 'Ok' | translate }}">
-        <ion-select-option *ngFor="let t of contextService.contexts" [value]="t.name" translate>
-          {{ t.name | titlecase }} Menu
-        </ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
       <ion-icon slot="start" name="pricetags"></ion-icon>
       <ion-label translate>Labels</ion-label>
       <ion-select [(ngModel)]="menu.tags" multiple="true" cancelText="{{ 'Cancel' | translate }}"
         okText="{{ 'Ok' | translate }}">
         <ion-select-option *ngFor="let t of contextService.tags" [value]="t">{{ t | translate }}</ion-select-option>
       </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="repeat"></ion-icon>
+      <ion-label translate>Back</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="menu.back"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="nuclear"></ion-icon>
+      <ion-label translate>Incognito</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="menu.incognito"></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label translate>Select</ion-label>

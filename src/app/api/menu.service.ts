@@ -23,7 +23,6 @@ export class MenuService {
     ['e', 'title'],
     ['b', 'back'],
     ['c', 'id'],
-    ['code', 'id'], // TODO remove
     ['i', 'incognito'],
     ['m', 'contexts'],
     ['l', 'language'],
