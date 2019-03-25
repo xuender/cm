@@ -37,6 +37,9 @@ export function removeAll() {
 export function getBackgroundPage() {
   return getChrome('chrome.runtime.getBackgroundPage')
 }
+export function getSelectedTab() {
+  return getChrome('chrome.tabs.getSelected')
+}
 
 function getChrome(key: string) {
   return new Promise((resolve, reject) => {

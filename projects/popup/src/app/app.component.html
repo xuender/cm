@@ -1,0 +1,18 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title translate>Context Menus</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="settings()">
+          <ion-icon slot="icon-only" name="settings"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <ion-searchbar [(ngModel)]="input" name="search"></ion-searchbar>
+    <ion-button *ngFor="let m of menus;let i =index" [color]="i==0?'primary':'secondary'" (click)="search(m)" small>
+      {{m.title}}
+    </ion-button>
+  </ion-content>
+</ion-app>

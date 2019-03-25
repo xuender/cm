@@ -35,7 +35,7 @@ export interface Menu {
   /**
    * language
    */
-  language: string
+  language?: string
   /**
    * URL
    */

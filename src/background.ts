@@ -1,9 +1,9 @@
 import { chain, find } from 'lodash'
 
-import { getItem, removeAll } from './app/api/utils';
+import { getItem, removeAll, setItem } from './app/api/utils';
 import { Menu } from './app/api/menu';
 
-class CmBackground {
+export class CmBackground {
   menus: Menu[] = []
   private clipboardInput = document.createElement('input')
   private replaceMap = new Map([
@@ -60,16 +60,9 @@ class CmBackground {
     return new Promise(resolve => chrome.contextMenus.create(createProperties, resolve))
   }
 
-  async onClicked(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
-    console.debug('click', info, tab)
-    const menu = find<Menu>(this.menus, { id: info.menuItemId })
-    console.dir(menu)
+  async open(menu: Menu, value: string, tab: chrome.tabs.Tab) {
     const isPage = /\/|.htm/.test(menu.url)
     console.debug(isPage)
-    const value = chain([info.selectionText, info.srcUrl, info.linkUrl, info.frameUrl, info.pageUrl])
-      .compact()
-      .head()
-      .value()
     console.debug('value', value)
     if (isPage) {
       let url = menu.url
@@ -103,6 +96,20 @@ class CmBackground {
       }
       await this.createTab(createProperties)
     }
+  }
+
+  async onClicked(info: chrome.contextMenus.OnClickData, tab: chrome.tabs.Tab) {
+    console.debug('click', info, tab)
+    if (info.selectionText) {
+      setItem(info.selectionText, 'selection')
+    }
+    const menu = find<Menu>(this.menus, { id: info.menuItemId })
+    console.dir(menu)
+    const value = chain([info.selectionText, info.srcUrl, info.linkUrl, info.frameUrl, info.pageUrl])
+      .compact()
+      .head()
+      .value()
+    await this.open(menu, value, tab)
   }
 
   private createTab(createProperties: chrome.tabs.CreateProperties) {
