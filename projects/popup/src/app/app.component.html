@@ -11,7 +11,8 @@
   </ion-header>
   <ion-content padding>
     <ion-searchbar [(ngModel)]="input" name="search"></ion-searchbar>
-    <ion-button *ngFor="let m of menus;let i =index" [color]="i==0?'primary':'secondary'" (click)="search(m)" small>
+    <ion-button *ngFor="let m of menus;let i =index" [color]="i==0?'primary':'secondary'" (click)="search(m)"
+      size="small">
       {{m.title}}
     </ion-button>
   </ion-content>
