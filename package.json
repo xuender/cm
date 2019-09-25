@@ -9,6 +9,7 @@
     "build": "ng build && webpack --config webpack.background.config.js",
     "prod": "ng build --prod && ng build popup --prod && webpack --config webpack.background.config.js && mv dist/popup/* dist -n",
     "watch": "webpack -w --config webpack.background.config.js",
+    "popup": "ng serve popup",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

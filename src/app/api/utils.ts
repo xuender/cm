@@ -54,3 +54,7 @@ function getChrome(key: string) {
     obj(resolve)
   })
 }
+
+export function urlEncode(url: string) {
+
+}

@@ -26,6 +26,7 @@ export class AppComponent {
       .sortBy(['order', 'name'])
       .value()
   }
+
   async search(menu: Menu) {
     const backgroupPage = await getBackgroundPage()
     if (backgroupPage) {
@@ -34,6 +35,7 @@ export class AppComponent {
       await cm.open(menu, this.input, tab)
     }
   }
+
   async settings() {
     const m: Menu = {
       id: 'i_title',
@@ -41,5 +43,9 @@ export class AppComponent {
       contexts: ['page'],
     }
     await this.search(m)
+  }
+
+  async add() {
+    await this.urlService.encode('https://www.baidu.com/s?wd=test&rsv_spt=1&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1')
   }
 }
