@@ -24,7 +24,7 @@
     "karma-coffee-preprocessor": "^0.3.0",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
-    "node-sass": "^3.4.0",
+    "node-sass": "^4.14.1",
     "phantomjs": "^1.9.18"
   },
   "scripts": {
